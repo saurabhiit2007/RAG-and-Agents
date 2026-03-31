@@ -1639,10 +1639,17 @@
 <p>A: Faithfulness measures whether the answer is supported by retrieved context — an answer can be wrong if the retrieved context is wrong, but still be "faithful". Answer correctness measures whether the answer matches a known ground truth — an answer can be correct but use parametric knowledge rather than retrieved context. Ideally you want both: correct and grounded in retrieved text.</p>
 <hr />
 <p><strong>Q: How would you build an evaluation set for a new RAG system with no existing labelled data?</strong></p>
-<p>A: Three approaches: (1) Synthetic generation — use an LLM to generate questions from your corpus, creating question-context-answer triples; (2) production logging — sample real user queries and have humans label relevant documents and correct answers; (3) expert annotation — for high-stakes domains, pay subject matter experts to create a gold-standard test set. Start with synthetic data for fast iteration and refine with human annotations before deployment.</p>
+<p>A: Three approaches: </p>
+<p>(1) Synthetic generation — use an LLM to generate questions from your corpus, creating question-context-answer triples; 
+(2) production logging — sample real user queries and have humans label relevant documents and correct answers; 
+(3) expert annotation — for high-stakes domains, pay subject matter experts to create a gold-standard test set. </p>
+<p>Start with synthetic data for fast iteration and refine with human annotations before deployment.</p>
 <hr />
 <p><strong>Q: What are the risks of using LLM-as-a-judge for evaluation?</strong></p>
-<p>A: Three main risks: (1) Fluency bias — LLMs tend to prefer well-written answers even if they are less factually accurate; (2) Prompt sensitivity — the scoring rubric significantly affects scores and must be carefully designed; (3) Self-preference — when the same model family is used for generation and evaluation, it tends to rate its own outputs more favourably. Mitigate by using a different model family for judging than for generation, and always validate against human judgments on a held-out set.</p>
+<p>A: Three main risks: </p>
+<p>(1) Fluency bias — LLMs tend to prefer well-written answers even if they are less factually accurate; 
+(2) Prompt sensitivity — the scoring rubric significantly affects scores and must be carefully designed; 
+(3) Self-preference — when the same model family is used for generation and evaluation, it tends to rate its own outputs more favourably. Mitigate by using a different model family for judging than for generation, and always validate against human judgments on a held-out set.</p>
 <hr />
 <p><strong>Q: How do you diagnose whether a RAG quality problem is in retrieval or generation?</strong></p>
 <p>A: Run an oracle experiment: manually find the correct document and inject it directly into the prompt, bypassing retrieval entirely. If the model produces a correct answer with the oracle document, the problem is in retrieval. If the model still fails with the correct document in context, the problem is in generation (prompting, model reasoning, or context integration). This isolates the failure mode clearly.</p>

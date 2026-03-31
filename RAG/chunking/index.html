@@ -1227,15 +1227,19 @@
 <h2 id="3-chunking-strategies">3. Chunking Strategies<a class="headerlink" href="#3-chunking-strategies" title="Permanent link">&para;</a></h2>
 <h3 id="fixed-size-chunking">Fixed-Size Chunking<a class="headerlink" href="#fixed-size-chunking" title="Permanent link">&para;</a></h3>
 <p>Documents are split into consecutive windows of N tokens with optional overlap. Simple and fast, but ignores semantic boundaries.</p>
-<p><strong>Algorithm:</strong>
-1. Tokenise the document.
-2. Split into consecutive windows of size N.
-3. Optionally overlap adjacent windows by M tokens.</p>
-<ul>
-<li><strong>Pros:</strong> Simple to implement; fast and scalable; good baseline.</li>
+<p><strong>Algorithm:</strong></p>
+<ol>
+<li>Tokenise the document.</li>
+<li>Split into consecutive windows of size N.</li>
+<li>
+<p>Optionally overlap adjacent windows by M tokens.</p>
+</li>
+<li>
+<p><strong>Pros:</strong> Simple to implement; fast and scalable; good baseline.</p>
+</li>
 <li><strong>Cons:</strong> Ignores semantic boundaries; may split sentences mid-thought.</li>
 <li><strong>Use when:</strong> Baseline systems; uniform document formats; large-scale indexing where simplicity matters.</li>
-</ul>
+</ol>
 <hr />
 <h3 id="sentence-based-chunking">Sentence-Based Chunking<a class="headerlink" href="#sentence-based-chunking" title="Permanent link">&para;</a></h3>
 <p>Documents are split at sentence boundaries, accumulating sentences until a token threshold is reached.</p>
@@ -1322,8 +1326,8 @@
 <li>Sliding window: stride equals 50% of window size</li>
 <li>Recursive chunking: overlap often unnecessary</li>
 </ul>
-<p><strong>Benefits:</strong> Improved recall; reduced boundary effects.
-<strong>Costs:</strong> Larger index; higher storage and retrieval cost; redundant embeddings.</p>
+<p><strong>Benefits:</strong> Improved recall; reduced boundary effects.</p>
+<p><strong>Costs:</strong> Larger index; higher storage and retrieval cost; redundant embeddings.</p>
 <blockquote>
 <p>Overlap is a mitigation strategy, not a substitute for good chunking design.</p>
 </blockquote>
