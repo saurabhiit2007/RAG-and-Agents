@@ -24,6 +24,7 @@ Embedding models have fixed input limits (typically 512 to 8192 tokens), so docu
 Documents are split into consecutive windows of N tokens with optional overlap. Simple and fast, but ignores semantic boundaries.
 
 **Algorithm:**
+
 1. Tokenise the document.
 2. Split into consecutive windows of size N.
 3. Optionally overlap adjacent windows by M tokens.
@@ -117,6 +118,7 @@ Overlap (sharing tokens between adjacent chunks) prevents information loss at ch
 - Recursive chunking: overlap often unnecessary
 
 **Benefits:** Improved recall; reduced boundary effects.
+
 **Costs:** Larger index; higher storage and retrieval cost; redundant embeddings.
 
 > Overlap is a mitigation strategy, not a substitute for good chunking design.

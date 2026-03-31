@@ -1,4 +1,4 @@
-## 1. Overview — What Is RAG and Why Does It Exist?
+## 1. Overview
 
 Large Language Models are trained on a fixed snapshot of data; knowledge is baked into model weights and cannot change without retraining. This creates three hard problems: a **knowledge cutoff** (no access to post-training events), **hallucinations** (the model generates plausible-sounding but wrong answers when it lacks a fact), and **poor domain specificity** for proprietary or niche corpora.
 

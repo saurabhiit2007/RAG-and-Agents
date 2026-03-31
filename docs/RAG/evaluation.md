@@ -230,13 +230,23 @@ A: Faithfulness measures whether the answer is supported by retrieved context �
 
 **Q: How would you build an evaluation set for a new RAG system with no existing labelled data?**
 
-A: Three approaches: (1) Synthetic generation — use an LLM to generate questions from your corpus, creating question-context-answer triples; (2) production logging — sample real user queries and have humans label relevant documents and correct answers; (3) expert annotation — for high-stakes domains, pay subject matter experts to create a gold-standard test set. Start with synthetic data for fast iteration and refine with human annotations before deployment.
+A: Three approaches: 
+
+(1) Synthetic generation — use an LLM to generate questions from your corpus, creating question-context-answer triples; 
+(2) production logging — sample real user queries and have humans label relevant documents and correct answers; 
+(3) expert annotation — for high-stakes domains, pay subject matter experts to create a gold-standard test set. 
+
+Start with synthetic data for fast iteration and refine with human annotations before deployment.
 
 ---
 
 **Q: What are the risks of using LLM-as-a-judge for evaluation?**
 
-A: Three main risks: (1) Fluency bias — LLMs tend to prefer well-written answers even if they are less factually accurate; (2) Prompt sensitivity — the scoring rubric significantly affects scores and must be carefully designed; (3) Self-preference — when the same model family is used for generation and evaluation, it tends to rate its own outputs more favourably. Mitigate by using a different model family for judging than for generation, and always validate against human judgments on a held-out set.
+A: Three main risks: 
+
+(1) Fluency bias — LLMs tend to prefer well-written answers even if they are less factually accurate; 
+(2) Prompt sensitivity — the scoring rubric significantly affects scores and must be carefully designed; 
+(3) Self-preference — when the same model family is used for generation and evaluation, it tends to rate its own outputs more favourably. Mitigate by using a different model family for judging than for generation, and always validate against human judgments on a held-out set.
 
 ---
 
