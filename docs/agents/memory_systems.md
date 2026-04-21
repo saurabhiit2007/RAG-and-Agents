@@ -171,35 +171,3 @@ Semantic memory: "I have a collaborative relationship with Alice on the project"
 | Privacy / PII | Sanitise before writing to external stores |
 | Retrieval quality | Use semantic similarity + recency + importance weighting |
 | Write cost | Only write memories above an importance threshold |
-
----
-
-## 5. Interview Questions
-
-**Q: What are the four memory types in LLM agents, and what does each store?**
-
-A: Working memory (in-context): the active prompt — current task, conversation, tool outputs. Episodic memory: records of specific past experiences, stored in a vector database and retrieved by similarity. Semantic memory: general world knowledge — either parametric (in weights) or retrieved from a RAG index. Procedural memory: encoded action policies — system prompt instructions, fine-tuned behaviours, tool-use patterns.
-
----
-
-**Q: What is the lost-in-the-middle effect and how does it affect agent memory design?**
-
-A: LLMs attend more strongly to content at the beginning and end of the context window. Information in the middle is less reliably used. For agent memory this means: place the most relevant retrieved memories and the most recent observations near the edges of the context; push less critical content to the middle. Experiments by Liu et al. (2023) show a 20+ percentage point accuracy drop when the key document is placed in the middle versus the beginning of a long context.
-
----
-
-**Q: How does MemGPT extend the context window of an LLM?**
-
-A: MemGPT treats the context window like CPU RAM and external storage like disk. The agent is given explicit memory management functions (e.g., `archival_memory_search`, `recall_memory_search`, `archival_memory_insert`) it can call like any tool. When the context fills, old content is paged to external storage; the agent explicitly retrieves it when needed. This enables unbounded effective context at the cost of explicit memory management calls.
-
----
-
-**Q: What is the difference between episodic and semantic memory in the context of an AI agent?**
-
-A: Episodic memory stores concrete, timestamped experiences: "On task X, I called tool Y and got result Z." Semantic memory stores abstracted facts and general knowledge: "Tool Y is useful for tasks of type X." Episodic memory supports case-based reasoning (retrieve a similar past task and copy its strategy); semantic memory supports knowledge-based reasoning (retrieve a relevant fact). In production agents, periodic *reflection* converts episodic memories into semantic ones, preventing the episodic store from becoming too large and noisy.
-
----
-
-**Q: How would you design a memory system for a long-running coding agent that needs to remember the structure of a large codebase?**
-
-A: Four layers: (1) Working memory — the current file, recent diffs, active tool outputs; (2) Semantic memory — a RAG index over the codebase (files, functions, docstrings) for retrieval by query; (3) Episodic memory — log of past actions (what files were edited, what tests ran, what errors were seen) stored as embeddings for similarity retrieval; (4) Procedural memory — system prompt encoding coding conventions, which tools to use for which tasks. On each step, the agent retrieves relevant code via semantic search and relevant past actions via episodic search, keeping only the most relevant in working memory.

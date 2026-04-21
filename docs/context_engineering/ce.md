@@ -329,35 +329,3 @@ PagedAttention applies virtual memory paging to KV cache management:
 ### Relation to Context Engineering
 
 Paged attention enables practitioners to use larger context windows in production without prohibitive memory cost. The techniques described in this document (compression, selection) remain important — but paged attention means the cost of longer contexts is now manageable.
-
----
-
-## 8. Interview Questions
-
-**Q: What is context engineering and why has it become a critical discipline?**
-
-A: Context engineering is the practice of deliberately constructing the information passed to an LLM — deciding what to include, how to format it, how to compress it, and how to isolate different components. It matters because modern LLM applications (agents, RAG systems, long-horizon tasks) are no longer bounded by prompt writing — they dynamically assemble context from retrieval results, tool outputs, conversation history, and memory. The context window is now the primary engineering artefact; poor context assembly is the leading cause of production LLM failures.
-
----
-
-**Q: What is the lost-in-the-middle effect and how does it affect context design?**
-
-A: LLMs attend most strongly to content at the beginning and end of the context window. Content in the middle receives consistently less attention, even if it is the most relevant. Liu et al. (2023) showed 20+ percentage point accuracy drops when the key document is placed in the middle versus at the start. For RAG: place the most relevant documents at the start and end of the retrieved context block; put less relevant documents in the middle. For agents: place the most important system instructions at the beginning.
-
----
-
-**Q: How does LLMLingua compress prompts and what is the performance trade-off?**
-
-A: LLMLingua uses a small proxy LLM to score each token's conditional probability — tokens that are easily predictable (high probability given context) carry less information and are dropped. At a 20× compression ratio, performance on downstream tasks degrades by only ~1.5% on average. This makes it suitable for compressing RAG retrieved documents before injection: the large LLM receives a much shorter context, reducing latency and cost, with minimal quality loss.
-
----
-
-**Q: What is prompt caching and when does it provide the most benefit?**
-
-A: Prompt caching reuses the KV cache from a previous request when the beginning of the current prompt is identical. It provides the most benefit when: (1) a fixed system prompt is sent with every request — the KV cache for the system prompt is computed once and reused; (2) a large static knowledge base is embedded in every request — the same document chunks don't need to be re-encoded on each query. It provides no benefit for fully dynamic contexts. Anthropic and Google both support prompt caching; it can reduce per-request cost by 60–90% for requests with large static prefixes.
-
----
-
-**Q: How would you structure a context window for a production RAG agent handling multi-turn conversations?**
-
-A: Five zones, in order: (1) System instructions at the top (5–10% of budget) — role, constraints, output format, citation requirements; (2) Retrieved documents next (50–60% of budget) — most relevant at the very top and bottom of this zone (lost-in-the-middle mitigation), numbered for citation; (3) Compressed conversation summary (10–15% of budget) — summarise sessions older than N turns rather than keeping raw history; (4) Recent conversation turns verbatim (10–15% of budget) — the last 3–5 turns in full; (5) Current query last (5–10% of budget) — placing it at the end leverages recency bias. Implement a budget monitor that triggers compression of the retrieved documents section when overall context exceeds 80% of the window.

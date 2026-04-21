@@ -202,29 +202,3 @@ Attempt 2 → informed by reflection → succeeds
 | LATS | Tree (MCTS + reflection) | Full | Hard reasoning, code gen | High |
 | Reflexion | Greedy + retry | Post-hoc (retry) | Tasks with recoverable failures | Medium |
 | Hierarchical | Decomposed (manager/worker) | Per-worker | Long-horizon, multi-domain | High |
-
----
-
-## 8. Interview Questions
-
-**Q: What is the difference between ReAct and Plan-and-Execute agents?**
-
-A: ReAct is reactive — it decides the next action after each observation, making it adaptive but linear. Plan-and-Execute first generates a complete plan for all steps, then executes them. Plan-and-Execute is more efficient for tasks with predictable structure and enables parallel execution of independent steps. ReAct is better when the correct path depends on what intermediate steps discover. Many production systems combine both: generate an initial plan, execute ReAct-style, and re-plan if a step fails.
-
----
-
-**Q: How does LATS improve over ReAct for complex reasoning tasks?**
-
-A: LATS replaces ReAct's greedy single-path search with Monte Carlo Tree Search. Instead of committing to the first plausible action, LATS explores multiple action branches, scores each with an LLM critic, and uses reflection (verbal critique of failures) to guide the search. This lets it recover from dead ends and find higher-quality solutions. The cost is significantly more LLM calls — LATS is best for tasks where answer quality matters more than latency.
-
----
-
-**Q: What is Reflexion, and how does it differ from standard ReAct?**
-
-A: Reflexion adds a reflection step after a failed attempt: the agent generates a natural language critique of what went wrong, stores it in episodic memory, and uses it to inform the next attempt. Standard ReAct has no mechanism for learning from its own failures within a session. Reflexion is cheaper than tree search (only one path at a time) but still improves on ReAct's pass-rate on coding tasks from ~67% to ~88%.
-
----
-
-**Q: When would you choose hierarchical planning over a flat ReAct agent?**
-
-A: When the task spans multiple domains or has sub-tasks that can run in parallel, or when the total number of steps would exceed the context window of a single agent. Hierarchical planning lets a manager agent break a complex goal into chunks, delegate each chunk to a specialized worker agent, and synthesise the results — keeping each agent's context focused and manageable. The overhead is coordination logic and the risk of misaligned sub-task specifications from the manager.

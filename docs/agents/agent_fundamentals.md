@@ -184,35 +184,3 @@ A production agent is more than a loop. It includes:
 │  └───────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────┘
 ```
-
----
-
-## 8. Interview Questions
-
-**Q: What is the difference between an LLM and an LLM agent?**
-
-A: An LLM takes a fixed input and produces a single output. An agent uses an LLM as its reasoning core but wraps it in a loop that can call external tools, observe their results, and dynamically decide the next step — repeating until the task is complete. An LLM answers "What is the weather?" in one shot; an agent calls a weather API, parses the result, and formats a response.
-
----
-
-**Q: What is ReAct and why is it the dominant agent pattern?**
-
-A: ReAct (Reason + Act) interleaves reasoning traces (*Thought*) with tool calls (*Action*) and their results (*Observation*). It's dominant because it combines the explicit reasoning benefits of chain-of-thought with the grounding benefits of tool use. The thought step prevents impulsive wrong actions; observations reduce hallucination by anchoring the model in real retrieved data.
-
----
-
-**Q: How does function calling work at the API level?**
-
-A: The caller passes a list of tool schemas (JSON with name, description, parameters) alongside the user message. If the model decides a tool call is needed, instead of generating text it emits a structured JSON object specifying the tool name and arguments. The calling framework executes the tool and appends the result as a *tool message* back to the conversation. The model then continues generating.
-
----
-
-**Q: What are the risks of giving an agent access to many tools?**
-
-A: Three main risks: (1) **Tool confusion** — overlapping tool descriptions cause wrong tool selection, compounding errors; (2) **Expanded attack surface** — more tools means more ways prompt injection or adversarial inputs can cause harmful actions; (3) **Increased latency and cost** — each tool call adds latency and token usage. Best practice: give agents the minimum tool set needed for the task (principle of least privilege).
-
----
-
-**Q: What is the difference between plan-and-execute and ReAct agents?**
-
-A: ReAct is reactive — it decides the next action at each step based on the latest observation. Plan-and-execute first generates a complete plan (all steps), then executes them sequentially or in parallel. Plan-and-execute is better for tasks with known structure; ReAct is better when the path is uncertain and depends on intermediate results.

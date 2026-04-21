@@ -168,29 +168,3 @@ Multi-agent systems are harder to evaluate than single agents:
 | Debugging | Log every inter-agent message with timestamps and agent IDs |
 | Failure isolation | Worker failures should not crash the orchestrator; implement retries + fallbacks |
 | Context limits | Each worker gets only the context it needs (not the full orchestrator context) |
-
----
-
-## 7. Interview Questions
-
-**Q: What are the main reasons to use a multi-agent system over a single large agent?**
-
-A: Three main reasons: (1) Context isolation — complex tasks would overflow a single agent's context window; distributing work keeps each agent's context focused; (2) Specialisation — each agent can be prompted or fine-tuned for its specific role (researcher, coder, critic), improving quality; (3) Parallelism — independent sub-tasks run simultaneously, reducing total wall-clock time. The trade-off is coordination overhead (orchestration logic, inter-agent communication, shared state management) and harder debugging.
-
----
-
-**Q: What is the multi-agent debate technique, and how does it improve factuality?**
-
-A: Multiple agents independently answer the same question, then each agent reads the others' answers and revises its own. After several rounds, agents converge on a consensus. The mechanism: each revision forces the agent to reason about why another answer might be correct, surfacing errors in its own reasoning. Du et al. (2023) showed ~11% improvement in mathematical reasoning and factuality over single-agent baselines. The cost is 3–5× more LLM calls than a single-agent answer.
-
----
-
-**Q: How does a swarm differ from an orchestrator-worker architecture?**
-
-A: In orchestrator-worker, there is a designated manager that controls the flow — it decomposes tasks and routes them. In a swarm, agents dynamically hand off control to each other based on the conversation state; any agent can trigger a handoff to any other. Swarms are more flexible for tasks where the needed specialist only becomes clear mid-execution, but they are harder to debug because the execution path is not determined upfront.
-
----
-
-**Q: How would you debug a multi-agent system that is producing wrong final answers?**
-
-A: Step-by-step attribution: log every inter-agent message with the sending agent, receiving agent, timestamp, and content. Replay the trace and evaluate each agent's output independently. Find the first step where an agent produces a wrong output given correct inputs — that's the root failure. If all intermediate outputs are correct but the final answer is wrong, the issue is in the orchestrator's synthesis logic or the final prompt. Tools like LangSmith (for LangGraph) provide built-in trace visualisation for this purpose.

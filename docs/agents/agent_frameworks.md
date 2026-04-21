@@ -249,29 +249,3 @@ root_agent = Agent(
 | Deployment | Self-hosted / LangGraph Platform | Self-hosted / CrewAI+ | Self-hosted | Vertex AI |
 | Protocols | MCP | MCP | MCP | MCP + A2A |
 | Best for | Complex conditional flows | Role-based collaboration | Code-heavy/conversational | Google Cloud users |
-
----
-
-## 7. Interview Questions
-
-**Q: What is the core abstraction in LangGraph and why does it matter?**
-
-A: LangGraph models agent execution as a directed graph with cycles. Nodes are Python functions (LLM calls, tool calls, state transformations); edges are transitions between them. Cycles are what enable the ReAct loop — execution can return from the tools node back to the LLM node indefinitely. The state dictionary is passed through the graph and each node can read and write it. This gives fine-grained, inspectable control over execution flow, which is why it is preferred for complex agents with conditional branching and human approval checkpoints.
-
----
-
-**Q: How does CrewAI's hierarchical process work, and what are its risks?**
-
-A: In hierarchical mode, CrewAI creates a manager agent (an LLM call) that dynamically decides which worker agent should handle each task. The manager receives the task description and the list of available workers and their roles, then routes accordingly. The risk is that routing is non-deterministic — the same task may go to different workers on different runs, making debugging difficult. Also, if the manager misunderstands a worker's capabilities, it may route tasks incorrectly. The sequential process (explicit task→agent assignment) is more predictable for production use.
-
----
-
-**Q: Why did Microsoft merge AutoGen and Semantic Kernel?**
-
-A: AutoGen / AG2 provided strong multi-agent conversation and code execution primitives; Semantic Kernel provided enterprise-grade planning, memory, and plugin orchestration for .NET and Python. The merge (October 2025) created a unified framework with AG2's conversational multi-agent model and Semantic Kernel's planning and enterprise integration. The goal was to avoid developers having to choose between two Microsoft agent frameworks with overlapping but complementary capabilities.
-
----
-
-**Q: If you had to pick one framework for a production RAG-powered research agent, which would you choose and why?**
-
-A: LangGraph for a production system requiring reliability and control. The explicit state graph makes execution paths auditable; human-in-the-loop interrupt points allow review before consequential actions; persistence via checkpointing survives crashes; and streaming enables responsive UIs. CrewAI or AG2 are faster to prototype with, but LangGraph's explicitness is worth the extra setup cost when the agent is customer-facing and must be debuggable. The RAG retrieval tool is just another node in the graph, with conditional routing to trigger retrieval only when needed.

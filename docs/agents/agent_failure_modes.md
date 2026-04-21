@@ -202,29 +202,3 @@ You cannot debug what you cannot observe. Production agents require:
 | Final output | Complete response, faithfulness score |
 
 **Tools:** LangSmith (LangGraph), AgentOps, Arize Phoenix, Helicone, OpenTelemetry custom spans.
-
----
-
-## 6. Interview Questions
-
-**Q: What is prompt injection in the context of LLM agents, and how is it different from prompt injection in standalone LLMs?**
-
-A: In a standalone LLM, prompt injection requires the attacker to control part of the user's input. In an agent, the attack surface expands dramatically: any tool output (a web page, a retrieved document, a database field, an email) can contain injected instructions, because the agent incorporates tool outputs directly into its context. An attacker who controls a webpage the agent visits can inject instructions that redirect the agent's behaviour. Mitigation: treat tool outputs as untrusted data; sanitise before injection; use a safety classifier on tool returns; apply privilege separation (read tools cannot trigger write tools without explicit permission).
-
----
-
-**Q: How do you prevent an agent from getting stuck in a tool-call loop?**
-
-A: Three defenses: (1) **Loop detector** — track the fingerprint of the last N tool calls (tool name + hashed arguments); if the same fingerprint repeats K times, abort the loop and surface an error; (2) **Step budget** — hard-cap the maximum number of agent steps (e.g., 25); if the cap is reached, return the best partial answer with a warning; (3) **Divergence detector** — if consecutive observations are near-identical (cosine similarity > threshold), conclude the search is not converging and escalate to human review.
-
----
-
-**Q: What is the principle of least privilege in agentic AI, and why is it critical?**
-
-A: Least privilege means giving each agent exactly the tools it needs for the current task and no more. It's critical because: (a) the expanded attack surface from each additional tool increases the risk from prompt injection and scope creep; (b) irreversible tools (delete, send, pay) should only be available when the task explicitly requires them; (c) if a tool is available, the agent may use it unnecessarily — the absence of a tool is the strongest guarantee it won't be misused. In practice: define per-task tool allowlists rather than giving all agents access to all tools.
-
----
-
-**Q: What is the difference between input validation and output validation for agents?**
-
-A: Input validation runs before the agent begins: check the user's request for malicious intent, PII leakage, or off-topic content. Output validation runs after the agent completes: check the response for harmful content, hallucinations (faithfulness against retrieved context), PII that should not be returned, and citation accuracy. Both layers are necessary — input validation prevents misuse of the agent as a vector for attacks; output validation catches failures in the agent's reasoning that could harm the user or expose sensitive data.

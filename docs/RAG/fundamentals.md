@@ -97,31 +97,3 @@ With frontier models now supporting 128K–1M token context windows, a third opt
 3. **Use long-context LLM** if the knowledge base fits in the context window AND is stable (few updates) AND latency/cost are acceptable.
 
 4. **Combine all three** for production systems: fine-tune for behaviour, RAG for dynamic knowledge retrieval, long-context for short static reference documents.
-
----
-
-## 7. Interview Questions
-
-**Q: What problem does RAG solve that fine-tuning does not?**
-
-A: RAG solves the knowledge access problem — it lets the model use information that wasn't in the training set, or that changes frequently. Fine-tuning changes how the model behaves (style, reasoning, format) but does not give it a way to look things up. A fine-tuned model still hallucinates when asked about facts outside its training data.
-
----
-
-**Q: Can you use RAG and fine-tuning together?**
-
-A: Yes, and this is common in production. A model might be fine-tuned for instruction following or a specific output format, and RAG provides the factual grounding at query time. Fine-tuning handles "how to respond"; RAG handles "what to respond with".
-
----
-
-**Q: What are the main failure modes in a vanilla RAG system?**
-
-A: The biggest failure is retrieval failure — the right document exists but isn't retrieved (poor recall) or irrelevant documents are retrieved (poor precision). Other failures include chunking errors that fragment context, context window overflow, the model ignoring or hallucinating over retrieved text, and the lack of any verification step.
-
----
-
-**Q: Formally, how does RAG change the generation objective?**
-
-A: Vanilla LLM generation is P(y | q) — the answer depends only on the query. RAG conditions generation on both the query and retrieved documents: P(y | q, d₁:k). The model reasons over provided evidence rather than relying solely on its internal parameters.
-
----
