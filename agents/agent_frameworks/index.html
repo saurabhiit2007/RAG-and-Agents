@@ -1042,15 +1042,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1464,15 +1455,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1742,7 +1724,7 @@
 <p><strong>Multi-agent natively:</strong> Sub-agents are first-class citizens in the SDK; routing is part of the agent definition.</p>
 </li>
 <li>
-<p><strong>A2A protocol support:</strong> Agents expose Agent Cards (capability manifests) and communicate via the A2A standard (see <code>mcp_and_protocols.md</code>).</p>
+<p><strong>A2A protocol support:</strong> Agents expose Agent Cards (capability manifests) and communicate via the A2A standard (see <a href="../mcp_and_protocols/">MCP &amp; Agent Protocols</a>).</p>
 </li>
 <li>
 <p><strong>Vertex AI integration:</strong> Native deployment on Google's managed agent infrastructure.</p>
@@ -1834,19 +1816,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What is the core abstraction in LangGraph and why does it matter?</strong></p>
-<p>A: LangGraph models agent execution as a directed graph with cycles. Nodes are Python functions (LLM calls, tool calls, state transformations); edges are transitions between them. Cycles are what enable the ReAct loop — execution can return from the tools node back to the LLM node indefinitely. The state dictionary is passed through the graph and each node can read and write it. This gives fine-grained, inspectable control over execution flow, which is why it is preferred for complex agents with conditional branching and human approval checkpoints.</p>
-<hr />
-<p><strong>Q: How does CrewAI's hierarchical process work, and what are its risks?</strong></p>
-<p>A: In hierarchical mode, CrewAI creates a manager agent (an LLM call) that dynamically decides which worker agent should handle each task. The manager receives the task description and the list of available workers and their roles, then routes accordingly. The risk is that routing is non-deterministic — the same task may go to different workers on different runs, making debugging difficult. Also, if the manager misunderstands a worker's capabilities, it may route tasks incorrectly. The sequential process (explicit task→agent assignment) is more predictable for production use.</p>
-<hr />
-<p><strong>Q: Why did Microsoft merge AutoGen and Semantic Kernel?</strong></p>
-<p>A: AutoGen / AG2 provided strong multi-agent conversation and code execution primitives; Semantic Kernel provided enterprise-grade planning, memory, and plugin orchestration for .NET and Python. The merge (October 2025) created a unified framework with AG2's conversational multi-agent model and Semantic Kernel's planning and enterprise integration. The goal was to avoid developers having to choose between two Microsoft agent frameworks with overlapping but complementary capabilities.</p>
-<hr />
-<p><strong>Q: If you had to pick one framework for a production RAG-powered research agent, which would you choose and why?</strong></p>
-<p>A: LangGraph for a production system requiring reliability and control. The explicit state graph makes execution paths auditable; human-in-the-loop interrupt points allow review before consequential actions; persistence via checkpointing survives crashes; and streaming enables responsive UIs. CrewAI or AG2 are faster to prototype with, but LangGraph's explicitness is worth the extra setup cost when the agent is customer-facing and must be debuggable. The RAG retrieval tool is just another node in the graph, with conditional routing to trigger retrieval only when needed.</p>
 
 
 

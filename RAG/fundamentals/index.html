@@ -416,15 +416,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1140,15 +1131,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1369,20 +1351,6 @@
 <p><strong>Combine all three</strong> for production systems: fine-tune for behaviour, RAG for dynamic knowledge retrieval, long-context for short static reference documents.</p>
 </li>
 </ol>
-<hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What problem does RAG solve that fine-tuning does not?</strong></p>
-<p>A: RAG solves the knowledge access problem — it lets the model use information that wasn't in the training set, or that changes frequently. Fine-tuning changes how the model behaves (style, reasoning, format) but does not give it a way to look things up. A fine-tuned model still hallucinates when asked about facts outside its training data.</p>
-<hr />
-<p><strong>Q: Can you use RAG and fine-tuning together?</strong></p>
-<p>A: Yes, and this is common in production. A model might be fine-tuned for instruction following or a specific output format, and RAG provides the factual grounding at query time. Fine-tuning handles "how to respond"; RAG handles "what to respond with".</p>
-<hr />
-<p><strong>Q: What are the main failure modes in a vanilla RAG system?</strong></p>
-<p>A: The biggest failure is retrieval failure — the right document exists but isn't retrieved (poor recall) or irrelevant documents are retrieved (poor precision). Other failures include chunking errors that fragment context, context window overflow, the model ignoring or hallucinating over retrieved text, and the lack of any verification step.</p>
-<hr />
-<p><strong>Q: Formally, how does RAG change the generation objective?</strong></p>
-<p>A: Vanilla LLM generation is P(y | q) — the answer depends only on the query. RAG conditions generation on both the query and retrieved documents: P(y | q, d₁:k). The model reasons over provided evidence rather than relying solely on its internal parameters.</p>
-<hr />
 
 
 

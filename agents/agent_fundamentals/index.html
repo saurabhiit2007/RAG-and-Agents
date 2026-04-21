@@ -898,15 +898,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#8-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1314,15 +1305,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#8-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1394,7 +1376,7 @@
 </li>
 <li>
 <p><strong>External memory</strong> — a vector store or database for long-term recall
-(See <code>memory_systems.md</code> for full taxonomy.)</p>
+(See <a href="../memory_systems/">Memory Systems</a> for full taxonomy.)</p>
 </li>
 </ul>
 <h3 id="23-tools">2.3 Tools<a class="headerlink" href="#23-tools" title="Permanent link">&para;</a></h3>
@@ -1418,7 +1400,7 @@
 </ul>
 <h3 id="24-planning">2.4 Planning<a class="headerlink" href="#24-planning" title="Permanent link">&para;</a></h3>
 <p>The strategy for decomposing a goal into steps. May be reactive (ReAct) or deliberative (MCTS, hierarchical).
-(See <code>planning.md</code> for full coverage.)</p>
+(See <a href="../planning/">Planning</a> for full coverage.)</p>
 <h3 id="25-action-space">2.5 Action Space<a class="headerlink" href="#25-action-space" title="Permanent link">&para;</a></h3>
 <p>The set of allowed actions (tools) the agent can take. Defines the scope of what the agent can do and is the primary safety control point.</p>
 <hr />
@@ -1591,22 +1573,6 @@ Answer: Sam Altman.
 │  └───────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────┘
 </code></pre></div>
-<hr />
-<h2 id="8-interview-questions">8. Interview Questions<a class="headerlink" href="#8-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What is the difference between an LLM and an LLM agent?</strong></p>
-<p>A: An LLM takes a fixed input and produces a single output. An agent uses an LLM as its reasoning core but wraps it in a loop that can call external tools, observe their results, and dynamically decide the next step — repeating until the task is complete. An LLM answers "What is the weather?" in one shot; an agent calls a weather API, parses the result, and formats a response.</p>
-<hr />
-<p><strong>Q: What is ReAct and why is it the dominant agent pattern?</strong></p>
-<p>A: ReAct (Reason + Act) interleaves reasoning traces (<em>Thought</em>) with tool calls (<em>Action</em>) and their results (<em>Observation</em>). It's dominant because it combines the explicit reasoning benefits of chain-of-thought with the grounding benefits of tool use. The thought step prevents impulsive wrong actions; observations reduce hallucination by anchoring the model in real retrieved data.</p>
-<hr />
-<p><strong>Q: How does function calling work at the API level?</strong></p>
-<p>A: The caller passes a list of tool schemas (JSON with name, description, parameters) alongside the user message. If the model decides a tool call is needed, instead of generating text it emits a structured JSON object specifying the tool name and arguments. The calling framework executes the tool and appends the result as a <em>tool message</em> back to the conversation. The model then continues generating.</p>
-<hr />
-<p><strong>Q: What are the risks of giving an agent access to many tools?</strong></p>
-<p>A: Three main risks: (1) <strong>Tool confusion</strong> — overlapping tool descriptions cause wrong tool selection, compounding errors; (2) <strong>Expanded attack surface</strong> — more tools means more ways prompt injection or adversarial inputs can cause harmful actions; (3) <strong>Increased latency and cost</strong> — each tool call adds latency and token usage. Best practice: give agents the minimum tool set needed for the task (principle of least privilege).</p>
-<hr />
-<p><strong>Q: What is the difference between plan-and-execute and ReAct agents?</strong></p>
-<p>A: ReAct is reactive — it decides the next action at each step based on the latest observation. Plan-and-execute first generates a complete plan (all steps), then executes them sequentially or in parallel. Plan-and-execute is better for tasks with known structure; ReAct is better when the path is uncertain and depends on intermediate results.</p>
 
 
 

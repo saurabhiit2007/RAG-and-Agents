@@ -1004,15 +1004,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1296,15 +1287,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1410,9 +1392,9 @@
 <p>Agents share a message bus or call each other's Python functions directly. Used in single-machine frameworks (LangGraph sub-graphs, CrewAI crews).</p>
 <p><strong>Format:</strong> Python function calls or shared state dictionaries.</p>
 <h3 id="via-mcp-model-context-protocol">Via MCP (Model Context Protocol)<a class="headerlink" href="#via-mcp-model-context-protocol" title="Permanent link">&para;</a></h3>
-<p>One agent exposes its capabilities as an MCP server; another connects to it as an MCP client. Enables cross-language, cross-process tool integration. See <code>mcp_and_protocols.md</code>.</p>
+<p>One agent exposes its capabilities as an MCP server; another connects to it as an MCP client. Enables cross-language, cross-process tool integration. See <a href="../mcp_and_protocols/">MCP &amp; Agent Protocols</a>.</p>
 <h3 id="via-a2a-agent-to-agent-protocol">Via A2A (Agent-to-Agent Protocol)<a class="headerlink" href="#via-a2a-agent-to-agent-protocol" title="Permanent link">&para;</a></h3>
-<p>Agents communicate via HTTP using the A2A standard. Enables cross-vendor, distributed agent networks where agents are discovered via Agent Cards. See <code>mcp_and_protocols.md</code>.</p>
+<p>Agents communicate via HTTP using the A2A standard. Enables cross-vendor, distributed agent networks where agents are discovered via Agent Cards. See <a href="../mcp_and_protocols/">MCP &amp; Agent Protocols</a>.</p>
 <hr />
 <h2 id="4-state-management-in-multi-agent-systems">4. State Management in Multi-Agent Systems<a class="headerlink" href="#4-state-management-in-multi-agent-systems" title="Permanent link">&para;</a></h2>
 <p>Shared state is the hardest problem in multi-agent design. Options:</p>
@@ -1512,19 +1494,6 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What are the main reasons to use a multi-agent system over a single large agent?</strong></p>
-<p>A: Three main reasons: (1) Context isolation — complex tasks would overflow a single agent's context window; distributing work keeps each agent's context focused; (2) Specialisation — each agent can be prompted or fine-tuned for its specific role (researcher, coder, critic), improving quality; (3) Parallelism — independent sub-tasks run simultaneously, reducing total wall-clock time. The trade-off is coordination overhead (orchestration logic, inter-agent communication, shared state management) and harder debugging.</p>
-<hr />
-<p><strong>Q: What is the multi-agent debate technique, and how does it improve factuality?</strong></p>
-<p>A: Multiple agents independently answer the same question, then each agent reads the others' answers and revises its own. After several rounds, agents converge on a consensus. The mechanism: each revision forces the agent to reason about why another answer might be correct, surfacing errors in its own reasoning. Du et al. (2023) showed ~11% improvement in mathematical reasoning and factuality over single-agent baselines. The cost is 3–5× more LLM calls than a single-agent answer.</p>
-<hr />
-<p><strong>Q: How does a swarm differ from an orchestrator-worker architecture?</strong></p>
-<p>A: In orchestrator-worker, there is a designated manager that controls the flow — it decomposes tasks and routes them. In a swarm, agents dynamically hand off control to each other based on the conversation state; any agent can trigger a handoff to any other. Swarms are more flexible for tasks where the needed specialist only becomes clear mid-execution, but they are harder to debug because the execution path is not determined upfront.</p>
-<hr />
-<p><strong>Q: How would you debug a multi-agent system that is producing wrong final answers?</strong></p>
-<p>A: Step-by-step attribution: log every inter-agent message with the sending agent, receiving agent, timestamp, and content. Replay the trace and evaluate each agent's output independently. Find the first step where an agent produces a wrong output given correct inputs — that's the root failure. If all intermediate outputs are correct but the final answer is wrong, the issue is in the orchestrator's synthesis logic or the final prompt. Tools like LangSmith (for LangGraph) provide built-in trace visualisation for this purpose.</p>
 
 
 

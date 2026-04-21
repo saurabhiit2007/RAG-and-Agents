@@ -620,15 +620,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1410,15 +1401,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1773,23 +1755,6 @@ More robust for rare and common terms than the basic IDF formula.</p>
 </tr>
 </tbody>
 </table>
-<hr />
-<hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why is BM25 still widely used despite neural models being more powerful?</strong></p>
-<p>A: BM25 requires no training, has no GPU inference cost, is fully interpretable, and handles exact keyword matching better than dense models. It's also very fast on inverted indexes. In hybrid systems, BM25 and dense retrieval complement each other — BM25 catches cases the dense model misses (exact terms, IDs) and dense models catch paraphrases BM25 misses.</p>
-<hr />
-<p><strong>Q: What is the difference between SPLADE and a dense bi-encoder?</strong></p>
-<p>A: SPLADE produces a sparse vector over the vocabulary and is indexed in an inverted index — fast, memory-efficient, and interpretable. A dense bi-encoder produces a continuous low-dimensional vector indexed in a vector DB with ANN search. SPLADE uses a neural model for semantic expansion but retains sparse representation. In practice SPLADE often outperforms BM25 and approaches dense retrieval quality, while remaining compatible with existing inverted-index infrastructure.</p>
-<hr />
-<p><strong>Q: What is Reciprocal Rank Fusion (RRF) and why is it preferred over score interpolation?</strong></p>
-<p>A: RRF combines ranked lists from multiple retrievers by summing 1/(k + rank) for each document across all retrievers (k is typically 60). It is preferred over linear score interpolation because it is robust to score scale differences between retrievers — BM25 scores and cosine similarities live on completely different scales. RRF requires no weight tuning and typically matches or outperforms tuned linear combinations.</p>
-<hr />
-<p><strong>Q: Why might a dense retriever miss a relevant document that BM25 finds?</strong></p>
-<p>A: Dense retrievers encode the entire meaning of text into a single vector — rare or highly specific terms may get diluted in the embedding. If a document is only relevant because it contains a specific product ID, error code, or proper noun, a dense embedding may not preserve that specificity. BM25's exact-match scoring handles these cases naturally. This is why hybrid retrieval consistently outperforms either method alone.</p>
-<hr />
-<p><strong>Q: What preprocessing decisions most affect BM25 performance?</strong></p>
-<p>A: Stopword removal, stemming/lemmatisation, and tokenisation. Removing stopwords (words like "the", "is") reduces noise. Stemming conflates "running" and "run", improving recall but potentially harming precision. BM25's k₁ and b parameters also have a significant effect and should be tuned on held-out validation data rather than left at defaults.</p>
 <hr />
 
 

@@ -698,15 +698,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#6-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1428,15 +1419,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#6-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1692,23 +1674,6 @@ Embed hypothetical answer → retrieve real documents most similar to it
 6. Citation-constrained generation
    └─ LLM instructed to ground answer in retrieved text and cite sources
 </code></pre></div>
-<hr />
-<hr />
-<h2 id="6-interview-questions">6. Interview Questions<a class="headerlink" href="#6-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What is the difference between vanilla RAG and Self-RAG?</strong></p>
-<p>A: In vanilla RAG, retrieval always happens and the LLM always uses the retrieved context regardless of quality. Self-RAG trains the LLM to decide dynamically whether retrieval is needed, to evaluate whether retrieved documents are relevant, and to assess whether its own output is supported by evidence. This produces more selective, higher-quality responses at the cost of more complex training and a specialised model.</p>
-<hr />
-<p><strong>Q: How would you handle a multi-hop question like "Who was the mentor of the person who founded company X?"</strong></p>
-<p>A: This requires reasoning across at least two documents. Approaches: (1) iterative retrieval — retrieve for "founder of X", extract the name, then retrieve for "mentor of [name]"; (2) query decomposition — break the question into sub-queries and chain their answers; (3) Graph RAG — build a knowledge graph and traverse it. Vanilla RAG typically fails on these without explicit multi-hop support, as the single-shot query doesn't match any single document.</p>
-<hr />
-<p><strong>Q: What is RAG Fusion and how does it differ from simple hybrid retrieval?</strong></p>
-<p>A: RAG Fusion generates multiple reformulations of the query (not just uses multiple retrieval methods), retrieves documents for each reformulation separately, and fuses all result sets with RRF. Simple hybrid retrieval uses multiple methods (dense + sparse) on the same query. RAG Fusion additionally handles query ambiguity and vocabulary mismatch by diversifying the queries themselves.</p>
-<hr />
-<p><strong>Q: How does HyDE differ from query rewriting?</strong></p>
-<p>A: Query rewriting produces a better-phrased version of the user's original question — still a question. HyDE generates a full hypothetical answer — a dense passage of text that looks like the kind of document you want to retrieve. The key insight is that a passage is much closer in vector space to other passages than a short question is, even if they're about the same topic.</p>
-<hr />
-<p><strong>Q: When would context compression be worth the extra latency?</strong></p>
-<p>A: When retrieved documents are long and noisy, and the LLM's context window is a bottleneck. For example, if retrieving 10 chunks of 500 tokens each fills most of a 4k context window, compressing each chunk to 100 tokens of truly relevant content gives you room to include more documents and reduces the chance the model gets confused by irrelevant text. The added LLM call for compression typically costs less than the degradation in answer quality from noisy context.</p>
 <hr />
 
 

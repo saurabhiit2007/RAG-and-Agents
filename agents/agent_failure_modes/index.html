@@ -1012,15 +1012,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#6-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1261,15 +1252,6 @@
   <a href="#5-observability" class="md-nav__link">
     <span class="md-ellipsis">
       5. Observability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Interview Questions
     </span>
   </a>
   
@@ -1522,19 +1504,6 @@
 </tbody>
 </table>
 <p><strong>Tools:</strong> LangSmith (LangGraph), AgentOps, Arize Phoenix, Helicone, OpenTelemetry custom spans.</p>
-<hr />
-<h2 id="6-interview-questions">6. Interview Questions<a class="headerlink" href="#6-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What is prompt injection in the context of LLM agents, and how is it different from prompt injection in standalone LLMs?</strong></p>
-<p>A: In a standalone LLM, prompt injection requires the attacker to control part of the user's input. In an agent, the attack surface expands dramatically: any tool output (a web page, a retrieved document, a database field, an email) can contain injected instructions, because the agent incorporates tool outputs directly into its context. An attacker who controls a webpage the agent visits can inject instructions that redirect the agent's behaviour. Mitigation: treat tool outputs as untrusted data; sanitise before injection; use a safety classifier on tool returns; apply privilege separation (read tools cannot trigger write tools without explicit permission).</p>
-<hr />
-<p><strong>Q: How do you prevent an agent from getting stuck in a tool-call loop?</strong></p>
-<p>A: Three defenses: (1) <strong>Loop detector</strong> — track the fingerprint of the last N tool calls (tool name + hashed arguments); if the same fingerprint repeats K times, abort the loop and surface an error; (2) <strong>Step budget</strong> — hard-cap the maximum number of agent steps (e.g., 25); if the cap is reached, return the best partial answer with a warning; (3) <strong>Divergence detector</strong> — if consecutive observations are near-identical (cosine similarity &gt; threshold), conclude the search is not converging and escalate to human review.</p>
-<hr />
-<p><strong>Q: What is the principle of least privilege in agentic AI, and why is it critical?</strong></p>
-<p>A: Least privilege means giving each agent exactly the tools it needs for the current task and no more. It's critical because: (a) the expanded attack surface from each additional tool increases the risk from prompt injection and scope creep; (b) irreversible tools (delete, send, pay) should only be available when the task explicitly requires them; (c) if a tool is available, the agent may use it unnecessarily — the absence of a tool is the strongest guarantee it won't be misused. In practice: define per-task tool allowlists rather than giving all agents access to all tools.</p>
-<hr />
-<p><strong>Q: What is the difference between input validation and output validation for agents?</strong></p>
-<p>A: Input validation runs before the agent begins: check the user's request for malicious intent, PII leakage, or off-topic content. Output validation runs after the agent completes: check the response for harmful content, hallucinations (faithfulness against retrieved context), PII that should not be returned, and citation accuracy. Both layers are necessary — input validation prevents misuse of the agent as a vector for attacks; output validation catches failures in the agent's reasoning that could harm the user or expose sensitive data.</p>
 
 
 

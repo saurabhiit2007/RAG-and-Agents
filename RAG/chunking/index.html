@@ -535,15 +535,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#9-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      9 Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1332,15 +1323,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#9-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      9 Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1637,23 +1619,6 @@
 </tbody>
 </table>
 <p><strong>Adaptive approach:</strong> Maintain multiple indexes with different chunk sizes and select based on query classification. Higher accuracy, but more system complexity.</p>
-<hr />
-<hr />
-<h2 id="9-interview-questions">9 Interview Questions<a class="headerlink" href="#9-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do you choose the right chunk size?</strong></p>
-<p>A: Consider three factors: (1) the embedding model's effective range — some models degrade with very long inputs; (2) the user's query style — short factual queries need small chunks, summary queries need larger ones; (3) the "lost in the middle" phenomenon — LLMs often miss information buried in the middle of long context windows. Start with medium chunks (400–600 tokens) and evaluate retrieval recall before optimising.</p>
-<hr />
-<p><strong>Q: What is the "lost in the middle" problem?</strong></p>
-<p>A: LLMs tend to pay more attention to content at the beginning and end of their context window, and less to content in the middle. This means that if you inject many large chunks into the prompt, relevant information buried in the middle may be ignored. Solutions include re-ordering retrieved chunks (most relevant first/last) and using smaller chunks with higher top-k.</p>
-<hr />
-<p><strong>Q: Why is overlap used, and what are its costs?</strong></p>
-<p>A: Overlap ensures that information near chunk boundaries appears in at least one chunk in its full context. The cost is index bloat: overlapping chunks produce redundant embeddings, increasing storage and retrieval compute. Overlap is a safety net, not a primary strategy.</p>
-<hr />
-<p><strong>Q: How would you chunk a large PDF with tables and diagrams?</strong></p>
-<p>A: Parse the PDF with a structure-aware tool to extract text, tables, and metadata separately. Chunk the text recursively. Serialise tables (e.g., to CSV or natural language rows) and attach the table schema as metadata. For diagrams, use a vision model to generate textual descriptions, then chunk those. Tag each chunk with its source section and content type for filtered retrieval.</p>
-<hr />
-<p><strong>Q: What happens if you use the wrong chunk size for your embedding model?</strong></p>
-<p>A: If chunks exceed the model's effective input window, the encoder either truncates them (losing information) or the quality of the embedding degrades because the model cannot attend properly to all tokens. If chunks are much smaller than what the model is trained on, you lose context and the embedding may not capture full meaning. Always check your embedding model's recommended input range.</p>
 <hr />
 
 

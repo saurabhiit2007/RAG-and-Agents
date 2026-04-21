@@ -540,15 +540,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#8-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1158,15 +1149,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#8-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1363,23 +1345,6 @@ Stage 3: LLM generation
 Sparse retrieval → top 100
 </code></pre></div>
 <p>This architecture maximises both recall (hybrid retrieval) and precision (cross-encoder reranking).</p>
-<hr />
-<hr />
-<h2 id="8-interview-questions">8. Interview Questions<a class="headerlink" href="#8-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why use a bi-encoder for retrieval instead of a cross-encoder from the start?</strong></p>
-<p>A: Cross-encoders cannot be pre-computed — every query-document pair requires a full model pass, so you cannot index documents ahead of time. A bi-encoder pre-computes all document embeddings once and stores them. At query time you only encode the query once and find nearest neighbours with fast math. For a corpus of 1 million documents, a cross-encoder would require 1 million forward passes per query — completely infeasible. Bi-encoders make retrieval tractable; cross-encoders then improve precision on a small shortlist.</p>
-<hr />
-<p><strong>Q: What is a good top-k for the first-stage retriever?</strong></p>
-<p>A: Typically 50–100. Large enough to have high recall (not miss relevant documents), small enough to keep reranking latency manageable. The exact number depends on the reranker's latency budget and how many documents will ultimately be passed to the LLM (usually 5–10). In hybrid systems, each retriever returns 50–100 and RRF merges them before reranking.</p>
-<hr />
-<p><strong>Q: What happens if the first-stage retriever misses the relevant document entirely?</strong></p>
-<p>A: The reranker cannot help — it can only reorder what was already retrieved. This is why first-stage recall is so critical. If Recall@100 is low, invest in improving the retriever (better embedding model, hybrid retrieval, query expansion) rather than in a better reranker. The reranker is a precision tool, not a recall tool.</p>
-<hr />
-<p><strong>Q: How do you evaluate whether a reranker is actually helping?</strong></p>
-<p>A: Compare Precision@5 (or Precision@10) before and after reranking on a labelled evaluation set. Also measure MRR — whether the most relevant document is moving to a higher rank. End-to-end, measure faithfulness and answer correctness before/after adding the reranker. Watch latency as a cost: cross-encoder reranking adds 50–200ms per query depending on model size and number of candidates.</p>
-<hr />
-<p><strong>Q: What is the difference between reranking and retrieval?</strong></p>
-<p>A: Retrieval selects candidates from the full corpus — it must be fast and prioritises recall. Reranking re-scores a small shortlist — it can be slower and prioritises precision. Retrieval uses approximate methods (ANN, BM25) that scale to millions of documents. Reranking uses exact, expensive methods (cross-encoders, LLMs) that only work on tens to hundreds of candidates. They serve complementary roles in the pipeline.</p>
 <hr />
 
 

@@ -1176,15 +1176,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1545,15 +1536,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
   
 </li>
       
@@ -1924,22 +1906,6 @@ retrieval  RAG             iterative RAG
 <p><strong>Critic agent</strong> — verifies faithfulness; rejects or flags unsupported claims.</p>
 </li>
 </ul>
-<hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What is the key innovation of Self-RAG over standard RAG?</strong></p>
-<p>A: Standard RAG always retrieves and always uses what it retrieves, regardless of quality. Self-RAG trains the LLM to generate reflection tokens inline that answer three questions: Should I retrieve at all? Is what I retrieved relevant? Is my generated text supported by the evidence? This makes retrieval selective (only happens when needed), makes relevance filtering automatic (irrelevant docs are discarded), and makes groundedness measurable at generation time. The trade-off is that Self-RAG requires fine-tuning the generation model on these reflection tokens.</p>
-<hr />
-<p><strong>Q: How does Corrective RAG (CRAG) handle low-quality retrieval?</strong></p>
-<p>A: CRAG adds a retrieval evaluator that scores retrieved documents. When confidence is high, it uses documents normally. When confidence is low (retrieved docs are irrelevant), it falls back to web search for broader information. In ambiguous cases, it combines both. Additionally, even when documents are relevant, CRAG performs knowledge refinement — decomposing documents into fine-grained strips, scoring each strip, and discarding irrelevant ones — to reduce prompt noise.</p>
-<hr />
-<p><strong>Q: For what types of queries does GraphRAG outperform standard vector RAG?</strong></p>
-<p>A: GraphRAG outperforms on: (1) Global queries that require summarising across many documents ("What are the main themes in this corpus?"); (2) Multi-hop queries requiring reasoning about relationships between entities ("How is person A connected to event B through organisation C?"); (3) Queries about relationships that aren't explicitly stated in any single document chunk. Standard vector RAG retrieves similar chunks, but if the answer requires combining information across many distant chunks, it will miss it. GraphRAG's community summaries and entity traversal enable this cross-document reasoning.</p>
-<hr />
-<p><strong>Q: What is the Leiden algorithm and why is it used in GraphRAG?</strong></p>
-<p>A: The Leiden algorithm is a community detection algorithm that partitions a graph into clusters of densely connected nodes. It improves over the earlier Louvain algorithm by guaranteeing that all communities are internally connected (no disconnected subgraphs within a community) and by producing a hierarchical decomposition (communities of communities). In GraphRAG, it's used to cluster related entities into thematic communities, which are then summarised — enabling global-level queries to reason over community summaries rather than individual entities.</p>
-<hr />
-<p><strong>Q: How would you design an Agentic RAG system for a medical Q&amp;A application?</strong></p>
-<p>A: Four components: (1) <strong>Adaptive routing</strong> — classify query complexity; simple factual queries go to single-step RAG, complex diagnostic queries go to multi-step iterative retrieval; (2) <strong>Hybrid retrieval</strong> — dense search over medical literature embeddings + sparse BM25 for precise medical term matching + a knowledge graph of diseases/symptoms/treatments for relationship queries; (3) <strong>Corrective evaluation</strong> — a CRAG-style evaluator that scores retrieved evidence and triggers web search on recent clinical guidelines if the vector store results are stale or low-confidence; (4) <strong>Faithfulness verification</strong> — a critic agent that checks every claim in the generated answer against retrieved sources before returning it; any unsupported claim triggers a revision cycle or an explicit "I don't know."</p>
 
 
 
