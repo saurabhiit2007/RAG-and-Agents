@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../agent_fundamentals/">
       
       
-        <link rel="next" href="../chunking/">
+        <link rel="next" href="../planning/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Fundamentals - RAG & Agents</title>
+        <title>Memory Systems - RAG & Agents</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#agent-memory-systems" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fundamentals
+              Memory Systems
             
           </span>
         </div>
@@ -274,20 +274,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -303,7 +303,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Retrieval Augmented Generation (RAG)
@@ -314,30 +314,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Fundamentals
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../RAG/fundamentals/" class="md-nav__link">
         
   
   
@@ -348,87 +328,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-the-core-rag-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. The Core RAG Loop
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-rag-vs-fine-tuning-choosing-the-right-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. RAG vs. Fine-Tuning — Choosing the Right Tool
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-high-level-rag-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. High-Level RAG Pipeline
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-key-failure-modes-of-vanilla-rag" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Key Failure Modes of Vanilla RAG
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-rag-vs-fine-tuning-vs-long-context-llm" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. RAG vs. Fine-Tuning vs. Long-Context LLM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -441,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chunking/" class="md-nav__link">
+      <a href="../../RAG/chunking/" class="md-nav__link">
         
   
   
@@ -464,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../embedding/" class="md-nav__link">
+      <a href="../../RAG/embedding/" class="md-nav__link">
         
   
   
@@ -487,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../retrieval_methods/" class="md-nav__link">
+      <a href="../../RAG/retrieval_methods/" class="md-nav__link">
         
   
   
@@ -510,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../indexing_and_vector_database/" class="md-nav__link">
+      <a href="../../RAG/indexing_and_vector_database/" class="md-nav__link">
         
   
   
@@ -533,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reranking/" class="md-nav__link">
+      <a href="../../RAG/reranking/" class="md-nav__link">
         
   
   
@@ -556,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced_rag/" class="md-nav__link">
+      <a href="../../RAG/advanced_rag/" class="md-nav__link">
         
   
   
@@ -579,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
+      <a href="../../RAG/evaluation/" class="md-nav__link">
         
   
   
@@ -602,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_reference/" class="md-nav__link">
+      <a href="../../RAG/quick_reference/" class="md-nav__link">
         
   
   
@@ -665,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/tf_idf/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/tf_idf/" class="md-nav__link">
         
   
   
@@ -688,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/bm25/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/bm25/" class="md-nav__link">
         
   
   
@@ -711,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/splade/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/splade/" class="md-nav__link">
         
   
   
@@ -734,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/sentence_transformers/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/sentence_transformers/" class="md-nav__link">
         
   
   
@@ -769,20 +668,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -798,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             LLM Agents
@@ -812,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_fundamentals/" class="md-nav__link">
+      <a href="../agent_fundamentals/" class="md-nav__link">
         
   
   
@@ -832,10 +731,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agents/memory_systems/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -846,6 +767,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-memory-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Why Memory Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-four-memory-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Four Memory Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Four Memory Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-working-memory-in-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Working Memory (In-Context)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-episodic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Episodic Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-semantic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Semantic Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-procedural-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Procedural Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-memory-architecture-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Architecture Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Memory Architecture Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-session-only-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 1: Session-Only (Stateless)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-external-memory-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 2: External Memory + RAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-hierarchical-memory-memgpt-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 3: Hierarchical Memory (MemGPT-style)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-reflection-and-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 4: Reflection and Abstraction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-in-production-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory in Production Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -858,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/planning/" class="md-nav__link">
+      <a href="../planning/" class="md-nav__link">
         
   
   
@@ -881,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_frameworks/" class="md-nav__link">
+      <a href="../agent_frameworks/" class="md-nav__link">
         
   
   
@@ -904,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/mcp_and_protocols/" class="md-nav__link">
+      <a href="../mcp_and_protocols/" class="md-nav__link">
         
   
   
@@ -927,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/multi_agent/" class="md-nav__link">
+      <a href="../multi_agent/" class="md-nav__link">
         
   
   
@@ -950,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_failure_modes/" class="md-nav__link">
+      <a href="../agent_failure_modes/" class="md-nav__link">
         
   
   
@@ -973,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agentic_rag/" class="md-nav__link">
+      <a href="../agentic_rag/" class="md-nav__link">
         
   
   
@@ -1079,6 +1149,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1087,63 +1159,129 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#1-why-memory-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview
+      1. Why Memory Matters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-the-core-rag-loop" class="md-nav__link">
+  <a href="#2-four-memory-types" class="md-nav__link">
     <span class="md-ellipsis">
-      2. The Core RAG Loop
+      2. Four Memory Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Four Memory Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-working-memory-in-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Working Memory (In-Context)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-episodic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Episodic Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-semantic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Semantic Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-procedural-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Procedural Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-memory-architecture-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Architecture Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Memory Architecture Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-session-only-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 1: Session-Only (Stateless)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-external-memory-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 2: External Memory + RAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-hierarchical-memory-memgpt-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 3: Hierarchical Memory (MemGPT-style)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-reflection-and-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pattern 4: Reflection and Abstraction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-in-production-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memory in Production Systems
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-rag-vs-fine-tuning-choosing-the-right-tool" class="md-nav__link">
+  <a href="#5-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      3. RAG vs. Fine-Tuning — Choosing the Right Tool
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-high-level-rag-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. High-Level RAG Pipeline
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-key-failure-modes-of-vanilla-rag" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Key Failure Modes of Vanilla RAG
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-rag-vs-fine-tuning-vs-long-context-llm" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. RAG vs. Fine-Tuning vs. Long-Context LLM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
+      5. Interview Questions
     </span>
   </a>
   
@@ -1168,221 +1306,206 @@
   
 
 
-  <h1>Fundamentals</h1>
+<h1 id="agent-memory-systems">Agent Memory Systems<a class="headerlink" href="#agent-memory-systems" title="Permanent link">&para;</a></h1>
+<h2 id="1-why-memory-matters">1. Why Memory Matters<a class="headerlink" href="#1-why-memory-matters" title="Permanent link">&para;</a></h2>
+<p>A stateless LLM processes each request independently. An agent that must complete a multi-step task over time needs memory to carry forward what it has learned, avoid repeating work, and accumulate context. Memory is the mechanism through which agents simulate continuity.</p>
+<p>The taxonomy used here follows the cognitive science literature (Tulving, 1985) and its adaptation to LLM agents in the survey by Wang et al. (2024) — see <a href="../../references/">References</a>.</p>
+<hr />
+<h2 id="2-four-memory-types">2. Four Memory Types<a class="headerlink" href="#2-four-memory-types" title="Permanent link">&para;</a></h2>
+<h3 id="21-working-memory-in-context">2.1 Working Memory (In-Context)<a class="headerlink" href="#21-working-memory-in-context" title="Permanent link">&para;</a></h3>
+<p><strong>What it is:</strong> The agent's active context window — everything currently in the prompt: system instructions, conversation history, tool outputs, scratchpad reasoning.</p>
+<p><strong>Capacity:</strong> Bounded by the model's context window. As of 2025, frontier models support 128K–1M tokens.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>
+<p>Fastest access (no retrieval needed — already in context).</p>
+</li>
+<li>
+<p>Volatile — cleared when the session ends.</p>
+</li>
+<li>
+<p>Subject to the <em>lost-in-the-middle</em> effect: attention degrades for content placed in the middle of a long context.</p>
+</li>
+<li>
+<p>Token-expensive: every token in working memory costs at inference time.</p>
+</li>
+</ul>
+<p><strong>Design patterns:</strong></p>
+<ul>
+<li>
+<p>Keep the most recent observations near the end of the context (recency bias of attention).</p>
+</li>
+<li>
+<p>Compress old tool outputs before adding new ones.</p>
+</li>
+<li>
+<p>Use a scratchpad format (e.g., ReAct Thought/Action/Observation blocks) to structure the working memory.</p>
+</li>
+</ul>
+<hr />
+<h3 id="22-episodic-memory">2.2 Episodic Memory<a class="headerlink" href="#22-episodic-memory" title="Permanent link">&para;</a></h3>
+<p><strong>What it is:</strong> Records of specific past interactions and experiences, stored externally and retrieved on demand. Analogous to human autobiographical memory — "what happened at step 7 of the task I ran last Tuesday."</p>
+<p><strong>Storage:</strong> Vector database, relational DB, or a structured log. Each episode is stored as an embedding.</p>
+<p><strong>Retrieval:</strong> At the start of a new task, the agent queries episodic memory for relevant past experiences. Retrieved episodes are injected into working memory.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>
+<p>Persistent across sessions.</p>
+</li>
+<li>
+<p>Grows over time as the agent accumulates experience.</p>
+</li>
+<li>
+<p>Supports <em>few-shot grounding</em>: past successful trajectories inform current decisions.</p>
+</li>
+</ul>
+<p><strong>Examples in practice:</strong></p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/2310.08560">MemGPT</a> (Packer et al., 2023): Paged virtual context with main context and external storage. The agent manages its own memory like an OS manages RAM — moving old content to disk (external memory) and retrieving it when needed.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2304.03442">Generative Agents</a> (Park et al., 2023): Each simulated agent stores a stream of experiences with importance scores. Retrieval is scored by recency, importance, and relevance.</p>
+</li>
+</ul>
+<hr />
+<h3 id="23-semantic-memory">2.3 Semantic Memory<a class="headerlink" href="#23-semantic-memory" title="Permanent link">&para;</a></h3>
+<p><strong>What it is:</strong> General world knowledge and domain facts — not tied to a specific episode. Analogous to factual/encyclopedic knowledge in cognitive science.</p>
+<p><strong>Two sources in LLM agents:</strong></p>
+<ol>
+<li>
+<p><strong>Parametric knowledge:</strong> Facts baked into the model weights during pretraining.</p>
+</li>
+<li>
+<p><strong>Retrieved knowledge:</strong> Documents fetched from a vector store at runtime (RAG).</p>
+</li>
+</ol>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>
+<p>Parametric knowledge has a training cutoff and cannot be updated without retraining.</p>
+</li>
+<li>
+<p>Retrieved knowledge can be kept current by updating the index.</p>
+</li>
+<li>
+<p>Agents must decide when to trust parametric knowledge vs. retrieve — Self-RAG addresses this with reflection tokens (see <code>agentic_rag.md</code>).</p>
+</li>
+</ul>
+<p><strong>Key distinction from episodic memory:</strong>
+Episodic memory records <em>what the agent experienced</em> (a concrete interaction). Semantic memory records <em>what the agent knows</em> (general facts). A retrieval result that is stored for reuse across sessions is semantic; the specific retrieval event that led to it is episodic.</p>
+<hr />
+<h3 id="24-procedural-memory">2.4 Procedural Memory<a class="headerlink" href="#24-procedural-memory" title="Permanent link">&para;</a></h3>
+<p><strong>What it is:</strong> Compiled knowledge about <em>how to act</em> — skills, habits, and action policies that don't require deliberate reasoning each time.</p>
+<p><strong>In LLM agents, procedural memory manifests as:</strong></p>
+<ul>
+<li>
+<p><strong>System prompt instructions:</strong> General behavioral rules (how to format answers, when to ask for clarification).</p>
+</li>
+<li>
+<p><strong>Fine-tuned weights:</strong> A model fine-tuned on successful agent trajectories has "procedural memory" for those tasks encoded in weights.</p>
+</li>
+<li>
+<p><strong>Tool usage policies:</strong> Hard-coded rules about which tools to call in which situations.</p>
+</li>
+<li>
+<p><strong>Prompt templates:</strong> Reusable prompt patterns for known sub-tasks.</p>
+</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>
+<p>Most efficient — no retrieval cost.</p>
+</li>
+<li>
+<p>Hardest to update — requires reprompting or retraining.</p>
+</li>
+<li>
+<p>Most reliable for well-scoped, repetitive tasks.</p>
+</li>
+</ul>
+<hr />
+<h2 id="3-memory-architecture-patterns">3. Memory Architecture Patterns<a class="headerlink" href="#3-memory-architecture-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="pattern-1-session-only-stateless">Pattern 1: Session-Only (Stateless)<a class="headerlink" href="#pattern-1-session-only-stateless" title="Permanent link">&para;</a></h3>
+<p>All memory is in-context. No external storage. Each session starts fresh.</p>
+<p><strong>Use when:</strong> Tasks are single-session, context window is sufficient.</p>
+<p><strong>Limitation:</strong> Cannot learn from past runs; no continuity across sessions.</p>
+<hr />
+<h3 id="pattern-2-external-memory-rag">Pattern 2: External Memory + RAG<a class="headerlink" href="#pattern-2-external-memory-rag" title="Permanent link">&para;</a></h3>
+<p>Agent writes important results to a vector store; retrieves relevant memories at the start of each session.</p>
+<div class="highlight"><pre><span></span><code>Start of session:
+  query = current_task
+  memories = vector_store.search(query, top_k=5)
+  context = [system_prompt] + memories + [current_task]
 
-<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Large Language Models are trained on a fixed snapshot of data; knowledge is baked into model weights and cannot change without retraining. This creates three hard problems: a <strong>knowledge cutoff</strong> (no access to post-training events), <strong>hallucinations</strong> (the model generates plausible-sounding but wrong answers when it lacks a fact), and <strong>poor domain specificity</strong> for proprietary or niche corpora.</p>
-<p><strong>Retrieval-Augmented Generation (RAG)</strong> decouples knowledge storage from language generation. Instead of forcing the model to memorise facts, it retrieves relevant external documents at inference time and conditions generation on that retrieved context.</p>
+End of session:
+  important_results = extract_key_results(conversation)
+  vector_store.upsert(important_results)
+</code></pre></div>
+<p><strong>Use when:</strong> Agent must maintain continuity across many sessions; knowledge base grows over time.</p>
 <hr />
+<h3 id="pattern-3-hierarchical-memory-memgpt-style">Pattern 3: Hierarchical Memory (MemGPT-style)<a class="headerlink" href="#pattern-3-hierarchical-memory-memgpt-style" title="Permanent link">&para;</a></h3>
+<p>Treats the context window as "main memory" (fast, limited) and external storage as "disk" (slow, unlimited). The agent explicitly decides what to page in/out using FIFO/LRU-style operations.</p>
+<div class="highlight"><pre><span></span><code>if context_is_full:
+    compress_or_page_out(oldest_content)
+    page_in(most_relevant_from_storage)
+</code></pre></div>
+<p>See: <a href="https://arxiv.org/abs/2310.08560">MemGPT: Towards LLMs as Operating Systems</a></p>
 <hr />
-<h2 id="2-the-core-rag-loop">2. The Core RAG Loop<a class="headerlink" href="#2-the-core-rag-loop" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>User submits a query.</p>
-</li>
-<li>
-<p>A retriever searches an external knowledge base and returns the top-k most relevant chunks.</p>
-</li>
-<li>
-<p>Retrieved chunks are injected into the prompt as context.</p>
-</li>
-<li>
-<p>The LLM generates an answer grounded in that context.</p>
-</li>
-</ol>
+<h3 id="pattern-4-reflection-and-abstraction">Pattern 4: Reflection and Abstraction<a class="headerlink" href="#pattern-4-reflection-and-abstraction" title="Permanent link">&para;</a></h3>
+<p>From <a href="https://arxiv.org/abs/2304.03442">Generative Agents</a> (Park et al., 2023): periodically, the agent reflects on recent episodic memories and synthesises higher-level observations, which are stored back as semantic memories. This prevents context flooding from low-level event logs.</p>
+<div class="highlight"><pre><span></span><code>Recent episodes: [ate breakfast, walked to park, met Alice, discussed project]
+  ↓ reflection (LLM summarises)
+Semantic memory: &quot;I have a collaborative relationship with Alice on the project&quot;
+</code></pre></div>
 <hr />
-<hr />
-<h2 id="3-rag-vs-fine-tuning-choosing-the-right-tool">3. RAG vs. Fine-Tuning — Choosing the Right Tool<a class="headerlink" href="#3-rag-vs-fine-tuning-choosing-the-right-tool" title="Permanent link">&para;</a></h2>
-<p>This is one of the most common conceptual interview questions. The short answer: <strong>use RAG when the problem is about knowledge access; use fine-tuning when the problem is about model behaviour.</strong></p>
+<h2 id="4-memory-in-production-systems">4. Memory in Production Systems<a class="headerlink" href="#4-memory-in-production-systems" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Dimension</th>
-<th>RAG</th>
-<th>Fine-Tuning</th>
+<th>Concern</th>
+<th>Design Decision</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Knowledge type</td>
-<td>Dynamic, large, frequently changing</td>
-<td>Stable, compact</td>
-</tr>
-<tr>
-<td>Primary goal</td>
-<td>Access external facts at inference time</td>
-<td>Change reasoning style or output format</td>
-</tr>
-<tr>
-<td>Cost to update</td>
-<td>Re-index documents (cheap)</td>
-<td>Retrain or fine-tune model (expensive)</td>
-</tr>
-<tr>
-<td>Explainability</td>
-<td>Citations traceable to source chunks</td>
-<td>Opaque — knowledge in weights</td>
-</tr>
-<tr>
-<td>Hallucination risk</td>
-<td>Reduced (grounded in retrieved text)</td>
-<td>Not directly addressed</td>
-</tr>
-<tr>
-<td>Common use case</td>
-<td>Enterprise Q&amp;A, support bots, doc search</td>
-<td>Instruction following, code style, tone</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>In practice RAG and fine-tuning are complementary.</strong> A model may be fine-tuned for instruction following, while RAG supplies factual grounding at runtime.</p>
-</blockquote>
-<hr />
-<hr />
-<h2 id="4-high-level-rag-pipeline">4. High-Level RAG Pipeline<a class="headerlink" href="#4-high-level-rag-pipeline" title="Permanent link">&para;</a></h2>
-<p>A standard RAG system has four stages:</p>
-<ol>
-<li>
-<p><strong>Indexing</strong> — documents are chunked, embedded, and stored in a vector index.</p>
-</li>
-<li>
-<p><strong>Retrieval</strong> — the user query is embedded and the most similar chunks are fetched.</p>
-</li>
-<li>
-<p><strong>Augmentation</strong> — retrieved chunks are injected into the prompt alongside the query.</p>
-</li>
-<li>
-<p><strong>Generation</strong> — the LLM generates a grounded answer conditioned on query + context.</p>
-</li>
-</ol>
-<hr />
-<hr />
-<h2 id="5-key-failure-modes-of-vanilla-rag">5. Key Failure Modes of Vanilla RAG<a class="headerlink" href="#5-key-failure-modes-of-vanilla-rag" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Failure Mode</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Poor recall</td>
-<td>Relevant documents exist but are not retrieved</td>
-</tr>
-<tr>
-<td>Poor precision</td>
-<td>Retrieved documents are irrelevant or noisy</td>
-</tr>
-<tr>
-<td>Chunking errors</td>
-<td>Semantic meaning is fragmented across chunk boundaries</td>
-</tr>
 <tr>
 <td>Context overflow</td>
-<td>Retrieved context exceeds the model's context window</td>
+<td>Compress old tool outputs; page episodic memories in/out</td>
 </tr>
 <tr>
-<td>Model ignores context</td>
-<td>LLM falls back on parametric knowledge despite good retrieval</td>
+<td>Stale memories</td>
+<td>Add timestamps; score by recency during retrieval</td>
 </tr>
 <tr>
-<td>No verification</td>
-<td>System produces fluent but wrong answers with no detection</td>
+<td>Privacy / PII</td>
+<td>Sanitise before writing to external stores</td>
+</tr>
+<tr>
+<td>Retrieval quality</td>
+<td>Use semantic similarity + recency + importance weighting</td>
+</tr>
+<tr>
+<td>Write cost</td>
+<td>Only write memories above an importance threshold</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Most real-world RAG systems extend vanilla RAG to explicitly address these failure modes by adding reranking, query rewriting, verification, and feedback loops.</p>
-</blockquote>
 <hr />
+<h2 id="5-interview-questions">5. Interview Questions<a class="headerlink" href="#5-interview-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What are the four memory types in LLM agents, and what does each store?</strong></p>
+<p>A: Working memory (in-context): the active prompt — current task, conversation, tool outputs. Episodic memory: records of specific past experiences, stored in a vector database and retrieved by similarity. Semantic memory: general world knowledge — either parametric (in weights) or retrieved from a RAG index. Procedural memory: encoded action policies — system prompt instructions, fine-tuned behaviours, tool-use patterns.</p>
 <hr />
-<h2 id="6-rag-vs-fine-tuning-vs-long-context-llm">6. RAG vs. Fine-Tuning vs. Long-Context LLM<a class="headerlink" href="#6-rag-vs-fine-tuning-vs-long-context-llm" title="Permanent link">&para;</a></h2>
-<p>With frontier models now supporting 128K–1M token context windows, a third option exists: simply include all knowledge directly in the context.</p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>RAG</th>
-<th>Fine-Tuning</th>
-<th>Long-Context LLM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Knowledge update</td>
-<td>Re-index (cheap, fast)</td>
-<td>Retrain (expensive, slow)</td>
-<td>Update document in prompt</td>
-</tr>
-<tr>
-<td>Knowledge size</td>
-<td>Unlimited (external store)</td>
-<td>Bounded by training data</td>
-<td>Bounded by context window</td>
-</tr>
-<tr>
-<td>Latency</td>
-<td>Retrieval adds latency</td>
-<td>None at inference</td>
-<td>Higher for very long prompts</td>
-</tr>
-<tr>
-<td>Cost</td>
-<td>Retrieval + generation</td>
-<td>Training cost (one-time)</td>
-<td>Token cost scales with context length</td>
-</tr>
-<tr>
-<td>Explainability</td>
-<td>Citations traceable</td>
-<td>Opaque</td>
-<td>Traceable if documents are numbered</td>
-</tr>
-<tr>
-<td>Hallucination risk</td>
-<td>Reduced (grounded)</td>
-<td>Not directly addressed</td>
-<td>Reduced (but lost-in-the-middle effect)</td>
-</tr>
-<tr>
-<td>Best for</td>
-<td>Large, changing knowledge bases</td>
-<td>Style/behaviour change</td>
-<td>Small, stable knowledge bases</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Decision framework:</strong></p>
-<ol>
-<li>
-<p><strong>Use RAG</strong> if the knowledge base is large (&gt;100K tokens), changes frequently, or requires traceability/citations.</p>
-</li>
-<li>
-<p><strong>Use fine-tuning</strong> if the problem is about model behaviour (tone, format, reasoning style) rather than knowledge access.</p>
-</li>
-<li>
-<p><strong>Use long-context LLM</strong> if the knowledge base fits in the context window AND is stable (few updates) AND latency/cost are acceptable.</p>
-</li>
-<li>
-<p><strong>Combine all three</strong> for production systems: fine-tune for behaviour, RAG for dynamic knowledge retrieval, long-context for short static reference documents.</p>
-</li>
-</ol>
+<p><strong>Q: What is the lost-in-the-middle effect and how does it affect agent memory design?</strong></p>
+<p>A: LLMs attend more strongly to content at the beginning and end of the context window. Information in the middle is less reliably used. For agent memory this means: place the most relevant retrieved memories and the most recent observations near the edges of the context; push less critical content to the middle. Experiments by Liu et al. (2023) show a 20+ percentage point accuracy drop when the key document is placed in the middle versus the beginning of a long context.</p>
 <hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What problem does RAG solve that fine-tuning does not?</strong></p>
-<p>A: RAG solves the knowledge access problem — it lets the model use information that wasn't in the training set, or that changes frequently. Fine-tuning changes how the model behaves (style, reasoning, format) but does not give it a way to look things up. A fine-tuned model still hallucinates when asked about facts outside its training data.</p>
+<p><strong>Q: How does MemGPT extend the context window of an LLM?</strong></p>
+<p>A: MemGPT treats the context window like CPU RAM and external storage like disk. The agent is given explicit memory management functions (e.g., <code>archival_memory_search</code>, <code>recall_memory_search</code>, <code>archival_memory_insert</code>) it can call like any tool. When the context fills, old content is paged to external storage; the agent explicitly retrieves it when needed. This enables unbounded effective context at the cost of explicit memory management calls.</p>
 <hr />
-<p><strong>Q: Can you use RAG and fine-tuning together?</strong></p>
-<p>A: Yes, and this is common in production. A model might be fine-tuned for instruction following or a specific output format, and RAG provides the factual grounding at query time. Fine-tuning handles "how to respond"; RAG handles "what to respond with".</p>
+<p><strong>Q: What is the difference between episodic and semantic memory in the context of an AI agent?</strong></p>
+<p>A: Episodic memory stores concrete, timestamped experiences: "On task X, I called tool Y and got result Z." Semantic memory stores abstracted facts and general knowledge: "Tool Y is useful for tasks of type X." Episodic memory supports case-based reasoning (retrieve a similar past task and copy its strategy); semantic memory supports knowledge-based reasoning (retrieve a relevant fact). In production agents, periodic <em>reflection</em> converts episodic memories into semantic ones, preventing the episodic store from becoming too large and noisy.</p>
 <hr />
-<p><strong>Q: What are the main failure modes in a vanilla RAG system?</strong></p>
-<p>A: The biggest failure is retrieval failure — the right document exists but isn't retrieved (poor recall) or irrelevant documents are retrieved (poor precision). Other failures include chunking errors that fragment context, context window overflow, the model ignoring or hallucinating over retrieved text, and the lack of any verification step.</p>
-<hr />
-<p><strong>Q: Formally, how does RAG change the generation objective?</strong></p>
-<p>A: Vanilla LLM generation is P(y | q) — the answer depends only on the query. RAG conditions generation on both the query and retrieved documents: P(y | q, d₁:k). The model reasons over provided evidence rather than relying solely on its internal parameters.</p>
-<hr />
+<p><strong>Q: How would you design a memory system for a long-running coding agent that needs to remember the structure of a large codebase?</strong></p>
+<p>A: Four layers: (1) Working memory — the current file, recent diffs, active tool outputs; (2) Semantic memory — a RAG index over the codebase (files, functions, docstrings) for retrieval by query; (3) Episodic memory — log of past actions (what files were edited, what tests ran, what errors were seen) stored as embeddings for similarity retrieval; (4) Procedural memory — system prompt encoding coding conventions, which tools to use for which tasks. On each step, the agent retrieves relevant code via semantic search and relevant past actions via episodic search, keeping only the most relevant in working memory.</p>
 
 
 

@@ -1,0 +1,2008 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
+      
+      
+        <meta name="author" content="Saurabh Goyal">
+      
+      
+      
+        <link rel="prev" href="../agent_failure_modes/">
+      
+      
+        <link rel="next" href="../../context_engineering/ce/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Agentic RAG - RAG & Agents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agentic-rag" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RAG & Agents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agentic RAG
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/saurabhiit2007/RAG_And_Context_Engineering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RAG & Agents
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/saurabhiit2007/RAG_And_Context_Engineering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retrieval Augmented Generation (RAG)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Retrieval Augmented Generation (RAG)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/chunking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chunking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/embedding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/retrieval_methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/indexing_and_vector_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/reranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Re-Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/advanced_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/quick_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Supporting Concepts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Supporting Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/supporting_topics/tf_idf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TF_IDF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/supporting_topics/bm25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BM25
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/supporting_topics/splade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Splade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RAG/supporting_topics/sentence_transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sentence Transformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-from-pipeline-to-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. From Pipeline to Agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-self-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Self-RAG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Self-RAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection Tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-corrective-rag-crag" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Corrective RAG (CRAG)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Corrective RAG (CRAG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knowledge Refinement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-from-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results (from paper)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-adaptive-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Adaptive RAG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Adaptive RAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-over-self-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits Over Self-RAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. GraphRAG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. GraphRAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leiden-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leiden Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphrag-vs-vector-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      GraphRAG vs. Vector RAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-agentic-rag-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Agentic RAG Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Agentic RAG Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rag-agent-with-tool-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Agent with Tool Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-agent-rag-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Agent RAG Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-from-pipeline-to-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. From Pipeline to Agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-self-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Self-RAG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Self-RAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection Tokens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-corrective-rag-crag" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Corrective RAG (CRAG)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Corrective RAG (CRAG)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mechanism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knowledge Refinement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-from-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results (from paper)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-adaptive-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Adaptive RAG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Adaptive RAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-over-self-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits Over Self-RAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-graphrag" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. GraphRAG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. GraphRAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-idea_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leiden-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leiden Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphrag-vs-vector-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      GraphRAG vs. Vector RAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-agentic-rag-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Agentic RAG Architectures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Agentic RAG Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rag-agent-with-tool-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Agent with Tool Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-agent-rag-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Agent RAG Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="agentic-rag">Agentic RAG<a class="headerlink" href="#agentic-rag" title="Permanent link">&para;</a></h1>
+<h2 id="1-from-pipeline-to-agent">1. From Pipeline to Agent<a class="headerlink" href="#1-from-pipeline-to-agent" title="Permanent link">&para;</a></h2>
+<p>Standard RAG is a pipeline: retrieve → augment → generate. The retrieval step always happens; the query is always the same; no verification occurs. An <strong>Agentic RAG</strong> system replaces this fixed pipeline with an agent loop that decides <em>if</em>, <em>when</em>, and <em>how</em> to retrieve — and optionally verifies and improves its own outputs.</p>
+<p><strong>Key capabilities Agentic RAG adds over standard RAG:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Standard RAG</th>
+<th>Agentic RAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retrieval decision</td>
+<td>Always retrieves</td>
+<td>Decides whether retrieval is needed</td>
+</tr>
+<tr>
+<td>Query strategy</td>
+<td>Single fixed query</td>
+<td>Multi-query, iterative, decomposed</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>None</td>
+<td>Verifies, retries on failure</td>
+</tr>
+<tr>
+<td>Multi-hop</td>
+<td>Not supported</td>
+<td>Supported via iterative loops</td>
+</tr>
+<tr>
+<td>Tool access</td>
+<td>Retrieval only</td>
+<td>Retrieval + web search + code + APIs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-self-rag">2. Self-RAG<a class="headerlink" href="#2-self-rag" title="Permanent link">&para;</a></h2>
+<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2310.11511">Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection</a> (Asai et al., 2023)</p>
+<h3 id="core-idea">Core Idea<a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h3>
+<p>Self-RAG trains the LLM to insert <strong>reflection tokens</strong> inline as it generates. These tokens allow the model to dynamically decide: should I retrieve? Is what I retrieved relevant? Is what I'm generating supported by the evidence?</p>
+<h3 id="reflection-tokens">Reflection Tokens<a class="headerlink" href="#reflection-tokens" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Question</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Retrieve]</code></td>
+<td>Should retrieval happen for this generation?</td>
+<td><code>yes</code> / <code>no</code></td>
+</tr>
+<tr>
+<td><code>[IsRel]</code></td>
+<td>Is the retrieved document relevant to the query?</td>
+<td><code>relevant</code> / <code>irrelevant</code></td>
+</tr>
+<tr>
+<td><code>[IsSup]</code></td>
+<td>Is the generated text supported by the retrieved document?</td>
+<td><code>fully supported</code> / <code>partially supported</code> / <code>not supported</code></td>
+</tr>
+<tr>
+<td><code>[IsUse]</code></td>
+<td>Is the overall response useful?</td>
+<td><code>5</code> / <code>4</code> / <code>3</code> / <code>2</code> / <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="inference">Inference<a class="headerlink" href="#inference" title="Permanent link">&para;</a></h3>
+<p>During inference, Self-RAG generates tokens step by step:</p>
+<ol>
+<li>
+<p>If it generates <code>[Retrieve]=yes</code>, it pauses, retrieves documents, and continues.</p>
+</li>
+<li>
+<p>For each retrieved document, it generates <code>[IsRel]</code> to score relevance.</p>
+</li>
+<li>
+<p>It generates the answer conditioned on relevant documents and produces <code>[IsSup]</code> to self-assess groundedness.</p>
+</li>
+<li>
+<p>It generates <code>[IsUse]</code> to score overall usefulness.</p>
+</li>
+</ol>
+<p>Multiple retrieval-conditioned generations are scored and the best is selected.</p>
+<h3 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h3>
+<p>Self-RAG with Llama-2-13B outperforms GPT-4 and Retrieval-Augmented ChatGPT on:</p>
+<ul>
+<li>
+<p>Open-domain QA (PopQA, TriviaQA)</p>
+</li>
+<li>
+<p>Long-form generation (ASQA)</p>
+</li>
+<li>
+<p>Fact verification (FEVER)</p>
+</li>
+</ul>
+<p><strong>Key advantage:</strong> Selective retrieval (only retrieves when needed) reduces latency and token cost for queries that don't require external knowledge.</p>
+<hr />
+<h2 id="3-corrective-rag-crag">3. Corrective RAG (CRAG)<a class="headerlink" href="#3-corrective-rag-crag" title="Permanent link">&para;</a></h2>
+<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2401.15884">Corrective Retrieval Augmented Generation</a> (Shi et al., 2024)</p>
+<h3 id="core-idea_1">Core Idea<a class="headerlink" href="#core-idea_1" title="Permanent link">&para;</a></h3>
+<p>Standard RAG blindly uses whatever is retrieved. CRAG adds a <strong>retrieval evaluator</strong> that scores the relevance of retrieved documents and triggers corrective actions when quality is low.</p>
+<h3 id="mechanism">Mechanism<a class="headerlink" href="#mechanism" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Query → Retrieve documents → Retrieval Evaluator
+                                   ↓
+                    ┌──────────────┴──────────────┐
+                    ▼                             ▼
+              High confidence              Low confidence
+          (relevant documents)          (irrelevant / ambiguous)
+                    │                             │
+                    ▼                             ▼
+           Use retrieved docs           Web search + refine query
+                    │                             │
+                    └──────────────┬──────────────┘
+                                   ▼
+                          Knowledge refinement
+                          (strip irrelevant passages,
+                           decompose into fine-grained strips)
+                                   ▼
+                              Generate answer
+</code></pre></div>
+<p><strong>Three states of the evaluator:</strong></p>
+<ol>
+<li>
+<p><strong>Correct</strong> (high confidence) — retrieved documents are relevant; use them directly.</p>
+</li>
+<li>
+<p><strong>Incorrect</strong> (low confidence) — retrieved documents are irrelevant; fall back to web search.</p>
+</li>
+<li>
+<p><strong>Ambiguous</strong> (medium confidence) — combine internal retrieval with web search.</p>
+</li>
+</ol>
+<h3 id="knowledge-refinement">Knowledge Refinement<a class="headerlink" href="#knowledge-refinement" title="Permanent link">&para;</a></h3>
+<p>Even when documents are relevant, CRAG performs a decompose-then-filter step:</p>
+<ul>
+<li>
+<p>Break retrieved documents into fine-grained knowledge strips (sentence or paragraph level).</p>
+</li>
+<li>
+<p>Score each strip for relevance to the query.</p>
+</li>
+<li>
+<p>Discard irrelevant strips before passing context to the LLM.</p>
+</li>
+</ul>
+<p>This reduces noise in the prompt and prevents the LLM from being confused by tangentially relevant text.</p>
+<h3 id="results-from-paper">Results (from paper)<a class="headerlink" href="#results-from-paper" title="Permanent link">&para;</a></h3>
+<p>CRAG consistently outperforms naive RAG, Self-RAG, and standard retrieval-augmented methods across:</p>
+<ul>
+<li>
+<p>PopQA: +15.6% over RAG baseline</p>
+</li>
+<li>
+<p>Biography generation (factuality): +8.3%</p>
+</li>
+<li>
+<p>FEVER (fact verification): +3.7%</p>
+</li>
+</ul>
+<hr />
+<h2 id="4-adaptive-rag">4. Adaptive RAG<a class="headerlink" href="#4-adaptive-rag" title="Permanent link">&para;</a></h2>
+<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2403.14403">Adaptive-RAG: Learning to Adapt Retrieval-Augmented Large Language Models through Question Complexity</a> (Jeong et al., 2024)</p>
+<h3 id="core-idea_2">Core Idea<a class="headerlink" href="#core-idea_2" title="Permanent link">&para;</a></h3>
+<p>Not all queries need retrieval. Adaptive RAG learns a <strong>classifier</strong> that routes each query to the appropriate strategy:</p>
+<ol>
+<li>
+<p><strong>No retrieval</strong> — simple queries the LLM can answer from parametric knowledge.</p>
+</li>
+<li>
+<p><strong>Single-step retrieval</strong> — standard RAG (one retrieval, one generation).</p>
+</li>
+<li>
+<p><strong>Multi-step retrieval</strong> — iterative RAG (multiple retrievals chained).</p>
+</li>
+</ol>
+<p>The classifier is a small LLM fine-tuned to predict query complexity. This avoids the overhead of multi-step retrieval for simple queries and the inadequacy of single-step retrieval for complex ones.</p>
+<h3 id="routing-logic">Routing Logic<a class="headerlink" href="#routing-logic" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Query → [Complexity Classifier]
+           ↓
+    ┌──────┴──────┐──────────────┐
+    ▼             ▼              ▼
+Simple:    Moderate:       Complex:
+No         Single-step     Multi-step
+retrieval  RAG             iterative RAG
+</code></pre></div>
+<h3 id="benefits-over-self-rag">Benefits Over Self-RAG<a class="headerlink" href="#benefits-over-self-rag" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>No special training required for the main LLM</strong> — the classifier is trained separately; the generation model is unchanged.</p>
+</li>
+<li>
+<p><strong>More explicit routing</strong> — the decision is made by a dedicated classifier, not reflection tokens embedded in generation.</p>
+</li>
+<li>
+<p><strong>Easier to audit</strong> — routing decisions are explicit and logged.</p>
+</li>
+</ul>
+<h3 id="results_1">Results<a class="headerlink" href="#results_1" title="Permanent link">&para;</a></h3>
+<p>Adaptive-RAG achieves comparable or better performance to always-retrieve baselines while reducing total retrieval calls by ~40% on benchmarks where many queries are simple.</p>
+<hr />
+<h2 id="5-graphrag">5. GraphRAG<a class="headerlink" href="#5-graphrag" title="Permanent link">&para;</a></h2>
+<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2404.16130">From Local to Global: A Graph RAG Approach to Query-Focused Summarization</a> (Edge et al., Microsoft, 2024)</p>
+<h3 id="core-idea_3">Core Idea<a class="headerlink" href="#core-idea_3" title="Permanent link">&para;</a></h3>
+<p>Standard vector RAG retrieves by semantic similarity. This works well for specific fact lookup but fails for global questions about large corpora ("What are the main themes in this collection of documents?"). GraphRAG builds a <strong>knowledge graph</strong> from the document corpus and retrieves by traversing the graph.</p>
+<h3 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>Indexing phase:</strong></p>
+<ol>
+<li>
+<p><strong>Chunk documents</strong> (standard chunking).</p>
+</li>
+<li>
+<p><strong>Extract entities and relations</strong> — use an LLM to extract entity names, types, and relationships from each chunk.</p>
+</li>
+<li>
+<p><strong>Build knowledge graph</strong> — nodes are entities; edges are relationships between entities.</p>
+</li>
+<li>
+<p><strong>Community detection</strong> — apply the Leiden algorithm to identify clusters of tightly related entities (communities).</p>
+</li>
+<li>
+<p><strong>Generate community summaries</strong> — for each community, use an LLM to write a summary of what that community represents.</p>
+</li>
+</ol>
+<p><strong>Query phase:</strong></p>
+<ul>
+<li>
+<p><strong>Global queries</strong> (themes, overview): use community summaries; generate a map-reduce answer across all relevant communities.</p>
+</li>
+<li>
+<p><strong>Local queries</strong> (specific facts): traverse the graph from the most relevant entity outward, collecting related nodes and their text chunks.</p>
+</li>
+</ul>
+<h3 id="leiden-algorithm">Leiden Algorithm<a class="headerlink" href="#leiden-algorithm" title="Permanent link">&para;</a></h3>
+<p>The Leiden algorithm (Traag et al., 2019) is used for community detection because:</p>
+<ul>
+<li>
+<p>It improves on the Louvain algorithm by guaranteeing that communities are internally well-connected (no disconnected subgraphs).</p>
+</li>
+<li>
+<p>It produces a hierarchical decomposition — communities of communities — enabling multi-resolution retrieval.</p>
+</li>
+</ul>
+<h3 id="graphrag-vs-vector-rag">GraphRAG vs. Vector RAG<a class="headerlink" href="#graphrag-vs-vector-rag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Vector RAG</th>
+<th>GraphRAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retrieval unit</td>
+<td>Text chunk</td>
+<td>Entity + its graph neighbourhood</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Specific fact lookup</td>
+<td>Multi-hop reasoning, thematic queries</td>
+</tr>
+<tr>
+<td>Query type</td>
+<td>"What did document X say about Y?"</td>
+<td>"What are the main themes?" / "How are A and B related?"</td>
+</tr>
+<tr>
+<td>Index size</td>
+<td>Proportional to chunks</td>
+<td>Proportional to entities + edges</td>
+</tr>
+<tr>
+<td>Build cost</td>
+<td>Low (embed chunks)</td>
+<td>High (LLM extraction of entities + edges)</td>
+</tr>
+<tr>
+<td>Update cost</td>
+<td>Re-embed changed chunks</td>
+<td>Re-extract entities from changed chunks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="microsoft-implementation">Microsoft Implementation<a class="headerlink" href="#microsoft-implementation" title="Permanent link">&para;</a></h3>
+<p>Microsoft open-sourced a full GraphRAG implementation:</p>
+<ul>
+<li>
+<p>GitHub: <a href="https://github.com/microsoft/graphrag">microsoft/graphrag</a></p>
+</li>
+<li>
+<p>Integrates with Azure OpenAI and Azure AI Search.</p>
+</li>
+<li>
+<p>Provides both local (entity-centric) and global (community-centric) query modes.</p>
+</li>
+</ul>
+<hr />
+<h2 id="6-agentic-rag-architectures">6. Agentic RAG Architectures<a class="headerlink" href="#6-agentic-rag-architectures" title="Permanent link">&para;</a></h2>
+<p>Beyond individual techniques, Agentic RAG refers to full agent architectures that orchestrate multiple retrieval strategies.</p>
+<h3 id="rag-agent-with-tool-selection">RAG Agent with Tool Selection<a class="headerlink" href="#rag-agent-with-tool-selection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>User Query → [RAG Agent]
+                ↓
+         [Tool Selection]
+         ┌────────────────────────────┐
+         │  - vector_search(query)    │
+         │  - graph_search(entities)  │
+         │  - web_search(query)       │
+         │  - code_exec(query)        │
+         └────────────────────────────┘
+                ↓
+         [Retrieved context]
+                ↓
+         [Verification step] ← check faithfulness
+                ↓
+         [Generate answer]
+</code></pre></div>
+<h3 id="multi-agent-rag-pipeline">Multi-Agent RAG Pipeline<a class="headerlink" href="#multi-agent-rag-pipeline" title="Permanent link">&para;</a></h3>
+<p>For complex research tasks, a multi-agent system where:</p>
+<ul>
+<li>
+<p><strong>Orchestrator</strong> receives the query and decomposes it.</p>
+</li>
+<li>
+<p><strong>Retrieval agents</strong> — each specialised for a different source (vector DB, web, internal APIs).</p>
+</li>
+<li>
+<p><strong>Synthesis agent</strong> — combines and deduplicates retrieved content.</p>
+</li>
+<li>
+<p><strong>Generation agent</strong> — writes the final answer grounded in synthesised context.</p>
+</li>
+<li>
+<p><strong>Critic agent</strong> — verifies faithfulness; rejects or flags unsupported claims.</p>
+</li>
+</ul>
+<hr />
+<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What is the key innovation of Self-RAG over standard RAG?</strong></p>
+<p>A: Standard RAG always retrieves and always uses what it retrieves, regardless of quality. Self-RAG trains the LLM to generate reflection tokens inline that answer three questions: Should I retrieve at all? Is what I retrieved relevant? Is my generated text supported by the evidence? This makes retrieval selective (only happens when needed), makes relevance filtering automatic (irrelevant docs are discarded), and makes groundedness measurable at generation time. The trade-off is that Self-RAG requires fine-tuning the generation model on these reflection tokens.</p>
+<hr />
+<p><strong>Q: How does Corrective RAG (CRAG) handle low-quality retrieval?</strong></p>
+<p>A: CRAG adds a retrieval evaluator that scores retrieved documents. When confidence is high, it uses documents normally. When confidence is low (retrieved docs are irrelevant), it falls back to web search for broader information. In ambiguous cases, it combines both. Additionally, even when documents are relevant, CRAG performs knowledge refinement — decomposing documents into fine-grained strips, scoring each strip, and discarding irrelevant ones — to reduce prompt noise.</p>
+<hr />
+<p><strong>Q: For what types of queries does GraphRAG outperform standard vector RAG?</strong></p>
+<p>A: GraphRAG outperforms on: (1) Global queries that require summarising across many documents ("What are the main themes in this corpus?"); (2) Multi-hop queries requiring reasoning about relationships between entities ("How is person A connected to event B through organisation C?"); (3) Queries about relationships that aren't explicitly stated in any single document chunk. Standard vector RAG retrieves similar chunks, but if the answer requires combining information across many distant chunks, it will miss it. GraphRAG's community summaries and entity traversal enable this cross-document reasoning.</p>
+<hr />
+<p><strong>Q: What is the Leiden algorithm and why is it used in GraphRAG?</strong></p>
+<p>A: The Leiden algorithm is a community detection algorithm that partitions a graph into clusters of densely connected nodes. It improves over the earlier Louvain algorithm by guaranteeing that all communities are internally connected (no disconnected subgraphs within a community) and by producing a hierarchical decomposition (communities of communities). In GraphRAG, it's used to cluster related entities into thematic communities, which are then summarised — enabling global-level queries to reason over community summaries rather than individual entities.</p>
+<hr />
+<p><strong>Q: How would you design an Agentic RAG system for a medical Q&amp;A application?</strong></p>
+<p>A: Four components: (1) <strong>Adaptive routing</strong> — classify query complexity; simple factual queries go to single-step RAG, complex diagnostic queries go to multi-step iterative retrieval; (2) <strong>Hybrid retrieval</strong> — dense search over medical literature embeddings + sparse BM25 for precise medical term matching + a knowledge graph of diseases/symptoms/treatments for relationship queries; (3) <strong>Corrective evaluation</strong> — a CRAG-style evaluator that scores retrieved evidence and triggers web search on recent clinical guidelines if the vector store results are stale or low-confidence; (4) <strong>Faithfulness verification</strong> — a critic agent that checks every claim in the generated answer against retrieved sources before returning it; any unsupported claim triggers a revision cycle or an explicit "I don't know."</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

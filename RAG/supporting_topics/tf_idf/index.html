@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -19,22 +19,19 @@
         <link rel="next" href="../bm25/">
       
       
-        
-      
-      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>TF_IDF - RAG & Context Engineering</title>
+        <title>TF_IDF - RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -59,6 +56,7 @@
 
     
     
+    
   </head>
   
   
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#tf-idf-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +225,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -262,14 +260,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -302,14 +295,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -318,11 +306,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -338,14 +322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -366,14 +345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -394,14 +368,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -422,14 +391,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -450,14 +414,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -478,14 +437,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -506,14 +460,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -534,14 +483,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -562,14 +506,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -603,14 +542,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -619,11 +553,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -640,20 +570,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -664,14 +591,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -682,6 +604,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -690,121 +614,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#formula" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      Formula
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-intuition-behind-tf-idf" class="md-nav__link">
+  <a href="#why-bm25-replaced-it" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Intuition Behind TF IDF
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-term-frequency-tf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Term Frequency (TF)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-inverse-document-frequency-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Inverse Document Frequency (IDF)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tf-idf-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. TF-IDF Score
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-how-tf-idf-is-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. How TF-IDF is Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-strengths-of-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Strengths of TF IDF
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-tf-idf-in-modern-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. TF IDF in Modern Systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interview Perspective
-      
+      Why BM25 Replaced It
     </span>
   </a>
   
@@ -831,14 +652,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -859,14 +675,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -887,14 +698,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
-  
   
 
       </a>
@@ -924,20 +730,290 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -962,6 +1038,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -970,121 +1048,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#formula" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      Formula
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-intuition-behind-tf-idf" class="md-nav__link">
+  <a href="#why-bm25-replaced-it" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Intuition Behind TF IDF
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-term-frequency-tf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Term Frequency (TF)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-inverse-document-frequency-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Inverse Document Frequency (IDF)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tf-idf-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. TF-IDF Score
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-how-tf-idf-is-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. How TF-IDF is Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-strengths-of-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Strengths of TF IDF
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-tf-idf-in-modern-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. TF IDF in Modern Systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interview Perspective
-      
+      Why BM25 Replaced It
     </span>
   </a>
   
@@ -1100,7 +1075,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1110,102 +1084,39 @@
   
 
 
-  <h1>TF_IDF</h1>
-
-<h3 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h3>
-<p>TF IDF (Term Frequency–Inverse Document Frequency) is a classical text representation technique used to convert unstructured text into numerical features. It is widely used in information retrieval and traditional NLP pipelines because of its simplicity, interpretability, and strong lexical matching performance.</p>
-<p>At a high level, TF IDF assigns higher importance to words that are frequent in a document but rare across the entire corpus. This helps highlight terms that best characterize a document while suppressing common, non informative words.</p>
-<hr />
-<h3 id="2-intuition-behind-tf-idf">2. Intuition Behind TF IDF<a class="headerlink" href="#2-intuition-behind-tf-idf" title="Permanent link">&para;</a></h3>
-<p>Not all words in a document are equally useful. Words like "the", "is", or "and" appear frequently but contribute little to meaning. In contrast, domain specific terms often appear repeatedly within a document but infrequently across the corpus.</p>
-<p>TF IDF captures this intuition by combining two signals:
-- How important a word is within a document
-- How unique that word is across documents</p>
-<p>Only terms that satisfy both conditions receive high scores.</p>
-<hr />
-<h3 id="3-term-frequency-tf">3. Term Frequency (TF)<a class="headerlink" href="#3-term-frequency-tf" title="Permanent link">&para;</a></h3>
-<p>Term Frequency measures how often a term appears in a document.</p>
-<p>A common formulation is:</p>
-<p>TF(t, d) = count(t in d) / total number of terms in d</p>
-<p>TF increases with repeated occurrence of a term in the same document, reflecting its local importance. Variants such as logarithmic TF are sometimes used to reduce the impact of very frequent terms.</p>
-<hr />
-<h3 id="4-inverse-document-frequency-idf">4. Inverse Document Frequency (IDF)<a class="headerlink" href="#4-inverse-document-frequency-idf" title="Permanent link">&para;</a></h3>
-<p>Inverse Document Frequency measures how rare a term is across the corpus.</p>
-<p>A common formulation is:</p>
-<div class="arithmatex">\[IDF(t) = log(N / (1 + df(t)))\]</div>
-<p>Where:</p>
-<ul>
-<li><span class="arithmatex">\(N\)</span> is the total number of documents</li>
-<li><span class="arithmatex">\(df(t)\)</span> is the number of documents containing the term</li>
-</ul>
-<p>Rare terms receive higher IDF values, while common terms receive lower values. Smoothing is often applied to avoid division by zero.</p>
-<hr />
-<h3 id="5-tf-idf-score">5. TF-IDF Score<a class="headerlink" href="#5-tf-idf-score" title="Permanent link">&para;</a></h3>
-<p>The final TF-IDF score is the product of TF and IDF:</p>
-<p>TF IDF(t, d) = TF(t, d) × IDF(t)</p>
-<p>A high TF IDF score indicates a term that is both important to the document and discriminative across the corpus.</p>
-<hr />
-<h3 id="6-how-tf-idf-is-used">6. How TF-IDF is Used<a class="headerlink" href="#6-how-tf-idf-is-used" title="Permanent link">&para;</a></h3>
-<p>TF IDF is commonly used in:</p>
-<ul>
-<li>Search engines and information retrieval systems</li>
-<li>Document similarity and clustering using cosine similarity</li>
-<li>Keyword extraction</li>
-<li>Text classification as a baseline feature representation</li>
-<li>Sparse retrieval components in RAG pipelines</li>
-</ul>
-<p>Despite the rise of dense embeddings, TF IDF remains a strong baseline and is often combined with neural retrievers.</p>
-<hr />
-<h3 id="7-strengths-of-tf-idf">7. Strengths of TF IDF<a class="headerlink" href="#7-strengths-of-tf-idf" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Simple and easy to implement</li>
-<li>Does not require labeled data or training</li>
-<li>Computationally efficient</li>
-<li>Produces interpretable feature weights</li>
-<li>Works well for exact and partial lexical matches</li>
-</ul>
-<p>These properties make TF IDF attractive for fast retrieval and baseline systems.</p>
-<hr />
-<h2 id="8-limitations-and-caveats">8. Limitations and Caveats<a class="headerlink" href="#8-limitations-and-caveats" title="Permanent link">&para;</a></h2>
-<p>TF IDF has several important limitations:</p>
-<ul>
-<li>It ignores word order and syntactic structure</li>
-<li>It cannot capture semantic similarity or paraphrases</li>
-<li>Vocabulary size can grow very large</li>
-<li>Performance depends heavily on preprocessing choices</li>
-<li>Sparse high dimensional vectors increase memory usage</li>
-</ul>
-<p>Because of these limitations, TF IDF performs poorly when semantic understanding is required.</p>
-<hr />
-<h2 id="9-practical-considerations">9. Practical Considerations<a class="headerlink" href="#9-practical-considerations" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Stopword removal and normalization significantly affect performance</li>
-<li>Cosine similarity is preferred over raw dot product</li>
-<li>IDF smoothing improves robustness</li>
-<li>Stemming or lemmatization can reduce sparsity</li>
-<li>TF-IDF is sensitive to spelling and tokenization errors</li>
-</ul>
-<p>Careful preprocessing is often more important than the exact TF-IDF formula.</p>
-<hr />
-<h2 id="10-tf-idf-in-modern-systems">10. TF IDF in Modern Systems<a class="headerlink" href="#10-tf-idf-in-modern-systems" title="Permanent link">&para;</a></h2>
-<p>In modern retrieval systems, TF IDF is often used as:</p>
-<ul>
-<li>A fast first stage retriever</li>
-<li>A lexical complement to dense embeddings</li>
-<li>A baseline for evaluating neural retrievers</li>
-</ul>
-<p>Hybrid retrieval systems frequently combine TF IDF or BM25 with dense vector search to balance precision and recall.</p>
-<hr />
-<h2 id="interview-perspective">Interview Perspective<a class="headerlink" href="#interview-perspective" title="Permanent link">&para;</a></h2>
-<p>For interviews, focus on:</p>
-<ul>
-<li>The intuition behind IDF and why it matters</li>
-<li>Why cosine similarity is commonly used</li>
-<li>When TF-IDF works well and when it fails</li>
-<li>How it compares to neural embeddings</li>
-<li>Its role in retrieval augmented generation systems</li>
-</ul>
-<hr />
+<h1 id="tf-idf-reference">TF-IDF Reference<a class="headerlink" href="#tf-idf-reference" title="Permanent link">&para;</a></h1>
+<p>TF-IDF (Term Frequency–Inverse Document Frequency) is the precursor to BM25. It is rarely used directly in production RAG — know it as the baseline BM25 improves upon.</p>
+<h2 id="formula">Formula<a class="headerlink" href="#formula" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>TF(t, d)      = count(t in d) / total terms in d
+IDF(t)        = log(N / (1 + df(t)))
+TF-IDF(t, d)  = TF(t, d) × IDF(t)
+</code></pre></div>
+<h2 id="why-bm25-replaced-it">Why BM25 Replaced It<a class="headerlink" href="#why-bm25-replaced-it" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Weakness</th>
+<th>BM25 Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TF grows linearly — keyword stuffing raises score</td>
+<td>Saturating TF with k₁ parameter</td>
+</tr>
+<tr>
+<td>No length normalisation — longer docs score higher</td>
+<td>Explicit length normalisation via b parameter</td>
+</tr>
+<tr>
+<td>IDF formula unstable for very rare/common terms</td>
+<td>Modified IDF: log((N − df + 0.5)/(df + 0.5))</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>For RAG interviews: know TF-IDF as context for why BM25 exists, not as a standalone topic. See <a href="../bm25/">BM25</a> and <a href="../../retrieval_methods/">Retrieval Methods</a>.</p>
+</blockquote>
 
 
 
@@ -1260,11 +1171,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

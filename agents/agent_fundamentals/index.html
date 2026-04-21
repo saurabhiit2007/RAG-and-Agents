@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../fundamentals/">
+        <link rel="prev" href="../../RAG/supporting_topics/sentence_transformers/">
       
       
-        <link rel="next" href="../embedding/">
+        <link rel="next" href="../memory_systems/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chunking - RAG & Agents</title>
+        <title>Agent Fundamentals - RAG & Agents</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#agent-fundamentals" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chunking
+              Agent Fundamentals
             
           </span>
         </div>
@@ -274,20 +274,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -303,7 +303,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Retrieval Augmented Generation (RAG)
@@ -317,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/" class="md-nav__link">
+      <a href="../../RAG/fundamentals/" class="md-nav__link">
         
   
   
@@ -337,30 +337,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Chunking
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../RAG/chunking/" class="md-nav__link">
         
   
   
@@ -371,183 +351,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-why-chunks-must-be-sized-carefully" class="md-nav__link">
-    <span class="md-ellipsis">
-      2 Why Chunks Must Be Sized Carefully
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-chunking-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Chunking Strategies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Chunking Strategies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fixed-size-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fixed-Size Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sentence-based-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sentence-Based Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#paragraph-based-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Paragraph-Based Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recursive-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recursive Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#semantic-context-aware-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Semantic / Context-Aware Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposition-based-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proposition-Based Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#late-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Late Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sliding-window-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sliding Window Chunking
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-chunk-size-and-top-k-are-coupled" class="md-nav__link">
-    <span class="md-ellipsis">
-      4 Chunk Size and Top-k Are Coupled
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-chunk-overlap" class="md-nav__link">
-    <span class="md-ellipsis">
-      5 Chunk Overlap
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-chunk-metadata-and-filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      6 Chunk Metadata and Filtering
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-special-cases-tables-and-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      7 Special Cases: Tables and Code
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-adaptive-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      8 Adaptive Chunking
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      9 Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -560,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../embedding/" class="md-nav__link">
+      <a href="../../RAG/embedding/" class="md-nav__link">
         
   
   
@@ -583,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../retrieval_methods/" class="md-nav__link">
+      <a href="../../RAG/retrieval_methods/" class="md-nav__link">
         
   
   
@@ -606,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../indexing_and_vector_database/" class="md-nav__link">
+      <a href="../../RAG/indexing_and_vector_database/" class="md-nav__link">
         
   
   
@@ -629,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reranking/" class="md-nav__link">
+      <a href="../../RAG/reranking/" class="md-nav__link">
         
   
   
@@ -652,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced_rag/" class="md-nav__link">
+      <a href="../../RAG/advanced_rag/" class="md-nav__link">
         
   
   
@@ -675,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
+      <a href="../../RAG/evaluation/" class="md-nav__link">
         
   
   
@@ -698,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_reference/" class="md-nav__link">
+      <a href="../../RAG/quick_reference/" class="md-nav__link">
         
   
   
@@ -761,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/tf_idf/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/tf_idf/" class="md-nav__link">
         
   
   
@@ -784,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/bm25/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/bm25/" class="md-nav__link">
         
   
   
@@ -807,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/splade/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/splade/" class="md-nav__link">
         
   
   
@@ -830,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/sentence_transformers/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/sentence_transformers/" class="md-nav__link">
         
   
   
@@ -865,20 +668,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -894,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             LLM Agents
@@ -905,10 +708,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agents/agent_fundamentals/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -919,6 +744,173 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-an-llm-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. What Is an LLM Agent?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-components-of-an-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Core Components of an Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core Components of an Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-brain-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Brain (LLM)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Memory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Planning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-action-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Action Space
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tool-use-and-function-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Tool Use and Function Calling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tool Use and Function Calling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-calling-structured-tool-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Calling (Structured Tool Use)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-design-decisions-for-tool-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Design Decisions for Tool Schemas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-react-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The ReAct Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-agent-types-by-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Agent Types by Autonomy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-agentic-vs-non-agentic-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Agentic vs. Non-Agentic RAG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-production-agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Production Agent Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -931,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/memory_systems/" class="md-nav__link">
+      <a href="../memory_systems/" class="md-nav__link">
         
   
   
@@ -954,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/planning/" class="md-nav__link">
+      <a href="../planning/" class="md-nav__link">
         
   
   
@@ -977,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_frameworks/" class="md-nav__link">
+      <a href="../agent_frameworks/" class="md-nav__link">
         
   
   
@@ -1000,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/mcp_and_protocols/" class="md-nav__link">
+      <a href="../mcp_and_protocols/" class="md-nav__link">
         
   
   
@@ -1023,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/multi_agent/" class="md-nav__link">
+      <a href="../multi_agent/" class="md-nav__link">
         
   
   
@@ -1046,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_failure_modes/" class="md-nav__link">
+      <a href="../agent_failure_modes/" class="md-nav__link">
         
   
   
@@ -1069,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agentic_rag/" class="md-nav__link">
+      <a href="../agentic_rag/" class="md-nav__link">
         
   
   
@@ -1175,6 +1167,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1183,100 +1177,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#1-what-is-an-llm-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview
+      1. What Is an LLM Agent?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-why-chunks-must-be-sized-carefully" class="md-nav__link">
+  <a href="#2-core-components-of-an-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Why Chunks Must Be Sized Carefully
+      2. Core Components of an Agent
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-chunking-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Chunking Strategies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Chunking Strategies">
+    <nav class="md-nav" aria-label="2. Core Components of an Agent">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed-size-chunking" class="md-nav__link">
+  <a href="#21-brain-llm" class="md-nav__link">
     <span class="md-ellipsis">
-      Fixed-Size Chunking
+      2.1 Brain (LLM)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sentence-based-chunking" class="md-nav__link">
+  <a href="#22-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      Sentence-Based Chunking
+      2.2 Memory
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#paragraph-based-chunking" class="md-nav__link">
+  <a href="#23-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Paragraph-Based Chunking
+      2.3 Tools
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#recursive-chunking" class="md-nav__link">
+  <a href="#24-planning" class="md-nav__link">
     <span class="md-ellipsis">
-      Recursive Chunking
+      2.4 Planning
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#semantic-context-aware-chunking" class="md-nav__link">
+  <a href="#25-action-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Semantic / Context-Aware Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposition-based-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Proposition-Based Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#late-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Late Chunking
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sliding-window-chunking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sliding Window Chunking
+      2.5 Action Space
     </span>
   </a>
   
@@ -1288,54 +1246,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-chunk-size-and-top-k-are-coupled" class="md-nav__link">
+  <a href="#3-tool-use-and-function-calling" class="md-nav__link">
     <span class="md-ellipsis">
-      4 Chunk Size and Top-k Are Coupled
+      3. Tool Use and Function Calling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tool Use and Function Calling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-calling-structured-tool-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Calling (Structured Tool Use)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-design-decisions-for-tool-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Design Decisions for Tool Schemas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-react-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The ReAct Pattern
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-chunk-overlap" class="md-nav__link">
+  <a href="#5-agent-types-by-autonomy" class="md-nav__link">
     <span class="md-ellipsis">
-      5 Chunk Overlap
+      5. Agent Types by Autonomy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-chunk-metadata-and-filtering" class="md-nav__link">
+  <a href="#6-agentic-vs-non-agentic-rag" class="md-nav__link">
     <span class="md-ellipsis">
-      6 Chunk Metadata and Filtering
+      6. Agentic vs. Non-Agentic RAG
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-special-cases-tables-and-code" class="md-nav__link">
+  <a href="#7-production-agent-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      7 Special Cases: Tables and Code
+      7. Production Agent Architecture
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-adaptive-chunking" class="md-nav__link">
+  <a href="#8-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      8 Adaptive Chunking
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      9 Interview Questions
+      8. Interview Questions
     </span>
   </a>
   
@@ -1360,301 +1342,271 @@
   
 
 
-  <h1>Chunking</h1>
-
-<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Chunking splits documents into smaller units before embedding and indexing. It is a critical design choice because it directly determines retrieval granularity, context relevance, latency, and cost. Poor chunking is one of the easiest ways to silently break a RAG system.</p>
-<hr />
-<hr />
-<h2 id="2-why-chunks-must-be-sized-carefully">2 Why Chunks Must Be Sized Carefully<a class="headerlink" href="#2-why-chunks-must-be-sized-carefully" title="Permanent link">&para;</a></h2>
-<p>Embedding models have fixed input limits (typically 512 to 8192 tokens), so documents must be split. But chunk size affects quality in both directions:</p>
-<ul>
-<li>
-<p><strong>Too small:</strong> Chunks lose semantic meaning; retrieval returns fragments that don't fully answer the question.</p>
-</li>
-<li>
-<p><strong>Too large:</strong> Chunks contain multiple unrelated topics; embedding quality degrades; context window fills with noise.</p>
-</li>
-</ul>
-<hr />
-<hr />
-<h2 id="3-chunking-strategies">3. Chunking Strategies<a class="headerlink" href="#3-chunking-strategies" title="Permanent link">&para;</a></h2>
-<h3 id="fixed-size-chunking">Fixed-Size Chunking<a class="headerlink" href="#fixed-size-chunking" title="Permanent link">&para;</a></h3>
-<p>Documents are split into consecutive windows of N tokens with optional overlap. Simple and fast, but ignores semantic boundaries.</p>
-<p><strong>Algorithm:</strong></p>
-<ol>
-<li>
-<p>Tokenise the document.</p>
-</li>
-<li>
-<p>Split into consecutive windows of size N.</p>
-</li>
-<li>
-<p>Optionally overlap adjacent windows by M tokens.</p>
-</li>
-<li>
-<p><strong>Pros:</strong> Simple to implement; fast and scalable; good baseline.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> Ignores semantic boundaries; may split sentences mid-thought.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> Baseline systems; uniform document formats; large-scale indexing where simplicity matters.</p>
-</li>
-</ol>
-<hr />
-<h3 id="sentence-based-chunking">Sentence-Based Chunking<a class="headerlink" href="#sentence-based-chunking" title="Permanent link">&para;</a></h3>
-<p>Documents are split at sentence boundaries, accumulating sentences until a token threshold is reached.</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> Preserves sentence semantics; reduces mid-sentence splits.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> Sentence lengths vary; ignores higher-level document structure.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> Narrative text; QA over articles or reports.</p>
-</li>
-</ul>
-<hr />
-<h3 id="paragraph-based-chunking">Paragraph-Based Chunking<a class="headerlink" href="#paragraph-based-chunking" title="Permanent link">&para;</a></h3>
-<p>Chunks are formed at paragraph boundaries and merged if small; large paragraphs are split further if needed.</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> Preserves local topical coherence; aligns with human-written structure.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> Paragraph length is highly inconsistent; formatting noise can affect quality.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> Well-structured documentation; markdown or HTML content.</p>
-</li>
-</ul>
-<hr />
-<h3 id="recursive-chunking">Recursive Chunking<a class="headerlink" href="#recursive-chunking" title="Permanent link">&para;</a></h3>
-<p>Applies a hierarchy of split rules — sections → paragraphs → sentences → fixed-size fallback — only falling back to finer splits when the chunk exceeds the size limit.</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> Preserves document structure; produces semantically meaningful chunks; handles diverse formats.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> More complex to implement; requires reliable document parsing.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> Enterprise documents; PDFs with headings; mixed-format content. <strong>This is the most common production approach.</strong></p>
-</li>
-</ul>
-<hr />
-<h3 id="semantic-context-aware-chunking">Semantic / Context-Aware Chunking<a class="headerlink" href="#semantic-context-aware-chunking" title="Permanent link">&para;</a></h3>
-<p>Adjacent text units are grouped based on embedding similarity rather than fixed boundaries.</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> High semantic coherence; reduces context fragmentation.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> Computationally expensive — requires embedding during preprocessing; sensitive to similarity thresholds.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> High-precision RAG; smaller corpora where quality matters most.</p>
-</li>
-</ul>
-<hr />
-<h3 id="proposition-based-chunking">Proposition-Based Chunking<a class="headerlink" href="#proposition-based-chunking" title="Permanent link">&para;</a></h3>
-<p>Use an LLM to extract atomic factual propositions from each paragraph, storing each as a micro-chunk. Example: a paragraph about a company becomes individual chunks like "Founded in 2010", "Headquartered in Berlin", "Has 500 employees."</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> Maximum semantic precision; each chunk answers exactly one question; retrieval is very accurate.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> LLM inference required at index time (expensive); chunks lose surrounding narrative context.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> High-precision QA over structured factual content; small corpora where index build cost is acceptable.</p>
-</li>
-</ul>
-<hr />
-<h3 id="late-chunking">Late Chunking<a class="headerlink" href="#late-chunking" title="Permanent link">&para;</a></h3>
-<p>(Jina AI, 2024) Embed the full document first using a long-context encoder, then chunk the resulting <strong>token embeddings</strong> rather than the raw text. Each chunk's embeddings carry context from the surrounding document.</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> Chunks retain cross-chunk context; resolves co-reference ("it", "the company") within chunks; better retrieval for narrative documents.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> Requires a long-context embedding model; cannot be applied to corpora already indexed with standard chunking.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> Documents where context from earlier/later paragraphs is needed to interpret individual chunks (legal contracts, research papers, long-form articles).</p>
-</li>
-</ul>
-<hr />
-<h3 id="sliding-window-chunking">Sliding Window Chunking<a class="headerlink" href="#sliding-window-chunking" title="Permanent link">&para;</a></h3>
-<p>Overlapping windows slide across the document (e.g., 512-token window, 256-token stride).</p>
-<ul>
-<li>
-<p><strong>Pros:</strong> Preserves cross-boundary context; reduces information loss at chunk edges.</p>
-</li>
-<li>
-<p><strong>Cons:</strong> Doubles or more the index size; higher storage and retrieval cost; redundant embeddings.</p>
-</li>
-<li>
-<p><strong>Use when:</strong> Long-form documents; multi-hop reasoning tasks; cases where boundary loss is critical.</p>
-</li>
-</ul>
-<hr />
-<hr />
-<h2 id="4-chunk-size-and-top-k-are-coupled">4 Chunk Size and Top-k Are Coupled<a class="headerlink" href="#4-chunk-size-and-top-k-are-coupled" title="Permanent link">&para;</a></h2>
-<p>Changing chunk size almost always requires adjusting top-k. <strong>They must be tuned jointly.</strong></p>
+<h1 id="agent-fundamentals">Agent Fundamentals<a class="headerlink" href="#agent-fundamentals" title="Permanent link">&para;</a></h1>
+<h2 id="1-what-is-an-llm-agent">1. What Is an LLM Agent?<a class="headerlink" href="#1-what-is-an-llm-agent" title="Permanent link">&para;</a></h2>
+<p>An <strong>LLM agent</strong> is a system that uses a language model as its reasoning engine to autonomously plan and execute multi-step tasks by choosing and calling external tools, observing their results, and deciding on subsequent actions — rather than just generating a single text response.</p>
+<p>The key distinction from a plain LLM call:</p>
 <table>
 <thead>
 <tr>
-<th>Chunk Size</th>
-<th>Typical Top-k</th>
-<th>Behaviour</th>
+<th>Plain LLM</th>
+<th>LLM Agent</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Small (100–300 tokens)</td>
-<td>High (10–20)</td>
-<td>High recall, lower precision — many fragments retrieved</td>
+<td>Single input → single output</td>
+<td>Iterative: reason → act → observe → reason</td>
 </tr>
 <tr>
-<td>Medium (300–700 tokens)</td>
-<td>Medium (4–8)</td>
-<td>Balanced — good default starting point</td>
+<td>No external state</td>
+<td>Maintains state across steps</td>
 </tr>
 <tr>
-<td>Large (700–1500 tokens)</td>
-<td>Low (1–3)</td>
-<td>High precision, risk of missing relevant info</td>
+<td>No tool access</td>
+<td>Calls tools (APIs, search, code, databases)</td>
+</tr>
+<tr>
+<td>Deterministic flow</td>
+<td>Plans dynamically at runtime</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Common failure patterns:</strong></p>
+<p>An agent can be thought of as a loop:</p>
+<div class="highlight"><pre><span></span><code>while not done:
+    thought = LLM.reason(current_state, history, tools)
+    if thought.requires_tool:
+        result = tool.call(thought.tool_name, thought.args)
+        history.append(result)
+    else:
+        return thought.final_answer
+</code></pre></div>
+<hr />
+<h2 id="2-core-components-of-an-agent">2. Core Components of an Agent<a class="headerlink" href="#2-core-components-of-an-agent" title="Permanent link">&para;</a></h2>
+<p>Every LLM agent has five logical components:</p>
+<h3 id="21-brain-llm">2.1 Brain (LLM)<a class="headerlink" href="#21-brain-llm" title="Permanent link">&para;</a></h3>
+<p>The language model that performs reasoning, planning, and decision-making. It decides <em>what to do next</em> at each step.</p>
+<h3 id="22-memory">2.2 Memory<a class="headerlink" href="#22-memory" title="Permanent link">&para;</a></h3>
+<p>State maintained across steps. May include:</p>
 <ul>
 <li>
-<p>Small chunks + low top-k → missing required information</p>
+<p><strong>In-context (working) memory</strong> — the current conversation/scratchpad</p>
 </li>
 <li>
-<p>Large chunks + high top-k → context overload and noise</p>
+<p><strong>External memory</strong> — a vector store or database for long-term recall
+(See <code>memory_systems.md</code> for full taxonomy.)</p>
+</li>
+</ul>
+<h3 id="23-tools">2.3 Tools<a class="headerlink" href="#23-tools" title="Permanent link">&para;</a></h3>
+<p>External capabilities the LLM can invoke. Examples:</p>
+<ul>
+<li>
+<p>Web search (Tavily, Brave Search API)</p>
 </li>
 <li>
-<p>Large chunks + low top-k → partial coverage</p>
+<p>Code execution (Python REPL, sandboxed environments)</p>
+</li>
+<li>
+<p>Database queries (SQL, vector stores)</p>
+</li>
+<li>
+<p>API calls (weather, calendar, email)</p>
+</li>
+<li>
+<p>File read/write</p>
+</li>
+</ul>
+<h3 id="24-planning">2.4 Planning<a class="headerlink" href="#24-planning" title="Permanent link">&para;</a></h3>
+<p>The strategy for decomposing a goal into steps. May be reactive (ReAct) or deliberative (MCTS, hierarchical).
+(See <code>planning.md</code> for full coverage.)</p>
+<h3 id="25-action-space">2.5 Action Space<a class="headerlink" href="#25-action-space" title="Permanent link">&para;</a></h3>
+<p>The set of allowed actions (tools) the agent can take. Defines the scope of what the agent can do and is the primary safety control point.</p>
+<hr />
+<h2 id="3-tool-use-and-function-calling">3. Tool Use and Function Calling<a class="headerlink" href="#3-tool-use-and-function-calling" title="Permanent link">&para;</a></h2>
+<h3 id="function-calling-structured-tool-use">Function Calling (Structured Tool Use)<a class="headerlink" href="#function-calling-structured-tool-use" title="Permanent link">&para;</a></h3>
+<p>Modern LLMs natively support function calling: given a set of function definitions (in JSON schema), the model can emit a structured call instead of plain text.</p>
+<p><strong>Example schema passed to the model:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;search_web&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Search the web for recent information&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Search query&quot;</span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;max_results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Model output (instead of plain text):</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tool_call&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;search_web&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RAG latest benchmarks 2025&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;max_results&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>The calling framework executes the function and returns the result back to the model as a tool message.</p>
+<h3 id="key-design-decisions-for-tool-schemas">Key Design Decisions for Tool Schemas<a class="headerlink" href="#key-design-decisions-for-tool-schemas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Names must be descriptive</strong> — the model uses the name and description to decide when to call the tool.</p>
+</li>
+<li>
+<p><strong>Avoid overlap</strong> — two tools with similar descriptions cause the model to choose incorrectly.</p>
+</li>
+<li>
+<p><strong>Required vs optional parameters</strong> — only mark parameters required if the tool genuinely cannot run without them.</p>
+</li>
+<li>
+<p><strong>Return format</strong> — keep tool returns concise and structured; avoid dumping 10KB of raw HTML.</p>
 </li>
 </ul>
 <hr />
-<hr />
-<h2 id="5-chunk-overlap">5 Chunk Overlap<a class="headerlink" href="#5-chunk-overlap" title="Permanent link">&para;</a></h2>
-<p>Overlap (sharing tokens between adjacent chunks) prevents information loss at chunk boundaries.</p>
-<p><strong>Typical settings:</strong></p>
+<h2 id="4-the-react-pattern">4. The ReAct Pattern<a class="headerlink" href="#4-the-react-pattern" title="Permanent link">&para;</a></h2>
+<p><strong>ReAct (Reason + Act)</strong> (Yao et al., 2022) is the foundational pattern for most production agents. The model interleaves <em>Thought</em>, <em>Action</em>, and <em>Observation</em> steps before producing a final answer.</p>
+<div class="highlight"><pre><span></span><code>Thought: I need to find the current CEO of OpenAI.
+Action: search_web(&quot;current CEO of OpenAI 2025&quot;)
+Observation: Sam Altman is the CEO of OpenAI as of 2025.
+Thought: I have the answer.
+Answer: Sam Altman.
+</code></pre></div>
+<p><strong>Why ReAct works:</strong></p>
 <ul>
 <li>
-<p>Fixed-size chunking: 10–20% overlap</p>
+<p>The <em>Thought</em> step forces the model to reason explicitly before acting (reduces impulsive wrong tool calls).</p>
 </li>
 <li>
-<p>Sliding window: stride equals 50% of window size</p>
+<p><em>Observations</em> ground the model in real retrieved information, reducing hallucination.</p>
 </li>
 <li>
-<p>Recursive chunking: overlap often unnecessary</p>
+<p>The loop allows self-correction: if an observation is unexpected, the next thought can adapt.</p>
 </li>
 </ul>
-<p><strong>Benefits:</strong> Improved recall; reduced boundary effects.</p>
-<p><strong>Costs:</strong> Larger index; higher storage and retrieval cost; redundant embeddings.</p>
-<blockquote>
-<p>Overlap is a mitigation strategy, not a substitute for good chunking design.</p>
-</blockquote>
-<hr />
-<hr />
-<h2 id="6-chunk-metadata-and-filtering">6 Chunk Metadata and Filtering<a class="headerlink" href="#6-chunk-metadata-and-filtering" title="Permanent link">&para;</a></h2>
-<p>Attaching structured metadata to each chunk enables filtering before or after similarity search — one of the highest-ROI improvements in a vanilla RAG system.</p>
-<p><strong>Common metadata fields:</strong> document ID, section heading, timestamp/version, author, content type, access permissions.</p>
-<p><strong>How it's used:</strong></p>
+<p><strong>Limitations of vanilla ReAct:</strong></p>
 <ul>
 <li>
-<p>Pre-filter by document type, date, or access permission before ANN search (faster, but risks reducing recall if over-filtered).</p>
+<p>Linear chain — no backtracking if a tool call fails.</p>
 </li>
 <li>
-<p>Post-filter after ANN search (preserves recall, wastes compute on irrelevant candidates).</p>
-</li>
-</ul>
-<p><strong>Example:</strong> Retrieve only chunks from documents created after a certain date, or from a specific product version.</p>
-<hr />
-<hr />
-<h2 id="7-special-cases-tables-and-code">7 Special Cases: Tables and Code<a class="headerlink" href="#7-special-cases-tables-and-code" title="Permanent link">&para;</a></h2>
-<p>Text-centric chunking destroys the structure of tables and source code.</p>
-<p><strong>Tables:</strong></p>
-<ul>
-<li>
-<p>Never split a table row across chunks.</p>
+<p>No exploration — takes the first plausible path.</p>
 </li>
 <li>
-<p>Attach the table schema and column headers as metadata to every row-chunk.</p>
-</li>
-<li>
-<p>Consider serialising rows to natural language for embedding.</p>
-</li>
-</ul>
-<p><strong>Code:</strong></p>
-<ul>
-<li>
-<p>Chunk at function or class boundaries — never split a function across chunks.</p>
-</li>
-<li>
-<p>File-level chunking for small files is acceptable.</p>
-</li>
-<li>
-<p>Long-range dependencies mean that smaller granularity (line-level) loses context.</p>
+<p>Prone to getting stuck in tool-call loops.</p>
 </li>
 </ul>
 <hr />
-<hr />
-<h2 id="8-adaptive-chunking">8 Adaptive Chunking<a class="headerlink" href="#8-adaptive-chunking" title="Permanent link">&para;</a></h2>
-<p>Different queries require different granularity. A single static chunking strategy cannot optimally serve all query types.</p>
+<h2 id="5-agent-types-by-autonomy">5. Agent Types by Autonomy<a class="headerlink" href="#5-agent-types-by-autonomy" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Query Type</th>
-<th>Preferred Chunking</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Fact lookup</td>
-<td>Small chunks</td>
+<td><strong>Single-step</strong></td>
+<td>One LLM call + one tool call</td>
+<td>Simple QA with web search</td>
 </tr>
 <tr>
-<td>Concept explanation</td>
-<td>Medium chunks</td>
+<td><strong>Multi-step (ReAct)</strong></td>
+<td>Iterative reason-act-observe loop</td>
+<td>Research agent</td>
 </tr>
 <tr>
-<td>Procedural steps</td>
-<td>Large chunks</td>
+<td><strong>Plan-and-execute</strong></td>
+<td>First generate a full plan, then execute steps</td>
+<td>Complex report generation</td>
 </tr>
 <tr>
-<td>Multi-hop reasoning</td>
-<td>Overlapping or sliding window</td>
+<td><strong>Multi-agent</strong></td>
+<td>Multiple specialized agents collaborating</td>
+<td>Orchestrator + researcher + writer</td>
+</tr>
+<tr>
+<td><strong>Autonomous (long-horizon)</strong></td>
+<td>Runs for hours/days with minimal human input</td>
+<td>Coding agent on a multi-day task</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Adaptive approach:</strong> Maintain multiple indexes with different chunk sizes and select based on query classification. Higher accuracy, but more system complexity.</p>
 <hr />
+<h2 id="6-agentic-vs-non-agentic-rag">6. Agentic vs. Non-Agentic RAG<a class="headerlink" href="#6-agentic-vs-non-agentic-rag" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Standard RAG</th>
+<th>Agentic RAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retrieval decisions</td>
+<td>Fixed: always retrieve</td>
+<td>Dynamic: agent decides if/when to retrieve</td>
+</tr>
+<tr>
+<td>Query strategy</td>
+<td>Single query</td>
+<td>Multi-query, iterative, decomposed</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>None</td>
+<td>Agent verifies, retries if needed</td>
+</tr>
+<tr>
+<td>Tool access</td>
+<td>Only retrieval</td>
+<td>Retrieval + search + code + APIs</td>
+</tr>
+<tr>
+<td>Multi-hop</td>
+<td>Not supported natively</td>
+<td>Supported via iterative retrieval</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="9-interview-questions">9 Interview Questions<a class="headerlink" href="#9-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do you choose the right chunk size?</strong></p>
-<p>A: Consider three factors: (1) the embedding model's effective range — some models degrade with very long inputs; (2) the user's query style — short factual queries need small chunks, summary queries need larger ones; (3) the "lost in the middle" phenomenon — LLMs often miss information buried in the middle of long context windows. Start with medium chunks (400–600 tokens) and evaluate retrieval recall before optimising.</p>
+<h2 id="7-production-agent-architecture">7. Production Agent Architecture<a class="headerlink" href="#7-production-agent-architecture" title="Permanent link">&para;</a></h2>
+<p>A production agent is more than a loop. It includes:</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────┐
+│                    Orchestrator                       │
+│  ┌──────────┐  ┌──────────┐  ┌────────────────────┐ │
+│  │  Planner │  │  Memory  │  │   Tool Registry    │ │
+│  │  (LLM)   │  │ (vector  │  │  - search          │ │
+│  │          │  │  store + │  │  - code_exec       │ │
+│  │          │  │  episodic│  │  - db_query        │ │
+│  └──────────┘  └──────────┘  │  - file_io         │ │
+│                               └────────────────────┘ │
+│  ┌───────────────────────────────────────────────┐   │
+│  │              Guardrails Layer                  │   │
+│  │  Input validation | Output filtering           │   │
+│  │  Budget limits | Safety classifiers            │   │
+│  └───────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────┘
+</code></pre></div>
 <hr />
-<p><strong>Q: What is the "lost in the middle" problem?</strong></p>
-<p>A: LLMs tend to pay more attention to content at the beginning and end of their context window, and less to content in the middle. This means that if you inject many large chunks into the prompt, relevant information buried in the middle may be ignored. Solutions include re-ordering retrieved chunks (most relevant first/last) and using smaller chunks with higher top-k.</p>
+<h2 id="8-interview-questions">8. Interview Questions<a class="headerlink" href="#8-interview-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What is the difference between an LLM and an LLM agent?</strong></p>
+<p>A: An LLM takes a fixed input and produces a single output. An agent uses an LLM as its reasoning core but wraps it in a loop that can call external tools, observe their results, and dynamically decide the next step — repeating until the task is complete. An LLM answers "What is the weather?" in one shot; an agent calls a weather API, parses the result, and formats a response.</p>
 <hr />
-<p><strong>Q: Why is overlap used, and what are its costs?</strong></p>
-<p>A: Overlap ensures that information near chunk boundaries appears in at least one chunk in its full context. The cost is index bloat: overlapping chunks produce redundant embeddings, increasing storage and retrieval compute. Overlap is a safety net, not a primary strategy.</p>
+<p><strong>Q: What is ReAct and why is it the dominant agent pattern?</strong></p>
+<p>A: ReAct (Reason + Act) interleaves reasoning traces (<em>Thought</em>) with tool calls (<em>Action</em>) and their results (<em>Observation</em>). It's dominant because it combines the explicit reasoning benefits of chain-of-thought with the grounding benefits of tool use. The thought step prevents impulsive wrong actions; observations reduce hallucination by anchoring the model in real retrieved data.</p>
 <hr />
-<p><strong>Q: How would you chunk a large PDF with tables and diagrams?</strong></p>
-<p>A: Parse the PDF with a structure-aware tool to extract text, tables, and metadata separately. Chunk the text recursively. Serialise tables (e.g., to CSV or natural language rows) and attach the table schema as metadata. For diagrams, use a vision model to generate textual descriptions, then chunk those. Tag each chunk with its source section and content type for filtered retrieval.</p>
+<p><strong>Q: How does function calling work at the API level?</strong></p>
+<p>A: The caller passes a list of tool schemas (JSON with name, description, parameters) alongside the user message. If the model decides a tool call is needed, instead of generating text it emits a structured JSON object specifying the tool name and arguments. The calling framework executes the tool and appends the result as a <em>tool message</em> back to the conversation. The model then continues generating.</p>
 <hr />
-<p><strong>Q: What happens if you use the wrong chunk size for your embedding model?</strong></p>
-<p>A: If chunks exceed the model's effective input window, the encoder either truncates them (losing information) or the quality of the embedding degrades because the model cannot attend properly to all tokens. If chunks are much smaller than what the model is trained on, you lose context and the embedding may not capture full meaning. Always check your embedding model's recommended input range.</p>
+<p><strong>Q: What are the risks of giving an agent access to many tools?</strong></p>
+<p>A: Three main risks: (1) <strong>Tool confusion</strong> — overlapping tool descriptions cause wrong tool selection, compounding errors; (2) <strong>Expanded attack surface</strong> — more tools means more ways prompt injection or adversarial inputs can cause harmful actions; (3) <strong>Increased latency and cost</strong> — each tool call adds latency and token usage. Best practice: give agents the minimum tool set needed for the task (principle of least privilege).</p>
 <hr />
+<p><strong>Q: What is the difference between plan-and-execute and ReAct agents?</strong></p>
+<p>A: ReAct is reactive — it decides the next action at each step based on the latest observation. Plan-and-execute first generates a complete plan (all steps), then executes them sequentially or in parallel. Plan-and-execute is better for tasks with known structure; ReAct is better when the path is uncertain and depends on intermediate results.</p>
 
 
 

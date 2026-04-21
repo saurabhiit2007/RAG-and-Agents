@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -19,22 +19,19 @@
         <link rel="next" href="../sentence_transformers/">
       
       
-        
-      
-      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Splade - RAG & Context Engineering</title>
+        <title>Splade - RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -59,6 +56,7 @@
 
     
     
+    
   </head>
   
   
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#splade-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +225,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -262,14 +260,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -302,14 +295,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -318,11 +306,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -338,14 +322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -366,14 +345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -394,14 +368,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -422,14 +391,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -450,14 +414,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -478,14 +437,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -506,14 +460,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -534,14 +483,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -562,14 +506,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -603,14 +542,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -619,11 +553,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -639,14 +569,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -667,14 +592,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -696,20 +616,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -720,14 +637,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -738,6 +650,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -746,275 +660,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#scoring-function" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      Scoring Function
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-core-idea-behind-splade" class="md-nav__link">
+  <a href="#pipeline-at-a-glance" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Core Idea Behind SPLADE
-      
+      Pipeline at a Glance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-how-splade-works" class="md-nav__link">
+  <a href="#term-expansion-example" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3. How SPLADE Works
-      
+      Term Expansion Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-input-text" class="md-nav__link">
+  <a href="#splade-vs-bm25-vs-dense" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 1: Input Text
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-transformer-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Transformer Encoding
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-vocabulary-level-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Vocabulary Level Scoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-non-linearity-and-sparsification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Non Linearity and Sparsification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-sparse-vector-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Sparse Vector Representation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-indexing-with-inverted-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Indexing with Inverted Index
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-query-processing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Query Processing
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-retrieval-and-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8: Retrieval and Scoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-works-better-than-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Works Better Than BM25
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learned-term-weights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learned Term Weights
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#semantic-expansion-without-dense-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Semantic Expansion Without Dense Vectors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sparsity-preserves-efficiency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sparsity Preserves Efficiency
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mental-model-for-interviews" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mental Model for Interviews
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-splade-scoring-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. SPLADE Scoring Function
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-learned-term-expansion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Learned Term Expansion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-where-splade-is-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Where SPLADE Is Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-strengths-of-splade" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Strengths of SPLADE
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-splade-vs-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. SPLADE vs BM25
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-splade-in-modern-rag-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. SPLADE in Modern RAG Pipelines
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. Interview Perspective
-      
+      SPLADE vs BM25 vs Dense
     </span>
   </a>
   
@@ -1041,14 +716,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1078,20 +748,290 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1116,6 +1056,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1124,275 +1066,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#scoring-function" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      Scoring Function
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-core-idea-behind-splade" class="md-nav__link">
+  <a href="#pipeline-at-a-glance" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Core Idea Behind SPLADE
-      
+      Pipeline at a Glance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-how-splade-works" class="md-nav__link">
+  <a href="#term-expansion-example" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3. How SPLADE Works
-      
+      Term Expansion Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-input-text" class="md-nav__link">
+  <a href="#splade-vs-bm25-vs-dense" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 1: Input Text
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-transformer-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Transformer Encoding
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-vocabulary-level-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Vocabulary Level Scoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-non-linearity-and-sparsification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Non Linearity and Sparsification
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-sparse-vector-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Sparse Vector Representation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-indexing-with-inverted-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Indexing with Inverted Index
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-query-processing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Query Processing
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-retrieval-and-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8: Retrieval and Scoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-works-better-than-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Works Better Than BM25
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learned-term-weights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learned Term Weights
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#semantic-expansion-without-dense-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Semantic Expansion Without Dense Vectors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sparsity-preserves-efficiency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sparsity Preserves Efficiency
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mental-model-for-interviews" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mental Model for Interviews
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-splade-scoring-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. SPLADE Scoring Function
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-learned-term-expansion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Learned Term Expansion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-where-splade-is-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Where SPLADE Is Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-strengths-of-splade" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Strengths of SPLADE
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-splade-vs-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. SPLADE vs BM25
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-splade-in-modern-rag-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        11. SPLADE in Modern RAG Pipelines
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#12-interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        12. Interview Perspective
-      
+      SPLADE vs BM25 vs Dense
     </span>
   </a>
   
@@ -1408,7 +1111,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1418,234 +1120,90 @@
   
 
 
-  <h1>Splade</h1>
-
-<h3 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h3>
-<p>SPLADE (Sparse Lexical and Expansion Model) is a sparse neural retrieval model that combines the strengths of traditional lexical methods like BM25 with the semantic generalization of neural models. It produces sparse, interpretable representations while enabling semantic term expansion using pretrained language models.</p>
-<p>SPLADE is especially popular in modern retrieval and RAG systems as a drop in replacement or complement to BM25.</p>
-<hr />
-<h3 id="2-core-idea-behind-splade">2. Core Idea Behind SPLADE<a class="headerlink" href="#2-core-idea-behind-splade" title="Permanent link">&para;</a></h3>
-<p>Classical sparse retrievers rely on exact term overlap. Dense retrievers capture semantics but lose interpretability and efficiency of inverted indexes.</p>
-<p>SPLADE bridges this gap by:</p>
+<h1 id="splade-reference">SPLADE Reference<a class="headerlink" href="#splade-reference" title="Permanent link">&para;</a></h1>
+<p>SPLADE is covered in depth in <a href="../../retrieval_methods/">Retrieval Methods</a>. This page is a compact math and mechanics reference.</p>
+<h2 id="scoring-function">Scoring Function<a class="headerlink" href="#scoring-function" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Score(t) = max_over_positions [ log(1 + ReLU(logit_t)) ]
+</code></pre></div>
 <ul>
-<li>Using a transformer encoder to generate sparse vectors</li>
-<li>Expanding queries and documents with semantically related terms</li>
-<li>Keeping representations compatible with inverted indexes</li>
+<li><strong>ReLU</strong> — removes negative scores (enforces non-negativity)</li>
+<li><strong>log(1 + x)</strong> — compresses large activations, controls sparsity</li>
+<li><strong>max pooling</strong> — takes the highest score across all token positions for term t</li>
 </ul>
-<p>Each document and query is represented as a weighted bag of vocabulary terms, where weights are learned rather than hand engineered.</p>
-<hr />
-<h3 id="3-how-splade-works">3. How SPLADE Works<a class="headerlink" href="#3-how-splade-works" title="Permanent link">&para;</a></h3>
-<h3 id="step-1-input-text">Step 1: Input Text<a class="headerlink" href="#step-1-input-text" title="Permanent link">&para;</a></h3>
-<p>SPLADE processes text in the same way as standard transformer models.</p>
-<p><strong>Example document:</strong> "Neural retrieval models improve search quality"</p>
-<p><strong>Example query:</strong> "better search models"</p>
-<p>Both documents and queries go through the same pipeline.</p>
-<h3 id="step-2-transformer-encoding">Step 2: Transformer Encoding<a class="headerlink" href="#step-2-transformer-encoding" title="Permanent link">&para;</a></h3>
-<p>The input text is passed through a masked language model such as BERT.</p>
-<p>The model outputs contextualized embeddings for each token. Unlike dense retrieval, SPLADE does not pool these embeddings into a single dense vector.</p>
-<p>Instead, it projects them into the <strong>vocabulary space</strong>.</p>
-<h3 id="step-3-vocabulary-level-scoring">Step 3: Vocabulary Level Scoring<a class="headerlink" href="#step-3-vocabulary-level-scoring" title="Permanent link">&para;</a></h3>
-<p>For each token position, the model produces a score for every term in the vocabulary.</p>
-<p>Conceptually, the model answers:</p>
-<blockquote>
-<p>Which vocabulary terms are relevant to this text, even if they do not appear explicitly?</p>
-</blockquote>
-<p><strong>Example high scoring terms for the document might be:</strong> neural, retrieval, search, information, ranking, models</p>
-<p>This is where semantic expansion happens.</p>
-<h3 id="step-4-non-linearity-and-sparsification">Step 4: Non Linearity and Sparsification<a class="headerlink" href="#step-4-non-linearity-and-sparsification" title="Permanent link">&para;</a></h3>
-<p>Raw scores are transformed using:</p>
-<ul>
-<li>ReLU to remove negative values</li>
-<li>Log scaling to control large activations</li>
-</ul>
-<p>Then, <strong>max pooling across token positions</strong> is applied.</p>
-<p>This results in:
-- One score per vocabulary term
-- Many terms having zero weight</p>
-<p>Only the most relevant terms remain active.</p>
-<h3 id="step-5-sparse-vector-representation">Step 5: Sparse Vector Representation<a class="headerlink" href="#step-5-sparse-vector-representation" title="Permanent link">&para;</a></h3>
-<p>The final output is a sparse vector over the vocabulary.</p>
-<p>Example representation:
-{
-search: 2.1,
-retrieval: 1.8,
-neural: 1.5,
-ranking: 0.9
-}</p>
-<p>This representation:</p>
-<ul>
-<li>Is sparse like BM25</li>
-<li>Encodes semantics like neural models</li>
-<li>Is interpretable as weighted terms</li>
-</ul>
-<hr />
-<h3 id="step-6-indexing-with-inverted-index">Step 6: Indexing with Inverted Index<a class="headerlink" href="#step-6-indexing-with-inverted-index" title="Permanent link">&para;</a></h3>
-<p>Each non-zero term is added to an inverted index.</p>
-<p>For each term, the index stores:</p>
-<ul>
-<li>Document IDs</li>
-<li>Term weights</li>
-</ul>
-<p>This allows fast retrieval using standard sparse indexing infrastructure.</p>
-<hr />
-<h3 id="step-7-query-processing">Step 7: Query Processing<a class="headerlink" href="#step-7-query-processing" title="Permanent link">&para;</a></h3>
-<p>Queries go through the exact same steps:</p>
-<ul>
-<li>Transformer encoding</li>
-<li>Vocabulary scoring</li>
-<li>Sparsification</li>
-<li>Sparse vector creation</li>
-</ul>
-<p>Example query expansion:</p>
-<p>"better search models"
-→ {search, retrieval, ranking, information}</p>
-<h3 id="step-8-retrieval-and-scoring">Step 8: Retrieval and Scoring<a class="headerlink" href="#step-8-retrieval-and-scoring" title="Permanent link">&para;</a></h3>
-<p>Document relevance is computed using a dot product between sparse query and document vectors.</p>
-<p>Only overlapping non zero terms contribute to the score, making retrieval efficient.</p>
-<p>Documents with strong lexical or semantic overlap score highest.</p>
-<h3 id="why-this-works-better-than-bm25">Why This Works Better Than BM25<a class="headerlink" href="#why-this-works-better-than-bm25" title="Permanent link">&para;</a></h3>
-<h3 id="learned-term-weights">Learned Term Weights<a class="headerlink" href="#learned-term-weights" title="Permanent link">&para;</a></h3>
-<p>BM25 uses hand crafted formulas.<br />
-SPLADE learns which terms matter directly from data.</p>
-<h3 id="semantic-expansion-without-dense-vectors">Semantic Expansion Without Dense Vectors<a class="headerlink" href="#semantic-expansion-without-dense-vectors" title="Permanent link">&para;</a></h3>
-<p>SPLADE can match:</p>
-<p>query: "car repair"
-document: "automobile maintenance"</p>
-<p>Even without exact word overlap.</p>
-<h3 id="sparsity-preserves-efficiency">Sparsity Preserves Efficiency<a class="headerlink" href="#sparsity-preserves-efficiency" title="Permanent link">&para;</a></h3>
-<p>Despite using transformers:</p>
-<ul>
-<li>Storage remains sparse</li>
-<li>Retrieval uses inverted indexes</li>
-<li>Latency stays manageable</li>
-</ul>
-<hr />
-<h3 id="mental-model-for-interviews">Mental Model for Interviews<a class="headerlink" href="#mental-model-for-interviews" title="Permanent link">&para;</a></h3>
-<p>Think of SPLADE as:</p>
-<blockquote>
-<p>BM25 where the term weights and expansions are learned by a language model instead of being manually designed.</p>
-</blockquote>
-<hr />
-<h3 id="4-splade-scoring-function">4. SPLADE Scoring Function<a class="headerlink" href="#4-splade-scoring-function" title="Permanent link">&para;</a></h3>
-<p>For a document or query, SPLADE computes:</p>
-<p>Score(t) = max over positions of log(1 + ReLU(logit(t)))</p>
-<p>Key properties:</p>
-<ul>
-<li>ReLU enforces non negativity</li>
-<li>Log scaling controls large activations</li>
-<li>Max pooling encourages sparse activation</li>
-</ul>
-<p>Only a small subset of vocabulary terms receive non-zero weights.</p>
-<hr />
-<h3 id="5-learned-term-expansion">5. Learned Term Expansion<a class="headerlink" href="#5-learned-term-expansion" title="Permanent link">&para;</a></h3>
-<p>Unlike BM25 or TF IDF, SPLADE can assign weight to terms that do not explicitly appear in the text.</p>
-<p>Example:</p>
-<ul>
-<li>Query: "car repair"</li>
-<li>Expanded terms: "automobile", "mechanic", "engine"</li>
-</ul>
-<p>This improves recall while preserving lexical matching behavior.</p>
-<hr />
-<h3 id="6-where-splade-is-used">6. Where SPLADE Is Used<a class="headerlink" href="#6-where-splade-is-used" title="Permanent link">&para;</a></h3>
-<p>SPLADE is commonly used in:</p>
-<ul>
-<li>Neural information retrieval</li>
-<li>Hybrid search systems</li>
-<li>RAG first stage retrieval</li>
-<li>Enterprise and domain specific search</li>
-<li>Large scale retrieval where dense vectors are costly</li>
-</ul>
-<p>It is especially useful when inverted index compatibility is required.</p>
-<hr />
-<h3 id="7-strengths-of-splade">7. Strengths of SPLADE<a class="headerlink" href="#7-strengths-of-splade" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Sparse and interpretable representations</li>
-<li>Semantic expansion improves recall</li>
-<li>Compatible with inverted indexes</li>
-<li>Strong performance compared to BM25</li>
-<li>Lower storage cost than dense embeddings</li>
-</ul>
-<p>SPLADE often outperforms BM25 without sacrificing efficiency.</p>
-<hr />
-<h3 id="8-limitations-and-caveats">8. Limitations and Caveats<a class="headerlink" href="#8-limitations-and-caveats" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Requires pretrained transformer models</li>
-<li>Higher indexing cost than BM25</li>
-<li>Vocabulary size affects memory usage</li>
-<li>Inference is slower than classical sparse methods</li>
-<li>Requires careful regularization to control sparsity</li>
-</ul>
-<p>Despite sparsity, SPLADE is still more expensive than purely lexical methods.</p>
-<hr />
-<h3 id="9-practical-considerations">9. Practical Considerations<a class="headerlink" href="#9-practical-considerations" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Regularization is critical to maintain sparsity</li>
-<li>Index size depends on vocabulary and pruning thresholds</li>
-<li>Query time expansion increases recall but adds latency</li>
-<li>Often combined with BM25 or dense retrievers</li>
-<li>Fine-tuning on domain data improves performance</li>
-</ul>
-<p>SPLADE is typically deployed where quality gains justify added complexity.</p>
-<hr />
-<h3 id="10-splade-vs-bm25">10. SPLADE vs BM25<a class="headerlink" href="#10-splade-vs-bm25" title="Permanent link">&para;</a></h3>
+<h2 id="pipeline-at-a-glance">Pipeline at a Glance<a class="headerlink" href="#pipeline-at-a-glance" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Input text
+  → BERT/MLM encoder
+  → For each token position: score all V vocabulary terms
+  → ReLU + log + max-pool across positions
+  → Sparse vector {term: weight, ...}  (most weights = 0)
+  → Store in standard inverted index
+</code></pre></div>
+<h2 id="term-expansion-example">Term Expansion Example<a class="headerlink" href="#term-expansion-example" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>BM25</th>
-<th>SPLADE</th>
+<th>Input</th>
+<th>Active terms after expansion</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Term weighting</td>
-<td>Hand crafted</td>
-<td>Learned</td>
+<td><code>"car repair"</code></td>
+<td>car, repair, automobile, mechanic, engine, maintenance</td>
 </tr>
 <tr>
-<td>Semantic expansion</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Sparsity</td>
-<td>Sparse</td>
-<td>Sparse</td>
-</tr>
-<tr>
-<td>Interpretability</td>
-<td>High</td>
-<td>Moderate</td>
-</tr>
-<tr>
-<td>Retrieval quality</td>
-<td>Strong</td>
-<td>Stronger</td>
+<td><code>"better search models"</code></td>
+<td>search, retrieval, ranking, model, information, query</td>
 </tr>
 </tbody>
 </table>
-<p>SPLADE can be viewed as a neural generalization of BM25.</p>
-<hr />
-<h3 id="11-splade-in-modern-rag-pipelines">11. SPLADE in Modern RAG Pipelines<a class="headerlink" href="#11-splade-in-modern-rag-pipelines" title="Permanent link">&para;</a></h3>
-<p>SPLADE is often used as:</p>
-<ul>
-<li>A semantic sparse retriever</li>
-<li>A complement to dense embeddings</li>
-<li>A first stage retriever before reranking</li>
-<li>A fallback when dense retrieval misses lexical matches</li>
-</ul>
-<p>Hybrid systems frequently combine SPLADE, BM25, and dense retrieval.</p>
-<hr />
-<h3 id="12-interview-perspective">12. Interview Perspective<a class="headerlink" href="#12-interview-perspective" title="Permanent link">&para;</a></h3>
-<p>For interviews, emphasize:</p>
-<ul>
-<li>Why SPLADE is still sparse despite being neural</li>
-<li>How learned term expansion improves recall</li>
-<li>Compatibility with inverted indexes</li>
-<li>Tradeoffs between BM25, SPLADE, and dense retrieval</li>
-<li>Its role in modern RAG architectures</li>
-</ul>
-<hr />
+<p>Documents containing <code>"automobile maintenance"</code> match query <code>"car repair"</code> even with zero word overlap.</p>
+<h2 id="splade-vs-bm25-vs-dense">SPLADE vs BM25 vs Dense<a class="headerlink" href="#splade-vs-bm25-vs-dense" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>BM25</th>
+<th>SPLADE</th>
+<th>Dense bi-encoder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Term weights</td>
+<td>Hand-crafted formula</td>
+<td>Learned by transformer</td>
+<td>N/A (dense vector)</td>
+</tr>
+<tr>
+<td>Semantic expansion</td>
+<td>None</td>
+<td>Yes (learned)</td>
+<td>Implicit</td>
+</tr>
+<tr>
+<td>Index type</td>
+<td>Inverted index</td>
+<td>Inverted index</td>
+<td>Vector index (ANN)</td>
+</tr>
+<tr>
+<td>Training needed</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Interpretable</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Mental model: <strong>SPLADE = BM25 with neural term weights and learned vocabulary expansion.</strong></p>
+</blockquote>
 
 
 
@@ -1700,11 +1258,10 @@ document: "automobile maintenance"</p>
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

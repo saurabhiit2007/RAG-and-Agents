@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -19,22 +19,19 @@
         <link rel="next" href="../reranking/">
       
       
-        
-      
-      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Indexing Strategies, Vector Databases, and Retrieval Systems for RAG - RAG & Context Engineering</title>
+        <title>Indexing Strategies, Vector Databases, and Retrieval Systems for RAG - RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,6 +54,7 @@
     
       
 
+    
     
     
   </head>
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +225,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -262,14 +260,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -302,14 +295,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -318,11 +306,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -338,14 +322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -366,14 +345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -394,14 +368,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -422,14 +391,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -457,14 +421,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -475,14 +434,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -503,9 +457,7 @@
         <li class="md-nav__item">
   <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      1. Overview
     </span>
   </a>
   
@@ -514,9 +466,7 @@
         <li class="md-nav__item">
   <a href="#2-flat-index-exact-search" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Flat Index (Exact Search)
-      
+      2. Flat Index (Exact Search)
     </span>
   </a>
   
@@ -525,9 +475,7 @@
         <li class="md-nav__item">
   <a href="#3-approximate-nearest-neighbor-ann-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3 Approximate Nearest Neighbor (ANN) Indexes
-      
+      3 Approximate Nearest Neighbor (ANN) Indexes
     </span>
   </a>
   
@@ -537,9 +485,7 @@
           <li class="md-nav__item">
   <a href="#hnsw-hierarchical-navigable-small-world" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        HNSW (Hierarchical Navigable Small World)
-      
+      HNSW (Hierarchical Navigable Small World)
     </span>
   </a>
   
@@ -548,9 +494,7 @@
           <li class="md-nav__item">
   <a href="#ivf-inverted-file-index" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        IVF (Inverted File Index)
-      
+      IVF (Inverted File Index)
     </span>
   </a>
   
@@ -559,9 +503,7 @@
           <li class="md-nav__item">
   <a href="#product-quantization-pq" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Product Quantization (PQ)
-      
+      Product Quantization (PQ)
     </span>
   </a>
   
@@ -570,9 +512,7 @@
           <li class="md-nav__item">
   <a href="#ann-index-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ANN Index Comparison
-      
+      ANN Index Comparison
     </span>
   </a>
   
@@ -586,9 +526,7 @@
         <li class="md-nav__item">
   <a href="#4-sparse-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        4. Sparse Indexes
-      
+      4. Sparse Indexes
     </span>
   </a>
   
@@ -597,9 +535,7 @@
         <li class="md-nav__item">
   <a href="#5-hybrid-indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        5. Hybrid Indexing
-      
+      5. Hybrid Indexing
     </span>
   </a>
   
@@ -608,9 +544,7 @@
         <li class="md-nav__item">
   <a href="#6-vector-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        6. Vector Databases
-      
+      6. Vector Databases
     </span>
   </a>
   
@@ -619,9 +553,7 @@
         <li class="md-nav__item">
   <a href="#7-metadata-filtering" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        7. Metadata Filtering
-      
+      7. Metadata Filtering
     </span>
   </a>
   
@@ -630,9 +562,7 @@
         <li class="md-nav__item">
   <a href="#8-multi-tenant-rag-and-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        8. Multi-Tenant RAG and Access Control
-      
+      8. Multi-Tenant RAG and Access Control
     </span>
   </a>
   
@@ -641,9 +571,7 @@
         <li class="md-nav__item">
   <a href="#9-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        9. Interview Questions
-      
+      9. Interview Questions
     </span>
   </a>
   
@@ -670,14 +598,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -698,14 +621,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -726,14 +644,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -754,14 +667,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -795,14 +703,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -811,11 +714,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -831,14 +730,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -859,14 +753,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -887,14 +776,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -915,14 +799,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
-  
   
 
       </a>
@@ -952,20 +831,290 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1000,9 +1149,7 @@
         <li class="md-nav__item">
   <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      1. Overview
     </span>
   </a>
   
@@ -1011,9 +1158,7 @@
         <li class="md-nav__item">
   <a href="#2-flat-index-exact-search" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Flat Index (Exact Search)
-      
+      2. Flat Index (Exact Search)
     </span>
   </a>
   
@@ -1022,9 +1167,7 @@
         <li class="md-nav__item">
   <a href="#3-approximate-nearest-neighbor-ann-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3 Approximate Nearest Neighbor (ANN) Indexes
-      
+      3 Approximate Nearest Neighbor (ANN) Indexes
     </span>
   </a>
   
@@ -1034,9 +1177,7 @@
           <li class="md-nav__item">
   <a href="#hnsw-hierarchical-navigable-small-world" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        HNSW (Hierarchical Navigable Small World)
-      
+      HNSW (Hierarchical Navigable Small World)
     </span>
   </a>
   
@@ -1045,9 +1186,7 @@
           <li class="md-nav__item">
   <a href="#ivf-inverted-file-index" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        IVF (Inverted File Index)
-      
+      IVF (Inverted File Index)
     </span>
   </a>
   
@@ -1056,9 +1195,7 @@
           <li class="md-nav__item">
   <a href="#product-quantization-pq" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Product Quantization (PQ)
-      
+      Product Quantization (PQ)
     </span>
   </a>
   
@@ -1067,9 +1204,7 @@
           <li class="md-nav__item">
   <a href="#ann-index-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ANN Index Comparison
-      
+      ANN Index Comparison
     </span>
   </a>
   
@@ -1083,9 +1218,7 @@
         <li class="md-nav__item">
   <a href="#4-sparse-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        4. Sparse Indexes
-      
+      4. Sparse Indexes
     </span>
   </a>
   
@@ -1094,9 +1227,7 @@
         <li class="md-nav__item">
   <a href="#5-hybrid-indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        5. Hybrid Indexing
-      
+      5. Hybrid Indexing
     </span>
   </a>
   
@@ -1105,9 +1236,7 @@
         <li class="md-nav__item">
   <a href="#6-vector-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        6. Vector Databases
-      
+      6. Vector Databases
     </span>
   </a>
   
@@ -1116,9 +1245,7 @@
         <li class="md-nav__item">
   <a href="#7-metadata-filtering" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        7. Metadata Filtering
-      
+      7. Metadata Filtering
     </span>
   </a>
   
@@ -1127,9 +1254,7 @@
         <li class="md-nav__item">
   <a href="#8-multi-tenant-rag-and-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        8. Multi-Tenant RAG and Access Control
-      
+      8. Multi-Tenant RAG and Access Control
     </span>
   </a>
   
@@ -1138,9 +1263,7 @@
         <li class="md-nav__item">
   <a href="#9-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        9. Interview Questions
-      
+      9. Interview Questions
     </span>
   </a>
   
@@ -1156,7 +1279,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1175,9 +1297,15 @@
 <h2 id="2-flat-index-exact-search">2. Flat Index (Exact Search)<a class="headerlink" href="#2-flat-index-exact-search" title="Permanent link">&para;</a></h2>
 <p>Computes similarity against every vector in the database. Recall is perfect by definition — no approximation.</p>
 <ul>
-<li><strong>Pros:</strong> Exact results; simple implementation; deterministic.</li>
-<li><strong>Cons:</strong> Linear search time — O(N) per query; unusable in production for large corpora.</li>
-<li><strong>Use when:</strong> Small datasets (up to ~100k vectors); offline ground-truth benchmarking; evaluating other indexes.</li>
+<li>
+<p><strong>Pros:</strong> Exact results; simple implementation; deterministic.</p>
+</li>
+<li>
+<p><strong>Cons:</strong> Linear search time — O(N) per query; unusable in production for large corpora.</p>
+</li>
+<li>
+<p><strong>Use when:</strong> Small datasets (up to ~100k vectors); offline ground-truth benchmarking; evaluating other indexes.</p>
+</li>
 </ul>
 <hr />
 <hr />
@@ -1187,8 +1315,12 @@
 <p>Builds a multi-layer graph where each node connects to similar vectors. Search starts at higher (coarser) layers and progressively refines through lower (finer) layers. The "navigable small world" property ensures short paths between any two nodes in the graph.</p>
 <p><strong>How it works:</strong></p>
 <ul>
-<li>During indexing, each new vector is inserted into multiple layers, with connections to its nearest neighbours at each layer.</li>
-<li>During search, the algorithm enters at the top layer (fewest nodes), greedily navigates to the nearest centroid, then descends layer by layer for increasing refinement.</li>
+<li>
+<p>During indexing, each new vector is inserted into multiple layers, with connections to its nearest neighbours at each layer.</p>
+</li>
+<li>
+<p>During search, the algorithm enters at the top layer (fewest nodes), greedily navigates to the nearest centroid, then descends layer by layer for increasing refinement.</p>
+</li>
 </ul>
 <table>
 <thead>
@@ -1214,9 +1346,15 @@
 </table>
 <p><strong>Key parameters:</strong></p>
 <ul>
-<li><code>M</code> — number of connections per node. Higher M → better recall, more memory.</li>
-<li><code>ef_construction</code> — search width during index build. Higher → better index quality, slower build.</li>
-<li><code>ef_search</code> — search width at query time. Higher → better recall, slower queries.</li>
+<li>
+<p><code>M</code> — number of connections per node. Higher M → better recall, more memory.</p>
+</li>
+<li>
+<p><code>ef_construction</code> — search width during index build. Higher → better index quality, slower build.</p>
+</li>
+<li>
+<p><code>ef_search</code> — search width at query time. Higher → better recall, slower queries.</p>
+</li>
 </ul>
 <hr />
 <h3 id="ivf-inverted-file-index">IVF (Inverted File Index)<a class="headerlink" href="#ivf-inverted-file-index" title="Permanent link">&para;</a></h3>
@@ -1246,16 +1384,26 @@
 </table>
 <p><strong>Key parameters:</strong></p>
 <ul>
-<li><code>n_list</code> — number of clusters. More clusters → higher precision but longer build time.</li>
-<li><code>n_probe</code> — number of clusters searched at query time. More probes → higher recall, slower queries.</li>
+<li>
+<p><code>n_list</code> — number of clusters. More clusters → higher precision but longer build time.</p>
+</li>
+<li>
+<p><code>n_probe</code> — number of clusters searched at query time. More probes → higher recall, slower queries.</p>
+</li>
 </ul>
 <hr />
 <h3 id="product-quantization-pq">Product Quantization (PQ)<a class="headerlink" href="#product-quantization-pq" title="Permanent link">&para;</a></h3>
 <p>Compresses high-dimensional vectors into compact codes by splitting each vector into sub-vectors and quantising each sub-vector independently using a trained codebook.</p>
 <ul>
-<li><strong>Pros:</strong> Massive memory reduction — enables storage of billions of vectors; lower I/O cost.</li>
-<li><strong>Cons:</strong> Lossy compression — recall drops due to quantisation errors; harder to debug.</li>
-<li><strong>Typically combined with:</strong> IVF+PQ for extreme-scale search (e.g., web-scale retrieval).</li>
+<li>
+<p><strong>Pros:</strong> Massive memory reduction — enables storage of billions of vectors; lower I/O cost.</p>
+</li>
+<li>
+<p><strong>Cons:</strong> Lossy compression — recall drops due to quantisation errors; harder to debug.</p>
+</li>
+<li>
+<p><strong>Typically combined with:</strong> IVF+PQ for extreme-scale search (e.g., web-scale retrieval).</p>
+</li>
 </ul>
 <hr />
 <h3 id="ann-index-comparison">ANN Index Comparison<a class="headerlink" href="#ann-index-comparison" title="Permanent link">&para;</a></h3>
@@ -1318,16 +1466,24 @@
 <h2 id="4-sparse-indexes">4. Sparse Indexes<a class="headerlink" href="#4-sparse-indexes" title="Permanent link">&para;</a></h2>
 <p>Sparse indexes use term-based inverted indexes mapping <code>term → posting list of documents</code>. Standard infrastructure for BM25 and SPLADE. Implemented in Elasticsearch, OpenSearch, and Lucene.</p>
 <ul>
-<li><strong>Excellent for:</strong> Lexical retrieval; exact keyword matches; rare terms and identifiers.</li>
-<li><strong>Cannot do:</strong> Semantic similarity; paraphrase matching.</li>
+<li>
+<p><strong>Excellent for:</strong> Lexical retrieval; exact keyword matches; rare terms and identifiers.</p>
+</li>
+<li>
+<p><strong>Cannot do:</strong> Semantic similarity; paraphrase matching.</p>
+</li>
 </ul>
 <hr />
 <hr />
 <h2 id="5-hybrid-indexing">5. Hybrid Indexing<a class="headerlink" href="#5-hybrid-indexing" title="Permanent link">&para;</a></h2>
 <p>Hybrid systems maintain both a dense vector index and a sparse inverted index. Retrieval runs in parallel across both, and results are merged (typically with Reciprocal Rank Fusion).</p>
 <ul>
-<li><strong>Pros:</strong> Improved recall and precision; robust to diverse query types; production-proven.</li>
-<li><strong>Cons:</strong> Increased system complexity; higher latency (two retrieval paths); requires score fusion tuning.</li>
+<li>
+<p><strong>Pros:</strong> Improved recall and precision; robust to diverse query types; production-proven.</p>
+</li>
+<li>
+<p><strong>Cons:</strong> Increased system complexity; higher latency (two retrieval paths); requires score fusion tuning.</p>
+</li>
 </ul>
 <hr />
 <hr />
@@ -1380,21 +1536,39 @@
 <p>Metadata filtering restricts retrieval to relevant subsets before (pre-filtering) or after (post-filtering) vector search.</p>
 <p><strong>Pre-filtering</strong> (filter first, then search the smaller set):</p>
 <ul>
-<li>Faster — ANN search runs on a smaller index.</li>
-<li>Risk: over-filtering can hurt recall if filters are too strict.</li>
+<li>
+<p>Faster — ANN search runs on a smaller index.</p>
+</li>
+<li>
+<p>Risk: over-filtering can hurt recall if filters are too strict.</p>
+</li>
 </ul>
 <p><strong>Post-filtering</strong> (search first, then discard irrelevant results):</p>
 <ul>
-<li>Better recall — the full index is searched.</li>
-<li>Wastes compute on candidates that will be filtered out.</li>
+<li>
+<p>Better recall — the full index is searched.</p>
+</li>
+<li>
+<p>Wastes compute on candidates that will be filtered out.</p>
+</li>
 </ul>
 <p><strong>Common metadata filters:</strong></p>
 <ul>
-<li>Document type or source</li>
-<li>Timestamp / version (retrieve only recent documents)</li>
-<li>Author or department</li>
-<li>Access permissions / tenant ID (multi-tenant RAG)</li>
-<li>Content type (prose vs. table vs. code)</li>
+<li>
+<p>Document type or source</p>
+</li>
+<li>
+<p>Timestamp / version (retrieve only recent documents)</p>
+</li>
+<li>
+<p>Author or department</p>
+</li>
+<li>
+<p>Access permissions / tenant ID (multi-tenant RAG)</p>
+</li>
+<li>
+<p>Content type (prose vs. table vs. code)</p>
+</li>
 </ul>
 <blockquote>
 <p>Metadata filtering is one of the highest-ROI improvements in a vanilla RAG system — it narrows the search space without changing the embedding model or retraining anything.</p>
@@ -1404,8 +1578,12 @@
 <h2 id="8-multi-tenant-rag-and-access-control">8. Multi-Tenant RAG and Access Control<a class="headerlink" href="#8-multi-tenant-rag-and-access-control" title="Permanent link">&para;</a></h2>
 <p>In enterprise systems, different users should only retrieve from their permitted document subset. Two main approaches:</p>
 <ol>
-<li><strong>Namespace / collection isolation:</strong> Each tenant's documents live in a separate index namespace. Cleanest isolation but higher infrastructure cost.</li>
-<li><strong>Metadata-based filtering:</strong> All documents share one index; retrieval filters on a <code>tenant_id</code> metadata field. More efficient but relies on the vector DB correctly enforcing filters.</li>
+<li>
+<p><strong>Namespace / collection isolation:</strong> Each tenant's documents live in a separate index namespace. Cleanest isolation but higher infrastructure cost.</p>
+</li>
+<li>
+<p><strong>Metadata-based filtering:</strong> All documents share one index; retrieval filters on a <code>tenant_id</code> metadata field. More efficient but relies on the vector DB correctly enforcing filters.</p>
+</li>
 </ol>
 <hr />
 <hr />
@@ -1479,11 +1657,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

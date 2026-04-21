@@ -1,0 +1,2271 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
+      
+      
+        <meta name="author" content="Saurabh Goyal">
+      
+      
+      
+        <link rel="prev" href="../context_engineering/ce/">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Interview Q&A - RAG & Agents</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rag-agents-interview-qa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RAG & Agents
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interview Q&A
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/saurabhiit2007/RAG_And_Context_Engineering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RAG & Agents
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/saurabhiit2007/RAG_And_Context_Engineering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Retrieval Augmented Generation (RAG)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Retrieval Augmented Generation (RAG)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/chunking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chunking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/embedding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embedding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/retrieval_methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Retrieval Methods
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/indexing_and_vector_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/reranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Re-Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/advanced_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/quick_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Supporting Concepts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Supporting Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/supporting_topics/tf_idf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TF_IDF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/supporting_topics/bm25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BM25
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/supporting_topics/splade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Splade
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RAG/supporting_topics/sentence_transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sentence Transformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-rag-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: RAG Fundamentals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-retrieval-and-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Retrieval and Indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-advanced-rag-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Advanced RAG Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-rag-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: RAG Evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-llm-agent-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: LLM Agent Fundamentals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-agent-memory-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Agent Memory and Planning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-agent-frameworks-and-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Agent Frameworks and Protocols
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-agent-safety-and-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Agent Safety and Production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Context Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Reference Cheat Sheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rag-pipeline-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Pipeline Stages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-retrieval-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Retrieval Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ragas-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAGAS Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-memory-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Memory Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planning-methods-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning Methods at a Glance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-vs-a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCP vs. A2A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-failure-mode-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Failure Mode Mitigations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-rag-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: RAG Fundamentals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-retrieval-and-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Retrieval and Indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-advanced-rag-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Advanced RAG Techniques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-rag-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: RAG Evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-llm-agent-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: LLM Agent Fundamentals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-agent-memory-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Agent Memory and Planning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-agent-frameworks-and-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Agent Frameworks and Protocols
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-agent-safety-and-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Agent Safety and Production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Context Engineering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Reference Cheat Sheet
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Cheat Sheet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rag-pipeline-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Pipeline Stages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-retrieval-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Retrieval Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ragas-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAGAS Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-memory-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Memory Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planning-methods-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning Methods at a Glance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-vs-a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCP vs. A2A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-failure-mode-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Failure Mode Mitigations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rag-agents-interview-qa">RAG &amp; Agents — Interview Q&amp;A<a class="headerlink" href="#rag-agents-interview-qa" title="Permanent link">&para;</a></h1>
+<p>A comprehensive collection of interview questions covering Retrieval-Augmented Generation, LLM Agents, and Context Engineering. Format mirrors the GenAI Interview Q&amp;A document — each question includes a structured answer, follow-ups, and coding challenges where applicable.</p>
+<hr />
+<h2 id="chapter-1-rag-fundamentals">Chapter 1: RAG Fundamentals<a class="headerlink" href="#chapter-1-rag-fundamentals" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q1. What problem does RAG solve that fine-tuning does not?</strong></p>
+<p>RAG solves the <strong>knowledge access problem</strong>. LLMs have a training cutoff and fixed parametric knowledge — they cannot access information that postdates training or is not in the training corpus. Fine-tuning changes <em>how</em> the model behaves (style, reasoning, output format) but does not allow the model to look up new facts. A fine-tuned model still hallucinates when asked about events or facts outside its training data.</p>
+<p>RAG decouples knowledge storage from model weights: the model retrieves relevant documents at inference time and grounds its answer in that retrieved evidence. The knowledge base can be updated by re-indexing new documents — no retraining required.</p>
+<p><strong>Key distinction:</strong></p>
+<ul>
+<li>
+<p>RAG: "What do the retrieved documents say about X?"</p>
+</li>
+<li>
+<p>Fine-tuning: "How should I respond to questions about X?"</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Follow-up:</strong> Can you use RAG and fine-tuning together?</p>
+<p>Yes, and this is common in production. Fine-tuning handles "how to respond" (instruction following, output format, tone); RAG handles "what to respond with" (factual content). A model fine-tuned for citation-constrained generation + RAG for retrieval is a common production pattern.</p>
+</blockquote>
+<hr />
+<p><strong>Q2. Formally, how does RAG change the generation objective?</strong></p>
+<p>Vanilla LLM generation maximises <code>P(y | q)</code> — the probability of answer <code>y</code> given only the query <code>q</code>. The model relies entirely on parametric knowledge baked into its weights.</p>
+<p>RAG conditions generation on both the query and retrieved documents:</p>
+<div class="highlight"><pre><span></span><code>P(y | q, d₁, d₂, ..., dₖ)
+</code></pre></div>
+<p>The model generates an answer grounded in the retrieved evidence <code>d₁:k</code> rather than relying solely on its internal parameters. This reduces hallucination because incorrect parametric beliefs can be overridden by retrieved facts.</p>
+<blockquote>
+<p><strong>Follow-up:</strong> What is the risk of this objective?</p>
+<p>If retrieval fails (wrong documents retrieved), the model generates answers conditioned on irrelevant or incorrect evidence. The model cannot distinguish good retrieval from bad retrieval without explicit verification. This is why faithfulness evaluation and retrieval quality metrics are both necessary.</p>
+</blockquote>
+<hr />
+<p><strong>Q3. What are the main failure modes of vanilla RAG?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Description</th>
+<th>Primary Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poor recall</td>
+<td>Relevant documents exist but aren't retrieved</td>
+<td>Hybrid retrieval; improve embeddings</td>
+</tr>
+<tr>
+<td>Poor precision</td>
+<td>Irrelevant documents retrieved and used</td>
+<td>Reranking; CRAG</td>
+</tr>
+<tr>
+<td>Chunking errors</td>
+<td>Semantic meaning split across chunk boundaries</td>
+<td>Recursive/semantic chunking; parent-doc retrieval</td>
+</tr>
+<tr>
+<td>Context overflow</td>
+<td>Retrieved context exceeds context window</td>
+<td>Compression; selective retrieval</td>
+</tr>
+<tr>
+<td>Model ignores context</td>
+<td>LLM uses parametric knowledge instead of retrieved text</td>
+<td>Explicit grounding instructions; Self-RAG</td>
+</tr>
+<tr>
+<td>No verification</td>
+<td>Fluent but wrong answer returned with no flag</td>
+<td>Faithfulness scoring; citation constraints</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Follow-up:</strong> Which failure is hardest to detect?</p>
+<p>"Model ignores context" — the system appears to work (fluent answer, no error) but the answer is grounded in the model's parametric knowledge rather than retrieved documents. This is detectable only via faithfulness evaluation (checking that every claim in the answer is supported by a retrieved chunk).</p>
+</blockquote>
+<hr />
+<p><strong>Q4. When should you use a long-context LLM instead of RAG?</strong></p>
+<p>Use a long-context LLM when:</p>
+<ol>
+<li>
+<p>The knowledge base <strong>fits entirely in the context window</strong> (typically ≤ 200K tokens for current frontier models).</p>
+</li>
+<li>
+<p>The knowledge base is <strong>stable</strong> — infrequent updates mean the overhead of a retrieval index is not justified.</p>
+</li>
+<li>
+<p><strong>Latency and cost</strong> for a large context are acceptable for the use case.</p>
+</li>
+</ol>
+<p>Use RAG when:</p>
+<ol>
+<li>
+<p>The knowledge base is <strong>larger than the context window</strong> (millions of documents).</p>
+</li>
+<li>
+<p>The knowledge base <strong>changes frequently</strong> (re-indexing is cheaper than re-generating the full context).</p>
+</li>
+<li>
+<p><strong>Citations and traceability</strong> are required (RAG produces attributable sources).</p>
+</li>
+<li>
+<p><strong>Cost must scale with query</strong> rather than with the size of the entire knowledge base.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Follow-up:</strong> What are the risks of long-context LLMs?</p>
+<p>The lost-in-the-middle effect — LLMs attend less to content in the middle of long contexts. Very long prompts are also expensive (cost scales with token count) and slow. For production systems with large, changing knowledge bases, RAG remains the preferred approach even as context windows grow.</p>
+</blockquote>
+<hr />
+<h2 id="chapter-2-retrieval-and-indexing">Chapter 2: Retrieval and Indexing<a class="headerlink" href="#chapter-2-retrieval-and-indexing" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q5. What is the difference between sparse and dense retrieval?</strong></p>
+<p><strong>Sparse retrieval (BM25, TF-IDF):</strong></p>
+<ul>
+<li>
+<p>Represents documents as sparse vectors of term counts/weights.</p>
+</li>
+<li>
+<p>Matches documents by <strong>lexical overlap</strong> (same words in query and document).</p>
+</li>
+<li>
+<p>Fast, interpretable, excellent for exact-match queries and technical terms.</p>
+</li>
+<li>
+<p>Fails on synonyms, paraphrases, or semantic similarity without lexical match.</p>
+</li>
+</ul>
+<p><strong>Dense retrieval (bi-encoders):</strong></p>
+<ul>
+<li>
+<p>Embeds query and documents into a shared dense vector space.</p>
+</li>
+<li>
+<p>Matches by <strong>semantic similarity</strong> (cosine or dot product distance).</p>
+</li>
+<li>
+<p>Handles synonyms and paraphrases; generalises across phrasings.</p>
+</li>
+<li>
+<p>Slower index build (embedding each document); requires ANN index for fast retrieval.</p>
+</li>
+</ul>
+<p><strong>Hybrid (BM25 + Dense + RRF):</strong></p>
+<ul>
+<li>
+<p>Run both in parallel; fuse ranked lists with Reciprocal Rank Fusion.</p>
+</li>
+<li>
+<p>Consistently outperforms either alone across retrieval benchmarks.</p>
+</li>
+<li>
+<p>Industry standard for production RAG.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Follow-up:</strong> What is Reciprocal Rank Fusion (RRF)?</p>
+<p>RRF merges multiple ranked lists without needing score normalisation. For each document, its RRF score is the sum of <code>1 / (k + rank_in_list_i)</code> across all lists (k=60 is typical). Documents that rank well in multiple lists score highest. RRF is robust to score scale differences between BM25 and dense retrievers.</p>
+</blockquote>
+<hr />
+<p><strong>Q6. What is a cross-encoder and when is it used in RAG?</strong></p>
+<p>A <strong>cross-encoder</strong> takes a (query, document) pair as a single input and produces a relevance score. Unlike a bi-encoder that encodes query and document independently, a cross-encoder allows full attention between query and document tokens — enabling much more precise relevance judgement.</p>
+<p><strong>Trade-off:</strong> Full attention is expensive — cross-encoders cannot be pre-computed and indexed. They are used only as a <strong>reranker</strong> on the top-N candidates (typically top-50–100) from the initial fast retrieval step.</p>
+<p><strong>Pipeline:</strong>
+<div class="highlight"><pre><span></span><code>All documents → ANN retrieval (fast, ~100ms) → top-100 candidates
+    → Cross-encoder reranker (slow, ~500ms for 100 docs) → top-5–10
+    → Pass to LLM
+</code></pre></div></p>
+<p><strong>When to add a reranker:</strong> When initial retrieval precision is insufficient — retrieved documents are topically related but not precisely relevant to the query. Cross-encoders typically recover 5–15% additional precision over bi-encoder retrieval alone.</p>
+<hr />
+<h2 id="chapter-3-advanced-rag-techniques">Chapter 3: Advanced RAG Techniques<a class="headerlink" href="#chapter-3-advanced-rag-techniques" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q7. What is HyDE and how does it bridge the query-document gap?</strong></p>
+<p><strong>HyDE (Hypothetical Document Embeddings)</strong> uses an LLM to generate a hypothetical ideal answer to the query, then embeds that answer rather than the original query for retrieval.</p>
+<p><strong>Why it works:</strong> A dense, fluent passage (the hypothetical answer) lives much closer in vector space to real documents on the same topic than a short, sparse user query does — even when they cover the same concept. This bridges the vocabulary and length mismatch between queries and documents.</p>
+<div class="highlight"><pre><span></span><code>Query: &quot;How does attention mechanism work?&quot;
+  ↓
+LLM generates: &quot;The attention mechanism computes query, key, and value
+matrices from input embeddings and uses scaled dot-product...&quot;
+  ↓
+Embed this passage → retrieve real documents most similar to it
+</code></pre></div>
+<p><strong>Risk:</strong> If the LLM hallucinates in the hypothetical answer, those errors are encoded into the retrieval vector — potentially retrieving misleading documents. Use HyDE with models that are reliable for the domain.</p>
+<blockquote>
+<p><strong>Coding challenge:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hyde_retrieval</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">llm</span><span class="p">,</span> <span class="n">retriever</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Document</span><span class="p">]:</span>
+    <span class="n">hypothetical</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Write a detailed answer to: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="se">\n</span><span class="s2">Answer:&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">retriever</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">hypothetical</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div></p>
+</blockquote>
+<hr />
+<p><strong>Q8. What is Self-RAG and how does it differ from standard RAG?</strong></p>
+<p><strong>Standard RAG:</strong> Always retrieves; always uses what is retrieved; no verification.</p>
+<p><strong>Self-RAG:</strong> Trains the LLM to generate <strong>reflection tokens</strong> inline that control retrieval and self-assess groundedness:</p>
+<table>
+<thead>
+<tr>
+<th>Reflection Token</th>
+<th>Question</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Retrieve]</code></td>
+<td>Should I retrieve?</td>
+<td>yes / no</td>
+</tr>
+<tr>
+<td><code>[IsRel]</code></td>
+<td>Is the retrieved document relevant?</td>
+<td>relevant / irrelevant</td>
+</tr>
+<tr>
+<td><code>[IsSup]</code></td>
+<td>Is my generated text supported?</td>
+<td>fully / partially / not supported</td>
+</tr>
+<tr>
+<td><code>[IsUse]</code></td>
+<td>Is the response useful?</td>
+<td>1–5</td>
+</tr>
+</tbody>
+</table>
+<p>Self-RAG with Llama-2-13B outperforms GPT-4 on PopQA and ASQA. The model only retrieves when needed (<code>[Retrieve]=yes</code>), reducing latency for simple queries.</p>
+<p><strong>Key trade-off:</strong> Requires fine-tuning the generation model. Cannot be applied to black-box APIs. CRAG achieves similar corrective benefits without modifying the LLM.</p>
+<hr />
+<p><strong>Q9. How does GraphRAG handle queries that standard vector RAG fails on?</strong></p>
+<p>Standard vector RAG retrieves chunks similar to the query by cosine similarity. It fails on:</p>
+<ol>
+<li>
+<p><strong>Global queries</strong> — "What are the main themes in this corpus?" No single chunk captures this.</p>
+</li>
+<li>
+<p><strong>Multi-hop queries</strong> — "How is entity A connected to event B?" The connection may span many chunks.</p>
+</li>
+</ol>
+<p><strong>GraphRAG (Microsoft, 2024)</strong> builds a knowledge graph from the corpus:</p>
+<ol>
+<li>
+<p>Extract entities and relationships (LLM-based).</p>
+</li>
+<li>
+<p>Apply Leiden algorithm for community detection (groups of tightly related entities).</p>
+</li>
+<li>
+<p>Generate LLM summaries for each community.</p>
+</li>
+</ol>
+<p><strong>Query time:</strong></p>
+<ul>
+<li>
+<p>Global queries: map-reduce over community summaries.</p>
+</li>
+<li>
+<p>Local queries: traverse graph from the most relevant entity.</p>
+</li>
+</ul>
+<p><strong>Build cost is high</strong> (LLM calls for entity extraction + community summarisation). Best for: large corpora where thematic understanding or entity relationship queries are frequent.</p>
+<hr />
+<h2 id="chapter-4-rag-evaluation">Chapter 4: RAG Evaluation<a class="headerlink" href="#chapter-4-rag-evaluation" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q10. Why is no single metric sufficient to evaluate a RAG system?</strong></p>
+<p>RAG has multiple failure modes that different metrics capture:</p>
+<table>
+<thead>
+<tr>
+<th>Metric Type</th>
+<th>What It Catches</th>
+<th>What It Misses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recall@k</td>
+<td>Whether relevant docs are retrieved</td>
+<td>Ranking quality, precision</td>
+</tr>
+<tr>
+<td>Faithfulness</td>
+<td>Whether answer is grounded in retrieved docs</td>
+<td>Whether retrieved docs are correct</td>
+</tr>
+<tr>
+<td>Answer correctness</td>
+<td>Whether answer matches ground truth</td>
+<td>Whether grounding is the source</td>
+</tr>
+<tr>
+<td>End-to-end F1</td>
+<td>Final answer quality</td>
+<td>Root cause of failures</td>
+</tr>
+</tbody>
+</table>
+<p>A system can have: high recall + low faithfulness (retrieves well, then hallucinates); high faithfulness + wrong answer (correctly cites wrong source); perfect generation + poor retrieval (lucky parametric recall). All layers must be evaluated to diagnose root causes.</p>
+<hr />
+<p><strong>Q11. What are the RAGAS evaluation dimensions and what does each measure?</strong></p>
+<p><strong>RAGAS</strong> (Es et al., 2023) provides reference-free evaluation of RAG systems using an LLM as a judge:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Question</th>
+<th>Requires Ground Truth?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Faithfulness</strong></td>
+<td>Are all claims in the answer supported by retrieved context?</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Answer Relevance</strong></td>
+<td>Is the answer on-topic for the original query?</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Context Recall</strong></td>
+<td>Does the retrieved context contain what's needed to answer?</td>
+<td>Yes (reference answer)</td>
+</tr>
+<tr>
+<td><strong>Context Precision</strong></td>
+<td>Are retrieved documents relevant, or is there noise?</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key risks of LLM-as-a-judge:</strong></p>
+<ol>
+<li>
+<p><strong>Fluency bias</strong> — well-written hallucinations can score high.</p>
+</li>
+<li>
+<p><strong>Prompt sensitivity</strong> — scoring rubric significantly affects results.</p>
+</li>
+<li>
+<p><strong>Self-preference</strong> — models prefer outputs from the same model family.</p>
+</li>
+</ol>
+<p><strong>Mitigation:</strong> Validate RAGAS scores against human judgments on a held-out set before using for production decisions.</p>
+<blockquote>
+<p><strong>Follow-up:</strong> How do you build an evaluation set without labelled data?</p>
+<p>Three approaches: (1) Synthetic — LLM generates question-context-answer triples from your corpus; (2) Production logging — sample real user queries and have humans label correct answers; (3) Expert annotation — domain experts create a gold-standard test set (expensive, highest quality). Start synthetic for iteration speed; refine with human annotations before deployment.</p>
+</blockquote>
+<hr />
+<p><strong>Q12. How do you diagnose whether a RAG failure is in retrieval or generation?</strong></p>
+<p>Run an <strong>oracle experiment</strong>: manually find the correct document and inject it directly into the prompt, bypassing retrieval entirely.</p>
+<ul>
+<li>
+<p>If the model answers <strong>correctly</strong> with the oracle document → the failure is in <strong>retrieval</strong> (fix: improve embeddings, use hybrid retrieval, adjust chunking).</p>
+</li>
+<li>
+<p>If the model <strong>still fails</strong> with the correct document in context → the failure is in <strong>generation</strong> (fix: improve prompting, citation constraints, grounding instructions, or model capability).</p>
+</li>
+</ul>
+<p>This isolates the failure mode cleanly and prevents the common error of optimising retrieval when the real problem is generation (or vice versa).</p>
+<hr />
+<h2 id="chapter-5-llm-agent-fundamentals">Chapter 5: LLM Agent Fundamentals<a class="headerlink" href="#chapter-5-llm-agent-fundamentals" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q13. What is the difference between an LLM and an LLM agent?</strong></p>
+<p>An <strong>LLM</strong> takes a fixed input and produces a single output. It answers a question in one shot.</p>
+<p>An <strong>LLM agent</strong> uses an LLM as its reasoning engine but wraps it in a loop:
+<div class="highlight"><pre><span></span><code>while not done:
+    thought = LLM.reason(state, history, tools)
+    if thought.requires_tool:
+        result = tool.call(thought.tool_name, thought.args)
+        history.append(result)
+    else:
+        return thought.final_answer
+</code></pre></div></p>
+<p>The agent can call external tools, observe their results, and dynamically decide the next step — repeating until the task is complete.</p>
+<p><strong>Key differences:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>LLM</th>
+<th>LLM Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flow</td>
+<td>Fixed: one input → one output</td>
+<td>Iterative: reason → act → observe</td>
+</tr>
+<tr>
+<td>External state</td>
+<td>None</td>
+<td>Maintains state across steps</td>
+</tr>
+<tr>
+<td>Tool access</td>
+<td>None</td>
+<td>Calls APIs, databases, code interpreters</td>
+</tr>
+<tr>
+<td>Planning</td>
+<td>Single response</td>
+<td>Dynamic, step-by-step</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Q14. How does function calling work at the API level?</strong></p>
+<p>The caller passes a list of tool schemas (JSON with name, description, parameters) alongside the user message. If the model decides a tool call is needed, instead of generating text it emits a structured JSON object:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tool_call&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;search_web&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RAG benchmarks 2025&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;max_results&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The calling framework executes the tool and appends the result as a <strong>tool message</strong> back to the conversation. The model then continues generating — either calling another tool or producing a final answer.</p>
+<p><strong>Key design rules for tool schemas:</strong></p>
+<ul>
+<li>
+<p>Names must be descriptive — the model uses the name and description to decide when to call.</p>
+</li>
+<li>
+<p>Avoid overlapping tool descriptions — ambiguity causes wrong tool selection.</p>
+</li>
+<li>
+<p>Mark parameters required only if the tool genuinely cannot run without them.</p>
+</li>
+<li>
+<p>Keep return formats concise and structured — avoid dumping raw HTML.</p>
+</li>
+</ul>
+<hr />
+<p><strong>Q15. What is the ReAct pattern and why is it the dominant agent architecture?</strong></p>
+<p><strong>ReAct (Reason + Act)</strong> (Yao et al., 2022) interleaves <em>Thought</em>, <em>Action</em>, and <em>Observation</em> steps before producing a final answer.</p>
+<div class="highlight"><pre><span></span><code>Thought: I need to find the CEO of Anthropic.
+Action: search_web(&quot;Anthropic CEO 2025&quot;)
+Observation: Dario Amodei is the CEO of Anthropic.
+Thought: I have the answer.
+Answer: Dario Amodei is the CEO of Anthropic.
+</code></pre></div>
+<p><strong>Why it's dominant:</strong></p>
+<ol>
+<li>
+<p>The <em>Thought</em> step (chain-of-thought) forces explicit reasoning before acting — reduces impulsive wrong tool calls.</p>
+</li>
+<li>
+<p><em>Observations</em> ground the model in real retrieved information, reducing hallucination.</p>
+</li>
+<li>
+<p>The loop allows self-correction — if an observation is unexpected, the next thought can adapt.</p>
+</li>
+</ol>
+<p><strong>Limitations:</strong> Linear (no backtracking); no exploration; prone to tool-call loops. Advanced alternatives: LATS (tree search), Reflexion (reflection + retry).</p>
+<hr />
+<h2 id="chapter-6-agent-memory-and-planning">Chapter 6: Agent Memory and Planning<a class="headerlink" href="#chapter-6-agent-memory-and-planning" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q16. What are the four memory types in LLM agents?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Memory Type</th>
+<th>What It Stores</th>
+<th>Where</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Working (in-context)</strong></td>
+<td>Active context: task, history, tool outputs</td>
+<td>Context window</td>
+<td>Current conversation, scratchpad</td>
+</tr>
+<tr>
+<td><strong>Episodic</strong></td>
+<td>Specific past interactions with timestamps</td>
+<td>Vector DB</td>
+<td>"On task X, tool Y returned Z"</td>
+</tr>
+<tr>
+<td><strong>Semantic</strong></td>
+<td>General facts and domain knowledge</td>
+<td>Weights or RAG index</td>
+<td>World knowledge, domain facts</td>
+</tr>
+<tr>
+<td><strong>Procedural</strong></td>
+<td>Action policies and skills</td>
+<td>System prompt or fine-tuned weights</td>
+<td>"Always check docs before coding"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key distinction — episodic vs. semantic:</strong>
+Episodic memory records what the agent <em>experienced</em> (a concrete interaction). Semantic memory records what the agent <em>knows</em> (general facts). Periodic reflection converts episodic memories into semantic ones, preventing the episodic store from flooding with low-level events.</p>
+<blockquote>
+<p><strong>Follow-up:</strong> How does MemGPT extend the context window?</p>
+<p>MemGPT treats the context window like CPU RAM and external storage like disk. The agent is given explicit memory management functions (<code>archival_memory_search</code>, <code>archival_memory_insert</code>) it calls like any tool. When the context fills, old content is paged to external storage; the agent explicitly retrieves it when needed. This enables unbounded effective context.</p>
+</blockquote>
+<hr />
+<p><strong>Q17. What is LATS and how does it improve over ReAct?</strong></p>
+<p><strong>LATS (Language Agent Tree Search)</strong> (Zhou et al., 2023) replaces ReAct's greedy single-path search with Monte Carlo Tree Search (MCTS):</p>
+<ol>
+<li>
+<p><strong>Selection</strong> — pick the most promising node using UCB1.</p>
+</li>
+<li>
+<p><strong>Expansion</strong> — generate new action candidates.</p>
+</li>
+<li>
+<p><strong>Evaluation</strong> — score each with an LLM critic (not a random rollout).</p>
+</li>
+<li>
+<p><strong>Backpropagation</strong> — update scores of all nodes on the path.</p>
+</li>
+<li>
+<p><strong>Reflection</strong> — when a path fails, generate a verbal critique and use it to inform other branches.</p>
+</li>
+</ol>
+<p><strong>Results:</strong> HotpotQA: LATS 73.2% vs. ReAct 35.1%. HumanEval (GPT-4): LATS 94.4%.</p>
+<p><strong>When to use:</strong> Tasks with high combinatorial complexity where the best answer matters more than speed. The cost is significantly more LLM calls.</p>
+<hr />
+<p><strong>Q18. What is Reflexion and how does verbal reinforcement work?</strong></p>
+<p><strong>Reflexion</strong> (Shinn et al., 2023) adds a reflection step after a failed attempt: the agent generates a natural language critique of what went wrong, stores it in episodic memory, and uses it on the next attempt.</p>
+<div class="highlight"><pre><span></span><code>Attempt 1 → fail
+Reflection: &quot;I called the wrong API endpoint. I should check the documentation first.&quot;
+  ↓ stored in memory
+Attempt 2 → informed by reflection → succeed
+</code></pre></div>
+<p><strong>Why verbal &gt; numerical reward:</strong> Natural language critiques are directly interpretable by the LLM on the next attempt, providing specific corrective guidance rather than just a scalar signal.</p>
+<p><strong>Results:</strong> Improves HumanEval pass@1 from ~67% to ~88% with GPT-4.</p>
+<hr />
+<h2 id="chapter-7-agent-frameworks-and-protocols">Chapter 7: Agent Frameworks and Protocols<a class="headerlink" href="#chapter-7-agent-frameworks-and-protocols" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q19. What is the core abstraction in LangGraph?</strong></p>
+<p>LangGraph models agent execution as a <strong>directed graph with cycles</strong>:</p>
+<ul>
+<li>
+<p><strong>Nodes:</strong> Python functions (LLM calls, tool calls, state transforms).</p>
+</li>
+<li>
+<p><strong>Edges:</strong> Transitions between nodes — unconditional or conditional (based on state).</p>
+</li>
+<li>
+<p><strong>State:</strong> A typed dictionary passed through the graph; each node reads from and writes to it.</p>
+</li>
+</ul>
+<p>Cycles are what enable the ReAct loop — execution can return from the tools node back to the LLM node indefinitely. Conditional edges implement routing logic ("if the model called a tool, go to tools; else return to user"). Human-in-the-loop interrupt points pause execution at any node for external approval.</p>
+<hr />
+<p><strong>Q20. What problem does MCP solve?</strong></p>
+<p>Before MCP, every AI tool had to be written as a custom adapter for each framework — a tool for LangChain couldn't be used in Claude Desktop without reimplementation.</p>
+<p><strong>Model Context Protocol (MCP)</strong> defines a universal client-server protocol:</p>
+<ul>
+<li>
+<p><strong>MCP Server:</strong> A tool (database, API, file system) exposes itself once as an MCP server.</p>
+</li>
+<li>
+<p><strong>MCP Client:</strong> Any MCP-compatible host (Claude, GPT-4, custom app) connects and discovers available tools automatically.</p>
+</li>
+</ul>
+<p>This reduces the integration problem from N×M (N models × M tools) to N+M (N hosts + M servers).</p>
+<p><strong>Protocol:</strong> JSON-RPC 2.0 over stdio (local) or HTTP+SSE (remote). Servers expose Tools, Resources, and Prompts.</p>
+<blockquote>
+<p><strong>Follow-up:</strong> What is A2A and how does it complement MCP?</p>
+<p>A2A (Agent-to-Agent protocol, Google, April 2025) standardises agent-to-agent communication. MCP handles model→tool connections; A2A handles agent→agent delegation. In a production system: an orchestrator uses A2A to delegate to sub-agents; each sub-agent uses MCP to connect to its tools.</p>
+</blockquote>
+<hr />
+<h2 id="chapter-8-agent-safety-and-production">Chapter 8: Agent Safety and Production<a class="headerlink" href="#chapter-8-agent-safety-and-production" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q21. What are the main agent failure modes in production?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Description</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hallucinated actions</td>
+<td>Agent fabricates tool results or invents non-existent tools</td>
+<td>Log every tool call; compare agent's stated observations to actual returns</td>
+</tr>
+<tr>
+<td>Scope creep</td>
+<td>Agent expands beyond assigned task</td>
+<td>Principle of least privilege; tool allowlists</td>
+</tr>
+<tr>
+<td>Cascading errors</td>
+<td>Early wrong observation poisons downstream reasoning</td>
+<td>Verification steps between major stages; oracle experiments</td>
+</tr>
+<tr>
+<td>Context loss</td>
+<td>Key instructions forgotten in long tasks</td>
+<td>Periodic constraint re-injection; MemGPT paging</td>
+</tr>
+<tr>
+<td>Tool misuse</td>
+<td>Right tool, wrong arguments</td>
+<td>Schema validation before execution; few-shot examples</td>
+</tr>
+<tr>
+<td>Prompt injection</td>
+<td>Adversarial content in tool outputs hijacks behaviour</td>
+<td>Sanitise tool outputs; safety classifier; privilege separation</td>
+</tr>
+<tr>
+<td>Infinite loops</td>
+<td>Same tool called repeatedly without progress</td>
+<td>Loop detector; step budget; divergence detector</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Follow-up:</strong> What is prompt injection specific to agents?</p>
+<p>In agents, the attack surface expands from user input to any tool output (web pages, documents, emails). An attacker who controls a webpage the agent visits can inject instructions that redirect the agent's behaviour. Mitigation: treat all tool outputs as untrusted; sanitise before context injection; use privilege separation (read tools cannot trigger write-capable tools).</p>
+</blockquote>
+<hr />
+<p><strong>Q22. When should a production agent require human approval before acting?</strong></p>
+<p>Use this decision framework:</p>
+<table>
+<thead>
+<tr>
+<th>Action Type</th>
+<th>Reversible?</th>
+<th>HITL Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read file / web search</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Write to internal notes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Send email / Slack message</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Delete file or DB record</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Make financial transaction</td>
+<td>No</td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Deploy to production</td>
+<td>No</td>
+<td>Always</td>
+</tr>
+</tbody>
+</table>
+<p>In LangGraph: <code>graph.add_node("confirm", human_approval_node)</code> inserted before any irreversible action node. Execution pauses; the human reviews the planned action and approves or rejects.</p>
+<hr />
+<h2 id="chapter-9-context-engineering">Chapter 9: Context Engineering<a class="headerlink" href="#chapter-9-context-engineering" title="Permanent link">&para;</a></h2>
+<hr />
+<p><strong>Q23. What is context engineering?</strong></p>
+<p>Context engineering is the practice of deliberately constructing the information environment (context window) that an LLM operates in — choosing what to include, how to compress it, how to sequence it, and how to isolate different components.</p>
+<p><strong>Four pillars:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Pillar</th>
+<th>Key Techniques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Writing</strong></td>
+<td>System prompt design, structured output schemas, prompt templates</td>
+</tr>
+<tr>
+<td><strong>Selecting</strong></td>
+<td>RAG retrieval, hybrid search, reranking, memory retrieval</td>
+</tr>
+<tr>
+<td><strong>Compressing</strong></td>
+<td>LLMLingua (20× compression, 1.5% quality loss), RECOMP, summarisation, prompt caching</td>
+</tr>
+<tr>
+<td><strong>Isolating</strong></td>
+<td>Section delimiters, numbered citations, tool output sandboxing</td>
+</tr>
+</tbody>
+</table>
+<p>Context engineering has become the primary engineering discipline for production LLM applications because the context window is now the primary artefact — not the prompt string.</p>
+<hr />
+<p><strong>Q24. How does LLMLingua compress prompts and what is the trade-off?</strong></p>
+<p>LLMLingua uses a small proxy LLM to score each token's conditional probability <code>P(token | prefix)</code>. Tokens that are easily predictable (high probability) carry less information and are dropped.</p>
+<ul>
+<li>
+<p><strong>Compression ratio:</strong> Up to 20×</p>
+</li>
+<li>
+<p><strong>Quality loss:</strong> ~1.5% on downstream tasks</p>
+</li>
+<li>
+<p><strong>Result:</strong> Compressed RAG context passed to the main LLM — lower latency, lower cost</p>
+</li>
+</ul>
+<p><strong>Trade-off:</strong> Adds an LLM call for the compression step. Best when: retrieved documents are long and noisy; the main LLM's context window is a bottleneck; cost and latency matter.</p>
+<hr />
+<p><strong>Q25. What is the lost-in-the-middle effect and how do you mitigate it in RAG?</strong></p>
+<p>LLMs attend most strongly to content at the <strong>beginning and end</strong> of the context window. Content placed in the middle receives consistently less attention. Liu et al. (2023) showed 20+ percentage point accuracy drops when the key document is in the middle vs. at the start.</p>
+<p><strong>Mitigation for RAG:</strong></p>
+<ul>
+<li>
+<p>Place the most relevant documents at the <strong>beginning</strong> of the retrieved context block (captures attention sink).</p>
+</li>
+<li>
+<p>Place the second-most relevant at the <strong>end</strong> (captures recency bias).</p>
+</li>
+<li>
+<p>Less relevant documents go in the middle.</p>
+</li>
+<li>
+<p>Place the current query <strong>last</strong> in the overall prompt (recency bias puts the question at maximum attention).</p>
+</li>
+</ul>
+<hr />
+<h2 id="quick-reference-cheat-sheet">Quick Reference Cheat Sheet<a class="headerlink" href="#quick-reference-cheat-sheet" title="Permanent link">&para;</a></h2>
+<h3 id="rag-pipeline-stages">RAG Pipeline Stages<a class="headerlink" href="#rag-pipeline-stages" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. Indexing:    chunk → embed → store in vector index
+
+2. Retrieval:   embed query → ANN search → rerank
+
+3. Augmentation: inject top-k chunks into prompt
+
+4. Generation:  LLM generates grounded answer
+</code></pre></div>
+<h3 id="key-retrieval-metrics">Key Retrieval Metrics<a class="headerlink" href="#key-retrieval-metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Formula</th>
+<th>What It Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recall@k</td>
+<td>% queries with ≥1 relevant doc in top-k</td>
+<td>Coverage</td>
+</tr>
+<tr>
+<td>MRR</td>
+<td>avg(1/rank of first relevant doc)</td>
+<td>Rank of first relevant</td>
+</tr>
+<tr>
+<td>nDCG</td>
+<td>Weighted by position and graded relevance</td>
+<td>Full ranking quality</td>
+</tr>
+<tr>
+<td>Precision@k</td>
+<td>% of top-k docs that are relevant</td>
+<td>Noise level</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ragas-dimensions">RAGAS Dimensions<a class="headerlink" href="#ragas-dimensions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Reference-Free?</th>
+<th>Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faithfulness</td>
+<td>Yes</td>
+<td>Answer grounded in retrieved context</td>
+</tr>
+<tr>
+<td>Answer Relevance</td>
+<td>Yes</td>
+<td>Answer addresses the question</td>
+</tr>
+<tr>
+<td>Context Recall</td>
+<td>No</td>
+<td>Retrieved context covers the answer</td>
+</tr>
+<tr>
+<td>Context Precision</td>
+<td>Yes</td>
+<td>Retrieved docs are relevant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agent-memory-types">Agent Memory Types<a class="headerlink" href="#agent-memory-types" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Working   → context window (volatile, fast)
+Episodic  → vector DB (past experiences, timestamped)
+Semantic  → weights or RAG index (general facts)
+Procedural → system prompt or fine-tuned weights (action policies)
+</code></pre></div>
+<h3 id="planning-methods-at-a-glance">Planning Methods at a Glance<a class="headerlink" href="#planning-methods-at-a-glance" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ReAct        → greedy, single-path, adaptive
+Plan-Execute → upfront plan, parallel steps, brittle to surprises
+LATS         → tree search, expensive, best quality
+Reflexion    → retry with reflection, medium cost
+</code></pre></div>
+<h3 id="mcp-vs-a2a">MCP vs. A2A<a class="headerlink" href="#mcp-vs-a2a" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>MCP → model ↔ tool  (filesystem, database, API)
+A2A → agent ↔ agent (orchestrator ↔ sub-agent)
+</code></pre></div>
+<h3 id="agent-failure-mode-mitigations">Agent Failure Mode Mitigations<a class="headerlink" href="#agent-failure-mode-mitigations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Hallucinated actions  → log + compare actual tool returns
+Scope creep           → least privilege tool allowlists
+Cascading errors      → verification checkpoints
+Context loss          → constraint re-injection; MemGPT
+Prompt injection      → sanitise tool outputs; privilege separation
+Infinite loops        → loop detector; step budget
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

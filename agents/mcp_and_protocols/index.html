@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../embedding/">
+        <link rel="prev" href="../agent_frameworks/">
       
       
-        <link rel="next" href="../indexing_and_vector_database/">
+        <link rel="next" href="../multi_agent/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Retrieval Methods - RAG & Agents</title>
+        <title>MCP and Agent Protocols - RAG & Agents</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#mcp-and-agent-protocols" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Retrieval Methods
+              MCP and Agent Protocols
             
           </span>
         </div>
@@ -274,20 +274,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -303,7 +303,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Retrieval Augmented Generation (RAG)
@@ -317,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/" class="md-nav__link">
+      <a href="../../RAG/fundamentals/" class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chunking/" class="md-nav__link">
+      <a href="../../RAG/chunking/" class="md-nav__link">
         
   
   
@@ -363,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../embedding/" class="md-nav__link">
+      <a href="../../RAG/embedding/" class="md-nav__link">
         
   
   
@@ -383,30 +383,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Retrieval Methods
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../RAG/retrieval_methods/" class="md-nav__link">
         
   
   
@@ -417,222 +397,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. TF-IDF
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. TF-IDF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#term-frequency-tf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Term Frequency (TF)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inverse-document-frequency-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Inverse Document Frequency (IDF)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tf-idf-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      TF-IDF Score
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-bm25-best-matching-25" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. BM25 (Best Matching 25)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. BM25 (Best Matching 25)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bm25-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      BM25 Formula
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-improvements-over-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Improvements Over TF-IDF
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bm25-vs-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      BM25 vs. TF-IDF
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-why-bm25-ranks-better" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Why BM25 Ranks Better
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use BM25
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-splade" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. SPLADE
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. SPLADE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Idea
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-splade-works-step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      How SPLADE Works (Step by Step)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#splade-scoring-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      SPLADE Scoring Function
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#splade-vs-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      SPLADE vs. BM25
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-splade" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use SPLADE
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-dense-retrieval-bi-encoders" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Dense Retrieval (Bi-Encoders)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-retrieval-method-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Retrieval Method Comparison
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -645,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../indexing_and_vector_database/" class="md-nav__link">
+      <a href="../../RAG/indexing_and_vector_database/" class="md-nav__link">
         
   
   
@@ -668,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reranking/" class="md-nav__link">
+      <a href="../../RAG/reranking/" class="md-nav__link">
         
   
   
@@ -691,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced_rag/" class="md-nav__link">
+      <a href="../../RAG/advanced_rag/" class="md-nav__link">
         
   
   
@@ -714,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
+      <a href="../../RAG/evaluation/" class="md-nav__link">
         
   
   
@@ -737,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_reference/" class="md-nav__link">
+      <a href="../../RAG/quick_reference/" class="md-nav__link">
         
   
   
@@ -800,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/tf_idf/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/tf_idf/" class="md-nav__link">
         
   
   
@@ -823,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/bm25/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/bm25/" class="md-nav__link">
         
   
   
@@ -846,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/splade/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/splade/" class="md-nav__link">
         
   
   
@@ -869,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/sentence_transformers/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/sentence_transformers/" class="md-nav__link">
         
   
   
@@ -904,20 +668,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -933,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             LLM Agents
@@ -947,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_fundamentals/" class="md-nav__link">
+      <a href="../agent_fundamentals/" class="md-nav__link">
         
   
   
@@ -970,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/memory_systems/" class="md-nav__link">
+      <a href="../memory_systems/" class="md-nav__link">
         
   
   
@@ -993,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/planning/" class="md-nav__link">
+      <a href="../planning/" class="md-nav__link">
         
   
   
@@ -1016,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_frameworks/" class="md-nav__link">
+      <a href="../agent_frameworks/" class="md-nav__link">
         
   
   
@@ -1036,10 +800,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agents/mcp_and_protocols/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1050,6 +836,206 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-problem-tool-fragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. The Problem: Tool Fragmentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-model-context-protocol-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Model Context Protocol (MCP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Model Context Protocol (MCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Background
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-what-mcp-servers-expose" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 What MCP Servers Expose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Transport
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-protocol-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Protocol Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-why-mcp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Why MCP Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Security Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-agent-to-agent-protocol-a2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Agent-to-Agent Protocol (A2A)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Agent-to-Agent Protocol (A2A)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Background
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Cards
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messages-and-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages and Artifacts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-a2a-vs-mcp-complementary-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 A2A vs. MCP — Complementary Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Interview Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1062,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/multi_agent/" class="md-nav__link">
+      <a href="../multi_agent/" class="md-nav__link">
         
   
   
@@ -1085,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_failure_modes/" class="md-nav__link">
+      <a href="../agent_failure_modes/" class="md-nav__link">
         
   
   
@@ -1108,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agentic_rag/" class="md-nav__link">
+      <a href="../agentic_rag/" class="md-nav__link">
         
   
   
@@ -1214,6 +1200,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1222,46 +1210,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#1-the-problem-tool-fragmentation" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview
+      1. The Problem: Tool Fragmentation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-tf-idf" class="md-nav__link">
+  <a href="#2-model-context-protocol-mcp" class="md-nav__link">
     <span class="md-ellipsis">
-      2. TF-IDF
+      2. Model Context Protocol (MCP)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. TF-IDF">
+    <nav class="md-nav" aria-label="2. Model Context Protocol (MCP)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#term-frequency-tf" class="md-nav__link">
+  <a href="#21-background" class="md-nav__link">
     <span class="md-ellipsis">
-      Term Frequency (TF)
+      2.1 Background
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#inverse-document-frequency-idf" class="md-nav__link">
+  <a href="#22-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Inverse Document Frequency (IDF)
+      2.2 Architecture
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tf-idf-score" class="md-nav__link">
+  <a href="#23-what-mcp-servers-expose" class="md-nav__link">
     <span class="md-ellipsis">
-      TF-IDF Score
+      2.3 What MCP Servers Expose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Transport
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-protocol-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Protocol Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-why-mcp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Why MCP Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Security Considerations
     </span>
   </a>
   
@@ -1273,55 +1297,79 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-bm25-best-matching-25" class="md-nav__link">
+  <a href="#3-agent-to-agent-protocol-a2a" class="md-nav__link">
     <span class="md-ellipsis">
-      3. BM25 (Best Matching 25)
+      3. Agent-to-Agent Protocol (A2A)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. BM25 (Best Matching 25)">
+    <nav class="md-nav" aria-label="3. Agent-to-Agent Protocol (A2A)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bm25-formula" class="md-nav__link">
+  <a href="#31-background" class="md-nav__link">
     <span class="md-ellipsis">
-      BM25 Formula
+      3.1 Background
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-improvements-over-tf-idf" class="md-nav__link">
+  <a href="#32-purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Improvements Over TF-IDF
+      3.2 Purpose
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#bm25-vs-tf-idf" class="md-nav__link">
+  <a href="#33-key-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      BM25 vs. TF-IDF
+      3.3 Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Cards
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-why-bm25-ranks-better" class="md-nav__link">
+  <a href="#task-lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Why BM25 Ranks Better
+      Task Lifecycle
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#when-to-use-bm25" class="md-nav__link">
+  <a href="#messages-and-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      When to Use BM25
+      Messages and Artifacts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-a2a-vs-mcp-complementary-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 A2A vs. MCP — Complementary Roles
     </span>
   </a>
   
@@ -1333,87 +1381,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-splade" class="md-nav__link">
+  <a href="#4-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      4. SPLADE
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. SPLADE">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Idea
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-splade-works-step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      How SPLADE Works (Step by Step)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#splade-scoring-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      SPLADE Scoring Function
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#splade-vs-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      SPLADE vs. BM25
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-use-splade" class="md-nav__link">
-    <span class="md-ellipsis">
-      When to Use SPLADE
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-dense-retrieval-bi-encoders" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Dense Retrieval (Bi-Encoders)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-retrieval-method-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Retrieval Method Comparison
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-interview-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Interview Questions
+      4. Interview Questions
     </span>
   </a>
   
@@ -1438,359 +1408,291 @@
   
 
 
-  <h1>Retrieval Methods</h1>
-
-<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Retrieval is the single most important factor in RAG quality. If the right document is not retrieved, the LLM cannot recover. This section covers the main retrieval algorithms from classical to neural, and how they compare.</p>
-<hr />
-<hr />
-<h2 id="2-tf-idf">2. TF-IDF<a class="headerlink" href="#2-tf-idf" title="Permanent link">&para;</a></h2>
-<p>TF-IDF (Term Frequency–Inverse Document Frequency) is the foundational lexical retrieval method. It scores documents by combining two signals.</p>
-<h3 id="term-frequency-tf">Term Frequency (TF)<a class="headerlink" href="#term-frequency-tf" title="Permanent link">&para;</a></h3>
-<p>How often a term appears in the document. Higher frequency → higher score.</p>
-<div class="highlight"><pre><span></span><code>TF(t, d) = count(t in d) / total terms in d
-</code></pre></div>
-<p>Variants like logarithmic TF reduce the impact of very frequent terms.</p>
-<hr />
-<h3 id="inverse-document-frequency-idf">Inverse Document Frequency (IDF)<a class="headerlink" href="#inverse-document-frequency-idf" title="Permanent link">&para;</a></h3>
-<p>How rare a term is across the corpus. Rare terms score higher; common words ("the", "is") score near zero.</p>
-<div class="highlight"><pre><span></span><code>IDF(t) = log(N / (1 + df(t)))
-</code></pre></div>
-<p>Where N is the total number of documents and df(t) is the number containing term t.</p>
-<hr />
-<h3 id="tf-idf-score">TF-IDF Score<a class="headerlink" href="#tf-idf-score" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>TF-IDF(t, d) = TF(t, d) × IDF(t)
-</code></pre></div>
-<p>A high score indicates a term that is both locally frequent and globally distinctive.</p>
-<hr />
-<p><strong>Strengths</strong></p>
+<h1 id="mcp-and-agent-protocols">MCP and Agent Protocols<a class="headerlink" href="#mcp-and-agent-protocols" title="Permanent link">&para;</a></h1>
+<h2 id="1-the-problem-tool-fragmentation">1. The Problem: Tool Fragmentation<a class="headerlink" href="#1-the-problem-tool-fragmentation" title="Permanent link">&para;</a></h2>
+<p>Every AI agent framework historically had its own proprietary way of connecting to tools. A LangChain tool couldn't be used in an AutoGen agent; a plugin written for ChatGPT couldn't be used in a custom LLM application. This "N×M problem" — N models × M tools — created massive integration overhead.</p>
+<p><strong>Model Context Protocol (MCP)</strong> and <strong>Agent-to-Agent Protocol (A2A)</strong> are the two emerging standards designed to solve this:</p>
 <ul>
 <li>
-<p>Simple, no training required, interpretable, fast.</p>
+<p><strong>MCP:</strong> Standardises how <em>agents connect to tools and data sources</em> (model ↔ tool).</p>
 </li>
 <li>
-<p>Works well for exact and partial lexical matches.</p>
+<p><strong>A2A:</strong> Standardises how <em>agents communicate with each other</em> (agent ↔ agent).</p>
 </li>
 </ul>
 <hr />
-<p><strong>Weaknesses</strong></p>
+<h2 id="2-model-context-protocol-mcp">2. Model Context Protocol (MCP)<a class="headerlink" href="#2-model-context-protocol-mcp" title="Permanent link">&para;</a></h2>
+<h3 id="21-background">2.1 Background<a class="headerlink" href="#21-background" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>No semantic understanding — requires exact word overlap.</p>
+<p><strong>Announced:</strong> November 2024 by Anthropic</p>
 </li>
 <li>
-<p>Assumes term independence (bag-of-words).</p>
+<p><strong>Open standard:</strong> Yes — specification published at <a href="https://modelcontextprotocol.io">modelcontextprotocol.io</a></p>
 </li>
 <li>
-<p>Linear TF with no saturation — keyword stuffing inflates scores.</p>
+<p><strong>Governance:</strong> Donated to the Linux Foundation AI &amp; Data (AAIF) in December 2025</p>
 </li>
 <li>
-<p>Ignores word order and syntax.</p>
+<p><strong>Adoption as of Q1 2025:</strong> 97 million monthly SDK downloads; adopted by OpenAI, Google, Microsoft, Amazon, and hundreds of third-party tool providers</p>
 </li>
 </ul>
-<hr />
-<hr />
-<h2 id="3-bm25-best-matching-25">3. BM25 (Best Matching 25)<a class="headerlink" href="#3-bm25-best-matching-25" title="Permanent link">&para;</a></h2>
-<p>BM25 is the go-to lexical retrieval baseline and a direct improvement over TF-IDF. It is probabilistically motivated and addresses TF-IDF's two main weaknesses: <strong>term frequency saturation</strong> and <strong>document length normalisation</strong>.</p>
-<h3 id="bm25-formula">BM25 Formula<a class="headerlink" href="#bm25-formula" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>BM25(d, q) = Σ IDF(t) × [tf(t,d) × (k₁ + 1)] / [tf(t,d) + k₁ × (1 - b + b × |d|/avgdl)]
+<h3 id="22-architecture">2.2 Architecture<a class="headerlink" href="#22-architecture" title="Permanent link">&para;</a></h3>
+<p>MCP is a <strong>client-server protocol</strong>:</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────┐
+│          MCP Host                │
+│  (Claude Desktop, IDE, app)      │
+│                                  │
+│  ┌─────────────┐                 │
+│  │  MCP Client  │ ←── connects ──┼──→ MCP Server (tool)
+│  └─────────────┘                 │    e.g. filesystem, GitHub,
+└──────────────────────────────────┘    Postgres, Slack, etc.
 </code></pre></div>
-<p>Where:</p>
 <ul>
 <li>
-<p><code>tf(t, d)</code> — term frequency of t in document d</p>
+<p><strong>MCP Host:</strong> The application running the LLM (Claude Desktop, VS Code extension, custom app).</p>
 </li>
 <li>
-<p><code>|d|</code> — length of document d</p>
+<p><strong>MCP Client:</strong> Lives inside the host; manages the connection to one MCP server.</p>
 </li>
 <li>
-<p><code>avgdl</code> — average document length in the corpus</p>
-</li>
-<li>
-<p><code>k₁</code> — controls term frequency saturation (typically 1.2–2.0)</p>
-</li>
-<li>
-<p><code>b</code> — controls length normalisation strength (typically 0.75)</p>
+<p><strong>MCP Server:</strong> A lightweight process (or remote service) that exposes tools, resources, and prompts over the MCP protocol.</p>
 </li>
 </ul>
-<hr />
-<h3 id="key-improvements-over-tf-idf">Key Improvements Over TF-IDF<a class="headerlink" href="#key-improvements-over-tf-idf" title="Permanent link">&para;</a></h3>
-<p><strong>Term Frequency Saturation:</strong> BM25 assumes diminishing returns for repeated terms. The first few occurrences matter most; additional repetitions contribute progressively less. This prevents keyword stuffing from dominating rankings.</p>
-<p><strong>Document Length Normalisation:</strong> Longer documents are explicitly penalised via the <code>b</code> parameter. Setting b=0 disables normalisation; b=1 applies full normalisation. TF-IDF only applies weak or implicit normalisation.</p>
-<p><strong>Modified IDF:</strong></p>
-<p><div class="highlight"><pre><span></span><code>IDF(t) = log((N - df(t) + 0.5) / (df(t) + 0.5))
-</code></pre></div>
-More robust for rare and common terms than the basic IDF formula.</p>
-<hr />
-<h3 id="bm25-vs-tf-idf">BM25 vs. TF-IDF<a class="headerlink" href="#bm25-vs-tf-idf" title="Permanent link">&para;</a></h3>
+<h3 id="23-what-mcp-servers-expose">2.3 What MCP Servers Expose<a class="headerlink" href="#23-what-mcp-servers-expose" title="Permanent link">&para;</a></h3>
+<p>MCP servers can expose three primitives:</p>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>TF-IDF</th>
-<th>BM25</th>
+<th>Primitive</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Term frequency</td>
-<td>Linear — repeats always increase score</td>
-<td>Saturated — diminishing returns past threshold</td>
+<td><strong>Tools</strong></td>
+<td>Functions the LLM can call (with arguments)</td>
+<td><code>read_file(path)</code>, <code>run_query(sql)</code></td>
 </tr>
 <tr>
-<td>Length normalisation</td>
-<td>Weak or implicit</td>
-<td>Explicit, tunable via b</td>
+<td><strong>Resources</strong></td>
+<td>Data the LLM can read (like files/DB rows)</td>
+<td><code>/project/README.md</code>, <code>db://table/users</code></td>
 </tr>
 <tr>
-<td>Tuning parameters</td>
-<td>None</td>
-<td>k₁ (saturation) and b (length norm)</td>
-</tr>
-<tr>
-<td>Ranking quality</td>
-<td>Good baseline</td>
-<td>Better; closer to human judgment</td>
-</tr>
-<tr>
-<td>Requires training</td>
-<td>No</td>
-<td>No</td>
+<td><strong>Prompts</strong></td>
+<td>Pre-built prompt templates the host can use</td>
+<td><code>summarise-pr-template</code></td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h3 id="example-why-bm25-ranks-better">Example: Why BM25 Ranks Better<a class="headerlink" href="#example-why-bm25-ranks-better" title="Permanent link">&para;</a></h3>
-<p><strong>Corpus:</strong></p>
-<ul>
-<li>
-<p>D1: "deep learning deep learning deep learning tutorial"</p>
-</li>
-<li>
-<p>D2: "deep learning tutorial"</p>
-</li>
-<li>
-<p>D3: "deep learning introduction overview"</p>
-</li>
-</ul>
-<p><strong>Query:</strong> "deep learning tutorial"</p>
-<ul>
-<li>
-<p>TF-IDF ranks: D1 &gt; D2 &gt; D3 — D1 wins purely due to repetition of "deep learning".</p>
-</li>
-<li>
-<p>BM25 ranks: D2 &gt; D1 &gt; D3 — D1's score saturates; D2's shorter length gives it a boost. D2 is more concise and directly on-topic.</p>
-</li>
-</ul>
-<p>BM25 aligns with human intuition: repeating the same phrase doesn't make a document more relevant.</p>
-<h3 id="when-to-use-bm25">When to Use BM25<a class="headerlink" href="#when-to-use-bm25" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Exact keyword matches matter (names, IDs, error codes, product codes).</p>
-</li>
-<li>
-<p>No training budget or labelled data.</p>
-</li>
-<li>
-<p>Fast, no-GPU, interpretable baseline.</p>
-</li>
-<li>
-<p>As the sparse component of a hybrid retrieval system.</p>
-</li>
-</ul>
-<hr />
-<hr />
-<h2 id="4-splade">4. SPLADE<a class="headerlink" href="#4-splade" title="Permanent link">&para;</a></h2>
-<p>SPLADE (Sparse Lexical and Expansion Model) is a neural sparse retrieval model that bridges classical lexical retrieval (BM25) and dense semantic retrieval. It uses a pretrained transformer to produce sparse vector representations, and critically, it performs <strong>learned term expansion</strong>.</p>
-<h3 id="core-idea">Core Idea<a class="headerlink" href="#core-idea" title="Permanent link">&para;</a></h3>
-<p>BM25 relies on exact term overlap. SPLADE trains a transformer to assign weights to vocabulary terms — including terms <strong>not present</strong> in the input — based on semantic relevance. Despite using a neural model, the output is a sparse vector compatible with standard inverted-index infrastructure.</p>
-<hr />
-<h3 id="how-splade-works-step-by-step">How SPLADE Works (Step by Step)<a class="headerlink" href="#how-splade-works-step-by-step" title="Permanent link">&para;</a></h3>
+<h3 id="24-transport">2.4 Transport<a class="headerlink" href="#24-transport" title="Permanent link">&para;</a></h3>
+<p>MCP messages are JSON-RPC 2.0. Two transport mechanisms:</p>
 <ol>
 <li>
-<p><strong>Input text</strong> is passed through a masked language model (e.g., BERT).</p>
+<p><strong>stdio:</strong> Server runs as a child process; host communicates via stdin/stdout. Used for local tools.</p>
 </li>
 <li>
-<p><strong>Vocabulary scoring:</strong> For each token position, the model produces a score for every term in the vocabulary. The model answers: "Which vocabulary terms are relevant to this text, even if not explicitly present?"</p>
-</li>
-<li>
-<p><strong>Non-linearity and sparsification:</strong> Raw scores are transformed using ReLU (removes negatives) + log scaling (controls large activations). Max pooling across token positions produces a single sparse vector.</p>
-</li>
-<li>
-<p><strong>Result:</strong> One score per vocabulary term; most are zero. Only the most relevant terms remain active.</p>
-</li>
-<li>
-<p><strong>Inverted index:</strong> Non-zero terms are stored in a standard inverted index — identical infrastructure to BM25.</p>
+<p><strong>HTTP + SSE (Server-Sent Events):</strong> Used for remote MCP servers. POST for client→server; SSE stream for server→client.</p>
 </li>
 </ol>
-<p><strong>Example expansion:</strong></p>
-<ul>
-<li>
-<p>Input: "car repair"</p>
-</li>
-<li>
-<p>Expanded active terms: <code>{car: 2.1, repair: 1.9, automobile: 1.4, mechanic: 1.1, engine: 0.8}</code></p>
-</li>
-</ul>
-<p>This allows matching a document about "automobile maintenance" even though neither query word appears in it.</p>
-<hr />
-<h3 id="splade-scoring-function">SPLADE Scoring Function<a class="headerlink" href="#splade-scoring-function" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>Score(t) = max over positions of log(1 + ReLU(logit_t))
+<h3 id="25-protocol-flow">2.5 Protocol Flow<a class="headerlink" href="#25-protocol-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. Host starts MCP server process (or connects to remote URL).
+
+2. Client sends initialize request (protocol version, client capabilities).
+
+3. Server responds with its capabilities (tools list, resources list).
+
+4. LLM in host receives tool list; includes them in its context.
+
+5. LLM emits a tool_call → client routes it to the correct MCP server.
+
+6. Server executes the tool and returns result as JSON.
+
+7. Client injects result into LLM context as a tool message.
 </code></pre></div>
+<h3 id="26-why-mcp-matters">2.6 Why MCP Matters<a class="headerlink" href="#26-why-mcp-matters" title="Permanent link">&para;</a></h3>
+<p>Before MCP, integrating a new tool required:</p>
 <ul>
 <li>
-<p>ReLU enforces non-negativity</p>
+<p>Writing a custom wrapper for each framework (LangChain, AutoGen, etc.).</p>
 </li>
 <li>
-<p>Log scaling controls large activations</p>
+<p>Maintaining N adapters as frameworks evolved.</p>
+</li>
+</ul>
+<p>With MCP:</p>
+<ul>
+<li>
+<p>A tool is written once as an MCP server.</p>
 </li>
 <li>
-<p>Max pooling encourages sparse activation</p>
+<p>Any MCP-compatible host (Claude, GPT-4, Gemini, custom app) can use it immediately.</p>
+</li>
+<li>
+<p>Solves the N×M integration problem.</p>
+</li>
+</ul>
+<h3 id="27-security-considerations">2.7 Security Considerations<a class="headerlink" href="#27-security-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Tool trust:</strong> MCP servers run with the permissions of the host process. A malicious MCP server could read files or make network calls.</p>
+</li>
+<li>
+<p><strong>Prompt injection via tool output:</strong> A tool could return text designed to hijack the LLM's behaviour.</p>
+</li>
+<li>
+<p><strong>Mitigation:</strong> Run MCP servers in sandboxes; validate tool outputs before injection into context; use allowlists for which servers can be connected.</p>
 </li>
 </ul>
 <hr />
-<h3 id="splade-vs-bm25">SPLADE vs. BM25<a class="headerlink" href="#splade-vs-bm25" title="Permanent link">&para;</a></h3>
+<h2 id="3-agent-to-agent-protocol-a2a">3. Agent-to-Agent Protocol (A2A)<a class="headerlink" href="#3-agent-to-agent-protocol-a2a" title="Permanent link">&para;</a></h2>
+<h3 id="31-background">3.1 Background<a class="headerlink" href="#31-background" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Announced:</strong> April 2025 by Google</p>
+</li>
+<li>
+<p><strong>Open standard:</strong> Yes — specification at <a href="https://google.github.io/A2A">google.github.io/A2A</a></p>
+</li>
+<li>
+<p><strong>Governance:</strong> Under the Linux Foundation alongside MCP</p>
+</li>
+<li>
+<p><strong>Co-authors:</strong> Atlassian, Box, Cohere, PayPal, Salesforce, SAP, ServiceNow, and 50+ others</p>
+</li>
+</ul>
+<h3 id="32-purpose">3.2 Purpose<a class="headerlink" href="#32-purpose" title="Permanent link">&para;</a></h3>
+<p>A2A addresses a different layer than MCP: <strong>how agents discover and communicate with other agents at runtime</strong>, regardless of the underlying framework or vendor.</p>
+<p><strong>MCP</strong> = a model connecting to a tool.<br />
+<strong>A2A</strong> = an agent connecting to another agent.</p>
+<h3 id="33-key-concepts">3.3 Key Concepts<a class="headerlink" href="#33-key-concepts" title="Permanent link">&para;</a></h3>
+<h4 id="agent-cards">Agent Cards<a class="headerlink" href="#agent-cards" title="Permanent link">&para;</a></h4>
+<p>Each A2A-compatible agent publishes a <strong>well-known JSON document</strong> (like <code>robots.txt</code> for AI):</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ResearchAgent&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Searches the web and summarises findings&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://my-agent.example.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;streaming&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;push_notifications&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;skills&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web_research&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Web Research&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Search and summarise web content&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;input_modes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;output_modes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;file&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>An orchestrator agent fetches Agent Cards to discover what remote agents can do, without hardcoded knowledge.</p>
+<h4 id="task-lifecycle">Task Lifecycle<a class="headerlink" href="#task-lifecycle" title="Permanent link">&para;</a></h4>
+<p>A2A defines a <strong>task</strong> as the unit of work sent from one agent (client) to another (server):</p>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>BM25</th>
-<th>SPLADE</th>
+<th>State</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Term weighting</td>
-<td>Hand-crafted formula (TF × IDF)</td>
-<td>Learned by transformer</td>
+<td><code>submitted</code></td>
+<td>Task received by server agent</td>
 </tr>
 <tr>
-<td>Semantic expansion</td>
-<td>None — exact words only</td>
-<td>Yes — expands to related terms</td>
+<td><code>working</code></td>
+<td>Server agent is actively processing</td>
 </tr>
 <tr>
-<td>Index compatibility</td>
-<td>Inverted index</td>
-<td>Inverted index (same infrastructure)</td>
+<td><code>input-required</code></td>
+<td>Server needs more information from client</td>
 </tr>
 <tr>
-<td>Interpretability</td>
-<td>High</td>
-<td>Moderate</td>
+<td><code>completed</code></td>
+<td>Task finished successfully</td>
 </tr>
 <tr>
-<td>Requires training</td>
-<td>No</td>
-<td>Yes</td>
+<td><code>failed</code></td>
+<td>Task failed</td>
 </tr>
 <tr>
-<td>Retrieval quality</td>
-<td>Strong baseline</td>
-<td>Stronger; approaches dense retrieval</td>
+<td><code>cancelled</code></td>
+<td>Task was cancelled</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Think of SPLADE as "BM25 where the term weights and expansions are learned by a language model rather than hand-crafted."</p>
-</blockquote>
-<hr />
-<h3 id="when-to-use-splade">When to Use SPLADE<a class="headerlink" href="#when-to-use-splade" title="Permanent link">&para;</a></h3>
+<p>Tasks can be <strong>synchronous</strong> (response returned immediately), <strong>streaming</strong> (SSE stream of intermediate results), or <strong>asynchronous</strong> (client polls or receives a push notification).</p>
+<h4 id="messages-and-artifacts">Messages and Artifacts<a class="headerlink" href="#messages-and-artifacts" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p>Want BM25 efficiency with semantic expansion.</p>
+<p><strong>Messages:</strong> Turn-by-turn conversation content (user ↔ agent or agent ↔ agent).</p>
 </li>
 <li>
-<p>Existing inverted-index infrastructure that cannot be replaced.</p>
-</li>
-<li>
-<p>Queries use different vocabulary than documents.</p>
-</li>
-<li>
-<p>As the sparse component in hybrid retrieval alongside dense models.</p>
+<p><strong>Artifacts:</strong> Structured outputs produced by the task (files, structured data, images).</p>
 </li>
 </ul>
-<hr />
-<hr />
-<h2 id="5-dense-retrieval-bi-encoders">5. Dense Retrieval (Bi-Encoders)<a class="headerlink" href="#5-dense-retrieval-bi-encoders" title="Permanent link">&para;</a></h2>
-<p>Dense retrieval uses neural embedding models to encode queries and documents into vectors; similarity is a dot product or cosine distance. Full coverage — training objectives, domain adaptation, model selection — is in <a href="../embedding/">Embedding</a>.</p>
-<p><strong>When to use:</strong> Natural language queries; paraphrase matching; semantic similarity matters.</p>
-<p><strong>Limitation:</strong> Weak on exact keyword matching, rare terms, and identifiers — combine with BM25/SPLADE for production systems.</p>
-<hr />
-<hr />
-<h2 id="6-retrieval-method-comparison">6. Retrieval Method Comparison<a class="headerlink" href="#6-retrieval-method-comparison" title="Permanent link">&para;</a></h2>
+<h3 id="34-a2a-vs-mcp-complementary-roles">3.4 A2A vs. MCP — Complementary Roles<a class="headerlink" href="#34-a2a-vs-mcp-complementary-roles" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Semantic Matching</th>
-<th>Exact Match</th>
-<th>Training Needed</th>
-<th>Infrastructure</th>
-<th>Best Use Case</th>
+<th>Dimension</th>
+<th>MCP</th>
+<th>A2A</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>TF-IDF</td>
-<td>None</td>
-<td>Good</td>
-<td>No</td>
-<td>Inverted index</td>
-<td>Simple baseline</td>
+<td>Who is the server?</td>
+<td>A tool / data source</td>
+<td>Another agent</td>
 </tr>
 <tr>
-<td>BM25</td>
-<td>None</td>
-<td>Strong</td>
-<td>No</td>
-<td>Inverted index</td>
-<td>Keyword-heavy queries; default lexical baseline</td>
+<td>Who is the client?</td>
+<td>An LLM / agent</td>
+<td>Another agent</td>
 </tr>
 <tr>
-<td>SPLADE</td>
-<td>Via expansion</td>
-<td>Strong</td>
-<td>Yes</td>
-<td>Inverted index</td>
-<td>Neural sparse; efficient + semantic</td>
+<td>What is exchanged?</td>
+<td>Tool calls and results</td>
+<td>Tasks and multi-turn messages</td>
 </tr>
 <tr>
-<td>Dense bi-encoder</td>
-<td>Strong</td>
-<td>Weak</td>
-<td>Yes</td>
-<td>Vector DB + ANN</td>
-<td>Natural language queries; semantic similarity</td>
+<td>Discovery mechanism</td>
+<td>Manual configuration</td>
+<td>Agent Cards (auto-discoverable)</td>
 </tr>
 <tr>
-<td>Hybrid (dense + sparse)</td>
-<td>Strong</td>
-<td>Strong</td>
-<td>Yes (dense part)</td>
-<td>Both</td>
-<td>Production RAG; best overall quality</td>
+<td>State management</td>
+<td>Stateless per call</td>
+<td>Stateful task lifecycle</td>
+</tr>
+<tr>
+<td>Use case</td>
+<td>Agent using a database</td>
+<td>Orchestrator delegating to sub-agent</td>
 </tr>
 </tbody>
 </table>
+<p><strong>In a production system:</strong> An orchestrator agent uses A2A to delegate tasks to specialised sub-agents. Each sub-agent uses MCP to connect to its own tools (databases, APIs, file systems).</p>
 <hr />
+<h2 id="4-interview-questions">4. Interview Questions<a class="headerlink" href="#4-interview-questions" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What problem does MCP solve, and how does it solve it?</strong></p>
+<p>A: Before MCP, every tool had to be written as a custom adapter for each AI framework — a tool for LangChain couldn't be used in AutoGen or Claude Desktop without re-implementing the integration. MCP defines a universal client-server protocol: a tool is exposed as an MCP server once, and any MCP-compatible host (any LLM application) can discover and use it. The protocol uses JSON-RPC 2.0 over stdio (for local tools) or HTTP+SSE (for remote tools). This reduces integration work from N×M (N models × M tools) to N+M (N hosts + M servers).</p>
 <hr />
-<h2 id="7-interview-questions">7. Interview Questions<a class="headerlink" href="#7-interview-questions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why is BM25 still widely used despite neural models being more powerful?</strong></p>
-<p>A: BM25 requires no training, has no GPU inference cost, is fully interpretable, and handles exact keyword matching better than dense models. It's also very fast on inverted indexes. In hybrid systems, BM25 and dense retrieval complement each other — BM25 catches cases the dense model misses (exact terms, IDs) and dense models catch paraphrases BM25 misses.</p>
+<p><strong>Q: What is the difference between MCP and A2A? Can they be used together?</strong></p>
+<p>A: MCP standardises the connection between an agent and its tools (databases, APIs, file systems). A2A standardises the connection between agents — how one agent delegates a task to another and tracks its progress. They operate at different layers and are complementary: an orchestrator agent uses A2A to delegate to sub-agents; each sub-agent uses MCP to connect to its tools. Google ADK and Anthropic's stack both support both protocols simultaneously.</p>
 <hr />
-<p><strong>Q: What is the difference between SPLADE and a dense bi-encoder?</strong></p>
-<p>A: SPLADE produces a sparse vector over the vocabulary and is indexed in an inverted index — fast, memory-efficient, and interpretable. A dense bi-encoder produces a continuous low-dimensional vector indexed in a vector DB with ANN search. SPLADE uses a neural model for semantic expansion but retains sparse representation. In practice SPLADE often outperforms BM25 and approaches dense retrieval quality, while remaining compatible with existing inverted-index infrastructure.</p>
+<p><strong>Q: What is an Agent Card in the A2A protocol?</strong></p>
+<p>A: An Agent Card is a JSON document published at a well-known URL by each A2A-compatible agent. It declares the agent's name, description, endpoint URL, supported communication modes (streaming, push notifications), and the skills it offers (with input/output modalities). An orchestrator fetches Agent Cards to discover available agents at runtime, without hardcoded configuration. This is analogous to OpenAPI specs for HTTP services — agents become self-describing and discoverable.</p>
 <hr />
-<p><strong>Q: What is Reciprocal Rank Fusion (RRF) and why is it preferred over score interpolation?</strong></p>
-<p>A: RRF combines ranked lists from multiple retrievers by summing 1/(k + rank) for each document across all retrievers (k is typically 60). It is preferred over linear score interpolation because it is robust to score scale differences between retrievers — BM25 scores and cosine similarities live on completely different scales. RRF requires no weight tuning and typically matches or outperforms tuned linear combinations.</p>
-<hr />
-<p><strong>Q: Why might a dense retriever miss a relevant document that BM25 finds?</strong></p>
-<p>A: Dense retrievers encode the entire meaning of text into a single vector — rare or highly specific terms may get diluted in the embedding. If a document is only relevant because it contains a specific product ID, error code, or proper noun, a dense embedding may not preserve that specificity. BM25's exact-match scoring handles these cases naturally. This is why hybrid retrieval consistently outperforms either method alone.</p>
-<hr />
-<p><strong>Q: What preprocessing decisions most affect BM25 performance?</strong></p>
-<p>A: Stopword removal, stemming/lemmatisation, and tokenisation. Removing stopwords (words like "the", "is") reduces noise. Stemming conflates "running" and "run", improving recall but potentially harming precision. BM25's k₁ and b parameters also have a significant effect and should be tuned on held-out validation data rather than left at defaults.</p>
-<hr />
+<p><strong>Q: What are the security risks of MCP and how would you mitigate them?</strong></p>
+<p>A: Three main risks: (1) <strong>Malicious MCP server:</strong> A compromised or adversarial server could exfiltrate data or make harmful calls — mitigate by running servers in sandboxes with minimal OS permissions; (2) <strong>Prompt injection via tool output:</strong> A server could return text designed to hijack the LLM's behaviour (e.g., "Ignore all previous instructions…") — mitigate by filtering tool output through a validation layer before injection into context; (3) <strong>Over-permissioned servers:</strong> A server with file system access shouldn't be connected to a model unless the task requires it — apply the principle of least privilege, connecting only the servers needed for the current task.</p>
 
 
 

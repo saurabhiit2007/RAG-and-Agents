@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -19,22 +19,19 @@
         <link rel="next" href="../retrieval_methods/">
       
       
-        
-      
-      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Embedding - RAG & Context Engineering</title>
+        <title>Embedding - RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,6 +54,7 @@
     
       
 
+    
     
     
   </head>
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +225,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -262,14 +260,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -302,14 +295,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -318,11 +306,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -338,14 +322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -366,14 +345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -401,14 +375,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -419,14 +388,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -447,9 +411,7 @@
         <li class="md-nav__item">
   <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      1. Overview
     </span>
   </a>
   
@@ -458,9 +420,7 @@
         <li class="md-nav__item">
   <a href="#2-dense-sparse-and-hybrid-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Dense, Sparse, and Hybrid Embeddings
-      
+      2. Dense, Sparse, and Hybrid Embeddings
     </span>
   </a>
   
@@ -470,9 +430,7 @@
           <li class="md-nav__item">
   <a href="#dense-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Dense Embeddings
-      
+      Dense Embeddings
     </span>
   </a>
   
@@ -481,9 +439,7 @@
           <li class="md-nav__item">
   <a href="#sparse-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Sparse Embeddings
-      
+      Sparse Embeddings
     </span>
   </a>
   
@@ -492,9 +448,7 @@
           <li class="md-nav__item">
   <a href="#hybrid-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Hybrid Embeddings
-      
+      Hybrid Embeddings
     </span>
   </a>
   
@@ -508,9 +462,7 @@
         <li class="md-nav__item">
   <a href="#3-bi-encoders-vs-cross-encoders" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3. Bi-Encoders vs. Cross-Encoders
-      
+      3. Bi-Encoders vs. Cross-Encoders
     </span>
   </a>
   
@@ -520,9 +472,7 @@
           <li class="md-nav__item">
   <a href="#bi-encoders-dual-encoders" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Bi-Encoders (Dual Encoders)
-      
+      Bi-Encoders (Dual Encoders)
     </span>
   </a>
   
@@ -531,9 +481,7 @@
           <li class="md-nav__item">
   <a href="#cross-encoders" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Cross-Encoders
-      
+      Cross-Encoders
     </span>
   </a>
   
@@ -542,9 +490,7 @@
           <li class="md-nav__item">
   <a href="#late-interaction-colbert" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Late Interaction — ColBERT
-      
+      Late Interaction — ColBERT
     </span>
   </a>
   
@@ -558,9 +504,7 @@
         <li class="md-nav__item">
   <a href="#4-embedding-training-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        4. Embedding Training Objectives
-      
+      4. Embedding Training Objectives
     </span>
   </a>
   
@@ -570,9 +514,7 @@
           <li class="md-nav__item">
   <a href="#contrastive-learning-infonce-mnr-loss" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Contrastive Learning (InfoNCE / MNR Loss)
-      
+      Contrastive Learning (InfoNCE / MNR Loss)
     </span>
   </a>
   
@@ -581,9 +523,7 @@
           <li class="md-nav__item">
   <a href="#supervised-retrieval-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Supervised Retrieval Fine-tuning
-      
+      Supervised Retrieval Fine-tuning
     </span>
   </a>
   
@@ -592,9 +532,7 @@
           <li class="md-nav__item">
   <a href="#matryoshka-representation-learning-mrl" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Matryoshka Representation Learning (MRL)
-      
+      Matryoshka Representation Learning (MRL)
     </span>
   </a>
   
@@ -603,9 +541,7 @@
           <li class="md-nav__item">
   <a href="#instruction-tuned-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Instruction-Tuned Embeddings
-      
+      Instruction-Tuned Embeddings
     </span>
   </a>
   
@@ -617,11 +553,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-domain-adaptation-the-cold-start-problem" class="md-nav__link">
+  <a href="#5-choosing-an-embedding-model-mteb" class="md-nav__link">
     <span class="md-ellipsis">
+      5. Choosing an Embedding Model — MTEB
+    </span>
+  </a>
+  
+</li>
       
-        5. Domain Adaptation (The "Cold Start" Problem)
-      
+        <li class="md-nav__item">
+  <a href="#6-domain-adaptation-the-cold-start-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Domain Adaptation (The "Cold Start" Problem)
     </span>
   </a>
   
@@ -630,9 +573,7 @@
         <li class="md-nav__item">
   <a href="#6-distance-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        6. Distance Metrics
-      
+      6. Distance Metrics
     </span>
   </a>
   
@@ -641,9 +582,7 @@
         <li class="md-nav__item">
   <a href="#7-common-failure-modes" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        7. Common Failure Modes
-      
+      7. Common Failure Modes
     </span>
   </a>
   
@@ -652,9 +591,7 @@
         <li class="md-nav__item">
   <a href="#8-evaluation-of-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        8. Evaluation of Embeddings
-      
+      8. Evaluation of Embeddings
     </span>
   </a>
   
@@ -663,9 +600,7 @@
         <li class="md-nav__item">
   <a href="#9-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        9. Interview Questions
-      
+      9. Interview Questions
     </span>
   </a>
   
@@ -692,14 +627,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -720,14 +650,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -748,14 +673,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -776,14 +696,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -804,14 +719,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -832,14 +742,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -873,14 +778,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -889,11 +789,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -909,14 +805,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -937,14 +828,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -965,14 +851,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -993,14 +874,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1030,20 +906,290 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1078,9 +1224,7 @@
         <li class="md-nav__item">
   <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      1. Overview
     </span>
   </a>
   
@@ -1089,9 +1233,7 @@
         <li class="md-nav__item">
   <a href="#2-dense-sparse-and-hybrid-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Dense, Sparse, and Hybrid Embeddings
-      
+      2. Dense, Sparse, and Hybrid Embeddings
     </span>
   </a>
   
@@ -1101,9 +1243,7 @@
           <li class="md-nav__item">
   <a href="#dense-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Dense Embeddings
-      
+      Dense Embeddings
     </span>
   </a>
   
@@ -1112,9 +1252,7 @@
           <li class="md-nav__item">
   <a href="#sparse-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Sparse Embeddings
-      
+      Sparse Embeddings
     </span>
   </a>
   
@@ -1123,9 +1261,7 @@
           <li class="md-nav__item">
   <a href="#hybrid-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Hybrid Embeddings
-      
+      Hybrid Embeddings
     </span>
   </a>
   
@@ -1139,9 +1275,7 @@
         <li class="md-nav__item">
   <a href="#3-bi-encoders-vs-cross-encoders" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3. Bi-Encoders vs. Cross-Encoders
-      
+      3. Bi-Encoders vs. Cross-Encoders
     </span>
   </a>
   
@@ -1151,9 +1285,7 @@
           <li class="md-nav__item">
   <a href="#bi-encoders-dual-encoders" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Bi-Encoders (Dual Encoders)
-      
+      Bi-Encoders (Dual Encoders)
     </span>
   </a>
   
@@ -1162,9 +1294,7 @@
           <li class="md-nav__item">
   <a href="#cross-encoders" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Cross-Encoders
-      
+      Cross-Encoders
     </span>
   </a>
   
@@ -1173,9 +1303,7 @@
           <li class="md-nav__item">
   <a href="#late-interaction-colbert" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Late Interaction — ColBERT
-      
+      Late Interaction — ColBERT
     </span>
   </a>
   
@@ -1189,9 +1317,7 @@
         <li class="md-nav__item">
   <a href="#4-embedding-training-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        4. Embedding Training Objectives
-      
+      4. Embedding Training Objectives
     </span>
   </a>
   
@@ -1201,9 +1327,7 @@
           <li class="md-nav__item">
   <a href="#contrastive-learning-infonce-mnr-loss" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Contrastive Learning (InfoNCE / MNR Loss)
-      
+      Contrastive Learning (InfoNCE / MNR Loss)
     </span>
   </a>
   
@@ -1212,9 +1336,7 @@
           <li class="md-nav__item">
   <a href="#supervised-retrieval-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Supervised Retrieval Fine-tuning
-      
+      Supervised Retrieval Fine-tuning
     </span>
   </a>
   
@@ -1223,9 +1345,7 @@
           <li class="md-nav__item">
   <a href="#matryoshka-representation-learning-mrl" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Matryoshka Representation Learning (MRL)
-      
+      Matryoshka Representation Learning (MRL)
     </span>
   </a>
   
@@ -1234,9 +1354,7 @@
           <li class="md-nav__item">
   <a href="#instruction-tuned-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Instruction-Tuned Embeddings
-      
+      Instruction-Tuned Embeddings
     </span>
   </a>
   
@@ -1248,11 +1366,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-domain-adaptation-the-cold-start-problem" class="md-nav__link">
+  <a href="#5-choosing-an-embedding-model-mteb" class="md-nav__link">
     <span class="md-ellipsis">
+      5. Choosing an Embedding Model — MTEB
+    </span>
+  </a>
+  
+</li>
       
-        5. Domain Adaptation (The "Cold Start" Problem)
-      
+        <li class="md-nav__item">
+  <a href="#6-domain-adaptation-the-cold-start-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Domain Adaptation (The "Cold Start" Problem)
     </span>
   </a>
   
@@ -1261,9 +1386,7 @@
         <li class="md-nav__item">
   <a href="#6-distance-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        6. Distance Metrics
-      
+      6. Distance Metrics
     </span>
   </a>
   
@@ -1272,9 +1395,7 @@
         <li class="md-nav__item">
   <a href="#7-common-failure-modes" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        7. Common Failure Modes
-      
+      7. Common Failure Modes
     </span>
   </a>
   
@@ -1283,9 +1404,7 @@
         <li class="md-nav__item">
   <a href="#8-evaluation-of-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        8. Evaluation of Embeddings
-      
+      8. Evaluation of Embeddings
     </span>
   </a>
   
@@ -1294,9 +1413,7 @@
         <li class="md-nav__item">
   <a href="#9-interview-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        9. Interview Questions
-      
+      9. Interview Questions
     </span>
   </a>
   
@@ -1312,7 +1429,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1332,25 +1448,43 @@
 <h3 id="dense-embeddings">Dense Embeddings<a class="headerlink" href="#dense-embeddings" title="Permanent link">&para;</a></h3>
 <p>Text is mapped into a continuous low-dimensional vector space (typically 256–4096 dimensions) using a neural encoder. Similar texts end up near each other regardless of exact word overlap.</p>
 <ul>
-<li><strong>Pros:</strong> Captures paraphrases and semantic equivalence; efficient ANN search; handles natural language queries well.</li>
-<li><strong>Cons:</strong> Weak at exact keyword matching; sensitive to domain shift; less interpretable.</li>
-<li><strong>Examples:</strong> Sentence-BERT, E5, GTE, OpenAI text-embedding models.</li>
+<li>
+<p><strong>Pros:</strong> Captures paraphrases and semantic equivalence; efficient ANN search; handles natural language queries well.</p>
+</li>
+<li>
+<p><strong>Cons:</strong> Weak at exact keyword matching; sensitive to domain shift; less interpretable.</p>
+</li>
+<li>
+<p><strong>Examples:</strong> Sentence-BERT, E5, GTE, OpenAI text-embedding models.</p>
+</li>
 </ul>
 <hr />
 <h3 id="sparse-embeddings">Sparse Embeddings<a class="headerlink" href="#sparse-embeddings" title="Permanent link">&para;</a></h3>
 <p>Text is represented as a high-dimensional sparse vector over a vocabulary (most dimensions are zero). Non-zero weights correspond to terms that appear in the document or query.</p>
 <ul>
-<li><strong>Pros:</strong> Excellent exact-match recall for keywords, IDs, product codes; interpretable; robust for rare terms.</li>
-<li><strong>Cons:</strong> No semantic generalisation; fails on paraphrases; vocabulary-dependent.</li>
-<li><strong>Examples:</strong> TF-IDF, BM25, SPLADE.</li>
+<li>
+<p><strong>Pros:</strong> Excellent exact-match recall for keywords, IDs, product codes; interpretable; robust for rare terms.</p>
+</li>
+<li>
+<p><strong>Cons:</strong> No semantic generalisation; fails on paraphrases; vocabulary-dependent.</p>
+</li>
+<li>
+<p><strong>Examples:</strong> TF-IDF, BM25, SPLADE.</p>
+</li>
 </ul>
 <hr />
 <h3 id="hybrid-embeddings">Hybrid Embeddings<a class="headerlink" href="#hybrid-embeddings" title="Permanent link">&para;</a></h3>
 <p>Hybrid approaches combine both signals. Three common strategies:</p>
 <ul>
-<li><strong>Late fusion (RRF):</strong> Run dense and sparse search independently, then merge ranked lists using Reciprocal Rank Fusion. Called "late" because merging happens after both retrievals complete.</li>
-<li><strong>Two-stage retrieval:</strong> Sparse search narrows millions of documents to a few hundred candidates; a dense model re-scores that shortlist. Balances efficiency and accuracy.</li>
-<li><strong>Joint sparse-dense (SPLADE-style):</strong> A single model produces vectors containing both semantic signals and lexical importance weights — one unified search.</li>
+<li>
+<p><strong>Late fusion (RRF):</strong> Run dense and sparse search independently, then merge ranked lists using Reciprocal Rank Fusion. Called "late" because merging happens after both retrievals complete.</p>
+</li>
+<li>
+<p><strong>Two-stage retrieval:</strong> Sparse search narrows millions of documents to a few hundred candidates; a dense model re-scores that shortlist. Balances efficiency and accuracy.</p>
+</li>
+<li>
+<p><strong>Joint sparse-dense (SPLADE-style):</strong> A single model produces vectors containing both semantic signals and lexical importance weights — one unified search.</p>
+</li>
 </ul>
 <hr />
 <hr />
@@ -1361,9 +1495,15 @@
 <div class="highlight"><pre><span></span><code>s(q, d) = ⟨f(q), g(d)⟩
 </code></pre></div>
 <ul>
-<li><strong>Strengths:</strong> Extremely fast at scale; indexable; supports millions of documents.</li>
-<li><strong>Weakness:</strong> No cross-attention between query and document — limited relevance modelling.</li>
-<li><strong>Used for:</strong> First-stage retrieval (recall-optimised).</li>
+<li>
+<p><strong>Strengths:</strong> Extremely fast at scale; indexable; supports millions of documents.</p>
+</li>
+<li>
+<p><strong>Weakness:</strong> No cross-attention between query and document — limited relevance modelling.</p>
+</li>
+<li>
+<p><strong>Used for:</strong> First-stage retrieval (recall-optimised).</p>
+</li>
 </ul>
 <hr />
 <h3 id="cross-encoders">Cross-Encoders<a class="headerlink" href="#cross-encoders" title="Permanent link">&para;</a></h3>
@@ -1371,9 +1511,15 @@
 <div class="highlight"><pre><span></span><code>s(q, d) = h([q ; d])
 </code></pre></div>
 <ul>
-<li><strong>Strengths:</strong> Rich token-level interactions; substantially more accurate relevance scoring.</li>
-<li><strong>Weakness:</strong> Cannot be pre-computed or indexed — one full forward pass per query-document pair. Too slow for large corpora.</li>
-<li><strong>Used for:</strong> Second-stage reranking over a small candidate set (precision-optimised).</li>
+<li>
+<p><strong>Strengths:</strong> Rich token-level interactions; substantially more accurate relevance scoring.</p>
+</li>
+<li>
+<p><strong>Weakness:</strong> Cannot be pre-computed or indexed — one full forward pass per query-document pair. Too slow for large corpora.</p>
+</li>
+<li>
+<p><strong>Used for:</strong> Second-stage reranking over a small candidate set (precision-optimised).</p>
+</li>
 </ul>
 <blockquote>
 <p><strong>Bi-encoders maximise recall at scale. Cross-encoders maximise precision on a shortlist. Production systems use both in sequence.</strong></p>
@@ -1382,9 +1528,15 @@
 <h3 id="late-interaction-colbert">Late Interaction — ColBERT<a class="headerlink" href="#late-interaction-colbert" title="Permanent link">&para;</a></h3>
 <p>A middle ground between bi- and cross-encoders:</p>
 <ul>
-<li>Stores a vector per <strong>token</strong> in each document (more memory than bi-encoders).</li>
-<li>Uses a <strong>MaxSim</strong> operation at retrieval: the score for a query token is the maximum similarity across all document token vectors.</li>
-<li>Achieves near cross-encoder accuracy at bi-encoder speed.</li>
+<li>
+<p>Stores a vector per <strong>token</strong> in each document (more memory than bi-encoders).</p>
+</li>
+<li>
+<p>Uses a <strong>MaxSim</strong> operation at retrieval: the score for a query token is the maximum similarity across all document token vectors.</p>
+</li>
+<li>
+<p>Achieves near cross-encoder accuracy at bi-encoder speed.</p>
+</li>
 </ul>
 <hr />
 <hr />
@@ -1402,9 +1554,15 @@
 <h3 id="supervised-retrieval-fine-tuning">Supervised Retrieval Fine-tuning<a class="headerlink" href="#supervised-retrieval-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Models are fine-tuned on human-labelled query-document relevance datasets.</p>
 <ul>
-<li><strong>MS MARCO:</strong> The gold standard — real Bing queries paired with human-judged relevant passages. Most production embedding models (BGE, GTE, E5) are trained on MS MARCO.</li>
-<li><strong>Pairwise loss:</strong> Model is given (q, d+, d-) and penalised if d- scores higher than d+.</li>
-<li><strong>Listwise loss:</strong> Model optimises the entire ranked list at once. More accurate for ranking (directly optimises nDCG) but more expensive to train.</li>
+<li>
+<p><strong>MS MARCO:</strong> The gold standard — real Bing queries paired with human-judged relevant passages. Most production embedding models (BGE, GTE, E5) are trained on MS MARCO.</p>
+</li>
+<li>
+<p><strong>Pairwise loss:</strong> Model is given (q, d+, d-) and penalised if d- scores higher than d+.</p>
+</li>
+<li>
+<p><strong>Listwise loss:</strong> Model optimises the entire ranked list at once. More accurate for ranking (directly optimises nDCG) but more expensive to train.</p>
+</li>
 </ul>
 <hr />
 <h3 id="matryoshka-representation-learning-mrl">Matryoshka Representation Learning (MRL)<a class="headerlink" href="#matryoshka-representation-learning-mrl" title="Permanent link">&para;</a></h3>
@@ -1418,13 +1576,54 @@
 <p>This lets a single model adapt its embedding space to different tasks — retrieval vs. clustering vs. classification — without separate models.</p>
 <hr />
 <hr />
-<h2 id="5-domain-adaptation-the-cold-start-problem">5. Domain Adaptation (The "Cold Start" Problem)<a class="headerlink" href="#5-domain-adaptation-the-cold-start-problem" title="Permanent link">&para;</a></h2>
+<h2 id="5-choosing-an-embedding-model-mteb">5. Choosing an Embedding Model — MTEB<a class="headerlink" href="#5-choosing-an-embedding-model-mteb" title="Permanent link">&para;</a></h2>
+<p>The <strong>Massive Text Embedding Benchmark (MTEB)</strong> is the standard leaderboard for comparing embedding models across retrieval, classification, clustering, and semantic similarity tasks. Available at <a href="https://huggingface.co/spaces/mteb/leaderboard">huggingface.co/spaces/mteb/leaderboard</a>.</p>
+<p><strong>Practical guidance:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Good Starting Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best quality (no size limit)</td>
+<td><code>text-embedding-3-large</code> (OpenAI), <code>voyage-3</code> (Voyage AI), <code>Cohere embed-v3</code></td>
+</tr>
+<tr>
+<td>Best open-source</td>
+<td><code>gte-Qwen2-7B</code>, <code>bge-en-icl</code>, <code>e5-mistral-7b-instruct</code></td>
+</tr>
+<tr>
+<td>Fastest / smallest</td>
+<td><code>all-MiniLM-L6-v2</code>, <code>bge-small-en-v1.5</code></td>
+</tr>
+<tr>
+<td>Multilingual</td>
+<td><code>multilingual-e5-large</code>, <code>paraphrase-multilingual-mpnet</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Do not pick an embedding model by MTEB rank alone — always evaluate on a sample from your specific domain. MTEB tasks may not reflect your query distribution.</p>
+</blockquote>
+<hr />
+<h2 id="6-domain-adaptation-the-cold-start-problem">6. Domain Adaptation (The "Cold Start" Problem)<a class="headerlink" href="#6-domain-adaptation-the-cold-start-problem" title="Permanent link">&para;</a></h2>
 <p>Generic embeddings underperform on specialist domains (medical, legal, code). Adaptation options in increasing cost order:</p>
 <ol>
-<li><strong>Continued pre-training:</strong> Run Masked Language Modeling (MLM) on your private corpus to teach the model domain vocabulary.</li>
-<li><strong>Contrastive fine-tuning:</strong> Use domain-specific query-document pairs with contrastive loss to pull relevant items closer.</li>
-<li><strong>Generative Pseudo-Labeling (GPL):</strong> Use an LLM to generate synthetic questions for each unlabeled document, then train the embedding model on these synthetic pairs. Effective with zero labeled data.</li>
-<li><strong>Adapter-based tuning:</strong> Insert lightweight adapter layers and fine-tune only those, leaving base model weights frozen.</li>
+<li>
+<p><strong>Continued pre-training:</strong> Run Masked Language Modeling (MLM) on your private corpus to teach the model domain vocabulary.</p>
+</li>
+<li>
+<p><strong>Contrastive fine-tuning:</strong> Use domain-specific query-document pairs with contrastive loss to pull relevant items closer.</p>
+</li>
+<li>
+<p><strong>Generative Pseudo-Labeling (GPL):</strong> Use an LLM to generate synthetic questions for each unlabeled document, then train the embedding model on these synthetic pairs. Effective with zero labeled data.</p>
+</li>
+<li>
+<p><strong>Adapter-based tuning:</strong> Insert lightweight adapter layers and fine-tune only those, leaving base model weights frozen.</p>
+</li>
 </ol>
 <blockquote>
 <p><strong>Critical:</strong> If you change the embedding model, you must re-index the entire corpus. Vectors from different models are not comparable.</p>
@@ -1503,9 +1702,15 @@
 <h2 id="8-evaluation-of-embeddings">8. Evaluation of Embeddings<a class="headerlink" href="#8-evaluation-of-embeddings" title="Permanent link">&para;</a></h2>
 <p><strong>Offline (retrieval-level):</strong></p>
 <ul>
-<li>Recall@k — is the relevant document in the top k?</li>
-<li>MRR — how early does the first relevant document appear?</li>
-<li>nDCG — quality of the full ranked list using graded relevance.</li>
+<li>
+<p>Recall@k — is the relevant document in the top k?</p>
+</li>
+<li>
+<p>MRR — how early does the first relevant document appear?</p>
+</li>
+<li>
+<p>nDCG — quality of the full ranked list using graded relevance.</p>
+</li>
 </ul>
 <p><strong>End-to-end:</strong></p>
 <ul>
@@ -1589,11 +1794,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -16,25 +16,22 @@
         <link rel="prev" href="../splade/">
       
       
-        <link rel="next" href="../../../references/">
-      
-      
-        
+        <link rel="next" href="../../../agents/agent_fundamentals/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Sentence Transformer - RAG & Context Engineering</title>
+        <title>Sentence Transformer - RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -59,6 +56,7 @@
 
     
     
+    
   </head>
   
   
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#sentence-transformers" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +225,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -262,14 +260,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -302,14 +295,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -318,11 +306,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -338,14 +322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -366,14 +345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -394,14 +368,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -422,14 +391,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -450,14 +414,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -478,14 +437,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -506,14 +460,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -534,14 +483,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -562,14 +506,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -603,14 +542,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -619,11 +553,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -639,14 +569,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -667,14 +592,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -695,14 +615,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -724,279 +639,20 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sentence Transformer
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
   
-  
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-idea-behind-sentence-transformers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Core Idea Behind Sentence Transformers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-how-sentence-transformers-work-step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. How Sentence Transformers Work: Step by Step
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. How Sentence Transformers Work: Step by Step">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-input-text" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Input Text
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-transformer-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Transformer Encoding
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-pooling-to-sentence-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Pooling to Sentence Embedding
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-training-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Training Objective
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-dense-vector-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Dense Vector Representation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-indexing-and-retrieval" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Indexing and Retrieval
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-why-sentence-transformers-work-well" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Why Sentence Transformers Work Well
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Why Sentence Transformers Work Well">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-semantic-matching" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 Semantic Matching
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-dense-representations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 Dense Representations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-where-sentence-transformers-are-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Where Sentence Transformers Are Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-strengths-of-sentence-transformers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Strengths of Sentence Transformers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-sentence-transformers-vs-sparse-retrieval" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Sentence Transformers vs Sparse Retrieval
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interview Perspective
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1006,6 +662,237 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1025,19 +912,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1062,235 +988,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-core-idea-behind-sentence-transformers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Core Idea Behind Sentence Transformers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-how-sentence-transformers-work-step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. How Sentence Transformers Work: Step by Step
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. How Sentence Transformers Work: Step by Step">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-input-text" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Input Text
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-transformer-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Transformer Encoding
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-pooling-to-sentence-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Pooling to Sentence Embedding
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-training-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Training Objective
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-dense-vector-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Dense Vector Representation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-indexing-and-retrieval" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Indexing and Retrieval
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-why-sentence-transformers-work-well" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Why Sentence Transformers Work Well
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Why Sentence Transformers Work Well">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-semantic-matching" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 Semantic Matching
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-dense-representations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 Dense Representations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-where-sentence-transformers-are-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Where Sentence Transformers Are Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-strengths-of-sentence-transformers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Strengths of Sentence Transformers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-sentence-transformers-vs-sparse-retrieval" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Sentence Transformers vs Sparse Retrieval
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interview Perspective
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1300,7 +999,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1310,176 +1008,16 @@
   
 
 
-  <h1>Sentence Transformer</h1>
-
-<h3 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h3>
-<p>Sentence Transformers are neural models designed to convert sentences or short text passages into fixed size dense vectors that capture semantic meaning. They enable efficient semantic similarity, clustering, and retrieval by embedding text into a continuous vector space.</p>
-<p>They are a foundational component of modern semantic search and RAG systems.</p>
-<hr />
-<h3 id="2-core-idea-behind-sentence-transformers">2. Core Idea Behind Sentence Transformers<a class="headerlink" href="#2-core-idea-behind-sentence-transformers" title="Permanent link">&para;</a></h3>
-<p>Traditional models like BERT produce contextual token embeddings but are not directly suitable for sentence level similarity. Sentence Transformers adapt transformer encoders to produce <strong>meaningful sentence level embeddings</strong>.</p>
-<p>The key idea is:
-- Similar sentences should have embeddings that are close in vector space
-- Dissimilar sentences should be far apart</p>
-<p>This is achieved through task specific training objectives.</p>
-<hr />
-<h3 id="3-how-sentence-transformers-work-step-by-step">3. How Sentence Transformers Work: Step by Step<a class="headerlink" href="#3-how-sentence-transformers-work-step-by-step" title="Permanent link">&para;</a></h3>
-<h4 id="step-1-input-text">Step 1: Input Text<a class="headerlink" href="#step-1-input-text" title="Permanent link">&para;</a></h4>
-<p>Sentence Transformers operate on short texts such as:
-- Sentences
-- Paragraphs
-- Queries and documents</p>
-<p>Example: "Neural retrieval improves search quality"</p>
-<hr />
-<h4 id="step-2-transformer-encoding">Step 2: Transformer Encoding<a class="headerlink" href="#step-2-transformer-encoding" title="Permanent link">&para;</a></h4>
-<p>The input text is passed through a transformer encoder such as BERT, RoBERTa, or MiniLM.</p>
-<p>The model outputs contextualized embeddings for each token in the input.</p>
-<hr />
-<h4 id="step-3-pooling-to-sentence-embedding">Step 3: Pooling to Sentence Embedding<a class="headerlink" href="#step-3-pooling-to-sentence-embedding" title="Permanent link">&para;</a></h4>
-<p>Token embeddings are aggregated into a single fixed size vector.</p>
-<p>Common pooling strategies:</p>
+<h1 id="sentence-transformers">Sentence Transformers<a class="headerlink" href="#sentence-transformers" title="Permanent link">&para;</a></h1>
+<p>Sentence Transformers (bi-encoders) are covered fully in <a href="../../embedding/">Embedding</a> — sections on dense embeddings, bi-encoders vs cross-encoders, training objectives (MNR loss, contrastive learning), domain adaptation, and evaluation.</p>
+<p>Key points for quick recall:</p>
 <ul>
-<li>Mean pooling across token embeddings</li>
-<li>CLS token pooling</li>
-<li>Max pooling</li>
+<li>Encode query and document <strong>independently</strong> → dot product for similarity</li>
+<li>Embeddings are <strong>pre-computed</strong> and stored in a vector index (ANN search)</li>
+<li>Trained with <strong>Multiple Negatives Ranking (MNR) loss</strong> — other documents in the batch serve as negatives for free</li>
+<li>Strong at semantic similarity; weak at exact keyword matching</li>
+<li>Use alongside BM25/SPLADE in hybrid retrieval to cover both failure modes</li>
 </ul>
-<p>Mean pooling is most commonly used because it is stable and performs well empirically.</p>
-<hr />
-<h4 id="step-4-normalization">Step 4: Normalization<a class="headerlink" href="#step-4-normalization" title="Permanent link">&para;</a></h4>
-<p>The resulting sentence embedding is often L2 normalized.</p>
-<p>This allows cosine similarity to be computed efficiently using dot product.</p>
-<hr />
-<h4 id="step-5-training-objective">Step 5: Training Objective<a class="headerlink" href="#step-5-training-objective" title="Permanent link">&para;</a></h4>
-<p>Sentence Transformers are trained using contrastive or similarity based losses.</p>
-<p>Common objectives:</p>
-<ul>
-<li>Cosine similarity loss</li>
-<li>Triplet loss</li>
-<li>Multiple negative ranking loss</li>
-</ul>
-<p>Training encourages semantically similar sentences to have high cosine similarity.</p>
-<hr />
-<h4 id="step-6-dense-vector-representation">Step 6: Dense Vector Representation<a class="headerlink" href="#step-6-dense-vector-representation" title="Permanent link">&para;</a></h4>
-<p>Each sentence is represented as a dense vector.</p>
-<p>Example: "Neural retrieval improves search quality" → [0.12, -0.03, 0.88, ...]</p>
-<p>These embeddings capture semantic meaning beyond exact word overlap.</p>
-<hr />
-<h4 id="step-7-indexing-and-retrieval">Step 7: Indexing and Retrieval<a class="headerlink" href="#step-7-indexing-and-retrieval" title="Permanent link">&para;</a></h4>
-<p>Embeddings are indexed using approximate nearest neighbor methods such as:</p>
-<ul>
-<li>FAISS</li>
-<li>HNSW</li>
-<li>ScaNN</li>
-</ul>
-<p>At query time:</p>
-<ul>
-<li>The query is embedded</li>
-<li>Nearest neighbors are retrieved using cosine similarity or dot product</li>
-</ul>
-<hr />
-<h3 id="4-why-sentence-transformers-work-well">4. Why Sentence Transformers Work Well<a class="headerlink" href="#4-why-sentence-transformers-work-well" title="Permanent link">&para;</a></h3>
-<h4 id="41-semantic-matching">4.1 Semantic Matching<a class="headerlink" href="#41-semantic-matching" title="Permanent link">&para;</a></h4>
-<p>They can match paraphrases and synonyms: "car repair" ≈ "automobile maintenance"</p>
-<p>Even without shared tokens.</p>
-<hr />
-<h4 id="42-dense-representations">4.2 Dense Representations<a class="headerlink" href="#42-dense-representations" title="Permanent link">&para;</a></h4>
-<p>Dense vectors:</p>
-<ul>
-<li>Are compact</li>
-<li>Capture continuous semantic relationships</li>
-<li>Enable fast similarity search with ANN indexes</li>
-</ul>
-<hr />
-<h3 id="5-where-sentence-transformers-are-used">5. Where Sentence Transformers Are Used<a class="headerlink" href="#5-where-sentence-transformers-are-used" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Semantic search</li>
-<li>Dense retrieval for RAG</li>
-<li>Document clustering</li>
-<li>Duplicate detection</li>
-<li>Question answering</li>
-<li>Reranking and retrieval augmentation</li>
-</ul>
-<p>They are widely adopted due to strong performance and ease of use.</p>
-<hr />
-<h3 id="6-strengths-of-sentence-transformers">6. Strengths of Sentence Transformers<a class="headerlink" href="#6-strengths-of-sentence-transformers" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Strong semantic understanding</li>
-<li>Compact representations</li>
-<li>Effective for paraphrase matching</li>
-<li>Pretrained models available</li>
-<li>Easy integration with vector databases</li>
-</ul>
-<hr />
-<h3 id="7-limitations-and-caveats">7. Limitations and Caveats<a class="headerlink" href="#7-limitations-and-caveats" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Poor at exact lexical matching</li>
-<li>Sensitive to domain shift</li>
-<li>Require ANN infrastructure</li>
-<li>Harder to interpret than sparse methods</li>
-<li>Retrieval errors are harder to debug</li>
-</ul>
-<p>Dense retrievers can miss rare but important keywords.</p>
-<hr />
-<h3 id="8-practical-considerations">8. Practical Considerations<a class="headerlink" href="#8-practical-considerations" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Model choice affects latency and quality</li>
-<li>Embedding dimensionality impacts storage and speed</li>
-<li>Fine tuning improves domain specific performance</li>
-<li>Hybrid retrieval often outperforms pure dense retrieval</li>
-<li>Reranking improves precision</li>
-</ul>
-<p>Sentence Transformers are often used alongside sparse retrievers.</p>
-<hr />
-<h3 id="9-sentence-transformers-vs-sparse-retrieval">9. Sentence Transformers vs Sparse Retrieval<a class="headerlink" href="#9-sentence-transformers-vs-sparse-retrieval" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Sparse (BM25, SPLADE)</th>
-<th>Sentence Transformers</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Representation</td>
-<td>Sparse</td>
-<td>Dense</td>
-</tr>
-<tr>
-<td>Semantic matching</td>
-<td>Limited</td>
-<td>Strong</td>
-</tr>
-<tr>
-<td>Interpretability</td>
-<td>High</td>
-<td>Low</td>
-</tr>
-<tr>
-<td>Exact match</td>
-<td>Strong</td>
-<td>Weak</td>
-</tr>
-<tr>
-<td>Infrastructure</td>
-<td>Inverted index</td>
-<td>Vector index</td>
-</tr>
-</tbody>
-</table>
-<p>Hybrid approaches combine both to get the best of both worlds.</p>
-<hr />
-<h2 id="interview-perspective">Interview Perspective<a class="headerlink" href="#interview-perspective" title="Permanent link">&para;</a></h2>
-<p>For interviews, focus on:</p>
-<ul>
-<li>How pooling creates sentence level embeddings</li>
-<li>Why contrastive learning is used</li>
-<li>Tradeoffs between dense and sparse retrieval</li>
-<li>Failure modes of dense retrievers</li>
-<li>Their role in RAG and hybrid retrieval systems</li>
-</ul>
-<p>This demonstrates practical understanding of modern retrieval architectures.</p>
-<hr />
 
 
 
@@ -1534,11 +1072,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

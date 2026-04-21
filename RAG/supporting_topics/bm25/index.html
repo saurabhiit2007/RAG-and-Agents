@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -19,22 +19,19 @@
         <link rel="next" href="../splade/">
       
       
-        
-      
-      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>BM25 - RAG & Context Engineering</title>
+        <title>BM25 - RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -59,6 +56,7 @@
 
     
     
+    
   </head>
   
   
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#bm25-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +225,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="../../.." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -262,14 +260,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -302,14 +295,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -318,11 +306,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -338,14 +322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -366,14 +345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -394,14 +368,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -422,14 +391,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -450,14 +414,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -478,14 +437,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -506,14 +460,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -534,14 +483,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -562,14 +506,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -603,14 +542,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -619,11 +553,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -639,14 +569,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -668,20 +593,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -692,14 +614,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -710,6 +627,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -718,271 +637,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#scoring-formula" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      Scoring Formula
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-intuition-behind-bm25" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Intuition Behind BM25
-      
+      Parameters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-bm25-scoring-formula" class="md-nav__link">
+  <a href="#key-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3. BM25 Scoring Formula
-      
+      Key Properties
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#31-key-components-explained" class="md-nav__link">
+  <a href="#worked-example" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3.1 Key Components Explained
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.1 Key Components Explained">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#term-frequency-saturation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Term Frequency Saturation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#document-length-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Document Length Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inverse-document-frequency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inverse Document Frequency
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-where-bm25-is-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Where BM25 is Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-strengths-of-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Strengths of BM25
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-bm25-vs-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. BM25 vs TF IDF
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#81-an-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.1 An Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8.1 An Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#corpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Corpus
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-deep-learning-tutorial" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Query : deep learning tutorial
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-tf-idf-scores-these-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How TF IDF Scores These Documents
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-bm25-scores-these-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How BM25 Scores These Documents
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#82-why-bm25-is-better-than-tf-idf-in-this-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2 Why BM25 Is Better Than TF IDF in This Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8.2 Why BM25 Is Better Than TF IDF in This Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#821-term-frequency-saturation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2.1 Term Frequency Saturation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#822-document-length-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2.2 Document Length Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#823-ranking-quality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2.3 Ranking Quality
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-bm25-in-modern-retrieval-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. BM25 in Modern Retrieval Systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Interview Perspective
-      
+      Worked Example
     </span>
   </a>
   
@@ -1009,14 +693,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1037,14 +716,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1074,20 +748,290 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1112,6 +1056,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1120,271 +1066,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#scoring-formula" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        1. Overview
-      
+      Scoring Formula
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-intuition-behind-bm25" class="md-nav__link">
+  <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        2. Intuition Behind BM25
-      
+      Parameters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-bm25-scoring-formula" class="md-nav__link">
+  <a href="#key-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3. BM25 Scoring Formula
-      
+      Key Properties
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#31-key-components-explained" class="md-nav__link">
+  <a href="#worked-example" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        3.1 Key Components Explained
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.1 Key Components Explained">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#term-frequency-saturation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Term Frequency Saturation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#document-length-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Document Length Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inverse-document-frequency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inverse Document Frequency
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-where-bm25-is-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Where BM25 is Used
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-strengths-of-bm25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Strengths of BM25
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-limitations-and-caveats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Limitations and Caveats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Practical Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-bm25-vs-tf-idf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. BM25 vs TF IDF
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#81-an-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.1 An Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8.1 An Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#corpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Corpus
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-deep-learning-tutorial" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Query : deep learning tutorial
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-tf-idf-scores-these-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How TF IDF Scores These Documents
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-bm25-scores-these-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How BM25 Scores These Documents
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#82-why-bm25-is-better-than-tf-idf-in-this-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2 Why BM25 Is Better Than TF IDF in This Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8.2 Why BM25 Is Better Than TF IDF in This Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#821-term-frequency-saturation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2.1 Term Frequency Saturation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#822-document-length-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2.2 Document Length Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#823-ranking-quality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2.3 Ranking Quality
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-bm25-in-modern-retrieval-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. BM25 in Modern Retrieval Systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-interview-perspective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Interview Perspective
-      
+      Worked Example
     </span>
   </a>
   
@@ -1400,7 +1111,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1410,240 +1120,79 @@
   
 
 
-  <h1>BM25</h1>
-
-<h3 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h3>
-<p>BM25 (Best Matching 25) is a probabilistic ranking function used in information retrieval to score and rank documents given a query. It can be seen as a principled improvement over TF IDF that better handles term frequency saturation and document length normalization. BM25 is widely used in search engines and remains a strong lexical baseline in modern retrieval systems.</p>
-<hr />
-<h3 id="2-intuition-behind-bm25">2. Intuition Behind BM25<a class="headerlink" href="#2-intuition-behind-bm25" title="Permanent link">&para;</a></h3>
-<p>TF-IDF assumes that term importance grows linearly with frequency and applies only coarse normalization for document length. In practice, these assumptions are often suboptimal.</p>
-<p>BM25 improves on this by:
-- Saturating the contribution of repeated terms
-- Explicitly normalizing for document length
-- Grounding the scoring function in probabilistic retrieval theory</p>
-<p>The result is a ranking function that aligns better with human relevance judgments.</p>
-<hr />
-<h3 id="3-bm25-scoring-formula">3. BM25 Scoring Formula<a class="headerlink" href="#3-bm25-scoring-formula" title="Permanent link">&para;</a></h3>
-<p>The BM25 score for a document <em>d</em> and query <em>q</em> is:</p>
+<h1 id="bm25-reference">BM25 Reference<a class="headerlink" href="#bm25-reference" title="Permanent link">&para;</a></h1>
+<p>BM25 is covered in depth in <a href="../../retrieval_methods/">Retrieval Methods</a>. This page is a compact math reference.</p>
+<h2 id="scoring-formula">Scoring Formula<a class="headerlink" href="#scoring-formula" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
-\text{BM25}(d, q) =
-\sum_{t \in q}
-\text{IDF}(t)
-\cdot
-\frac{
-    tf(t, d) \cdot (k_1 + 1)
-}{
-    tf(t, d)
-    + k_1 \cdot
-    \left(
-        1 - b + b \cdot \frac{|d|}{\text{avgdl}}
-    \right)
-}
+\text{BM25}(d, q) = \sum_{t \in q} \text{IDF}(t) \cdot \frac{tf(t,d) \cdot (k_1 + 1)}{tf(t,d) + k_1 \cdot \left(1 - b + b \cdot \frac{|d|}{\text{avgdl}}\right)}
 \]</div>
-<p>Where:</p>
-<ul>
-<li><span class="arithmatex">\(t\)</span> is a query term  </li>
-<li><span class="arithmatex">\(tf(t, d)\)</span> is the term frequency of <span class="arithmatex">\(t\)</span> in document <span class="arithmatex">\(d\)</span>  </li>
-<li><span class="arithmatex">\(|d|\)</span> is the length of document <span class="arithmatex">\(d\)</span>  </li>
-<li><span class="arithmatex">\(\text{avgdl}\)</span> is the average document length in the corpus  </li>
-<li><span class="arithmatex">\(k_1\)</span> controls term frequency saturation  </li>
-<li><span class="arithmatex">\(b\)</span> controls document length normalization  </li>
-<li><span class="arithmatex">\(\text{IDF}(t)\)</span> is the inverse document frequency of term <span class="arithmatex">\(t\)</span></li>
-</ul>
-<hr />
-<h3 id="31-key-components-explained">3.1 Key Components Explained<a class="headerlink" href="#31-key-components-explained" title="Permanent link">&para;</a></h3>
-<h4 id="term-frequency-saturation">Term Frequency Saturation<a class="headerlink" href="#term-frequency-saturation" title="Permanent link">&para;</a></h4>
-<p>Unlike TF IDF, BM25 assumes diminishing returns for repeated terms. The first few occurrences of a term matter most, while additional repetitions contribute progressively less to the score.</p>
-<p>The parameter <span class="arithmatex">\(k_1\)</span> controls how quickly this saturation happens.</p>
-<hr />
-<h4 id="document-length-normalization">Document Length Normalization<a class="headerlink" href="#document-length-normalization" title="Permanent link">&para;</a></h4>
-<p>Longer documents naturally contain more terms and higher raw term counts. BM25 explicitly normalizes scores based on document length to avoid favoring longer documents unfairly.</p>
-<p>The parameter <em>b</em> controls how strongly document length affects the score:
-- b = 0 disables length normalization
-- b = 1 applies full normalization</p>
-<hr />
-<h4 id="inverse-document-frequency">Inverse Document Frequency<a class="headerlink" href="#inverse-document-frequency" title="Permanent link">&para;</a></h4>
-<p>BM25 uses a slightly modified IDF formulation that is more robust for rare and common terms:</p>
-<div class="arithmatex">\[IDF(t) = log((N − df(t) + 0.5) / (df(t) + 0.5))\]</div>
-<p>This formulation stabilizes scores and improves ranking quality.</p>
-<hr />
-<h3 id="4-where-bm25-is-used">4. Where BM25 is Used<a class="headerlink" href="#4-where-bm25-is-used" title="Permanent link">&para;</a></h3>
-<p>BM25 is commonly used in:</p>
-<ul>
-<li>Search engines</li>
-<li>Document retrieval systems</li>
-<li>Question answering pipelines</li>
-<li>First stage retrievers in RAG systems</li>
-<li>Enterprise and web scale search applications</li>
-</ul>
-<p>It is often the default choice when dense embeddings are not available or too expensive.</p>
-<hr />
-<h3 id="5-strengths-of-bm25">5. Strengths of BM25<a class="headerlink" href="#5-strengths-of-bm25" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Strong lexical matching performance</li>
-<li>Better handling of term frequency than TF IDF</li>
-<li>Explicit document length normalization</li>
-<li>No training required</li>
-<li>Robust across different domains</li>
-</ul>
-<p>BM25 often outperforms TF IDF with minimal tuning.</p>
-<hr />
-<h3 id="6-limitations-and-caveats">6. Limitations and Caveats<a class="headerlink" href="#6-limitations-and-caveats" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Cannot capture semantic similarity</li>
-<li>Still relies on exact term overlap</li>
-<li>Sensitive to tokenization and preprocessing</li>
-<li>Query term independence assumption</li>
-<li>Requires tuning of k1 and b for optimal performance</li>
-</ul>
-<p>BM25 remains a lexical method and inherits the fundamental limitations of bag of words models.</p>
-<hr />
-<h3 id="7-practical-considerations">7. Practical Considerations<a class="headerlink" href="#7-practical-considerations" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Typical values: k1 in [1.2, 2.0], b around 0.75</li>
-<li>Stopword handling significantly affects results</li>
-<li>Works best with cosine or BM25 specific scoring, not raw dot products</li>
-<li>Often paired with inverted indexes for efficient retrieval</li>
-</ul>
-<p>BM25 is computationally efficient and scales well to large corpora.</p>
-<hr />
-<h3 id="8-bm25-vs-tf-idf">8. BM25 vs TF IDF<a class="headerlink" href="#8-bm25-vs-tf-idf" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\text{IDF}(t) = \log\frac{N - df(t) + 0.5}{df(t) + 0.5}
+\]</div>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>TF IDF</th>
-<th>BM25</th>
+<th>Parameter</th>
+<th>Typical Value</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Term frequency</td>
-<td>Linear</td>
-<td>Saturated</td>
+<td>k₁</td>
+<td>1.2–2.0</td>
+<td>TF saturation speed — higher = slower saturation</td>
 </tr>
 <tr>
-<td>Length normalization</td>
-<td>Weak</td>
-<td>Explicit</td>
-</tr>
-<tr>
-<td>Tuning parameters</td>
-<td>None</td>
-<td>k1, b</td>
-</tr>
-<tr>
-<td>Ranking quality</td>
-<td>Good</td>
-<td>Better</td>
-</tr>
-<tr>
-<td>Complexity</td>
-<td>Low</td>
-<td>Moderate</td>
+<td>b</td>
+<td>0.75</td>
+<td>Length normalisation strength — 0 = off, 1 = full</td>
 </tr>
 </tbody>
 </table>
-<p>BM25 can be seen as a more refined and robust version of TF IDF.</p>
-<h3 id="81-an-example">8.1 An Example<a class="headerlink" href="#81-an-example" title="Permanent link">&para;</a></h3>
-<p>Consider a small corpus of three documents and a simple query.</p>
-<h4 id="corpus">Corpus<a class="headerlink" href="#corpus" title="Permanent link">&para;</a></h4>
+<h2 id="key-properties">Key Properties<a class="headerlink" href="#key-properties" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>D1</strong>: "deep learning deep learning deep learning tutorial"</li>
-<li><strong>D2</strong>: "deep learning tutorial"</li>
-<li><strong>D3</strong>: "deep learning introduction overview"</li>
+<li><strong>TF saturation:</strong> repeated terms give diminishing returns (prevents keyword stuffing)</li>
+<li><strong>Length normalisation:</strong> long documents are penalised proportionally to <code>b</code></li>
+<li><strong>Modified IDF:</strong> more robust for very rare or very common terms than vanilla TF-IDF</li>
 </ul>
-<h4 id="query-deep-learning-tutorial">Query : deep learning tutorial<a class="headerlink" href="#query-deep-learning-tutorial" title="Permanent link">&para;</a></h4>
-<h4 id="how-tf-idf-scores-these-documents">How TF IDF Scores These Documents<a class="headerlink" href="#how-tf-idf-scores-these-documents" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nv">Key</span><span class="w"> </span><span class="nv">Observation</span>
-
-<span class="nv">TF</span><span class="w"> </span><span class="nv">IDF</span><span class="w"> </span><span class="nv">increases</span><span class="w"> </span><span class="nv">linearly</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">term</span><span class="w"> </span><span class="nv">frequency</span>.<span class="w"> </span><span class="nv">Repeating</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">term</span><span class="w"> </span><span class="nv">multiple</span><span class="w"> </span><span class="nv">times</span><span class="w"> </span><span class="nv">keeps</span><span class="w"> </span><span class="nv">increasing</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">score</span>.
-
-###<span class="w"> </span><span class="nv">Approximate</span><span class="w"> </span><span class="nv">Behavior</span>
-
-<span class="o">-</span><span class="w"> </span><span class="nv">D1</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nv">Very</span><span class="w"> </span><span class="nv">high</span><span class="w"> </span><span class="nv">TF</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s2">&quot;deep&quot;</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="s2">&quot;learning&quot;</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nv">High</span><span class="w"> </span><span class="nv">TF</span><span class="w"> </span><span class="nv">IDF</span><span class="w"> </span><span class="nv">score</span><span class="w"> </span><span class="nv">due</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">repetition</span>
-<span class="o">-</span><span class="w"> </span><span class="nv">D2</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nv">Moderate</span><span class="w"> </span><span class="nv">TF</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">query</span><span class="w"> </span><span class="nv">terms</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nv">Lower</span><span class="w"> </span><span class="nv">score</span><span class="w"> </span><span class="nv">than</span><span class="w"> </span><span class="nv">D1</span>
-<span class="o">-</span><span class="w"> </span><span class="nv">D3</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nv">Missing</span><span class="w"> </span><span class="s2">&quot;tutorial&quot;</span>
-<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nv">Lowest</span><span class="w"> </span><span class="nv">score</span>
-
-<span class="nv">TF</span><span class="w"> </span><span class="nv">IDF</span><span class="w"> </span><span class="nv">Ranking</span>:<span class="w"> </span><span class="nv">D1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">D2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">D3</span>
-
-<span class="nv">Issue</span>
-<span class="nv">D1</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">ranked</span><span class="w"> </span><span class="nv">highest</span><span class="w"> </span><span class="nv">mainly</span><span class="w"> </span><span class="nv">because</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">repeats</span><span class="w"> </span><span class="s2">&quot;deep learning&quot;</span><span class="w"> </span><span class="nv">many</span><span class="w"> </span><span class="nv">times</span>,<span class="w"> </span><span class="nv">even</span><span class="w"> </span><span class="nv">though</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">necessarily</span><span class="w"> </span><span class="nv">more</span><span class="w"> </span><span class="nv">relevant</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">query</span><span class="w"> </span><span class="nv">than</span><span class="w"> </span><span class="nv">D2</span>.
-
-<span class="nv">TF</span><span class="w"> </span><span class="nv">IDF</span><span class="w"> </span><span class="nv">assumes</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">more</span><span class="w"> </span><span class="nv">repetitions</span><span class="w"> </span><span class="nv">always</span><span class="w"> </span><span class="nv">mean</span><span class="w"> </span><span class="nv">higher</span><span class="w"> </span><span class="nv">relevance</span>.
-</code></pre></div>
-
-<h4 id="how-bm25-scores-these-documents">How BM25 Scores These Documents<a class="headerlink" href="#how-bm25-scores-these-documents" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>Key Observation
-
-BM25 applies **term frequency saturation** and **length normalization**.
-
-<span class="k">-</span> The first few occurrences of a term matter most
-<span class="k">-</span> Extra repetitions contribute less
-<span class="k">-</span> Longer documents are penalized
-
-Approximate Behavior
-
-<span class="k">-</span> D1
-    <span class="k">-</span> TF contribution saturates quickly
-    <span class="k">-</span> Longer document length reduces score
-<span class="k">-</span> D2
-    <span class="k">-</span> Balanced term coverage
-    <span class="k">-</span> Shorter document length boosts score
-<span class="k">-</span> D3
-    <span class="k">-</span> Still missing &quot;tutorial&quot;
-    <span class="k">-</span> Lowest score
-
-BM25 Ranking: D2 &gt; D1 &gt; D3
-</code></pre></div>
-
-<hr />
-<h3 id="82-why-bm25-is-better-than-tf-idf-in-this-example">8.2 Why BM25 Is Better Than TF IDF in This Example<a class="headerlink" href="#82-why-bm25-is-better-than-tf-idf-in-this-example" title="Permanent link">&para;</a></h3>
-<h4 id="821-term-frequency-saturation">8.2.1 Term Frequency Saturation<a class="headerlink" href="#821-term-frequency-saturation" title="Permanent link">&para;</a></h4>
-<p>TF IDF: Repeats always increase score</p>
-<p>BM25: Repeats beyond a point add little value</p>
-<p>This prevents keyword stuffing from dominating rankings.</p>
-<h4 id="822-document-length-normalization">8.2.2 Document Length Normalization<a class="headerlink" href="#822-document-length-normalization" title="Permanent link">&para;</a></h4>
-<p>TF IDF: Weak or implicit normalization</p>
-<p>BM25: Explicitly penalizes longer documents</p>
-<p>This avoids favoring verbose documents.</p>
-<h4 id="823-ranking-quality">8.2.3 Ranking Quality<a class="headerlink" href="#823-ranking-quality" title="Permanent link">&para;</a></h4>
-<p>BM25 aligns better with human intuition:</p>
-<ul>
-<li>D2 is more concise and directly matches the query</li>
-<li>D1 is repetitive but not necessarily more informative</li>
-</ul>
-<blockquote>
-<p>Note: BM25 improves over TF IDF by introducing realistic assumptions about term importance. It limits the impact of repeated terms and corrects for document length bias, leading to more reliable and intuitive document rankings in retrieval systems.</p>
-</blockquote>
-<hr />
-<h3 id="9-bm25-in-modern-retrieval-systems">9. BM25 in Modern Retrieval Systems<a class="headerlink" href="#9-bm25-in-modern-retrieval-systems" title="Permanent link">&para;</a></h3>
-<p>BM25 is frequently used as:</p>
-<ul>
-<li>A fast first stage retriever</li>
-<li>A baseline for evaluating dense retrievers</li>
-<li>A component in hybrid retrieval systems</li>
-<li>A fallback when embeddings fail</li>
-</ul>
-<p>Many state of the art systems combine BM25 with dense retrieval to balance recall and precision.</p>
-<hr />
-<h3 id="10-interview-perspective">10. Interview Perspective<a class="headerlink" href="#10-interview-perspective" title="Permanent link">&para;</a></h3>
-<p>For interviews, emphasize:</p>
-<ul>
-<li>Why BM25 improves over TF IDF</li>
-<li>The role of term frequency saturation</li>
-<li>The importance of document length normalization</li>
-<li>Typical parameter choices and their effects</li>
-<li>How BM25 fits into RAG and hybrid retrieval pipelines</li>
-</ul>
-<p>This demonstrates both theoretical understanding and practical retrieval intuition.</p>
-<hr />
+<h2 id="worked-example">Worked Example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
+<p>Query: <code>"deep learning tutorial"</code></p>
+<table>
+<thead>
+<tr>
+<th>Doc</th>
+<th>Content</th>
+<th>TF-IDF rank</th>
+<th>BM25 rank</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>"deep learning deep learning deep learning tutorial"</td>
+<td>1st</td>
+<td>2nd</td>
+<td>TF saturates; long doc penalised</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>"deep learning tutorial"</td>
+<td>2nd</td>
+<td>1st</td>
+<td>Concise; all terms present</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>"deep learning introduction overview"</td>
+<td>3rd</td>
+<td>3rd</td>
+<td>Missing "tutorial"</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1698,11 +1247,10 @@ BM25 Ranking: D2 &gt; D1 &gt; D3
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

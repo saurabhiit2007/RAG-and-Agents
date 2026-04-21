@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A technical reference Retrieval Augmented Generation And Context Engineering.">
+        <meta name="description" content="A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.">
       
       
         <meta name="author" content="Saurabh Goyal">
@@ -17,22 +17,19 @@
         <link rel="next" href="RAG/fundamentals/">
       
       
-        
-      
-      
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>RAG & Context Engineering</title>
+        <title>RAG & Agents</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,6 +54,7 @@
 
     
     
+    
   </head>
   
   
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rag-context-engineering-concepts" class="md-skip">
+        <a href="#rag-agents-knowledge-base" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="RAG &amp; Context Engineering" class="md-header__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="." title="RAG &amp; Agents" class="md-header__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            RAG & Context Engineering
+            RAG & Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -225,13 +223,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="RAG &amp; Context Engineering" class="md-nav__button md-logo" aria-label="RAG & Context Engineering" data-md-component="logo">
+    <a href="." title="RAG &amp; Agents" class="md-nav__button md-logo" aria-label="RAG & Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    RAG & Context Engineering
+    RAG & Agents
   </label>
   
     <div class="md-nav__source">
@@ -264,22 +262,118 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
   
-  
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use This Knowledge Base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieval-augmented-generation-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval-Augmented Generation (RAG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM Agents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts Map
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -310,14 +404,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Retrival Augmented Generation (RAG)
-  
-
+    Retrieval Augmented Generation (RAG)
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -326,11 +415,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Retrival Augmented Generation (RAG)
-  
-
+            Retrieval Augmented Generation (RAG)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -346,14 +431,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Fundamentals
-  
-
     
   </span>
-  
   
 
       </a>
@@ -374,14 +454,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -402,14 +477,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding
-  
-
     
   </span>
-  
   
 
       </a>
@@ -430,14 +500,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval Methods
-  
-
     
   </span>
-  
   
 
       </a>
@@ -458,14 +523,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Indexing Strategies, Vector Databases, and Retrieval Systems for RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -486,14 +546,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Re-Ranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -514,14 +569,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Advanced RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -542,14 +592,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -570,14 +615,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Quick Reference
-  
-
     
   </span>
-  
   
 
       </a>
@@ -611,14 +651,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Supporting Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -627,11 +662,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Supporting Concepts
-  
-
+            Supporting Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -647,14 +678,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     TF_IDF
-  
-
     
   </span>
-  
   
 
       </a>
@@ -675,14 +701,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25
-  
-
     
   </span>
-  
   
 
       </a>
@@ -703,14 +724,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Splade
-  
-
     
   </span>
-  
   
 
       </a>
@@ -731,14 +747,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Sentence Transformer
-  
-
     
   </span>
-  
   
 
       </a>
@@ -768,20 +779,290 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    LLM Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/agent_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/memory_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/agent_frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/mcp_and_protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCP and Agent Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/multi_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-Agent Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/agent_failure_modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Failure Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agents/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="context_engineering/ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="qa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interview Q&A
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="references/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
     References
-  
-
     
   </span>
-  
   
 
       </a>
@@ -809,6 +1090,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use This Knowledge Base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retrieval-augmented-generation-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval-Augmented Generation (RAG)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM Agents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts Map
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -817,7 +1175,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -827,7 +1184,181 @@
   
 
 
-<h1 id="rag-context-engineering-concepts">RAG &amp; Context Engineering concepts<a class="headerlink" href="#rag-context-engineering-concepts" title="Permanent link">&para;</a></h1>
+<h1 id="rag-agents-knowledge-base">RAG &amp; Agents — Knowledge Base<a class="headerlink" href="#rag-agents-knowledge-base" title="Permanent link">&para;</a></h1>
+<p>A technical reference covering Retrieval-Augmented Generation (RAG), LLM Agents, and Context Engineering. Built for deep interview preparation and production system design.</p>
+<hr />
+<h2 id="how-to-use-this-knowledge-base">How to Use This Knowledge Base<a class="headerlink" href="#how-to-use-this-knowledge-base" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Start with the <strong>Fundamentals</strong> sections in each topic area to build the conceptual foundation.</p>
+</li>
+<li>
+<p>Use <strong>Advanced</strong> sections for production-grade depth.</p>
+</li>
+<li>
+<p>Use the <strong>Interview Questions</strong> at the end of each page for active recall.</p>
+</li>
+<li>
+<p>Use the <strong>Quick Reference</strong> pages for rapid revision before interviews.</p>
+</li>
+</ul>
+<hr />
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+<h3 id="retrieval-augmented-generation-rag">Retrieval-Augmented Generation (RAG)<a class="headerlink" href="#retrieval-augmented-generation-rag" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="RAG/fundamentals/">Fundamentals</a></td>
+<td>What RAG is, the core loop, RAG vs. fine-tuning, failure modes</td>
+</tr>
+<tr>
+<td><a href="RAG/chunking/">Chunking</a></td>
+<td>Fixed-size, recursive, semantic, and hierarchical chunking</td>
+</tr>
+<tr>
+<td><a href="RAG/embedding/">Embedding</a></td>
+<td>Bi-encoders, embedding models, fine-tuning embeddings</td>
+</tr>
+<tr>
+<td><a href="RAG/retrieval_methods/">Retrieval Methods</a></td>
+<td>BM25, dense retrieval, hybrid retrieval, RRF</td>
+</tr>
+<tr>
+<td><a href="RAG/indexing_and_vector_database/">Indexing &amp; Vector Databases</a></td>
+<td>FAISS, HNSW, IVF, ANN, production vector DBs</td>
+</tr>
+<tr>
+<td><a href="RAG/reranking/">Re-Ranking</a></td>
+<td>Cross-encoders, Cohere Rerank, BGE rerankers</td>
+</tr>
+<tr>
+<td><a href="RAG/advanced_rag/">Advanced RAG</a></td>
+<td>HyDE, Self-RAG, CRAG, Adaptive RAG, GraphRAG, RAG Fusion</td>
+</tr>
+<tr>
+<td><a href="RAG/evaluation/">Evaluation</a></td>
+<td>Recall@k, MRR, nDCG, RAGAS, faithfulness, LLM-as-a-judge</td>
+</tr>
+<tr>
+<td><a href="RAG/quick_reference/">Quick Reference</a></td>
+<td>Cheat sheet for retrieval metrics, pipeline stages, failure modes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supporting Concepts:</strong></p>
+<ul>
+<li>
+<p><a href="RAG/supporting_topics/tf_idf/">TF-IDF</a></p>
+</li>
+<li>
+<p><a href="RAG/supporting_topics/bm25/">BM25</a></p>
+</li>
+<li>
+<p><a href="RAG/supporting_topics/splade/">SPLADE</a></p>
+</li>
+<li>
+<p><a href="RAG/supporting_topics/sentence_transformers/">Sentence Transformers</a></p>
+</li>
+</ul>
+<hr />
+<h3 id="llm-agents">LLM Agents<a class="headerlink" href="#llm-agents" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="agents/agent_fundamentals/">Agent Fundamentals</a></td>
+<td>What is an agent, ReAct pattern, tool use, agent types, agentic vs. standard RAG</td>
+</tr>
+<tr>
+<td><a href="agents/memory_systems/">Memory Systems</a></td>
+<td>Working, episodic, semantic, and procedural memory; MemGPT; Generative Agents</td>
+</tr>
+<tr>
+<td><a href="agents/planning/">Planning</a></td>
+<td>ReAct, Plan-and-Execute, MCTS, LATS, Reflexion, hierarchical planning</td>
+</tr>
+<tr>
+<td><a href="agents/agent_frameworks/">Agent Frameworks</a></td>
+<td>LangGraph, CrewAI, AG2/AutoGen, Google ADK — comparison and trade-offs</td>
+</tr>
+<tr>
+<td><a href="agents/mcp_and_protocols/">MCP &amp; Agent Protocols</a></td>
+<td>Model Context Protocol, Agent-to-Agent Protocol, Agent Cards</td>
+</tr>
+<tr>
+<td><a href="agents/multi_agent/">Multi-Agent Systems</a></td>
+<td>Orchestrator-worker, pipelines, debate, swarms, evaluation</td>
+</tr>
+<tr>
+<td><a href="agents/agent_failure_modes/">Agent Failure Modes</a></td>
+<td>Hallucinated actions, scope creep, prompt injection, loops, guardrail architecture</td>
+</tr>
+<tr>
+<td><a href="agents/agentic_rag/">Agentic RAG</a></td>
+<td>Self-RAG, Corrective RAG, Adaptive RAG, GraphRAG, multi-agent RAG pipelines</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="context-engineering">Context Engineering<a class="headerlink" href="#context-engineering" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>What You'll Learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="context_engineering/ce/">Context Engineering</a></td>
+<td>Writing/selecting/compressing/isolating context; LLMLingua; PagedAttention; lost-in-the-middle</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="references/">All References</a> — Full bibliography for all papers, tools, and external sources cited in this knowledge base.</li>
+</ul>
+<hr />
+<h2 id="key-concepts-map">Key Concepts Map<a class="headerlink" href="#key-concepts-map" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>RAG Pipeline
+  └─ Indexing → Retrieval → Augmentation → Generation
+        ├─ Chunking, Embedding, Vector Index
+        ├─ Hybrid: BM25 + Dense + RRF
+        └─ Reranking (Cross-encoder)
+
+Advanced RAG
+  ├─ Query: Rewriting, HyDE, Multi-query, Step-back
+  ├─ Retrieval: Self-RAG, CRAG, Adaptive RAG
+  ├─ Context: Compression, Citation-constrained generation
+  └─ Graph: GraphRAG (Leiden communities)
+
+LLM Agents
+  ├─ Core loop: Reason → Act → Observe
+  ├─ Memory: Working | Episodic | Semantic | Procedural
+  ├─ Planning: ReAct | Plan-Execute | LATS | Reflexion
+  ├─ Frameworks: LangGraph | CrewAI | AG2 | ADK
+  ├─ Protocols: MCP (tools) | A2A (agents)
+  └─ Safety: Guardrails | HITL | Observability
+
+Context Engineering
+  ├─ Writing: System prompts, structured output
+  ├─ Selecting: Retrieval, budget allocation
+  ├─ Compressing: LLMLingua, RECOMP, summarisation, caching
+  └─ Isolating: Delimiters, citations, tool sandboxing
+</code></pre></div>
 
 
 
@@ -882,11 +1413,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "mathjax"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
