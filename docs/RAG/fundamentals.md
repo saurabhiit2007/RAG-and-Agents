@@ -11,8 +11,11 @@ Large Language Models are trained on a fixed snapshot of data; knowledge is bake
 ## 2. The Core RAG Loop
 
 1. User submits a query.
+
 2. A retriever searches an external knowledge base and returns the top-k most relevant chunks.
+
 3. Retrieved chunks are injected into the prompt as context.
+
 4. The LLM generates an answer grounded in that context.
 
 ---
@@ -43,8 +46,11 @@ This is one of the most common conceptual interview questions. The short answer:
 A standard RAG system has four stages:
 
 1. **Indexing** — documents are chunked, embedded, and stored in a vector index.
+
 2. **Retrieval** — the user query is embedded and the most similar chunks are fetched.
+
 3. **Augmentation** — retrieved chunks are injected into the prompt alongside the query.
+
 4. **Generation** — the LLM generates a grounded answer conditioned on query + context.
 
 ---
@@ -68,7 +74,33 @@ A standard RAG system has four stages:
 
 ---
 
-## 6. Interview Questions
+## 6. RAG vs. Fine-Tuning vs. Long-Context LLM
+
+With frontier models now supporting 128K–1M token context windows, a third option exists: simply include all knowledge directly in the context.
+
+| Dimension | RAG | Fine-Tuning | Long-Context LLM |
+|---|---|---|---|
+| Knowledge update | Re-index (cheap, fast) | Retrain (expensive, slow) | Update document in prompt |
+| Knowledge size | Unlimited (external store) | Bounded by training data | Bounded by context window |
+| Latency | Retrieval adds latency | None at inference | Higher for very long prompts |
+| Cost | Retrieval + generation | Training cost (one-time) | Token cost scales with context length |
+| Explainability | Citations traceable | Opaque | Traceable if documents are numbered |
+| Hallucination risk | Reduced (grounded) | Not directly addressed | Reduced (but lost-in-the-middle effect) |
+| Best for | Large, changing knowledge bases | Style/behaviour change | Small, stable knowledge bases |
+
+**Decision framework:**
+
+1. **Use RAG** if the knowledge base is large (>100K tokens), changes frequently, or requires traceability/citations.
+
+2. **Use fine-tuning** if the problem is about model behaviour (tone, format, reasoning style) rather than knowledge access.
+
+3. **Use long-context LLM** if the knowledge base fits in the context window AND is stable (few updates) AND latency/cost are acceptable.
+
+4. **Combine all three** for production systems: fine-tune for behaviour, RAG for dynamic knowledge retrieval, long-context for short static reference documents.
+
+---
+
+## 7. Interview Questions
 
 **Q: What problem does RAG solve that fine-tuning does not?**
 

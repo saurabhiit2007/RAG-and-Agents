@@ -144,14 +144,23 @@ Low answer quality?
 ## 9. The Production RAG Checklist
 
 - [ ] Define evaluation metrics before building (Recall@k, faithfulness, answer correctness).
+
 - [ ] Choose chunk size and strategy; evaluate retrieval recall before touching the LLM.
+
 - [ ] Start with hybrid retrieval (BM25 + dense) as the first-stage retriever.
+
 - [ ] Add a cross-encoder reranker; measure Precision@5 improvement.
+
 - [ ] Attach metadata to all chunks; implement filtered retrieval.
+
 - [ ] Implement faithfulness and groundedness checks before shipping.
+
 - [ ] Run the oracle experiment to confirm failures are in retrieval, not generation.
+
 - [ ] Log queries, retrieved context, and answers in production for continuous evaluation.
+
 - [ ] Re-index when changing embedding models.
+
 - [ ] Build a held-out evaluation set; validate LLM-as-a-judge scores against humans.
 
 ---

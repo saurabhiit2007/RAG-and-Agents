@@ -11,7 +11,9 @@ They are a foundational component of modern semantic search and RAG systems.
 Traditional models like BERT produce contextual token embeddings but are not directly suitable for sentence level similarity. Sentence Transformers adapt transformer encoders to produce **meaningful sentence level embeddings**.
 
 The key idea is:
+
 - Similar sentences should have embeddings that are close in vector space
+
 - Dissimilar sentences should be far apart
 
 This is achieved through task specific training objectives.
@@ -23,8 +25,11 @@ This is achieved through task specific training objectives.
 #### Step 1: Input Text
 
 Sentence Transformers operate on short texts such as:
+
 - Sentences
+
 - Paragraphs
+
 - Queries and documents
 
 Example: "Neural retrieval improves search quality"
@@ -46,7 +51,9 @@ Token embeddings are aggregated into a single fixed size vector.
 Common pooling strategies:
 
 - Mean pooling across token embeddings
+
 - CLS token pooling
+
 - Max pooling
 
 Mean pooling is most commonly used because it is stable and performs well empirically.
@@ -68,7 +75,9 @@ Sentence Transformers are trained using contrastive or similarity based losses.
 Common objectives:
 
 - Cosine similarity loss
+
 - Triplet loss
+
 - Multiple negative ranking loss
 
 Training encourages semantically similar sentences to have high cosine similarity.
@@ -90,12 +99,15 @@ These embeddings capture semantic meaning beyond exact word overlap.
 Embeddings are indexed using approximate nearest neighbor methods such as:
 
 - FAISS
+
 - HNSW
+
 - ScaNN
 
 At query time:
 
 - The query is embedded
+
 - Nearest neighbors are retrieved using cosine similarity or dot product
 
 ---
@@ -115,7 +127,9 @@ Even without shared tokens.
 Dense vectors:
 
 - Are compact
+
 - Capture continuous semantic relationships
+
 - Enable fast similarity search with ANN indexes
 
 ---
@@ -123,10 +137,15 @@ Dense vectors:
 ### 5. Where Sentence Transformers Are Used
 
 - Semantic search
+
 - Dense retrieval for RAG
+
 - Document clustering
+
 - Duplicate detection
+
 - Question answering
+
 - Reranking and retrieval augmentation
 
 They are widely adopted due to strong performance and ease of use.
@@ -136,9 +155,13 @@ They are widely adopted due to strong performance and ease of use.
 ### 6. Strengths of Sentence Transformers
 
 - Strong semantic understanding
+
 - Compact representations
+
 - Effective for paraphrase matching
+
 - Pretrained models available
+
 - Easy integration with vector databases
 
 ---
@@ -146,9 +169,13 @@ They are widely adopted due to strong performance and ease of use.
 ### 7. Limitations and Caveats
 
 - Poor at exact lexical matching
+
 - Sensitive to domain shift
+
 - Require ANN infrastructure
+
 - Harder to interpret than sparse methods
+
 - Retrieval errors are harder to debug
 
 Dense retrievers can miss rare but important keywords.
@@ -158,9 +185,13 @@ Dense retrievers can miss rare but important keywords.
 ### 8. Practical Considerations
 
 - Model choice affects latency and quality
+
 - Embedding dimensionality impacts storage and speed
+
 - Fine tuning improves domain specific performance
+
 - Hybrid retrieval often outperforms pure dense retrieval
+
 - Reranking improves precision
 
 Sentence Transformers are often used alongside sparse retrievers.
@@ -186,9 +217,13 @@ Hybrid approaches combine both to get the best of both worlds.
 For interviews, focus on:
 
 - How pooling creates sentence level embeddings
+
 - Why contrastive learning is used
+
 - Tradeoffs between dense and sparse retrieval
+
 - Failure modes of dense retrievers
+
 - Their role in RAG and hybrid retrieval systems
 
 This demonstrates practical understanding of modern retrieval architectures.

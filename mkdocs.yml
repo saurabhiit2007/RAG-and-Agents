@@ -1,5 +1,5 @@
-site_name: RAG & Context Engineering
-site_description: A technical reference Retrieval Augmented Generation And Context Engineering.
+site_name: RAG & Agents
+site_description: A technical reference for Retrieval-Augmented Generation, LLM Agents, and Context Engineering.
 site_author: Saurabh Goyal
 repo_url: https://github.com/saurabhiit2007/RAG_And_Context_Engineering
 theme:
@@ -30,7 +30,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Retrival Augmented Generation (RAG):
+  - Retrieval Augmented Generation (RAG):
       - Fundamentals: ./RAG/fundamentals.md
       - Chunking: ./RAG/chunking.md
       - Embedding: ./RAG/embedding.md
@@ -45,6 +45,17 @@ nav:
           - BM25: ./RAG/supporting_topics/bm25.md
           - Splade: ./RAG/supporting_topics/splade.md
           - Sentence Transformer: ./RAG/supporting_topics/sentence_transformers.md
+  - LLM Agents:
+      - Agent Fundamentals: ./agents/agent_fundamentals.md
+      - Memory Systems: ./agents/memory_systems.md
+      - Planning: ./agents/planning.md
+      - Agent Frameworks: ./agents/agent_frameworks.md
+      - MCP and Agent Protocols: ./agents/mcp_and_protocols.md
+      - Multi-Agent Systems: ./agents/multi_agent.md
+      - Agent Failure Modes: ./agents/agent_failure_modes.md
+      - Agentic RAG: ./agents/agentic_rag.md
+  - Context Engineering: ./context_engineering/ce.md
+  - Interview Q&A: qa.md
   - References: references.md
 
 markdown_extensions:

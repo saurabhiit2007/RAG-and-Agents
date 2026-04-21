@@ -13,7 +13,9 @@ Embeddings are fixed-length dense vectors that encode the semantic meaning of te
 Text is mapped into a continuous low-dimensional vector space (typically 256–4096 dimensions) using a neural encoder. Similar texts end up near each other regardless of exact word overlap.
 
 - **Pros:** Captures paraphrases and semantic equivalence; efficient ANN search; handles natural language queries well.
+
 - **Cons:** Weak at exact keyword matching; sensitive to domain shift; less interpretable.
+
 - **Examples:** Sentence-BERT, E5, GTE, OpenAI text-embedding models.
 
 ---
@@ -23,7 +25,9 @@ Text is mapped into a continuous low-dimensional vector space (typically 256–4
 Text is represented as a high-dimensional sparse vector over a vocabulary (most dimensions are zero). Non-zero weights correspond to terms that appear in the document or query.
 
 - **Pros:** Excellent exact-match recall for keywords, IDs, product codes; interpretable; robust for rare terms.
+
 - **Cons:** No semantic generalisation; fails on paraphrases; vocabulary-dependent.
+
 - **Examples:** TF-IDF, BM25, SPLADE.
 
 ---
@@ -33,7 +37,9 @@ Text is represented as a high-dimensional sparse vector over a vocabulary (most 
 Hybrid approaches combine both signals. Three common strategies:
 
 - **Late fusion (RRF):** Run dense and sparse search independently, then merge ranked lists using Reciprocal Rank Fusion. Called "late" because merging happens after both retrievals complete.
+
 - **Two-stage retrieval:** Sparse search narrows millions of documents to a few hundred candidates; a dense model re-scores that shortlist. Balances efficiency and accuracy.
+
 - **Joint sparse-dense (SPLADE-style):** A single model produces vectors containing both semantic signals and lexical importance weights — one unified search.
 
 ---
@@ -53,7 +59,9 @@ s(q, d) = ⟨f(q), g(d)⟩
 ```
 
 - **Strengths:** Extremely fast at scale; indexable; supports millions of documents.
+
 - **Weakness:** No cross-attention between query and document — limited relevance modelling.
+
 - **Used for:** First-stage retrieval (recall-optimised).
 
 ---
@@ -67,7 +75,9 @@ s(q, d) = h([q ; d])
 ```
 
 - **Strengths:** Rich token-level interactions; substantially more accurate relevance scoring.
+
 - **Weakness:** Cannot be pre-computed or indexed — one full forward pass per query-document pair. Too slow for large corpora.
+
 - **Used for:** Second-stage reranking over a small candidate set (precision-optimised).
 
 > **Bi-encoders maximise recall at scale. Cross-encoders maximise precision on a shortlist. Production systems use both in sequence.**
@@ -79,7 +89,9 @@ s(q, d) = h([q ; d])
 A middle ground between bi- and cross-encoders:
 
 - Stores a vector per **token** in each document (more memory than bi-encoders).
+
 - Uses a **MaxSim** operation at retrieval: the score for a query token is the maximum similarity across all document token vectors.
+
 - Achieves near cross-encoder accuracy at bi-encoder speed.
 
 ---
@@ -109,7 +121,9 @@ L = -log [ exp(sim(q, d+)) / (exp(sim(q, d+)) + Σ exp(sim(q, d-))) ]
 Models are fine-tuned on human-labelled query-document relevance datasets.
 
 - **MS MARCO:** The gold standard — real Bing queries paired with human-judged relevant passages. Most production embedding models (BGE, GTE, E5) are trained on MS MARCO.
+
 - **Pairwise loss:** Model is given (q, d+, d-) and penalised if d- scores higher than d+.
+
 - **Listwise loss:** Model optimises the entire ranked list at once. More accurate for ranking (directly optimises nDCG) but more expensive to train.
 
 ---
@@ -137,8 +151,11 @@ This lets a single model adapt its embedding space to different tasks — retrie
 Generic embeddings underperform on specialist domains (medical, legal, code). Adaptation options in increasing cost order:
 
 1. **Continued pre-training:** Run Masked Language Modeling (MLM) on your private corpus to teach the model domain vocabulary.
+
 2. **Contrastive fine-tuning:** Use domain-specific query-document pairs with contrastive loss to pull relevant items closer.
+
 3. **Generative Pseudo-Labeling (GPL):** Use an LLM to generate synthetic questions for each unlabeled document, then train the embedding model on these synthetic pairs. Effective with zero labeled data.
+
 4. **Adapter-based tuning:** Insert lightweight adapter layers and fine-tune only those, leaving base model weights frozen.
 
 > **Critical:** If you change the embedding model, you must re-index the entire corpus. Vectors from different models are not comparable.
@@ -180,7 +197,9 @@ Generic embeddings underperform on specialist domains (medical, legal, code). Ad
 **Offline (retrieval-level):**
 
 - Recall@k — is the relevant document in the top k?
+
 - MRR — how early does the first relevant document appear?
+
 - nDCG — quality of the full ranked list using graded relevance.
 
 **End-to-end:**

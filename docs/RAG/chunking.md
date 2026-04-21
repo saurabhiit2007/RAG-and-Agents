@@ -11,6 +11,7 @@ Chunking splits documents into smaller units before embedding and indexing. It i
 Embedding models have fixed input limits (typically 512 to 8192 tokens), so documents must be split. But chunk size affects quality in both directions:
 
 - **Too small:** Chunks lose semantic meaning; retrieval returns fragments that don't fully answer the question.
+
 - **Too large:** Chunks contain multiple unrelated topics; embedding quality degrades; context window fills with noise.
 
 ---
@@ -26,11 +27,15 @@ Documents are split into consecutive windows of N tokens with optional overlap. 
 **Algorithm:**
 
 1. Tokenise the document.
+
 2. Split into consecutive windows of size N.
+
 3. Optionally overlap adjacent windows by M tokens.
 
 - **Pros:** Simple to implement; fast and scalable; good baseline.
+
 - **Cons:** Ignores semantic boundaries; may split sentences mid-thought.
+
 - **Use when:** Baseline systems; uniform document formats; large-scale indexing where simplicity matters.
 
 ---
@@ -40,7 +45,9 @@ Documents are split into consecutive windows of N tokens with optional overlap. 
 Documents are split at sentence boundaries, accumulating sentences until a token threshold is reached.
 
 - **Pros:** Preserves sentence semantics; reduces mid-sentence splits.
+
 - **Cons:** Sentence lengths vary; ignores higher-level document structure.
+
 - **Use when:** Narrative text; QA over articles or reports.
 
 ---
@@ -50,7 +57,9 @@ Documents are split at sentence boundaries, accumulating sentences until a token
 Chunks are formed at paragraph boundaries and merged if small; large paragraphs are split further if needed.
 
 - **Pros:** Preserves local topical coherence; aligns with human-written structure.
+
 - **Cons:** Paragraph length is highly inconsistent; formatting noise can affect quality.
+
 - **Use when:** Well-structured documentation; markdown or HTML content.
 
 ---
@@ -60,7 +69,9 @@ Chunks are formed at paragraph boundaries and merged if small; large paragraphs 
 Applies a hierarchy of split rules — sections → paragraphs → sentences → fixed-size fallback — only falling back to finer splits when the chunk exceeds the size limit.
 
 - **Pros:** Preserves document structure; produces semantically meaningful chunks; handles diverse formats.
+
 - **Cons:** More complex to implement; requires reliable document parsing.
+
 - **Use when:** Enterprise documents; PDFs with headings; mixed-format content. **This is the most common production approach.**
 
 ---
@@ -70,7 +81,9 @@ Applies a hierarchy of split rules — sections → paragraphs → sentences →
 Adjacent text units are grouped based on embedding similarity rather than fixed boundaries.
 
 - **Pros:** High semantic coherence; reduces context fragmentation.
+
 - **Cons:** Computationally expensive — requires embedding during preprocessing; sensitive to similarity thresholds.
+
 - **Use when:** High-precision RAG; smaller corpora where quality matters most.
 
 ---
@@ -80,7 +93,9 @@ Adjacent text units are grouped based on embedding similarity rather than fixed 
 Overlapping windows slide across the document (e.g., 512-token window, 256-token stride).
 
 - **Pros:** Preserves cross-boundary context; reduces information loss at chunk edges.
+
 - **Cons:** Doubles or more the index size; higher storage and retrieval cost; redundant embeddings.
+
 - **Use when:** Long-form documents; multi-hop reasoning tasks; cases where boundary loss is critical.
 
 ---
@@ -100,7 +115,9 @@ Changing chunk size almost always requires adjusting top-k. **They must be tuned
 **Common failure patterns:**
 
 - Small chunks + low top-k → missing required information
+
 - Large chunks + high top-k → context overload and noise
+
 - Large chunks + low top-k → partial coverage
 
 ---
@@ -114,7 +131,9 @@ Overlap (sharing tokens between adjacent chunks) prevents information loss at ch
 **Typical settings:**
 
 - Fixed-size chunking: 10–20% overlap
+
 - Sliding window: stride equals 50% of window size
+
 - Recursive chunking: overlap often unnecessary
 
 **Benefits:** Improved recall; reduced boundary effects.
@@ -136,6 +155,7 @@ Attaching structured metadata to each chunk enables filtering before or after si
 **How it's used:**
 
 - Pre-filter by document type, date, or access permission before ANN search (faster, but risks reducing recall if over-filtered).
+
 - Post-filter after ANN search (preserves recall, wastes compute on irrelevant candidates).
 
 **Example:** Retrieve only chunks from documents created after a certain date, or from a specific product version.
@@ -151,13 +171,17 @@ Text-centric chunking destroys the structure of tables and source code.
 **Tables:**
 
 - Never split a table row across chunks.
+
 - Attach the table schema and column headers as metadata to every row-chunk.
+
 - Consider serialising rows to natural language for embedding.
 
 **Code:**
 
 - Chunk at function or class boundaries — never split a function across chunks.
+
 - File-level chunking for small files is acceptable.
+
 - Long-range dependencies mean that smaller granularity (line-level) loses context.
 
 ---

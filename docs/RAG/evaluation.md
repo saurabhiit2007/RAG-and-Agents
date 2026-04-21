@@ -11,8 +11,11 @@ Evaluation is one of the hardest aspects of RAG. The system has multiple interac
 Unlike traditional NLP tasks, RAG systems:
 
 - Do not have a single ground-truth output (multiple valid answers may exist).
+
 - Depend on external knowledge sources that can be wrong, stale, or irrelevant.
+
 - Can fail silently — generating fluent but factually wrong answers.
+
 - Have multiple interacting components: a failure in retrieval causes a failure in generation, but this is hard to detect end-to-end.
 
 No single metric is sufficient. Effective evaluation requires layered coverage.
@@ -28,6 +31,7 @@ No single metric is sufficient. Effective evaluation requires layered coverage.
 Each module is tested independently.
 
 - **Retrieval:** Are relevant documents retrieved? Are they ranked correctly?
+
 - **Generation:** Given perfect context, can the model answer correctly?
 
 | | |
@@ -59,6 +63,7 @@ The full pipeline is tested from user query to final answer.
 Fraction of queries for which at least one relevant document appears in the top-k retrieved results.
 
 - **Why it matters:** If recall is low, generation cannot recover. Especially critical for factual QA.
+
 - **Limitation:** Binary notion of relevance; does not consider ranking quality within top-k.
 
 ---
@@ -68,6 +73,7 @@ Fraction of queries for which at least one relevant document appears in the top-
 Measures how early the first relevant document appears in the ranked list. Score = average of 1/rank across queries.
 
 - **Why it matters:** Rewards systems that rank relevant documents earlier; useful when only one document is needed.
+
 - **Limitation:** Ignores multiple relevant documents.
 
 ---
@@ -77,6 +83,7 @@ Measures how early the first relevant document appears in the ranked list. Score
 Measures quality of the full ranked list using graded relevance, penalising relevant documents that appear lower.
 
 - **Why it matters:** More realistic for multi-document relevance; handles graded (not just binary) relevance labels.
+
 - **Limitation:** Requires graded relevance annotations; more complex to compute and interpret.
 
 ---
@@ -86,6 +93,7 @@ Measures quality of the full ranked list using graded relevance, penalising rele
 Fraction of top-k retrieved documents that are relevant.
 
 - **Why it matters:** Complements recall — high precision means less noisy context for the LLM.
+
 - **Limitation:** Must be considered alongside recall; a system can have high precision@3 with low recall.
 
 > High Recall@k is often more critical than precision in RAG retrieval, because the LLM can filter irrelevant context — but it cannot invent missing information.
@@ -117,6 +125,7 @@ The most critical RAG-specific evaluation dimension. A system can score well on 
 **Question:** Is every claim in the answer supported by the retrieved context?
 
 - Measured by sentence-level entailment checks or LLM-as-a-judge prompting.
+
 - Failure mode: Correct-sounding claims that are not in any retrieved document.
 
 ---
@@ -125,6 +134,7 @@ The most critical RAG-specific evaluation dimension. A system can score well on 
 **Question:** Does every specific claim in the answer trace back to a retrieved source?
 
 - Measured by claim extraction followed by source matching or citation validation.
+
 - Failure mode: Answers that are correct (by coincidence or parametric knowledge) but unsupported by retrieved text.
 
 ---
@@ -159,7 +169,9 @@ Using an LLM to evaluate RAG outputs is increasingly the standard approach. **RA
 **Risks:**
 
 - Bias towards fluent answers — LLM judges may reward well-written hallucinations.
+
 - Sensitivity to prompt design — scoring rubrics matter significantly.
+
 - Self-preference bias — models tend to rate outputs from similar architectures more favourably.
 
 **Best practice:** Validate LLM-as-a-judge scores against human judgments on a held-out set before trusting them for production decisions.
@@ -177,7 +189,9 @@ Human evaluation remains the gold standard for RAG systems.
 **Protocol design:**
 
 - Blind evaluation (evaluators don't know which system produced which answer).
+
 - Multiple annotators per example (typically 3).
+
 - Measure inter-annotator agreement (Cohen's Kappa).
 
 **Tradeoffs:** High cost; low scalability; slow iteration — but irreplaceable for final validation.
@@ -207,7 +221,9 @@ Human evaluation remains the gold standard for RAG systems.
 **Approaches:**
 
 1. **Synthetic generation:** Use an LLM to generate questions from your document corpus, creating question–context–answer triples. Fast and free, but synthetic questions may not match real user queries.
+
 2. **Production logging:** Sample real user queries and have humans label relevant documents and correct answers. Most realistic, but requires live traffic.
+
 3. **Expert annotation:** For high-stakes domains (medical, legal), pay subject matter experts to create a gold-standard test set. Expensive but highest quality.
 
 ---

@@ -13,7 +13,9 @@ Classical sparse retrievers rely on exact term overlap. Dense retrievers capture
 SPLADE bridges this gap by:
 
 - Using a transformer encoder to generate sparse vectors
+
 - Expanding queries and documents with semantically related terms
+
 - Keeping representations compatible with inverted indexes
 
 Each document and query is represented as a weighted bag of vocabulary terms, where weights are learned rather than hand engineered.
@@ -56,12 +58,15 @@ This is where semantic expansion happens.
 Raw scores are transformed using:
 
 - ReLU to remove negative values
+
 - Log scaling to control large activations
 
 Then, **max pooling across token positions** is applied.
 
 This results in:
+
 - One score per vocabulary term
+
 - Many terms having zero weight
 
 Only the most relevant terms remain active.
@@ -82,7 +87,9 @@ ranking: 0.9
 This representation:
 
 - Is sparse like BM25
+
 - Encodes semantics like neural models
+
 - Is interpretable as weighted terms
 
 ---
@@ -94,6 +101,7 @@ Each non-zero term is added to an inverted index.
 For each term, the index stores:
 
 - Document IDs
+
 - Term weights
 
 This allows fast retrieval using standard sparse indexing infrastructure.
@@ -105,8 +113,11 @@ This allows fast retrieval using standard sparse indexing infrastructure.
 Queries go through the exact same steps:
 
 - Transformer encoding
+
 - Vocabulary scoring
+
 - Sparsification
+
 - Sparse vector creation
 
 Example query expansion:
@@ -144,7 +155,9 @@ Even without exact word overlap.
 Despite using transformers:
 
 - Storage remains sparse
+
 - Retrieval uses inverted indexes
+
 - Latency stays manageable
 
 ---
@@ -165,7 +178,9 @@ Score(t) = max over positions of log(1 + ReLU(logit(t)))
 Key properties:
 
 - ReLU enforces non negativity
+
 - Log scaling controls large activations
+
 - Max pooling encourages sparse activation
 
 Only a small subset of vocabulary terms receive non-zero weights.
@@ -179,6 +194,7 @@ Unlike BM25 or TF IDF, SPLADE can assign weight to terms that do not explicitly 
 Example:
 
 - Query: "car repair"
+
 - Expanded terms: "automobile", "mechanic", "engine"
 
 This improves recall while preserving lexical matching behavior.
@@ -190,9 +206,13 @@ This improves recall while preserving lexical matching behavior.
 SPLADE is commonly used in:
 
 - Neural information retrieval
+
 - Hybrid search systems
+
 - RAG first stage retrieval
+
 - Enterprise and domain specific search
+
 - Large scale retrieval where dense vectors are costly
 
 It is especially useful when inverted index compatibility is required.
@@ -202,9 +222,13 @@ It is especially useful when inverted index compatibility is required.
 ### 7. Strengths of SPLADE
 
 - Sparse and interpretable representations
+
 - Semantic expansion improves recall
+
 - Compatible with inverted indexes
+
 - Strong performance compared to BM25
+
 - Lower storage cost than dense embeddings
 
 SPLADE often outperforms BM25 without sacrificing efficiency.
@@ -214,9 +238,13 @@ SPLADE often outperforms BM25 without sacrificing efficiency.
 ### 8. Limitations and Caveats
 
 - Requires pretrained transformer models
+
 - Higher indexing cost than BM25
+
 - Vocabulary size affects memory usage
+
 - Inference is slower than classical sparse methods
+
 - Requires careful regularization to control sparsity
 
 Despite sparsity, SPLADE is still more expensive than purely lexical methods.
@@ -226,9 +254,13 @@ Despite sparsity, SPLADE is still more expensive than purely lexical methods.
 ### 9. Practical Considerations
 
 - Regularization is critical to maintain sparsity
+
 - Index size depends on vocabulary and pruning thresholds
+
 - Query time expansion increases recall but adds latency
+
 - Often combined with BM25 or dense retrievers
+
 - Fine-tuning on domain data improves performance
 
 SPLADE is typically deployed where quality gains justify added complexity.
@@ -254,8 +286,11 @@ SPLADE can be viewed as a neural generalization of BM25.
 SPLADE is often used as:
 
 - A semantic sparse retriever
+
 - A complement to dense embeddings
+
 - A first stage retriever before reranking
+
 - A fallback when dense retrieval misses lexical matches
 
 Hybrid systems frequently combine SPLADE, BM25, and dense retrieval.
@@ -267,9 +302,13 @@ Hybrid systems frequently combine SPLADE, BM25, and dense retrieval.
 For interviews, emphasize:
 
 - Why SPLADE is still sparse despite being neural
+
 - How learned term expansion improves recall
+
 - Compatibility with inverted indexes
+
 - Tradeoffs between BM25, SPLADE, and dense retrieval
+
 - Its role in modern RAG architectures
 
 ---

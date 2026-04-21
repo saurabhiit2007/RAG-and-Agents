@@ -47,6 +47,7 @@ A high score indicates a term that is both locally frequent and globally distinc
 **Strengths**
 
 - Simple, no training required, interpretable, fast.
+
 - Works well for exact and partial lexical matches.
 
 ---
@@ -54,8 +55,11 @@ A high score indicates a term that is both locally frequent and globally distinc
 **Weaknesses**
 
 - No semantic understanding — requires exact word overlap.
+
 - Assumes term independence (bag-of-words).
+
 - Linear TF with no saturation — keyword stuffing inflates scores.
+
 - Ignores word order and syntax.
 
 ---
@@ -75,9 +79,13 @@ BM25(d, q) = Σ IDF(t) × [tf(t,d) × (k₁ + 1)] / [tf(t,d) + k₁ × (1 - b + 
 Where:
 
 - `tf(t, d)` — term frequency of t in document d
+
 - `|d|` — length of document d
+
 - `avgdl` — average document length in the corpus
+
 - `k₁` — controls term frequency saturation (typically 1.2–2.0)
+
 - `b` — controls length normalisation strength (typically 0.75)
 
 ---
@@ -114,12 +122,15 @@ More robust for rare and common terms than the basic IDF formula.
 **Corpus:**
 
 - D1: "deep learning deep learning deep learning tutorial"
+
 - D2: "deep learning tutorial"
+
 - D3: "deep learning introduction overview"
 
 **Query:** "deep learning tutorial"
 
 - TF-IDF ranks: D1 > D2 > D3 — D1 wins purely due to repetition of "deep learning".
+
 - BM25 ranks: D2 > D1 > D3 — D1's score saturates; D2's shorter length gives it a boost. D2 is more concise and directly on-topic.
 
 BM25 aligns with human intuition: repeating the same phrase doesn't make a document more relevant.
@@ -127,8 +138,11 @@ BM25 aligns with human intuition: repeating the same phrase doesn't make a docum
 ### When to Use BM25
 
 - Exact keyword matches matter (names, IDs, error codes, product codes).
+
 - No training budget or labelled data.
+
 - Fast, no-GPU, interpretable baseline.
+
 - As the sparse component of a hybrid retrieval system.
 
 ---
@@ -148,13 +162,19 @@ BM25 relies on exact term overlap. SPLADE trains a transformer to assign weights
 ### How SPLADE Works (Step by Step)
 
 1. **Input text** is passed through a masked language model (e.g., BERT).
+
 2. **Vocabulary scoring:** For each token position, the model produces a score for every term in the vocabulary. The model answers: "Which vocabulary terms are relevant to this text, even if not explicitly present?"
+
 3. **Non-linearity and sparsification:** Raw scores are transformed using ReLU (removes negatives) + log scaling (controls large activations). Max pooling across token positions produces a single sparse vector.
+
 4. **Result:** One score per vocabulary term; most are zero. Only the most relevant terms remain active.
+
 5. **Inverted index:** Non-zero terms are stored in a standard inverted index — identical infrastructure to BM25.
 
 **Example expansion:**
+
 - Input: "car repair"
+
 - Expanded active terms: `{car: 2.1, repair: 1.9, automobile: 1.4, mechanic: 1.1, engine: 0.8}`
 
 This allows matching a document about "automobile maintenance" even though neither query word appears in it.
@@ -168,7 +188,9 @@ Score(t) = max over positions of log(1 + ReLU(logit_t))
 ```
 
 - ReLU enforces non-negativity
+
 - Log scaling controls large activations
+
 - Max pooling encourages sparse activation
 
 ---
@@ -189,9 +211,13 @@ Score(t) = max over positions of log(1 + ReLU(logit_t))
 ---
 
 ### When to Use SPLADE
+
 - Want BM25 efficiency with semantic expansion.
+
 - Existing inverted-index infrastructure that cannot be replaced.
+
 - Queries use different vocabulary than documents.
+
 - As the sparse component in hybrid retrieval alongside dense models.
 
 ---
@@ -205,9 +231,13 @@ Sentence Transformers are neural models that convert text into dense fixed-size 
 ### How They Work (Step by Step)
 
 1. **Input text** is passed through a transformer encoder (BERT, RoBERTa, MiniLM, etc.).
+
 2. **Transformer encoding** produces one contextualised embedding per token.
+
 3. **Pooling:** Token embeddings are aggregated into a single fixed-size vector. Mean pooling is most common — it is stable and empirically strong.
+
 4. **L2 normalisation:** The vector is normalised so cosine similarity equals dot product.
+
 5. **Indexing:** Vectors are stored in a vector database for ANN search.
 
 ---
@@ -242,8 +272,11 @@ Sentence Transformers are trained with contrastive objectives:
 ---
 
 ### When to Use
+
 - **Dense retrieval:** Natural language queries; paraphrase matching; fine-grained semantic similarity matters.
+
 - **Sparse retrieval:** Queries with specific identifiers; corpus has precise technical terminology.
+
 - **Hybrid (recommended for production):** Most systems combine both to cover complementary failure modes.
 
 ---

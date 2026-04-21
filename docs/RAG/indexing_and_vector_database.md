@@ -11,7 +11,9 @@ Indexing defines how embeddings are organised for fast similarity search at scal
 Computes similarity against every vector in the database. Recall is perfect by definition — no approximation.
 
 - **Pros:** Exact results; simple implementation; deterministic.
+
 - **Cons:** Linear search time — O(N) per query; unusable in production for large corpora.
+
 - **Use when:** Small datasets (up to ~100k vectors); offline ground-truth benchmarking; evaluating other indexes.
 
 ---
@@ -29,6 +31,7 @@ Builds a multi-layer graph where each node connects to similar vectors. Search s
 **How it works:**
 
 - During indexing, each new vector is inserted into multiple layers, with connections to its nearest neighbours at each layer.
+
 - During search, the algorithm enters at the top layer (fewest nodes), greedily navigates to the nearest centroid, then descends layer by layer for increasing refinement.
 
 | | |
@@ -40,7 +43,9 @@ Builds a multi-layer graph where each node connects to similar vectors. Search s
 **Key parameters:**
 
 - `M` — number of connections per node. Higher M → better recall, more memory.
+
 - `ef_construction` — search width during index build. Higher → better index quality, slower build.
+
 - `ef_search` — search width at query time. Higher → better recall, slower queries.
 
 ---
@@ -60,6 +65,7 @@ Clusters all vectors into `n_list` centroid clusters at build time. At query tim
 **Key parameters:**
 
 - `n_list` — number of clusters. More clusters → higher precision but longer build time.
+
 - `n_probe` — number of clusters searched at query time. More probes → higher recall, slower queries.
 
 ---
@@ -69,7 +75,9 @@ Clusters all vectors into `n_list` centroid clusters at build time. At query tim
 Compresses high-dimensional vectors into compact codes by splitting each vector into sub-vectors and quantising each sub-vector independently using a trained codebook.
 
 - **Pros:** Massive memory reduction — enables storage of billions of vectors; lower I/O cost.
+
 - **Cons:** Lossy compression — recall drops due to quantisation errors; harder to debug.
+
 - **Typically combined with:** IVF+PQ for extreme-scale search (e.g., web-scale retrieval).
 
 ---
@@ -93,6 +101,7 @@ Compresses high-dimensional vectors into compact codes by splitting each vector 
 Sparse indexes use term-based inverted indexes mapping `term → posting list of documents`. Standard infrastructure for BM25 and SPLADE. Implemented in Elasticsearch, OpenSearch, and Lucene.
 
 - **Excellent for:** Lexical retrieval; exact keyword matches; rare terms and identifiers.
+
 - **Cannot do:** Semantic similarity; paraphrase matching.
 
 ---
@@ -104,6 +113,7 @@ Sparse indexes use term-based inverted indexes mapping `term → posting list of
 Hybrid systems maintain both a dense vector index and a sparse inverted index. Retrieval runs in parallel across both, and results are merged (typically with Reciprocal Rank Fusion).
 
 - **Pros:** Improved recall and precision; robust to diverse query types; production-proven.
+
 - **Cons:** Increased system complexity; higher latency (two retrieval paths); requires score fusion tuning.
 
 ---
@@ -134,19 +144,25 @@ Metadata filtering restricts retrieval to relevant subsets before (pre-filtering
 **Pre-filtering** (filter first, then search the smaller set):
 
 - Faster — ANN search runs on a smaller index.
+
 - Risk: over-filtering can hurt recall if filters are too strict.
 
 **Post-filtering** (search first, then discard irrelevant results):
 
 - Better recall — the full index is searched.
+
 - Wastes compute on candidates that will be filtered out.
 
 **Common metadata filters:**
 
 - Document type or source
+
 - Timestamp / version (retrieve only recent documents)
+
 - Author or department
+
 - Access permissions / tenant ID (multi-tenant RAG)
+
 - Content type (prose vs. table vs. code)
 
 > Metadata filtering is one of the highest-ROI improvements in a vanilla RAG system — it narrows the search space without changing the embedding model or retraining anything.
@@ -160,6 +176,7 @@ Metadata filtering restricts retrieval to relevant subsets before (pre-filtering
 In enterprise systems, different users should only retrieve from their permitted document subset. Two main approaches:
 
 1. **Namespace / collection isolation:** Each tenant's documents live in a separate index namespace. Cleanest isolation but higher infrastructure cost.
+
 2. **Metadata-based filtering:** All documents share one index; retrieval filters on a `tenant_id` metadata field. More efficient but relies on the vector DB correctly enforcing filters.
 
 ---

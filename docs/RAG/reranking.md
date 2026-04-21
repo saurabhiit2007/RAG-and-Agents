@@ -25,8 +25,11 @@ The standard reranking approach. The query and each candidate document are conca
 **How it works:**
 
 1. First-stage retriever returns top-k candidates (typically 50–100).
+
 2. For each candidate, concatenate `[CLS] query [SEP] document [SEP]` and run through the cross-encoder.
+
 3. The model outputs a single relevance score per candidate.
+
 4. Re-sort candidates by these scores; pass top-m (typically 5–10) to the LLM.
 
 | | |
@@ -74,7 +77,9 @@ An LLM is prompted to score or rank candidates rather than using a dedicated cro
 **Strategies:**
 
 - **Pointwise:** Score each document independently on a scale (e.g., 0–10 relevance).
+
 - **Pairwise:** Compare two documents at a time and identify the more relevant one.
+
 - **Listwise:** Ask the LLM to sort the entire candidate list and return the ranked order.
 
 | | |
