@@ -115,11 +115,11 @@ Agents share a message bus or call each other's Python functions directly. Used 
 
 ### Via MCP (Model Context Protocol)
 
-One agent exposes its capabilities as an MCP server; another connects to it as an MCP client. Enables cross-language, cross-process tool integration. See `mcp_and_protocols.md`.
+One agent exposes its capabilities as an MCP server; another connects to it as an MCP client. Enables cross-language, cross-process tool integration. See [MCP & Agent Protocols](mcp_and_protocols.md).
 
 ### Via A2A (Agent-to-Agent Protocol)
 
-Agents communicate via HTTP using the A2A standard. Enables cross-vendor, distributed agent networks where agents are discovered via Agent Cards. See `mcp_and_protocols.md`.
+Agents communicate via HTTP using the A2A standard. Enables cross-vendor, distributed agent networks where agents are discovered via Agent Cards. See [MCP & Agent Protocols](mcp_and_protocols.md).
 
 ---
 

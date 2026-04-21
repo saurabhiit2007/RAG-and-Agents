@@ -76,7 +76,7 @@ The taxonomy used here follows the cognitive science literature (Tulving, 1985) 
 
 - Retrieved knowledge can be kept current by updating the index.
 
-- Agents must decide when to trust parametric knowledge vs. retrieve — Self-RAG addresses this with reflection tokens (see `agentic_rag.md`).
+- Agents must decide when to trust parametric knowledge vs. retrieve — Self-RAG addresses this with reflection tokens (see [Agentic RAG](agentic_rag.md)).
 
 **Key distinction from episodic memory:**
 Episodic memory records *what the agent experienced* (a concrete interaction). Semantic memory records *what the agent knows* (general facts). A retrieval result that is stored for reuse across sessions is semantic; the specific retrieval event that led to it is episodic.

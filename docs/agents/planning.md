@@ -162,7 +162,7 @@ Low-level plan (Worker agents, for step 1):
   1d. Verify claims against secondary sources.
 ```
 
-The manager orchestrates; workers execute. This is the basis of multi-agent architectures (see `multi_agent.md`).
+The manager orchestrates; workers execute. This is the basis of multi-agent architectures (see [Multi-Agent Systems](multi_agent.md)).
 
 **Advantages:**
 

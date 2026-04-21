@@ -221,7 +221,7 @@ root_agent = Agent(
 
 - **Multi-agent natively:** Sub-agents are first-class citizens in the SDK; routing is part of the agent definition.
 
-- **A2A protocol support:** Agents expose Agent Cards (capability manifests) and communicate via the A2A standard (see `mcp_and_protocols.md`).
+- **A2A protocol support:** Agents expose Agent Cards (capability manifests) and communicate via the A2A standard (see [MCP & Agent Protocols](mcp_and_protocols.md)).
 
 - **Vertex AI integration:** Native deployment on Google's managed agent infrastructure.
 

@@ -40,7 +40,7 @@ State maintained across steps. May include:
 - **In-context (working) memory** — the current conversation/scratchpad
 
 - **External memory** — a vector store or database for long-term recall
-(See `memory_systems.md` for full taxonomy.)
+(See [Memory Systems](memory_systems.md) for full taxonomy.)
 
 ### 2.3 Tools
 External capabilities the LLM can invoke. Examples:
@@ -57,7 +57,7 @@ External capabilities the LLM can invoke. Examples:
 
 ### 2.4 Planning
 The strategy for decomposing a goal into steps. May be reactive (ReAct) or deliberative (MCTS, hierarchical).
-(See `planning.md` for full coverage.)
+(See [Planning](planning.md) for full coverage.)
 
 ### 2.5 Action Space
 The set of allowed actions (tools) the agent can take. Defines the scope of what the agent can do and is the primary safety control point.
