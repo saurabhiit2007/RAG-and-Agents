@@ -146,7 +146,24 @@ This lets a single model adapt its embedding space to different tasks — retrie
 
 ---
 
-## 5. Domain Adaptation (The "Cold Start" Problem)
+## 5. Choosing an Embedding Model — MTEB
+
+The **Massive Text Embedding Benchmark (MTEB)** is the standard leaderboard for comparing embedding models across retrieval, classification, clustering, and semantic similarity tasks. Available at [huggingface.co/spaces/mteb/leaderboard](https://huggingface.co/spaces/mteb/leaderboard).
+
+**Practical guidance:**
+
+| Constraint | Good Starting Point |
+|---|---|
+| Best quality (no size limit) | `text-embedding-3-large` (OpenAI), `voyage-3` (Voyage AI), `Cohere embed-v3` |
+| Best open-source | `gte-Qwen2-7B`, `bge-en-icl`, `e5-mistral-7b-instruct` |
+| Fastest / smallest | `all-MiniLM-L6-v2`, `bge-small-en-v1.5` |
+| Multilingual | `multilingual-e5-large`, `paraphrase-multilingual-mpnet` |
+
+> Do not pick an embedding model by MTEB rank alone — always evaluate on a sample from your specific domain. MTEB tasks may not reflect your query distribution.
+
+---
+
+## 6. Domain Adaptation (The "Cold Start" Problem)
 
 Generic embeddings underperform on specialist domains (medical, legal, code). Adaptation options in increasing cost order:
 

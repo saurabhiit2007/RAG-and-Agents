@@ -224,60 +224,13 @@ Score(t) = max over positions of log(1 + ReLU(logit_t))
 
 ---
 
-## 5. Sentence Transformers (Dense Retrieval)
+## 5. Dense Retrieval (Bi-Encoders)
 
-Sentence Transformers are neural models that convert text into dense fixed-size vectors encoding semantic meaning. They are the backbone of dense retrieval in most production RAG systems.
+Dense retrieval uses neural embedding models to encode queries and documents into vectors; similarity is a dot product or cosine distance. Full coverage — training objectives, domain adaptation, model selection — is in [Embedding](embedding.md).
 
-### How They Work (Step by Step)
+**When to use:** Natural language queries; paraphrase matching; semantic similarity matters.
 
-1. **Input text** is passed through a transformer encoder (BERT, RoBERTa, MiniLM, etc.).
-
-2. **Transformer encoding** produces one contextualised embedding per token.
-
-3. **Pooling:** Token embeddings are aggregated into a single fixed-size vector. Mean pooling is most common — it is stable and empirically strong.
-
-4. **L2 normalisation:** The vector is normalised so cosine similarity equals dot product.
-
-5. **Indexing:** Vectors are stored in a vector database for ANN search.
-
----
-
-### Why Mean Pooling?
-
-Mean pooling averages all token embeddings, including padding tokens (which are typically masked). It is simple, stable, and performs better than CLS-token pooling in most retrieval benchmarks.
-
----
-
-### Training
-
-Sentence Transformers are trained with contrastive objectives:
-
-- **Multiple Negatives Ranking (MNR) Loss:** In a batch of K query-document pairs, each document serves as a negative for all other queries in the batch. This provides K–1 negatives per query for free — no manual negative labelling needed. This is the standard training approach for models like BGE, E5, and GTE.
-
-- **Triplet Loss:** (anchor, positive, negative) — the model is penalised when the negative is closer to the anchor than the positive.
-
----
-
-### Sentence Transformers vs. Sparse Retrieval
-
-| Aspect | Sparse (BM25 / SPLADE) | Dense (Sentence Transformers) |
-|---|---|---|
-| Semantic matching | Limited / partial | Strong — handles paraphrases natively |
-| Exact match | Strong | Weak — misses rare keywords and IDs |
-| Interpretability | High | Low — black box |
-| Infrastructure | Inverted index | Vector database with ANN index |
-| Training required | No (BM25) / Yes (SPLADE) | Yes |
-| Domain adaptation | Not needed (BM25) | May require fine-tuning |
-
----
-
-### When to Use
-
-- **Dense retrieval:** Natural language queries; paraphrase matching; fine-grained semantic similarity matters.
-
-- **Sparse retrieval:** Queries with specific identifiers; corpus has precise technical terminology.
-
-- **Hybrid (recommended for production):** Most systems combine both to cover complementary failure modes.
+**Limitation:** Weak on exact keyword matching, rare terms, and identifiers — combine with BM25/SPLADE for production systems.
 
 ---
 

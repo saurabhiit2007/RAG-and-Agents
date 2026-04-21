@@ -88,6 +88,30 @@ Adjacent text units are grouped based on embedding similarity rather than fixed 
 
 ---
 
+### Proposition-Based Chunking
+
+Use an LLM to extract atomic factual propositions from each paragraph, storing each as a micro-chunk. Example: a paragraph about a company becomes individual chunks like "Founded in 2010", "Headquartered in Berlin", "Has 500 employees."
+
+- **Pros:** Maximum semantic precision; each chunk answers exactly one question; retrieval is very accurate.
+
+- **Cons:** LLM inference required at index time (expensive); chunks lose surrounding narrative context.
+
+- **Use when:** High-precision QA over structured factual content; small corpora where index build cost is acceptable.
+
+---
+
+### Late Chunking
+
+(Jina AI, 2024) Embed the full document first using a long-context encoder, then chunk the resulting **token embeddings** rather than the raw text. Each chunk's embeddings carry context from the surrounding document.
+
+- **Pros:** Chunks retain cross-chunk context; resolves co-reference ("it", "the company") within chunks; better retrieval for narrative documents.
+
+- **Cons:** Requires a long-context embedding model; cannot be applied to corpora already indexed with standard chunking.
+
+- **Use when:** Documents where context from earlier/later paragraphs is needed to interpret individual chunks (legal contracts, research papers, long-form articles).
+
+---
+
 ### Sliding Window Chunking
 
 Overlapping windows slide across the document (e.g., 512-token window, 256-token stride).

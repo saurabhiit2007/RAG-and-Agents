@@ -95,13 +95,24 @@ An LLM is prompted to score or rank candidates rather than using a dedicated cro
 
 ## 6. Reranker Models
 
+**Discriminative cross-encoders** (standard approach):
+
 | Model | Notes |
 |---|---|
-| `ms-marco-MiniLM-L-6-v2` | Fast, small cross-encoder fine-tuned on MS MARCO — good default |
-| `bge-reranker-large` | Strong performance; part of the BGE family |
-| `cross-encoder/ms-marco-electra-base` | Stronger than MiniLM, still fast |
-| Cohere Rerank API | Managed API; good multilingual support |
-| GPT-4 / Claude (listwise) | Most accurate but highest latency and cost |
+| `ms-marco-MiniLM-L-6-v2` | Fast, small — good default for latency-sensitive systems |
+| `bge-reranker-v2-m3` | Strong multilingual cross-encoder from BAAI |
+| `cross-encoder/ms-marco-electra-base` | Higher accuracy than MiniLM, still fast |
+| Cohere Rerank v3 | Managed API; strong multilingual support |
+
+**Generative rerankers** (2023–2024):
+
+| Model | Approach | Notes |
+|---|---|---|
+| **MonoT5** (Nogueira et al., 2020) | T5 generates "true"/"false" for each (query, doc) pair | Strong baseline for generative reranking |
+| **RankZephyr** (2024) | Zephyr-7B fine-tuned for listwise ranking | Strong open-source listwise reranker |
+| **RankGPT** | GPT-4 prompted for sliding window listwise ranking | Highest quality; high latency and cost |
+
+> **Discriminative vs. generative rerankers:** Discriminative models (cross-encoders) produce a relevance score directly. Generative models produce text ("true"/"false" or a ranked list) and are more flexible but slower. For most RAG applications, a discriminative cross-encoder is the right default.
 
 ---
 
