@@ -850,6 +850,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4.1 Monte Carlo Tree Search (MCTS) for LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Core Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-four-phases-concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Four Phases (Concrete Example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Full Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcts-vs-react-vs-plan-and-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCTS vs ReAct vs Plan-and-Execute
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1169,6 +1211,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4.1 Monte Carlo Tree Search (MCTS) for LLMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Core Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-four-phases-concrete-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Four Phases (Concrete Example)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Full Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcts-vs-react-vs-plan-and-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCTS vs ReAct vs Plan-and-Execute
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1342,24 +1426,116 @@ Phase 2 — Execute:
 <p><strong>Hybrid:</strong> Many production systems use Plan-and-Execute with a re-planning step: if a step fails or returns an unexpected observation, the planner regenerates the remainder of the plan.</p>
 <hr />
 <h2 id="4-tree-search-mcts-and-lats">4. Tree Search: MCTS and LATS<a class="headerlink" href="#4-tree-search-mcts-and-lats" title="Permanent link">&para;</a></h2>
-<p>ReAct and Plan-and-Execute are linear. For tasks where the optimal path is uncertain, tree-search methods explore multiple alternatives before committing.</p>
+<p>ReAct and Plan-and-Execute are linear — they commit to one path and never backtrack. For tasks where the optimal sequence of actions is genuinely uncertain, tree-search methods explore multiple alternatives before committing.</p>
 <h3 id="41-monte-carlo-tree-search-mcts-for-llms">4.1 Monte Carlo Tree Search (MCTS) for LLMs<a class="headerlink" href="#41-monte-carlo-tree-search-mcts-for-llms" title="Permanent link">&para;</a></h3>
-<p>MCTS explores a tree of possible action sequences using four phases:</p>
-<ol>
-<li>
-<p><strong>Selection</strong> — traverse the existing tree following the UCB1 policy (balances exploitation of known good paths and exploration of less-visited paths).</p>
-</li>
-<li>
-<p><strong>Expansion</strong> — generate one or more new actions at the selected node.</p>
-</li>
-<li>
-<p><strong>Simulation</strong> — run a fast rollout (complete the task heuristically) to get a value estimate.</p>
-</li>
-<li>
-<p><strong>Backpropagation</strong> — update the value estimates of all nodes on the path from the selected node to the root.</p>
-</li>
-</ol>
-<p>For LLM agents, value estimates come from a <em>critic</em> (an LLM that scores how promising the current state is) rather than a game outcome.</p>
+<h4 id="the-core-intuition">The Core Intuition<a class="headerlink" href="#the-core-intuition" title="Permanent link">&para;</a></h4>
+<p>Imagine the agent's task as a maze. ReAct walks down one corridor and if it hits a dead end, it's stuck. MCTS instead builds a <strong>map of the maze as it explores</strong> — it keeps track of every junction it has visited, how promising each branch turned out to be, and uses that to decide where to explore next.</p>
+<p>In agent terms, the "maze" is a tree of possible action sequences:</p>
+<div class="highlight"><pre><span></span><code>                        [Start: user question]
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+        [search_web]     [read_docs]      [run_code]      ← possible first actions
+              │                │
+        ┌─────┴──────┐    ┌────┴─────┐
+        │            │    │          │
+   [summarise]  [search   [extract  [ask
+                 again]    table]    user]                 ← possible second actions
+</code></pre></div>
+<p>Each <strong>node</strong> is a state (what has happened so far). Each <strong>edge</strong> is an action the agent can take. MCTS explores this tree intelligently — not randomly, not exhaustively — to find the best path.</p>
+<hr />
+<h4 id="the-four-phases-concrete-example">The Four Phases (Concrete Example)<a class="headerlink" href="#the-four-phases-concrete-example" title="Permanent link">&para;</a></h4>
+<p>Say the task is: <em>"Find the revenue of Apple in Q3 2024 and compare it to Q3 2023."</em></p>
+<p><strong>Phase 1 — Selection: Pick which node to expand next</strong></p>
+<p>MCTS maintains a score for every node it has already visited. It walks down the tree from the root, at each junction picking the child with the highest UCB1 score:</p>
+<div class="highlight"><pre><span></span><code>UCB1 = (average value of node) + C × √(ln(parent visits) / node visits)
+</code></pre></div>
+<p>The first term rewards paths that have been good so far (<strong>exploitation</strong>). The second term rewards paths that haven't been explored much yet (<strong>exploration</strong>). C is a constant that controls the balance — higher C means more exploration.</p>
+<p>In practice: if MCTS tried <code>search_web → summarise</code> twice and it scored 0.4 both times, but <code>search_web → search_again</code> was only tried once, UCB1 will push it toward trying <code>search_again</code> next — even if its current score is lower.</p>
+<blockquote>
+<p><strong>Key point:</strong> "Policy" here means the UCB1 selection formula — it is <strong>not</strong> a trained neural network. MCTS is a search algorithm, not a learning algorithm.</p>
+</blockquote>
+<hr />
+<p><strong>Phase 2 — Expansion: Try a new action</strong></p>
+<p>At the selected node, the LLM generates one or more new possible next actions. These become new child nodes in the tree.</p>
+<div class="highlight"><pre><span></span><code>Selected node: [search_web(&quot;Apple Q3 2024 revenue&quot;)]
+                        │
+          Expansion generates 3 children:
+          ├── [search_web(&quot;Apple Q3 2023 revenue&quot;)]
+          ├── [read_url(&quot;apple.com/investor-relations&quot;)]
+          └── [summarise(search_result)]
+</code></pre></div>
+<hr />
+<p><strong>Phase 3 — Simulation (Rollout): Estimate how good this new node is</strong></p>
+<p>From the newly expanded node, run a fast heuristic rollout to the end of the task to estimate its value. In classic MCTS (chess, Go) this means playing random moves to the end of the game. For LLM agents it means:</p>
+<ul>
+<li>Either: ask an LLM critic <em>"Given the state so far, how likely is this path to succeed? Score 0–1."</em></li>
+<li>Or: run a cheap, abbreviated version of the remaining task to get an outcome.</li>
+</ul>
+<p>The simulation gives a <strong>value estimate</strong> for the new node without fully committing to it.</p>
+<hr />
+<p><strong>Phase 4 — Backpropagation: Update the whole path</strong></p>
+<blockquote>
+<p><strong>Terminology note:</strong> This has nothing to do with neural network gradient backpropagation. In MCTS, "backpropagation" means propagating the value estimate back up the tree — updating the scores of every node on the path from the newly expanded node back to the root.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>New node value: 0.8
+
+Backpropagate:
+  [read_url] node: update average value → was 0.5, now 0.65
+  [search_web] node: update average value → was 0.4, now 0.52
+  [root] node: update → was 0.4, now 0.53
+</code></pre></div>
+<p>Now the tree "knows" that the <code>search_web → read_url</code> path is more promising than it previously estimated. Next time Selection runs, UCB1 will favour this branch.</p>
+<hr />
+<h4 id="the-full-loop">The Full Loop<a class="headerlink" href="#the-full-loop" title="Permanent link">&para;</a></h4>
+<p>These four phases repeat for a fixed budget (e.g., 50 iterations). At the end, the agent commits to the <strong>highest-value path</strong> found, not just the first one it tried.</p>
+<div class="highlight"><pre><span></span><code>Repeat N times:
+  1. Selection  → pick the most promising unexplored node
+  2. Expansion  → generate new possible actions from it
+  3. Simulation → estimate value of that new node
+  4. Backprop   → update all ancestors with the new value
+
+After N iterations:
+  → Follow the path with the highest average value
+</code></pre></div>
+<hr />
+<h4 id="mcts-vs-react-vs-plan-and-execute">MCTS vs ReAct vs Plan-and-Execute<a class="headerlink" href="#mcts-vs-react-vs-plan-and-execute" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ReAct</th>
+<th>Plan-and-Execute</th>
+<th>MCTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path explored</td>
+<td>1 (greedy)</td>
+<td>1 (upfront plan)</td>
+<td>Many (tree)</td>
+</tr>
+<tr>
+<td>Backtracking</td>
+<td>No</td>
+<td>Re-plan on failure</td>
+<td>Yes — built in</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Low</td>
+<td>Low–Medium</td>
+<td>High (N × LLM calls)</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Simple tasks</td>
+<td>Known structure</td>
+<td>Hard, uncertain tasks</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h3 id="42-lats-language-agent-tree-search">4.2 LATS (Language Agent Tree Search)<a class="headerlink" href="#42-lats-language-agent-tree-search" title="Permanent link">&para;</a></h3>
 <p><strong>Paper:</strong> <a href="https://arxiv.org/abs/2310.04406">Language Agent Tree Search (LATS)</a> (Zhou et al., 2023)</p>
