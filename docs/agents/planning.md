@@ -88,21 +88,121 @@ Phase 2 — Execute:
 
 ## 4. Tree Search: MCTS and LATS
 
-ReAct and Plan-and-Execute are linear. For tasks where the optimal path is uncertain, tree-search methods explore multiple alternatives before committing.
+ReAct and Plan-and-Execute are linear — they commit to one path and never backtrack. For tasks where the optimal sequence of actions is genuinely uncertain, tree-search methods explore multiple alternatives before committing.
 
 ### 4.1 Monte Carlo Tree Search (MCTS) for LLMs
 
-MCTS explores a tree of possible action sequences using four phases:
+#### The Core Intuition
 
-1. **Selection** — traverse the existing tree following the UCB1 policy (balances exploitation of known good paths and exploration of less-visited paths).
+Imagine the agent's task as a maze. ReAct walks down one corridor and if it hits a dead end, it's stuck. MCTS instead builds a **map of the maze as it explores** — it keeps track of every junction it has visited, how promising each branch turned out to be, and uses that to decide where to explore next.
 
-2. **Expansion** — generate one or more new actions at the selected node.
+In agent terms, the "maze" is a tree of possible action sequences:
 
-3. **Simulation** — run a fast rollout (complete the task heuristically) to get a value estimate.
+```
+                        [Start: user question]
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+        [search_web]     [read_docs]      [run_code]      ← possible first actions
+              │                │
+        ┌─────┴──────┐    ┌────┴─────┐
+        │            │    │          │
+   [summarise]  [search   [extract  [ask
+                 again]    table]    user]                 ← possible second actions
+```
 
-4. **Backpropagation** — update the value estimates of all nodes on the path from the selected node to the root.
+Each **node** is a state (what has happened so far). Each **edge** is an action the agent can take. MCTS explores this tree intelligently — not randomly, not exhaustively — to find the best path.
 
-For LLM agents, value estimates come from a *critic* (an LLM that scores how promising the current state is) rather than a game outcome.
+---
+
+#### The Four Phases (Concrete Example)
+
+Say the task is: *"Find the revenue of Apple in Q3 2024 and compare it to Q3 2023."*
+
+**Phase 1 — Selection: Pick which node to expand next**
+
+MCTS maintains a score for every node it has already visited. It walks down the tree from the root, at each junction picking the child with the highest UCB1 score:
+
+```
+UCB1 = (average value of node) + C × √(ln(parent visits) / node visits)
+```
+
+The first term rewards paths that have been good so far (**exploitation**). The second term rewards paths that haven't been explored much yet (**exploration**). C is a constant that controls the balance — higher C means more exploration.
+
+In practice: if MCTS tried `search_web → summarise` twice and it scored 0.4 both times, but `search_web → search_again` was only tried once, UCB1 will push it toward trying `search_again` next — even if its current score is lower.
+
+> **Key point:** "Policy" here means the UCB1 selection formula — it is **not** a trained neural network. MCTS is a search algorithm, not a learning algorithm.
+
+---
+
+**Phase 2 — Expansion: Try a new action**
+
+At the selected node, the LLM generates one or more new possible next actions. These become new child nodes in the tree.
+
+```
+Selected node: [search_web("Apple Q3 2024 revenue")]
+                        │
+          Expansion generates 3 children:
+          ├── [search_web("Apple Q3 2023 revenue")]
+          ├── [read_url("apple.com/investor-relations")]
+          └── [summarise(search_result)]
+```
+
+---
+
+**Phase 3 — Simulation (Rollout): Estimate how good this new node is**
+
+From the newly expanded node, run a fast heuristic rollout to the end of the task to estimate its value. In classic MCTS (chess, Go) this means playing random moves to the end of the game. For LLM agents it means:
+
+- Either: ask an LLM critic *"Given the state so far, how likely is this path to succeed? Score 0–1."*
+- Or: run a cheap, abbreviated version of the remaining task to get an outcome.
+
+The simulation gives a **value estimate** for the new node without fully committing to it.
+
+---
+
+**Phase 4 — Backpropagation: Update the whole path**
+
+> **Terminology note:** This has nothing to do with neural network gradient backpropagation. In MCTS, "backpropagation" means propagating the value estimate back up the tree — updating the scores of every node on the path from the newly expanded node back to the root.
+
+```
+New node value: 0.8
+
+Backpropagate:
+  [read_url] node: update average value → was 0.5, now 0.65
+  [search_web] node: update average value → was 0.4, now 0.52
+  [root] node: update → was 0.4, now 0.53
+```
+
+Now the tree "knows" that the `search_web → read_url` path is more promising than it previously estimated. Next time Selection runs, UCB1 will favour this branch.
+
+---
+
+#### The Full Loop
+
+These four phases repeat for a fixed budget (e.g., 50 iterations). At the end, the agent commits to the **highest-value path** found, not just the first one it tried.
+
+```
+Repeat N times:
+  1. Selection  → pick the most promising unexplored node
+  2. Expansion  → generate new possible actions from it
+  3. Simulation → estimate value of that new node
+  4. Backprop   → update all ancestors with the new value
+
+After N iterations:
+  → Follow the path with the highest average value
+```
+
+---
+
+#### MCTS vs ReAct vs Plan-and-Execute
+
+| | ReAct | Plan-and-Execute | MCTS |
+|---|---|---|---|
+| Path explored | 1 (greedy) | 1 (upfront plan) | Many (tree) |
+| Backtracking | No | Re-plan on failure | Yes — built in |
+| Cost | Low | Low–Medium | High (N × LLM calls) |
+| Best for | Simple tasks | Known structure | Hard, uncertain tasks |
 
 ---
 
