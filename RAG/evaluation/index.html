@@ -24,7 +24,7 @@
     
     
       
-        <title>Evaluation - RAG & Agents</title>
+        <title>Evaluation (RAG & Agents) - RAG & Agents</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Evaluation
+              Evaluation (RAG & Agents)
             
           </span>
         </div>
@@ -490,7 +490,7 @@
   
   
   <span class="md-ellipsis">
-    Evaluation
+    Evaluation (RAG & Agents)
     
   </span>
   
@@ -503,7 +503,7 @@
   
   
   <span class="md-ellipsis">
-    Evaluation
+    Evaluation (RAG & Agents)
     
   </span>
   
@@ -713,9 +713,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-building-an-evaluation-dataset" class="md-nav__link">
+  <a href="#10-agent-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Building an Evaluation Dataset
+      10. Agent Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Agent Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-agent-evaluation-is-harder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Agent Evaluation Is Harder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outcome-vs-trajectory-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outcome vs Trajectory Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-agent-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Agent Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Evaluation Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-as-judge-for-agent-trajectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM-as-Judge for Agent Trajectories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-building-an-evaluation-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Building an Evaluation Dataset
     </span>
   </a>
   
@@ -1411,9 +1471,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-building-an-evaluation-dataset" class="md-nav__link">
+  <a href="#10-agent-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      10. Building an Evaluation Dataset
+      10. Agent Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Agent Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-agent-evaluation-is-harder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Agent Evaluation Is Harder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outcome-vs-trajectory-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outcome vs Trajectory Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-agent-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Agent Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Evaluation Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-as-judge-for-agent-trajectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM-as-Judge for Agent Trajectories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-building-an-evaluation-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Building an Evaluation Dataset
     </span>
   </a>
   
@@ -1438,7 +1558,7 @@
   
 
 
-  <h1>Evaluation</h1>
+  <h1>Evaluation (RAG & Agents)</h1>
 
 <h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <p>Evaluation is one of the hardest aspects of RAG. The system has multiple interacting components, no single ground-truth output, and can fail silently — generating fluent but incorrect answers. Effective evaluation requires multiple layers covering retrieval quality, generation quality, and faithfulness.</p>
@@ -1741,7 +1861,108 @@
 </table>
 <hr />
 <hr />
-<h2 id="10-building-an-evaluation-dataset">10. Building an Evaluation Dataset<a class="headerlink" href="#10-building-an-evaluation-dataset" title="Permanent link">&para;</a></h2>
+<h2 id="10-agent-evaluation">10. Agent Evaluation<a class="headerlink" href="#10-agent-evaluation" title="Permanent link">&para;</a></h2>
+<p>Evaluating agents is fundamentally harder than evaluating RAG pipelines. RAG has one retrieval step and one generation step — both with well-defined inputs and outputs. Agents take variable-length sequences of actions, interact with external tools, and may arrive at the correct answer via many different paths.</p>
+<h3 id="why-agent-evaluation-is-harder">Why Agent Evaluation Is Harder<a class="headerlink" href="#why-agent-evaluation-is-harder" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-determinism</td>
+<td>Same prompt can produce different tool-call sequences across runs</td>
+</tr>
+<tr>
+<td>Trajectory length varies</td>
+<td>One agent solves a task in 3 steps; another takes 12 — both may be correct</td>
+</tr>
+<tr>
+<td>Partial credit</td>
+<td>An agent that retrieves the right document but formats the answer wrong failed — but how badly?</td>
+</tr>
+<tr>
+<td>Tool call verification</td>
+<td>Did the agent call the right tool with the right arguments, or get lucky with the output?</td>
+</tr>
+<tr>
+<td>Environment dependency</td>
+<td>Many tasks require a live browser, code interpreter, or database — hard to reproduce exactly</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outcome-vs-trajectory-evaluation">Outcome vs Trajectory Evaluation<a class="headerlink" href="#outcome-vs-trajectory-evaluation" title="Permanent link">&para;</a></h3>
+<p><strong>Outcome-level:</strong> Did the agent produce the correct final answer? Binary — easy to automate but ignores <em>how</em> the agent got there. An agent that succeeded by luck (hallucinated the right answer without using tools) looks the same as one that used tools correctly.</p>
+<p><strong>Trajectory-level:</strong> Was each intermediate step correct? Did the agent call the right tools, in the right order, with correct arguments? Much richer signal but requires annotating full traces — expensive at scale.</p>
+<blockquote>
+<p>Best practice: use outcome metrics for benchmarking, trajectory metrics for debugging.</p>
+</blockquote>
+<hr />
+<h3 id="key-agent-benchmarks">Key Agent Benchmarks<a class="headerlink" href="#key-agent-benchmarks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Task Type</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WebArena</strong> (Zhou et al., 2023)</td>
+<td>Web navigation (shopping, Reddit, GitLab)</td>
+<td>Multi-step browser control; real websites</td>
+</tr>
+<tr>
+<td><strong>SWE-bench</strong> (Jimenez et al., 2023)</td>
+<td>GitHub issue resolution</td>
+<td>Code agents; long-horizon software engineering</td>
+</tr>
+<tr>
+<td><strong>AgentBench</strong> (Liu et al., 2023)</td>
+<td>8 environments (OS, DB, browser, games)</td>
+<td>Breadth across agent task types</td>
+</tr>
+<tr>
+<td><strong>GAIA</strong> (Mialon et al., 2023)</td>
+<td>Real-world QA requiring tools</td>
+<td>Factual grounding; tool selection</td>
+</tr>
+<tr>
+<td><strong>τ-bench</strong> (Yao et al., 2024)</td>
+<td>Retail/airline customer service</td>
+<td>Tool use + policy compliance in realistic workflows</td>
+</tr>
+<tr>
+<td><strong>HotpotQA / 2WikiMultiHopQA</strong></td>
+<td>Multi-hop reasoning QA</td>
+<td>Planning and information synthesis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SWE-bench</strong> has become the de facto standard for coding agents — pass rate on SWE-bench Verified is now reported by every major agent system (Claude, GPT-4o, Gemini).</p>
+<hr />
+<h3 id="agent-evaluation-metrics">Agent Evaluation Metrics<a class="headerlink" href="#agent-evaluation-metrics" title="Permanent link">&para;</a></h3>
+<p><strong>Task completion rate (TCR):</strong> Fraction of tasks fully solved. The primary metric on most benchmarks.</p>
+<p><strong>Step efficiency:</strong> Average number of steps (tool calls) to solve a task. A system with high TCR but 3× the steps of a baseline is wasteful in production.</p>
+<p><strong>Tool call accuracy:</strong> Did the agent invoke the correct tool with correct arguments? Measured per step.</p>
+<p><strong>Grounding rate:</strong> Fraction of agent claims that are traceable to tool outputs (not parametric hallucination). Same concept as RAG faithfulness, applied to agents.</p>
+<p><strong>Retry rate:</strong> How often does the agent get stuck and retry the same action? High retry rate signals poor loop detection or weak planning.</p>
+<hr />
+<h3 id="llm-as-judge-for-agent-trajectories">LLM-as-Judge for Agent Trajectories<a class="headerlink" href="#llm-as-judge-for-agent-trajectories" title="Permanent link">&para;</a></h3>
+<p>For open-ended tasks (writing a report, debugging code), binary pass/fail is insufficient. LLM-as-a-judge evaluates:</p>
+<ul>
+<li>Was the final output correct and complete?</li>
+<li>Were tool calls reasonable given the task?</li>
+<li>Did the agent get stuck, hallucinate actions, or waste steps?</li>
+</ul>
+<p><strong>Risk:</strong> Same biases as in RAG — LLM judges reward fluent, well-structured trajectories even when factually wrong. Always validate on a human-labelled held-out set.</p>
+<hr />
+<hr />
+<h2 id="11-building-an-evaluation-dataset">11. Building an Evaluation Dataset<a class="headerlink" href="#11-building-an-evaluation-dataset" title="Permanent link">&para;</a></h2>
 <p><strong>Challenge:</strong> Creating reliable ground-truth labels for RAG is expensive.</p>
 <p><strong>Approaches:</strong></p>
 <ol>
