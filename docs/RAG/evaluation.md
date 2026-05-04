@@ -214,7 +214,13 @@ Human evaluation remains the gold standard for RAG systems.
 
 ---
 
-## 10. Building an Evaluation Dataset
+## 10. Agent Evaluation
+
+For single-agent and multi-agent evaluation — metrics, benchmarks, outcome vs. trajectory evaluation, and multi-agent coordination failures — see the dedicated page: [Agent Evaluation](../agents/agent_evaluation.md).
+
+---
+
+## 11. Building an Evaluation Dataset
 
 **Challenge:** Creating reliable ground-truth labels for RAG is expensive.
 

@@ -38,7 +38,7 @@ nav:
       - Indexing Strategies, Vector Databases, and Retrieval Systems for RAG: ./RAG/indexing_and_vector_database.md
       - Re-Ranking: ./RAG/reranking.md
       - Advanced RAG: ./RAG/advanced_rag.md
-      - Evaluation: ./RAG/evaluation.md
+      - RAG Evaluation: ./RAG/evaluation.md
       - Quick Reference: ./RAG/quick_reference.md
       - Supporting Concepts:
           - TF_IDF: ./RAG/supporting_topics/tf_idf.md
@@ -54,6 +54,7 @@ nav:
       - Multi-Agent Systems: ./agents/multi_agent.md
       - Agent Failure Modes: ./agents/agent_failure_modes.md
       - Agentic RAG: ./agents/agentic_rag.md
+      - Agent Evaluation: ./agents/agent_evaluation.md
   - Context Engineering: ./context_engineering/ce.md
   - Interview Q&A: qa.md
   - References: references.md
