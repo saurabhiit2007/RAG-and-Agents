@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../advanced_rag/">
+        <link rel="prev" href="../agentic_rag/">
       
       
-        <link rel="next" href="../quick_reference/">
+        <link rel="next" href="../../context_engineering/ce/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>RAG Evaluation - RAG & Agents</title>
+        <title>Agent Evaluation - RAG & Agents</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-overview" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RAG Evaluation
+              Agent Evaluation
             
           </span>
         </div>
@@ -274,20 +274,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -303,7 +303,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Retrieval Augmented Generation (RAG)
@@ -317,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals/" class="md-nav__link">
+      <a href="../../RAG/fundamentals/" class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chunking/" class="md-nav__link">
+      <a href="../../RAG/chunking/" class="md-nav__link">
         
   
   
@@ -363,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../embedding/" class="md-nav__link">
+      <a href="../../RAG/embedding/" class="md-nav__link">
         
   
   
@@ -386,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../retrieval_methods/" class="md-nav__link">
+      <a href="../../RAG/retrieval_methods/" class="md-nav__link">
         
   
   
@@ -409,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../indexing_and_vector_database/" class="md-nav__link">
+      <a href="../../RAG/indexing_and_vector_database/" class="md-nav__link">
         
   
   
@@ -432,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reranking/" class="md-nav__link">
+      <a href="../../RAG/reranking/" class="md-nav__link">
         
   
   
@@ -455,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced_rag/" class="md-nav__link">
+      <a href="../../RAG/advanced_rag/" class="md-nav__link">
         
   
   
@@ -475,30 +475,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    RAG Evaluation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../RAG/evaluation/" class="md-nav__link">
         
   
   
@@ -509,231 +489,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-why-rag-evaluation-is-hard" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Why RAG Evaluation Is Hard
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-component-vs-end-to-end-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Component vs. End-to-End Evaluation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Component vs. End-to-End Evaluation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#component-level-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Component-Level Evaluation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#end-to-end-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      End-to-End Evaluation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-retrieval-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Retrieval Metrics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Retrieval Metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recallk" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recall@k
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mean-reciprocal-rank-mrr" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mean Reciprocal Rank (MRR)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ndcg-normalised-discounted-cumulative-gain" class="md-nav__link">
-    <span class="md-ellipsis">
-      nDCG (Normalised Discounted Cumulative Gain)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#precisionk" class="md-nav__link">
-    <span class="md-ellipsis">
-      Precision@k
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-generation-quality-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Generation Quality Metrics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-faithfulness-and-groundedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Faithfulness and Groundedness
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Faithfulness and Groundedness">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#faithfulness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Faithfulness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#groundedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Groundedness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#answer-relevance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Answer Relevance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#context-relevance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context Relevance
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-llm-as-a-judge-ragas-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. LLM-as-a-Judge (RAGAS Framework)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-human-evaluation-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Human Evaluation Protocols
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-common-rag-failure-types-and-root-causes" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Common RAG Failure Types and Root Causes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-agent-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Agent Evaluation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-building-an-evaluation-dataset" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Building an Evaluation Dataset
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -746,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_reference/" class="md-nav__link">
+      <a href="../../RAG/quick_reference/" class="md-nav__link">
         
   
   
@@ -809,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/tf_idf/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/tf_idf/" class="md-nav__link">
         
   
   
@@ -832,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/bm25/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/bm25/" class="md-nav__link">
         
   
   
@@ -855,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/splade/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/splade/" class="md-nav__link">
         
   
   
@@ -878,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../supporting_topics/sentence_transformers/" class="md-nav__link">
+      <a href="../../RAG/supporting_topics/sentence_transformers/" class="md-nav__link">
         
   
   
@@ -913,20 +668,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -942,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             LLM Agents
@@ -956,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_fundamentals/" class="md-nav__link">
+      <a href="../agent_fundamentals/" class="md-nav__link">
         
   
   
@@ -979,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/memory_systems/" class="md-nav__link">
+      <a href="../memory_systems/" class="md-nav__link">
         
   
   
@@ -1002,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/planning/" class="md-nav__link">
+      <a href="../planning/" class="md-nav__link">
         
   
   
@@ -1025,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_frameworks/" class="md-nav__link">
+      <a href="../agent_frameworks/" class="md-nav__link">
         
   
   
@@ -1048,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/mcp_and_protocols/" class="md-nav__link">
+      <a href="../mcp_and_protocols/" class="md-nav__link">
         
   
   
@@ -1071,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/multi_agent/" class="md-nav__link">
+      <a href="../multi_agent/" class="md-nav__link">
         
   
   
@@ -1094,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agent_failure_modes/" class="md-nav__link">
+      <a href="../agent_failure_modes/" class="md-nav__link">
         
   
   
@@ -1117,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agents/agentic_rag/" class="md-nav__link">
+      <a href="../agentic_rag/" class="md-nav__link">
         
   
   
@@ -1137,10 +892,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../agents/agent_evaluation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Agent Evaluation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1151,6 +926,162 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-single-agent-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Single-Agent Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Single-Agent Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-why-it-is-harder-than-evaluating-a-single-llm-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Why It Is Harder Than Evaluating a Single LLM Call
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-outcome-vs-trajectory-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Outcome vs. Trajectory Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-key-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Key Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-llm-as-judge-for-agent-trajectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 LLM-as-Judge for Agent Trajectories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-single-agent-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Single-Agent Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-multi-agent-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Multi-Agent Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Multi-Agent Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-why-multi-agent-is-even-harder" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Why Multi-Agent Is Even Harder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-evaluation-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Evaluation Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-coordination-failure-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Coordination Failure Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-multi-agent-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Multi-Agent Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-practical-evaluation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Practical Evaluation Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1254,46 +1185,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-overview" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Overview
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-why-rag-evaluation-is-hard" class="md-nav__link">
+  <a href="#1-single-agent-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Why RAG Evaluation Is Hard
+      1. Single-Agent Evaluation
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-component-vs-end-to-end-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Component vs. End-to-End Evaluation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Component vs. End-to-End Evaluation">
+    <nav class="md-nav" aria-label="1. Single-Agent Evaluation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#component-level-evaluation" class="md-nav__link">
+  <a href="#11-why-it-is-harder-than-evaluating-a-single-llm-call" class="md-nav__link">
     <span class="md-ellipsis">
-      Component-Level Evaluation
+      1.1 Why It Is Harder Than Evaluating a Single LLM Call
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#end-to-end-evaluation" class="md-nav__link">
+  <a href="#12-outcome-vs-trajectory-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      End-to-End Evaluation
+      1.2 Outcome vs. Trajectory Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-key-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Key Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-llm-as-judge-for-agent-trajectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 LLM-as-Judge for Agent Trajectories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-single-agent-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Single-Agent Benchmarks
     </span>
   </a>
   
@@ -1305,46 +1254,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-retrieval-metrics" class="md-nav__link">
+  <a href="#2-multi-agent-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Retrieval Metrics
+      2. Multi-Agent Evaluation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Retrieval Metrics">
+    <nav class="md-nav" aria-label="2. Multi-Agent Evaluation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#recallk" class="md-nav__link">
+  <a href="#21-why-multi-agent-is-even-harder" class="md-nav__link">
     <span class="md-ellipsis">
-      Recall@k
+      2.1 Why Multi-Agent Is Even Harder
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mean-reciprocal-rank-mrr" class="md-nav__link">
+  <a href="#22-evaluation-levels" class="md-nav__link">
     <span class="md-ellipsis">
-      Mean Reciprocal Rank (MRR)
+      2.2 Evaluation Levels
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ndcg-normalised-discounted-cumulative-gain" class="md-nav__link">
+  <a href="#23-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      nDCG (Normalised Discounted Cumulative Gain)
+      2.3 Metrics
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#precisionk" class="md-nav__link">
+  <a href="#24-coordination-failure-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      Precision@k
+      2.4 Coordination Failure Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-multi-agent-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Multi-Agent Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-practical-evaluation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Practical Evaluation Strategy
     </span>
   </a>
   
@@ -1352,111 +1319,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-generation-quality-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Generation Quality Metrics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-faithfulness-and-groundedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Faithfulness and Groundedness
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Faithfulness and Groundedness">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#faithfulness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Faithfulness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#groundedness" class="md-nav__link">
-    <span class="md-ellipsis">
-      Groundedness
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#answer-relevance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Answer Relevance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#context-relevance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Context Relevance
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-llm-as-a-judge-ragas-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. LLM-as-a-Judge (RAGAS Framework)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-human-evaluation-protocols" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Human Evaluation Protocols
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-common-rag-failure-types-and-root-causes" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Common RAG Failure Types and Root Causes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-agent-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Agent Evaluation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#11-building-an-evaluation-dataset" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Building an Evaluation Dataset
-    </span>
-  </a>
   
 </li>
       
@@ -1479,327 +1341,303 @@
   
 
 
-  <h1>RAG Evaluation</h1>
+  <h1>Agent Evaluation</h1>
 
-<h2 id="1-overview">1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
-<p>Evaluation is one of the hardest aspects of RAG. The system has multiple interacting components, no single ground-truth output, and can fail silently — generating fluent but incorrect answers. Effective evaluation requires multiple layers covering retrieval quality, generation quality, and faithfulness.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Evaluating agents is fundamentally harder than evaluating a single LLM response. A plain LLM call has one input and one output. An agent executes a sequence of decisions — choosing tools, interpreting results, planning next steps — and the quality of the final answer depends on every step in that chain.</p>
+<p>This page covers evaluation for single-agent systems and multi-agent systems separately, since multi-agent introduces additional dimensions (coordination, inter-agent communication, emergent failures) that don't exist in single-agent settings.</p>
 <hr />
-<hr />
-<h2 id="2-why-rag-evaluation-is-hard">2. Why RAG Evaluation Is Hard<a class="headerlink" href="#2-why-rag-evaluation-is-hard" title="Permanent link">&para;</a></h2>
-<p>Unlike traditional NLP tasks, RAG systems:</p>
-<ul>
-<li>
-<p>Do not have a single ground-truth output (multiple valid answers may exist).</p>
-</li>
-<li>
-<p>Depend on external knowledge sources that can be wrong, stale, or irrelevant.</p>
-</li>
-<li>
-<p>Can fail silently — generating fluent but factually wrong answers.</p>
-</li>
-<li>
-<p>Have multiple interacting components: a failure in retrieval causes a failure in generation, but this is hard to detect end-to-end.</p>
-</li>
-</ul>
-<p>No single metric is sufficient. Effective evaluation requires layered coverage.</p>
-<hr />
-<hr />
-<h2 id="3-component-vs-end-to-end-evaluation">3. Component vs. End-to-End Evaluation<a class="headerlink" href="#3-component-vs-end-to-end-evaluation" title="Permanent link">&para;</a></h2>
-<h3 id="component-level-evaluation">Component-Level Evaluation<a class="headerlink" href="#component-level-evaluation" title="Permanent link">&para;</a></h3>
-<p>Each module is tested independently.</p>
-<ul>
-<li>
-<p><strong>Retrieval:</strong> Are relevant documents retrieved? Are they ranked correctly?</p>
-</li>
-<li>
-<p><strong>Generation:</strong> Given perfect context, can the model answer correctly?</p>
-</li>
-</ul>
+<h2 id="1-single-agent-evaluation">1. Single-Agent Evaluation<a class="headerlink" href="#1-single-agent-evaluation" title="Permanent link">&para;</a></h2>
+<h3 id="11-why-it-is-harder-than-evaluating-a-single-llm-call">1.1 Why It Is Harder Than Evaluating a Single LLM Call<a class="headerlink" href="#11-why-it-is-harder-than-evaluating-a-single-llm-call" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
+<th>Challenge</th>
+<th>Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Pros</strong></td>
-<td>Easier to debug failures; clear error attribution; fast offline iteration</td>
+<td>Non-determinism</td>
+<td>Same prompt can produce different tool-call sequences across runs</td>
 </tr>
 <tr>
-<td><strong>Cons</strong></td>
-<td>Does not capture compounding errors; may overestimate real-world performance</td>
+<td>Variable trajectory length</td>
+<td>One agent solves a task in 3 steps; another takes 12 — both may be correct</td>
+</tr>
+<tr>
+<td>Partial credit</td>
+<td>An agent that retrieves the right document but formats the answer wrong failed — but how badly?</td>
+</tr>
+<tr>
+<td>Tool call verification</td>
+<td>Did the agent call the right tool with the right arguments, or get lucky with the output?</td>
+</tr>
+<tr>
+<td>Environment dependency</td>
+<td>Many tasks require a live browser, code interpreter, or database — hard to reproduce exactly</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h3 id="end-to-end-evaluation">End-to-End Evaluation<a class="headerlink" href="#end-to-end-evaluation" title="Permanent link">&para;</a></h3>
-<p>The full pipeline is tested from user query to final answer.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Pros</strong></td>
-<td>Reflects real user experience; captures interaction effects between components</td>
-</tr>
-<tr>
-<td><strong>Cons</strong></td>
-<td>Hard to diagnose root causes; more expensive and noisy</td>
-</tr>
-</tbody>
-</table>
+<h3 id="12-outcome-vs-trajectory-evaluation">1.2 Outcome vs. Trajectory Evaluation<a class="headerlink" href="#12-outcome-vs-trajectory-evaluation" title="Permanent link">&para;</a></h3>
+<p><strong>Outcome-level:</strong> Did the agent produce the correct final answer? Binary — easy to automate but ignores <em>how</em> the agent got there. An agent that hallucinated the right answer without using tools looks identical to one that used tools correctly.</p>
+<p><strong>Trajectory-level:</strong> Was each intermediate step correct? Did the agent call the right tools, in the right order, with correct arguments? Much richer signal but requires annotating full traces — expensive at scale.</p>
 <blockquote>
-<p>Strong systems use both — component evaluation during development, end-to-end evaluation before deployment.</p>
+<p>Use outcome metrics for benchmarking across models; trajectory metrics for debugging and improvement.</p>
 </blockquote>
-<hr />
-<hr />
-<h2 id="4-retrieval-metrics">4. Retrieval Metrics<a class="headerlink" href="#4-retrieval-metrics" title="Permanent link">&para;</a></h2>
-<h3 id="recallk">Recall@k<a class="headerlink" href="#recallk" title="Permanent link">&para;</a></h3>
-<p>Fraction of queries for which at least one relevant document appears in the top-k retrieved results.</p>
-<ul>
-<li>
-<p><strong>Why it matters:</strong> If recall is low, generation cannot recover. Especially critical for factual QA.</p>
-</li>
-<li>
-<p><strong>Limitation:</strong> Binary notion of relevance; does not consider ranking quality within top-k.</p>
-</li>
-</ul>
-<hr />
-<h3 id="mean-reciprocal-rank-mrr">Mean Reciprocal Rank (MRR)<a class="headerlink" href="#mean-reciprocal-rank-mrr" title="Permanent link">&para;</a></h3>
-<p>Measures how early the first relevant document appears in the ranked list. Score = average of 1/rank across queries.</p>
-<ul>
-<li>
-<p><strong>Why it matters:</strong> Rewards systems that rank relevant documents earlier; useful when only one document is needed.</p>
-</li>
-<li>
-<p><strong>Limitation:</strong> Ignores multiple relevant documents.</p>
-</li>
-</ul>
-<hr />
-<h3 id="ndcg-normalised-discounted-cumulative-gain">nDCG (Normalised Discounted Cumulative Gain)<a class="headerlink" href="#ndcg-normalised-discounted-cumulative-gain" title="Permanent link">&para;</a></h3>
-<p>Measures quality of the full ranked list using graded relevance, penalising relevant documents that appear lower.</p>
-<ul>
-<li>
-<p><strong>Why it matters:</strong> More realistic for multi-document relevance; handles graded (not just binary) relevance labels.</p>
-</li>
-<li>
-<p><strong>Limitation:</strong> Requires graded relevance annotations; more complex to compute and interpret.</p>
-</li>
-</ul>
-<hr />
-<h3 id="precisionk">Precision@k<a class="headerlink" href="#precisionk" title="Permanent link">&para;</a></h3>
-<p>Fraction of top-k retrieved documents that are relevant.</p>
-<ul>
-<li>
-<p><strong>Why it matters:</strong> Complements recall — high precision means less noisy context for the LLM.</p>
-</li>
-<li>
-<p><strong>Limitation:</strong> Must be considered alongside recall; a system can have high precision@3 with low recall.</p>
-</li>
-</ul>
-<blockquote>
-<p>High Recall@k is often more critical than precision in RAG retrieval, because the LLM can filter irrelevant context — but it cannot invent missing information.</p>
-</blockquote>
-<hr />
-<hr />
-<h2 id="5-generation-quality-metrics">5. Generation Quality Metrics<a class="headerlink" href="#5-generation-quality-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="13-key-metrics">1.3 Key Metrics<a class="headerlink" href="#13-key-metrics" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Metric</th>
-<th>What It Measures</th>
-<th>Limitation</th>
+<th>Definition</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Exact Match (EM)</td>
-<td>Exact string match with reference answer</td>
-<td>Too strict for NL generation; penalises valid paraphrasing</td>
+<td><strong>Task Completion Rate (TCR)</strong></td>
+<td>Fraction of tasks fully solved</td>
+<td>Primary metric on most benchmarks</td>
 </tr>
 <tr>
-<td>F1 Score (token overlap)</td>
-<td>Token-level overlap with reference</td>
-<td>Surface-level; misses semantic equivalence</td>
+<td><strong>Step Efficiency</strong></td>
+<td>Avg. steps to solve a task</td>
+<td>A system with high TCR but 3× the steps is costly in production</td>
 </tr>
 <tr>
-<td>BLEU / ROUGE</td>
-<td>N-gram overlap with reference text</td>
-<td>Poorly correlates with factual correctness; rewards fluency</td>
+<td><strong>Tool Call Accuracy</strong></td>
+<td>Did the agent invoke the correct tool with correct arguments, per step?</td>
+<td>Requires trajectory annotation</td>
 </tr>
 <tr>
-<td>BERTScore</td>
-<td>Semantic similarity via contextual embeddings</td>
-<td>Better than n-gram but still not factuality-aware</td>
+<td><strong>Grounding Rate</strong></td>
+<td>Fraction of agent claims traceable to tool outputs (not parametric knowledge)</td>
+<td>Same concept as RAG faithfulness</td>
+</tr>
+<tr>
+<td><strong>Retry Rate</strong></td>
+<td>How often does the agent repeat the same action without progress?</td>
+<td>High retry rate signals weak planning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-llm-as-judge-for-agent-trajectories">1.4 LLM-as-Judge for Agent Trajectories<a class="headerlink" href="#14-llm-as-judge-for-agent-trajectories" title="Permanent link">&para;</a></h3>
+<p>For open-ended tasks (writing a report, debugging code), binary pass/fail is insufficient. An LLM judge evaluates:</p>
+<ul>
+<li>Was the final output correct and complete?</li>
+<li>Were tool calls reasonable given the task?</li>
+<li>Did the agent get stuck, hallucinate actions, or waste steps?</li>
+</ul>
+<p><strong>Risk:</strong> LLM judges reward fluent, well-structured trajectories even when factually wrong. Always validate judge scores against a human-labelled held-out set before using them for production decisions.</p>
+<h3 id="15-single-agent-benchmarks">1.5 Single-Agent Benchmarks<a class="headerlink" href="#15-single-agent-benchmarks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Task Type</th>
+<th>What It Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WebArena</strong> (Zhou et al., 2023)</td>
+<td>Web navigation (shopping, Reddit, GitLab)</td>
+<td>Multi-step browser control on real websites</td>
+</tr>
+<tr>
+<td><strong>SWE-bench Verified</strong> (Jimenez et al., 2023)</td>
+<td>GitHub issue resolution</td>
+<td>Code agents; long-horizon software engineering</td>
+</tr>
+<tr>
+<td><strong>AgentBench</strong> (Liu et al., 2023)</td>
+<td>8 environments (OS, DB, browser, games)</td>
+<td>Breadth across agent task types</td>
+</tr>
+<tr>
+<td><strong>GAIA</strong> (Mialon et al., 2023)</td>
+<td>Real-world QA requiring tools</td>
+<td>Factual grounding; tool selection</td>
+</tr>
+<tr>
+<td><strong>τ-bench</strong> (Yao et al., 2024)</td>
+<td>Retail/airline customer service</td>
+<td>Tool use + policy compliance in realistic workflows</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SWE-bench Verified</strong> is the current de facto standard for coding agents — task completion rate on it is now reported by every major agent system.</p>
+<hr />
+<h2 id="2-multi-agent-evaluation">2. Multi-Agent Evaluation<a class="headerlink" href="#2-multi-agent-evaluation" title="Permanent link">&para;</a></h2>
+<h3 id="21-why-multi-agent-is-even-harder">2.1 Why Multi-Agent Is Even Harder<a class="headerlink" href="#21-why-multi-agent-is-even-harder" title="Permanent link">&para;</a></h3>
+<p>Single-agent evaluation has one trajectory to inspect. Multi-agent systems have <strong>N concurrent trajectories plus the communication between them</strong>. New failure modes emerge that don't exist in single-agent settings:</p>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Credit assignment</td>
+<td>Which agent caused the final output to be correct or wrong?</td>
+</tr>
+<tr>
+<td>Coordination failures</td>
+<td>Agents may produce contradictory outputs, duplicate work, or deadlock waiting on each other</td>
+</tr>
+<tr>
+<td>Sub-task specification quality</td>
+<td>If the orchestrator decomposes the task incorrectly, all workers fail — but worker metrics look fine</td>
+</tr>
+<tr>
+<td>Emergent errors</td>
+<td>No individual agent is wrong, but their combined outputs produce an incorrect result</td>
+</tr>
+<tr>
+<td>Communication overhead</td>
+<td>Agents may pass malformed or incomplete context to each other, silently degrading quality</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-evaluation-levels">2.2 Evaluation Levels<a class="headerlink" href="#22-evaluation-levels" title="Permanent link">&para;</a></h3>
+<p>Multi-agent systems must be evaluated at three levels simultaneously:</p>
+<div class="highlight"><pre><span></span><code>System Level      →  Did the overall task succeed?
+       ↓
+Orchestrator Level →  Was the task decomposition correct?
+                       Were sub-tasks well-specified?
+       ↓
+Worker Level       →  Did each agent complete its sub-task correctly?
+                       Did it use the right tools?
+</code></pre></div>
+<p>Evaluating only at the system level misses orchestrator failures. Evaluating only at the worker level misses coordination failures.</p>
+<h3 id="23-metrics">2.3 Metrics<a class="headerlink" href="#23-metrics" title="Permanent link">&para;</a></h3>
+<p><strong>System-level:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>End-to-end TCR</strong></td>
+<td>Fraction of high-level tasks fully solved by the system</td>
+</tr>
+<tr>
+<td><strong>Coordination efficiency</strong></td>
+<td>Steps taken / minimum steps needed (measures redundant or duplicated work)</td>
+</tr>
+<tr>
+<td><strong>Time-to-completion</strong></td>
+<td>Wall-clock time accounting for parallel agent execution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Orchestrator-level:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Decomposition correctness</strong></td>
+<td>Are the sub-tasks necessary and sufficient for solving the high-level task?</td>
+</tr>
+<tr>
+<td><strong>Sub-task specification quality</strong></td>
+<td>Are worker instructions precise enough that each worker can execute without ambiguity?</td>
+</tr>
+<tr>
+<td><strong>Synthesis quality</strong></td>
+<td>Does the orchestrator correctly combine worker outputs into a coherent final answer?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worker-level:</strong></p>
+<p>Same metrics as single-agent: TCR per sub-task, tool call accuracy, grounding rate.</p>
+<p><strong>Inter-agent communication:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Message faithfulness</strong></td>
+<td>Does what one agent communicates to another accurately reflect what it found?</td>
+</tr>
+<tr>
+<td><strong>Redundancy rate</strong></td>
+<td>What fraction of tool calls across agents duplicate work already done by another agent?</td>
+</tr>
+<tr>
+<td><strong>Contradiction rate</strong></td>
+<td>How often do workers produce outputs that directly contradict each other?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-coordination-failure-patterns">2.4 Coordination Failure Patterns<a class="headerlink" href="#24-coordination-failure-patterns" title="Permanent link">&para;</a></h3>
+<p><strong>Deadlock:</strong> Agent A waits for Agent B's output before proceeding; Agent B waits for Agent A. No progress is made.</p>
+<p><strong>Redundant execution:</strong> Two workers independently call the same tool with the same arguments because the orchestrator didn't share intermediate results.</p>
+<p><strong>Contradictory outputs:</strong> Worker A concludes X; Worker B concludes ¬X. The orchestrator synthesises an incoherent answer or picks arbitrarily.</p>
+<p><strong>Context loss at handoff:</strong> Worker A produces a correct result but communicates it to Worker B incompletely (truncation, missing metadata). Worker B makes decisions on degraded information.</p>
+<p><strong>Detection:</strong> Log all inter-agent messages. Compare what each agent claims to have received vs. what the sending agent actually produced.</p>
+<h3 id="25-multi-agent-benchmarks">2.5 Multi-Agent Benchmarks<a class="headerlink" href="#25-multi-agent-benchmarks" title="Permanent link">&para;</a></h3>
+<p>Dedicated multi-agent benchmarks are still emerging. Current options:</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GAIA</strong> (multi-agent mode)</td>
+<td>Tasks too complex for one agent; measures system-level completion</td>
+</tr>
+<tr>
+<td><strong>AgentBench</strong> (multi-agent tracks)</td>
+<td>Some environments support multi-agent execution</td>
+</tr>
+<tr>
+<td><strong>ChatDev / SWE-bench</strong> (pipeline agents)</td>
+<td>Software development with specialised coder/reviewer/tester agents</td>
+</tr>
+<tr>
+<td><strong>CAMEL</strong> role-playing dataset</td>
+<td>Evaluates cooperative reasoning between two agents assigned complementary roles</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p>These metrics primarily measure fluency and surface similarity, not truthfulness. A hallucinated answer can score well if it is fluent and partially overlaps with the reference.</p>
+<p>Multi-agent benchmarks are significantly less mature than single-agent benchmarks. Most production teams build custom internal evaluation suites using their actual task distribution.</p>
 </blockquote>
-<hr />
-<hr />
-<h2 id="6-faithfulness-and-groundedness">6. Faithfulness and Groundedness<a class="headerlink" href="#6-faithfulness-and-groundedness" title="Permanent link">&para;</a></h2>
-<p>The most critical RAG-specific evaluation dimension. A system can score well on generation metrics while still hallucinating — generating correct-sounding text not supported by the retrieved documents.</p>
-<h3 id="faithfulness">Faithfulness<a class="headerlink" href="#faithfulness" title="Permanent link">&para;</a></h3>
-<p><strong>Question:</strong> Is every claim in the answer supported by the retrieved context?</p>
-<ul>
-<li>
-<p>Measured by sentence-level entailment checks or LLM-as-a-judge prompting.</p>
-</li>
-<li>
-<p>Failure mode: Correct-sounding claims that are not in any retrieved document.</p>
-</li>
-</ul>
-<hr />
-<h3 id="groundedness">Groundedness<a class="headerlink" href="#groundedness" title="Permanent link">&para;</a></h3>
-<p><strong>Question:</strong> Does every specific claim in the answer trace back to a retrieved source?</p>
-<ul>
-<li>
-<p>Measured by claim extraction followed by source matching or citation validation.</p>
-</li>
-<li>
-<p>Failure mode: Answers that are correct (by coincidence or parametric knowledge) but unsupported by retrieved text.</p>
-</li>
-</ul>
-<hr />
-<h3 id="answer-relevance">Answer Relevance<a class="headerlink" href="#answer-relevance" title="Permanent link">&para;</a></h3>
-<p><strong>Question:</strong> Does the answer actually address the original question?</p>
-<ul>
-<li>Measured by LLM-as-a-judge or semantic similarity between answer and query.</li>
-</ul>
-<hr />
-<h3 id="context-relevance">Context Relevance<a class="headerlink" href="#context-relevance" title="Permanent link">&para;</a></h3>
-<p><strong>Question:</strong> Were the retrieved documents actually relevant to the query?</p>
-<ul>
-<li>Measured by LLM-based relevance scoring per retrieved chunk.</li>
-</ul>
-<hr />
-<h2 id="7-llm-as-a-judge-ragas-framework">7. LLM-as-a-Judge (RAGAS Framework)<a class="headerlink" href="#7-llm-as-a-judge-ragas-framework" title="Permanent link">&para;</a></h2>
-<p>Using an LLM to evaluate RAG outputs is increasingly the standard approach. <strong>RAGAS</strong> is a widely-used framework evaluating four dimensions without requiring ground-truth labels for generation:</p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Question Answered</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Faithfulness</td>
-<td>Are all claims in the answer supported by retrieved context?</td>
-</tr>
-<tr>
-<td>Answer Relevance</td>
-<td>Is the answer on-topic for the original query?</td>
-</tr>
-<tr>
-<td>Context Recall</td>
-<td>Does the retrieved context contain what's needed to answer? (Needs reference answer)</td>
-</tr>
-<tr>
-<td>Context Precision</td>
-<td>Are retrieved documents relevant, or is there noise?</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Benefits:</strong> Scales without human labelling; captures semantic nuance beyond lexical overlap.</p>
-<p><strong>Risks:</strong></p>
-<ul>
-<li>
-<p>Bias towards fluent answers — LLM judges may reward well-written hallucinations.</p>
-</li>
-<li>
-<p>Sensitivity to prompt design — scoring rubrics matter significantly.</p>
-</li>
-<li>
-<p>Self-preference bias — models tend to rate outputs from similar architectures more favourably.</p>
-</li>
-</ul>
-<p><strong>Best practice:</strong> Validate LLM-as-a-judge scores against human judgments on a held-out set before trusting them for production decisions.</p>
-<hr />
-<hr />
-<h2 id="8-human-evaluation-protocols">8. Human Evaluation Protocols<a class="headerlink" href="#8-human-evaluation-protocols" title="Permanent link">&para;</a></h2>
-<p>Human evaluation remains the gold standard for RAG systems.</p>
-<p><strong>Common criteria:</strong> Correctness, completeness, faithfulness, clarity, usefulness.</p>
-<p><strong>Protocol design:</strong></p>
-<ul>
-<li>
-<p>Blind evaluation (evaluators don't know which system produced which answer).</p>
-</li>
-<li>
-<p>Multiple annotators per example (typically 3).</p>
-</li>
-<li>
-<p>Measure inter-annotator agreement (Cohen's Kappa).</p>
-</li>
-</ul>
-<p><strong>Tradeoffs:</strong> High cost; low scalability; slow iteration — but irreplaceable for final validation.</p>
-<hr />
-<hr />
-<h2 id="9-common-rag-failure-types-and-root-causes">9. Common RAG Failure Types and Root Causes<a class="headerlink" href="#9-common-rag-failure-types-and-root-causes" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Failure Type</th>
-<th>Diagnosis</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Relevant doc not retrieved</td>
-<td>Low Recall@k</td>
-<td>Improve embeddings; use hybrid retrieval; adjust chunk size</td>
-</tr>
-<tr>
-<td>Retrieved but not used by LLM</td>
-<td>Good recall, low faithfulness</td>
-<td>Improve prompt; citation constraints; rerank more aggressively</td>
-</tr>
-<tr>
-<td>Partial hallucinations</td>
-<td>Mixed faithful + invented claims</td>
-<td>Faithfulness scoring; instruction-tune with grounding</td>
-</tr>
-<tr>
-<td>Over-reliance on parametric knowledge</td>
-<td>Model ignores retrieved context</td>
-<td>Explicit grounding instructions; Self-RAG</td>
-</tr>
-<tr>
-<td>Stale or contradictory sources</td>
-<td>Corpus not updated</td>
-<td>Add timestamps; filter by recency; update index</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<hr />
-<h2 id="10-agent-evaluation">10. Agent Evaluation<a class="headerlink" href="#10-agent-evaluation" title="Permanent link">&para;</a></h2>
-<p>For single-agent and multi-agent evaluation — metrics, benchmarks, outcome vs. trajectory evaluation, and multi-agent coordination failures — see the dedicated page: <a href="../../agents/agent_evaluation/">Agent Evaluation</a>.</p>
-<hr />
-<h2 id="11-building-an-evaluation-dataset">11. Building an Evaluation Dataset<a class="headerlink" href="#11-building-an-evaluation-dataset" title="Permanent link">&para;</a></h2>
-<p><strong>Challenge:</strong> Creating reliable ground-truth labels for RAG is expensive.</p>
-<p><strong>Approaches:</strong></p>
+<h3 id="26-practical-evaluation-strategy">2.6 Practical Evaluation Strategy<a class="headerlink" href="#26-practical-evaluation-strategy" title="Permanent link">&para;</a></h3>
+<p>Because public multi-agent benchmarks are limited, a pragmatic approach is:</p>
 <ol>
 <li>
-<p><strong>Synthetic generation:</strong> Use an LLM to generate questions from your document corpus, creating question–context–answer triples. Fast and free, but synthetic questions may not match real user queries.</p>
+<p><strong>Decompose into sub-task unit tests.</strong> For each worker agent type, build a targeted eval set for its sub-task (e.g., "does the research agent reliably retrieve the right document?"). These are cheap and fast.</p>
 </li>
 <li>
-<p><strong>Production logging:</strong> Sample real user queries and have humans label relevant documents and correct answers. Most realistic, but requires live traffic.</p>
+<p><strong>Sample full end-to-end traces.</strong> Run the full multi-agent system on a representative task set and human-review complete traces for a sample of failures.</p>
 </li>
 <li>
-<p><strong>Expert annotation:</strong> For high-stakes domains (medical, legal), pay subject matter experts to create a gold-standard test set. Expensive but highest quality.</p>
+<p><strong>Inject faults.</strong> Deliberately provide a worker with a malformed input or wrong tool result, and check whether the orchestrator detects and recovers — or propagates the error silently.</p>
+</li>
+<li>
+<p><strong>Monitor in production.</strong> Log all inter-agent messages and outcomes. Contradiction rate, retry rate, and step count are the most informative signals for ongoing health.</p>
 </li>
 </ol>
-<hr />
 
 
 
